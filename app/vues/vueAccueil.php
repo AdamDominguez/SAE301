@@ -1,6 +1,5 @@
 <?php
 $title = "ACCUEIL";
-require "header.php";
 ?>
 
 <!DOCTYPE html>
@@ -14,6 +13,7 @@ require "header.php";
 </head>
 
 <body>
+    <?php require "header.php"; ?>
     <main>
         <section class="Home">
             <div class="Content">
