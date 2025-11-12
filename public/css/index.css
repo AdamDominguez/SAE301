@@ -98,3 +98,82 @@ body {
     color: #ffffff;
     font-weight: bold;
 }
+
+.Explication {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #333333;
+    height: 100lvh;
+}
+
+.honeycomb1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 100%;
+    width: 20vw;
+}
+
+.honeycomb2 {
+    position: absolute;
+    max-width: 100%;
+    width: 20vw;
+    right: 0;
+    bottom: 0;
+}
+
+h3 {
+    color: #ffffff;
+    font-weight: lighter;
+}
+
+h2 {
+    font-size: 45px;
+    color: #ffffff;
+    text-align: center;
+}
+
+h2 span {
+    color: #F0C753;
+}
+
+.ExplicationMenu{
+    display: flex;
+}
+
+.ExplicationTexte {
+    background: #F0C753;
+    border-radius: 20px;
+    width: 60vw;
+    padding: 30px;
+}
+
+.ExplicationTexte p {
+    font-size: 22.5px;
+}
+
+.ExplicationLogos div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    width: 100px;
+    height: 115.47px;
+    background: #F0C753;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    border-radius: 20px;
+}
+
+.Piliers {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #333333;
+    height: 150lvh;
+    gap: 10lvh;
+}
