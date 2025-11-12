@@ -8,30 +8,40 @@ body {
 }
 
 .Droite {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 0 2.5vw 0 2.5vw;
     width: 50vw;
 }
 
 .Droite img {
     max-width: 100%;
-    width: 40vw;
+    width: 30vw;
 }
 
 .Home {
-    height: 100svh;
+    height: 65lvh;
+}
+
+.HomeHero {
+    background: #333333;
+    height: 20lvh;
 }
 
 .Content {
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .Content h1 {
-    font-size: 64px;
+    font-size: 45px;
     color: #333333;
 }
 
 .Content p {
-    font-size: 24px;
+    font-size: 20px;
     color: #333333;
 }
 
@@ -40,9 +50,6 @@ body {
 }
 
 .Decouvrir {
-    display: flex;
-    align-items: center;
-    gap: 9px;
     border-radius: 15px;
     background: #333333;
     padding: 15px;
@@ -50,6 +57,10 @@ body {
 }
 
 .Decouvrir a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
     color: #ffffff;
     text-decoration: none;
     font-size: 16px;
