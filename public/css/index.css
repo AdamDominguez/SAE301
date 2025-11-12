@@ -1,3 +1,72 @@
-body{
-    margin: 0;
+body {
+    background: #F0C753;
+}
+
+.Gauche {
+    margin: 0 2.5vw 0 2.5vw;
+    width: 50vw;
+}
+
+.Droite {
+    margin: 0 2.5vw 0 2.5vw;
+    width: 50vw;
+}
+
+.Droite img {
+    max-width: 100%;
+    width: 40vw;
+}
+
+.Home {
+    height: 100svh;
+}
+
+.Content {
+    display: flex;
+}
+
+.Content h1 {
+    font-size: 64px;
+    color: #333333;
+}
+
+.Content p {
+    font-size: 24px;
+    color: #333333;
+}
+
+.Boutons {
+    display: flex;
+}
+
+.Decouvrir {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    border-radius: 15px;
+    background: #333333;
+    padding: 15px;
+    margin: 0 40px 0 0;
+}
+
+.Decouvrir a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.Savoir {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    border-radius: 15px;
+    border: #333333 solid;
+    padding: 15px;
+    margin: 0 40px 0 0;
+}
+
+.Savoir a {
+    color: #333333;
+    text-decoration: none;
+    font-size: 16px;
 }

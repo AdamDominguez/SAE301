@@ -1,3 +1,135 @@
-body{
+/*
+ * LATO FONT FAMILY
+ */
+
+/* Lato Thin (100) */
+@font-face {
+    font-family: 'Lato';
+    src: url('./fonts/Lato-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Lato Thin Italic (100) */
+@font-face {
+    font-family: 'Lato';
+    src: url('./fonts/Lato-ThinItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Lato Light Italic (300) */
+@font-face {
+    font-family: 'Lato';
+    src: url('./fonts/Lato-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Lato Light (300) */
+@font-face {
+    font-family: 'Lato';
+    src: url('./fonts/Lato-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Lato Regular (400) */
+@font-face {
+    font-family: 'Lato';
+    src: url('./fonts/Lato-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Lato Italic (400) */
+@font-face {
+    font-family: 'Lato';
+    src: url('./fonts/Lato-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Lato Bold (700) */
+@font-face {
+    font-family: 'Lato';
+    src: url('./fonts/Lato-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Lato Bold Italic (700) */
+@font-face {
+    font-family: 'Lato';
+    src: url('./fonts/Lato-BoldItalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Lato Black (900) */
+@font-face {
+    font-family: 'Lato';
+    src: url('./fonts/Lato-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Lato Black Italic (900) */
+@font-face {
+    font-family: 'Lato';
+    src: url('./fonts/Lato-BlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+body {
+    font-family: "Lato Regular", sans-serif;
     margin: 0;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    height: 15lvh;
+    background: #F0C753;
+}
+
+header img {
+    margin: 0 0 0 40px;
+    max-width: 100%;
+    max-height: 100%;
+    width: 130px;
+}
+
+header a {
+    color: #333333;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.Liens {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin: 0 auto;
+}
+
+.Connecter {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    border-radius: 15px;
+    border: #333333 solid;
+    padding: 10px;
+    margin: 0 40px 0 0;
 }
