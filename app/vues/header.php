@@ -3,10 +3,10 @@
             <img src="./public/img/logo.avif" alt="Logo BEELINK">
         </a></div>
     <div class="Liens">
-        <a href="">Accueil</a>
-        <a href="">Fonctionnalités</a>
-        <a href="">Tableau de bord</a>
-        <a href="">Nous Contacter</a>
+        <a href='index.php?action=accueil'>Accueil</a>
+        <a href='index.php?action=fonctionnalites'>Fonctionnalités</a>
+        <a href='index.php?action=tableau'>Tableau de bord</a>
+        <a href='index.php?action=contact'>Nous Contacter</a>
     </div>
     <div class="Connecter">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
