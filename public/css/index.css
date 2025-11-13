@@ -125,6 +125,14 @@ body {
     bottom: 0;
 }
 
+.honeycomb3 {
+    position: absolute;
+    max-width: 100%;
+    width: 20vw;
+    right: 0;
+    top: 0;
+}
+
 h3 {
     color: #ffffff;
     font-weight: lighter;
@@ -140,7 +148,7 @@ h2 span {
     color: #F0C753;
 }
 
-.ExplicationMenu{
+.ExplicationMenu {
     display: flex;
 }
 
@@ -176,4 +184,57 @@ h2 span {
     background-color: #333333;
     height: 150lvh;
     gap: 10lvh;
+}
+
+.Passion {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333333;
+    height: 100lvh;
+    gap: 10lvh;
+}
+
+.Passion p {
+    color: #ffffff;
+}
+
+.Check {
+    font-weight: bold;
+    gap: 15px;
+    display: flex;
+    align-items: center;
+
+}
+
+.PassionDroite {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40vw;
+}
+
+.PassionDroite h2 {
+    text-align: left;
+}
+
+.Marche {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #333333;
+    height: 100lvh;
+}
+
+.Beelink {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F0C753;
+    height: 100lvh;
 }

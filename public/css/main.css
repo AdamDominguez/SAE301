@@ -108,6 +108,13 @@ header {
     background: #F0C753;
 }
 
+footer {
+    display: flex;
+    align-items: center;
+    height: 20lvh;
+    background: #333333;
+}
+
 header img {
     margin: 0 0 0 40px;
     max-width: 100%;
