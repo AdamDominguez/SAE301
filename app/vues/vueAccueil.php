@@ -10,6 +10,8 @@ $title = "ACCUEIL";
     <title><?= $title ?></title>
     <link href="./public/css/main.css" rel="stylesheet">
     <link href="./public/css/index.css" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="./public/img/favicons/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./public/img/favicons/favicon-16.png">
 </head>
 
 <body>
@@ -25,21 +27,25 @@ $title = "ACCUEIL";
                                 stroke-linejoin="round" />
                         </svg>
                     </div>
+                </div>
             </a>
-            </div>
             <div class="Content">
                 <div class="Gauche">
                     <h1>Surveillez vos ruches en temps réel</h1>
                     <p>Un système intelligent de surveillance pour vos ruches connectées. Suivez la température, le
                         poids, l'humidité et la santé de vos colonies où que vous soyez.</p>
                     <div class="Boutons">
-                        <div class="Decouvrir"><a href='index.php?action=tableau'>Découvrir le tableau de bord <svg
-                                    xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"
-                                    fill="none">
+                        <a href='index.php?action=tableau'>
+                            <div class="Decouvrir">Découvrir le tableau de bord <svg xmlns="http://www.w3.org/2000/svg"
+                                    width="30" height="30" viewBox="0 0 30 30" fill="none">
                                     <path d="M6.25 15H23.75M23.75 15L15 6.25M23.75 15L15 23.75" stroke="white"
                                         stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
-                                </svg></a></div>
-                        <div class="Savoir"><a href="index.php?action=fonctionnalites">En savoir plus</a></div>
+                                </svg>
+                            </div>
+                        </a>
+                        <a href="index.php?action=fonctionnalites">
+                            <div class="Savoir">En savoir plus</div>
+                        </a>
                     </div>
                 </div>
                 <div class="Droite">
@@ -74,9 +80,9 @@ $title = "ACCUEIL";
                 </div>
             </div>
         </section>
+        <img class="honeycomb1" src="./public/img/honeycomb.png" alt="Design de ruche">
+        <img class="honeycomb2" src="./public/img/honeycombdouble.png" alt="Design de ruche">
         <section class="Explication" id="Explication">
-            <img class="honeycomb1" src="./public/img/honeycomb.png" alt="Design de ruche">
-            <img class="honeycomb2" src="./public/img/honeycomb3.png" alt="Design de ruche">
             <h2>Qu'est-ce que le projet <span>BeeLink</span> ?</h2>
             <div class="ExplicationMenu">
                 <div class="ExplicationLogos">
@@ -120,7 +126,6 @@ $title = "ACCUEIL";
             </div>
         </section>
         <section class="Piliers">
-            <img class="honeycomb3" src="./public/img/honeycomb4.png" alt="Design de ruche">
             <div>
                 <h2>Nos trois <span>piliers</span></h2>
                 <h3>Ce qui fait de BeeLink une solution unique pour les apiculteurs</h3>

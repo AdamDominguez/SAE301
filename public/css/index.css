@@ -1,5 +1,9 @@
 body {
-    background: #F0C753;
+    background: #333333;
+}
+
+a {
+    text-decoration: none;
 }
 
 .Gauche {
@@ -64,6 +68,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-grow: 1;
+    background: #F0C753;
 }
 
 .Content h1 {
@@ -87,14 +92,13 @@ body {
     margin: 0 40px 0 0;
 }
 
-.Decouvrir a {
+.Decouvrir {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 12px;
-    color: #ffffff;
-    text-decoration: none;
     font-size: 16px;
+    color: #ffffff;
 }
 
 .Savoir {
@@ -105,12 +109,7 @@ body {
     border: #333333 solid;
     padding: 15px;
     margin: 0 40px 0 0;
-}
-
-.Savoir a {
     color: #333333;
-    text-decoration: none;
-    font-size: 16px;
 }
 
 .HomeHero {
@@ -139,14 +138,16 @@ body {
     align-items: center;
     background-color: #333333;
     height: 100lvh;
+    margin: 15lvh 5vw 15lvh 5vw;
 }
 
 .honeycomb1 {
     position: absolute;
-    top: 0;
+    top: 100lvh;
     left: 0;
     max-width: 100%;
     width: 20vw;
+    z-index: 1000;
 }
 
 .honeycomb2 {
@@ -154,15 +155,8 @@ body {
     max-width: 100%;
     width: 20vw;
     right: 0;
-    bottom: 0;
-}
-
-.honeycomb3 {
-    position: absolute;
-    max-width: 100%;
-    width: 20vw;
-    right: 0;
-    top: 0;
+    top: 200lvh;
+    z-index: 1000;
 }
 
 h3 {
@@ -216,6 +210,11 @@ h2 span {
     background-color: #333333;
     height: 100lvh;
     gap: 10lvh;
+    margin: 15lvh 5vw 15lvh 5vw;
+}
+
+.Piliers svg {
+    transform: scale(0.7);
 }
 
 .Passion {
@@ -226,6 +225,12 @@ h2 span {
     background-color: #333333;
     height: 70lvh;
     gap: 10lvh;
+    margin: 15lvh 5vw 15lvh 5vw;
+}
+
+.Passion img {
+    max-width: 100%;
+    width: 40vw;
 }
 
 .Passion p {
@@ -259,6 +264,11 @@ h2 span {
     align-items: center;
     background-color: #333333;
     height: 70lvh;
+    margin: 15lvh 5vw 15lvh 5vw;
+}
+
+.Marche svg {
+    transform: scale(0.7);
 }
 
 .Beelink {
@@ -277,11 +287,14 @@ h2 span {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 1591px;
+    width: 95%;
+    max-width: 100%;
+    width: 80vw;
     height: 625px;
     background-image: url(../img/TabBack.jpg);
     border-radius: 68px;
     border: #F0C753 solid 5px;
+    margin: 15lvh 5vw 15lvh 5vw;
 }
 
 .BeelinkTab h3,

@@ -1,6 +1,25 @@
+// https://gsap.com/docs/v3/
+
 gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener("DOMContentLoaded", function () {
+    const sections = gsap.utils.toArray("main > section:not(.Home)");
+
+    sections.forEach(section => {
+        gsap.from(section, {
+            y: 100,
+            autoAlpha: 0,
+            duration: 1,
+            ease: "power3.out",
+            scrollTrigger: {
+                trigger: section,
+                start: "top 80%",
+                once: true
+                // markers: true, 
+            }
+        });
+    });
+
     const tl = gsap.timeline({
         scrollTrigger: {
             trigger: ".BeelinkStat",
