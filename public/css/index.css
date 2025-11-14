@@ -3,9 +3,14 @@ body {
 }
 
 .Gauche {
-    padding: 0 0 15px 70px;
+    padding: 0 0 15px 190px;
     flex-basis: 50%;
     box-sizing: border-box;
+}
+
+.Gauche p {
+    width: 30vw;
+    margin: 0 0 40px 0;
 }
 
 .Droite {
@@ -21,7 +26,34 @@ body {
     width: 30vw;
 }
 
+.Arrow {
+    position: absolute;
+    max-width: 100%;
+    width: 150px;
+    height: 150px;
+    right: 50px;
+    bottom: 150px;
+    border-radius: 100%;
+    background: #F0C753;
+}
+
+.Arrow div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #333333;
+    border-radius: 100%;
+    max-width: 100%;
+    width: 100px;
+    height: 100px;
+}
+
 .Home {
+    position: relative;
     height: 85lvh;
     display: flex;
     flex-direction: column;
@@ -182,7 +214,7 @@ h2 span {
     justify-content: center;
     align-items: center;
     background-color: #333333;
-    height: 150lvh;
+    height: 100lvh;
     gap: 10lvh;
 }
 
@@ -192,7 +224,7 @@ h2 span {
     justify-content: center;
     align-items: center;
     background-color: #333333;
-    height: 100lvh;
+    height: 70lvh;
     gap: 10lvh;
 }
 
@@ -226,7 +258,7 @@ h2 span {
     flex-direction: column;
     align-items: center;
     background-color: #333333;
-    height: 100lvh;
+    height: 70lvh;
 }
 
 .Beelink {
@@ -235,6 +267,86 @@ h2 span {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    background-color: #F0C753;
+    background-color: #333333;
     height: 100lvh;
+
+}
+
+.BeelinkTab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 1591px;
+    height: 625px;
+    background-image: url(../img/TabBack.jpg);
+    border-radius: 68px;
+    border: #F0C753 solid 5px;
+}
+
+.BeelinkTab h3,
+.BeelinkDesc,
+.BeelinkStats {
+    color: #ffffff;
+}
+
+.BeelinkDesc {
+    font-size: 30px;
+}
+
+.BeelinkTab a {
+    text-decoration: none;
+}
+
+.BeelinkBouton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #F0C753;
+    gap: 20px;
+    padding: 10px 40px 10px 40px;
+    border-radius: 25px;
+}
+
+.BeelinkBouton p {
+    color: #333333;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.BeelinkStat {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 10vw;
+    width: 10vw;
+}
+
+.BeelinkStats {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+}
+
+.BeelinkStats span {
+    color: #F0C753;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.BeelinkStats p {
+    font-size: 20px
+}
+
+.BeelinkTab h3 {
+    font-size: 60px;
+    font-weight: bolder;
+}
+
+.BeelinkService {
+    color: #8F8F8F;
+    font-size: 20px;
 }
