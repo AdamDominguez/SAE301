@@ -265,10 +265,30 @@ h2 span {
     background-color: #333333;
     height: 70lvh;
     margin: 15lvh 5vw 15lvh 5vw;
+    color: #ffffff;
 }
 
-.Marche svg {
-    transform: scale(0.7);
+.Marche h4 {
+    color: #F0C753;
+    margin: 15px;
+}
+
+.MarcheEtapes {
+    display: flex;
+    gap: 10vw;
+}
+
+.MarcheEtape {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 15vw;
+}
+
+.MarcheEtape p {
+    height: 5lvh;
+    text-align: center;
 }
 
 .Beelink {
