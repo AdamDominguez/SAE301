@@ -1,7 +1,5 @@
 <?php
-// require_once "modele/article.php";
-// require_once "modele/client.php";
-// require_once "modele/commande.php";
+require_once __DIR__ . "/../modeles/contact.php";
 
 // Affichage de la page d'accueil
 function accueil()
@@ -24,6 +22,10 @@ function tableau()
 
 function contact()
 {
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $contactModel = new Contact();
+        $success = $contactModel->pushMail(); 
+    }
     setcookie('page', '?action=contact', time() + 3600);
     require __DIR__ . "/../vues/vueContact.php";
 }
