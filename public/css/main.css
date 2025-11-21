@@ -214,6 +214,7 @@ header a {
     margin: 0 auto;
 }
 
+/* bouton se connecter */
 .Connecter {
     display: flex;
     align-items: center;
@@ -222,4 +223,76 @@ header a {
     border: #333333 solid;
     padding: 10px;
     margin: 0 40px 0 0;
+    cursor: pointer;
+}
+
+/*-- Menu de connexion --*/
+.menu {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    transition: 0.4s;
+    transform: translateX(1000%);
+    width: 20vw;
+    min-height: 100lvh;
+    background-color: rgb(255, 255, 255);
+    z-index: 11;
+}
+
+.menu-active {
+    transform: translateX(0%);
+}
+
+.cross {
+    right: 0;
+    position: absolute;
+    width: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 10px;
+    display: none;
+    cursor: pointer;
+}
+
+.cross-active {
+    display: flex;
+}
+
+.cross span {
+    height: 2px;
+    width: 15px;
+    background-color: black;
+}
+
+.stick-active {
+    transform: rotate(45deg) translatex(7px);
+    width: 38px;
+    transition: 0.4s;
+}
+
+.stick2-active {
+    transform: rotate(-45deg) translatex(7px);
+    width: 38px;
+    transition: 0.4s;
+}
+
+.fond {
+    position: fixed;
+    pointer-events: none;
+    background-color: black;
+    opacity: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: 0.4s;
+    z-index: 10;
+}
+
+.fond-active {
+    opacity: 0.5;
+    cursor: pointer;
+    pointer-events: initial;
 }
