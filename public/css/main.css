@@ -107,14 +107,14 @@ body {
 
 main {
     flex-grow: 1;
-    padding-top: 15lvh;
+    padding-top: 11lvh;
 }
 
 header {
     position: fixed;
     display: flex;
     align-items: center;
-    height: 15lvh;
+    min-height: 11lvh;
     background: #F0C753;
     z-index: 2000;
     top: 0;
@@ -128,7 +128,8 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 60lvh;
+    /* height: 60lvh; */
+    padding: 50px 0 50px 0;
     background: #F0C753;
     gap: 50px;
 }

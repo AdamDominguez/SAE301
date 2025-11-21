@@ -6,7 +6,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80lvh;
+    height: 89lvh;
     gap: 5vw;
 }
 
@@ -19,6 +19,7 @@ body {
 
 .Droite {
     margin: 0 auto 0 0;
+    width: 45vw;
 }
 
 form {
@@ -29,8 +30,8 @@ form {
     border-radius: 15px;
     padding: 40px;
     max-width: 100%;
-    width: 50vw;
     gap: 15px;
+    box-shadow: 0 0 8px #000000;
 }
 
 form h3 {
@@ -94,4 +95,8 @@ fieldset {
 .gauche-trois,
 .gauche-deux {
     border-top: #333333 1px solid;
+}
+
+span {
+    color: #F0C753;
 }

@@ -43,19 +43,19 @@ $title = "ACCUEIL";
                     <fieldset>
                         <div class="form-group">
                             <div class="form-row">
-                                <label for="nom">Nom*</label>
+                                <label for="nom">Nom <span>*</span></label>
                                 <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
                             </div>
 
                             <div class="form-row">
-                                <label for="prenom">Prénom*</label>
+                                <label for="prenom">Prénom <span>*</span></label>
                                 <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="form-row">
-                                <label for="email">Email*</label>
+                                <label for="email">Email <span>*</span></label>
                                 <input type="email" id="email" name="email" placeholder="nom@example.com" required>
                             </div>
 
@@ -67,7 +67,7 @@ $title = "ACCUEIL";
                     </fieldset>
 
                     <div class="form-message">
-                        <label for="message">Votre demande *</label>
+                        <label for="message">Votre demande <span>*</span></label>
                         <textarea id="demande" name="message" rows="6" placeholder="Décrivez votre demande ici..."
                             required></textarea>
                     </div>
