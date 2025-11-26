@@ -1,5 +1,11 @@
 body {
     background: #F0C753;
+    margin: 0;
+    height: 100lvh;
+}
+
+main {
+    padding-top: 0;
 }
 
 .ConnexionAdmin {
@@ -7,16 +13,17 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    min-height: 89lvh;
+    width: 100%;
+    min-height: 100lvh;
 }
 
 .ConnexionAdmin img {
-    position: absolute;
-    max-width: 100%;
-    max-height: 100%;
-    width: 200px;
-    bottom: 50%;
+    position: relative;
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: -75px;
+    z-index: 10;
 }
 
 form {
@@ -25,12 +32,11 @@ form {
     flex-direction: column;
     background: #333333;
     border-radius: 15px;
-    padding: 40px;
+    padding: 85px 40px 40px 40px;
     max-width: 100%;
     width: 30vw;
-    height: auto;
-    max-height: none;
     box-shadow: 0 0 8px #000000;
+    position: relative;
 }
 
 form h3 {
