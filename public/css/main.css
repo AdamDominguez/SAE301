@@ -138,6 +138,7 @@ footer {
     padding: 50px 0 50px 0;
     background: #F0C753;
     gap: 50px;
+    width: 100%;
 }
 
 footer a {
@@ -238,18 +239,24 @@ header a {
     top: 0;
     bottom: 0;
     right: 0;
-    transition: 0.4s;
+    transition: 2s;
     transform: translateX(1000%);
     width: 25vw;
     min-height: 100lvh;
-    background-color: rgb(255, 255, 255);
     z-index: 11;
     display: flex;
     justify-content: center;
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(12.9px);
+    -webkit-backdrop-filter: blur(12.9px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .ConnecterMenu-active {
     transform: translateX(0%);
+    transition: 0.6s;
 }
 
 .cross {
@@ -340,7 +347,8 @@ header a {
     padding: 40px 0 0 0;
 }
 
-.ConnecterContent fieldset, .ConnecterContent input {
+.ConnecterContent fieldset,
+.ConnecterContent input {
     border: 0;
     padding: 0;
     float: none;
@@ -354,9 +362,11 @@ header a {
 
 .ConnecterContent input {
     width: 15vw;
+    background: 0;
 }
 
-.ConnecterInput2a, .ConnecterInput1 {
+.ConnecterInput2a,
+.ConnecterInput1 {
     border: #333333 1px solid;
     padding: 10px;
     border-radius: 15px;
@@ -365,7 +375,8 @@ header a {
     gap: 15px;
 }
 
-.ConnecterInput2a svg, .ConnecterInput1 svg {
+.ConnecterInput2a svg,
+.ConnecterInput1 svg {
     max-width: 100%;
     padding: 0 15px 0 0;
     width: 21px;

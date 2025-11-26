@@ -58,8 +58,12 @@
                 </div>
             </fieldset>
             <button type="submit">CONNEXION</button>
-            <p>Pas encore de compte ? <a href="">S’inscrire</a></p>
+            <p>Pas encore de compte ? <a href="index.php?action=inscription">S’inscrire</a></p>
             <p class="ConnecterAdmin">Vous êtes administrateur ? <a href="">Connectez-vous</a></p>
         </div>
     </div>
 </header>
+
+<body>
+    <script src="./public/js/connecter.js"></script>
+</body>

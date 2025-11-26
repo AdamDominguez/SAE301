@@ -1,0 +1,95 @@
+body {
+    background: #F0C753;
+}
+
+.Inscription {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    gap: 5vw;
+    min-height: 89lvh;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: #333333;
+    border-radius: 15px;
+    padding: 40px;
+    max-width: 100%;
+    width: 30vw;
+    height: auto;
+    max-height: none;
+    box-shadow: 0 0 8px #000000;
+}
+
+form h3 {
+    margin: 0;
+}
+
+form input,
+textarea {
+    background: #333333;
+    border: #F0C753 1px solid;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px;
+    margin: 0;
+    color: #ffffff;
+    height: 40px;
+}
+
+form button {
+    background: #F0C753;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    margin: 25px 0 0 0;
+}
+
+form input {
+    padding: 10px;
+}
+
+form label,
+h3 {
+    color: #ffffff;
+}
+
+fieldset {
+    border: none;
+    padding: 0;
+    display: block;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.form-row {
+    margin: 25px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+}
+
+.form-message {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.gauche-trois,
+.gauche-deux {
+    border-top: #333333 1px solid;
+}
+
+span {
+    color: #F0C753;
+}

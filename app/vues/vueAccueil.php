@@ -341,7 +341,6 @@ $title = "ACCUEIL";
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="./public/js/accueilanim.js"></script>
-    <script src="./public/js/connecter.js"></script>
 </body>
 
 </html>
