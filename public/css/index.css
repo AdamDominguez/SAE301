@@ -58,7 +58,7 @@ a {
 
 .Home {
     position: relative;
-    height: 85lvh;
+    height: 89lvh;
     display: flex;
     flex-direction: column;
 }
@@ -137,8 +137,8 @@ a {
     justify-content: center;
     align-items: center;
     background-color: #333333;
-    height: 100lvh;
-    margin: 15lvh 5vw 15lvh 5vw;
+    min-height: 89lvh;
+    margin: 50px 5vw;
 }
 
 .honeycomb1 {
@@ -155,7 +155,7 @@ a {
     max-width: 100%;
     width: 20vw;
     right: 0;
-    top: 200lvh;
+    top: 170lvh;
     z-index: 1000;
 }
 
@@ -176,29 +176,37 @@ h2 span {
 
 .ExplicationMenu {
     display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 30px;
 }
 
 .ExplicationTexte {
     background: #F0C753;
     border-radius: 20px;
-    width: 60vw;
+    width: 50vw;
     padding: 30px;
-}
-
-.ExplicationTexte p {
-    font-size: 22.5px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .ExplicationLogos div {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px;
-    width: 100px;
-    height: 115.47px;
+    width: 60px;
+    height: 72.376px;
+    margin: 10px 0;
     background: #F0C753;
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     border-radius: 20px;
+}
+
+.ExplicationLogos svg {
+    max-width: 80%;
+    max-height: 80%;
 }
 
 .Piliers {
@@ -208,7 +216,7 @@ h2 span {
     justify-content: center;
     align-items: center;
     background-color: #333333;
-    height: 100lvh;
+    height: 89lvh;
     gap: 10lvh;
     margin: 15lvh 5vw 15lvh 5vw;
 }
@@ -265,10 +273,30 @@ h2 span {
     background-color: #333333;
     height: 70lvh;
     margin: 15lvh 5vw 15lvh 5vw;
+    color: #ffffff;
 }
 
-.Marche svg {
-    transform: scale(0.7);
+.Marche h4 {
+    color: #F0C753;
+    margin: 15px;
+}
+
+.MarcheEtapes {
+    display: flex;
+    gap: 10vw;
+}
+
+.MarcheEtape {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 15vw;
+}
+
+.MarcheEtape p {
+    height: 5lvh;
+    text-align: center;
 }
 
 .Beelink {
@@ -278,8 +306,8 @@ h2 span {
     flex-direction: column;
     align-items: center;
     background-color: #333333;
-    height: 100lvh;
-
+    height: 89lvh;
+    padding: 100px;
 }
 
 .BeelinkTab {
