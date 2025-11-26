@@ -1,5 +1,5 @@
 <header>
-    <div><a href="index.php">
+    <div><a href="index.php?action=accueil">
             <img src="./public/img/logo.avif" alt="Logo BEELINK">
         </a></div>
     <div class="Liens">
