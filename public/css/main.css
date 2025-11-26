@@ -208,6 +208,12 @@ header img {
     width: 130px;
 }
 
+footer img {
+    max-width: 100%;
+    max-height: 100%;
+    width: 200px;
+}
+
 header a {
     color: #333333;
     text-decoration: none;

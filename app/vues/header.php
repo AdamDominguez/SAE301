@@ -59,7 +59,7 @@
             </fieldset>
             <button type="submit">CONNEXION</button>
             <p>Pas encore de compte ? <a href="index.php?action=inscription">S’inscrire</a></p>
-            <p class="ConnecterAdmin">Vous êtes administrateur ? <a href="">Connectez-vous</a></p>
+            <p class="ConnecterAdmin">Vous êtes administrateur ? <a href="index.php?action=connexionadmin">Connectez-vous</a></p>
         </div>
     </div>
 </header>
