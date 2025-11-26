@@ -4,7 +4,7 @@ document.querySelector('.fond').addEventListener("click", menuToggle);
 
 function menuToggle() {
 
-    document.querySelector('.menu').classList.toggle('menu-active');
+    document.querySelector('.ConnecterMenu').classList.toggle('ConnecterMenu-active');
     document.querySelector('.cross').classList.toggle('cross-active');
     document.querySelector('.stick').classList.toggle('stick-active');
     document.querySelector('.stick2').classList.toggle('stick2-active');
