@@ -6,16 +6,17 @@ section{
     height: 89lvh;
 }
 
-.FrontNav {
+.FonctionNav {
     width: 250px;
-    padding-top: 20px;
+    padding-top: 10px;
     border-right: 2px solid #F0C753;
     min-height: 89lvh;
+    margin-left: 20px;
 }
 
 .element-menu {
     margin-bottom: 20px;
-    padding: 0 15px;
+    padding: 0 10px;
 }
 
 .FonctionNav h3 {
@@ -32,20 +33,23 @@ section{
     align-items: center;
     text-decoration: none;
     color: white;
-    padding: 10px 15px;
+    padding: 10px 10px;
     border-radius: 4px;
     transition: background-color 0.2s, color 0.2s;
     font-weight: 500;
     margin-bottom: 12px;
+    margin-right: 20px
 }
 
-.element-menu :hover a {
+.element-menu:hover a {
     background-color: #F0C753;
     color: #333333;
+    margin-right: 20px
 }
 
 .element-menu.actif a{
     background-color: #F0C753;
     color: #333333;
     border-radius: 4px;
+    margin-right: 20px
 }
