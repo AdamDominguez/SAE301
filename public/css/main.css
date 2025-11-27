@@ -396,6 +396,10 @@ header a {
     gap: 10px;
 }
 
+.ConnecterContent p {
+    text-align: center;
+}
+
 nav a {
     text-decoration: none;
     padding: 10px;
