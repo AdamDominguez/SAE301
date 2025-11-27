@@ -1,8 +1,9 @@
 <?php
-$title = "ACCUEIL";
+$title = "Panel Administrateur | BeeLink";
 ?>
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <title><?= $title ?></title>
@@ -14,6 +15,7 @@ $title = "ACCUEIL";
 
 <body>
     <main>
+        <a href="index.php?action=accueil" class="BackAccueil">← Retour à la page d'accueil</a>
         <section class="ConnexionAdmin">
             <img src="./public/img/logo_admin.avif" alt="Logo Administrateur">
             <form method="POST">
@@ -32,6 +34,16 @@ $title = "ACCUEIL";
                 </fieldset>
 
                 <button type="submit">CONNEXION</button>
+
+                <div class="ConnexionOpt">
+                    <div class="ConnexionCheck">
+                        <input type="checkbox" id="remember" name="remember" />
+                        <label for="remember">Se souvenir de moi</label>
+                    </div>
+                    <div class="ConnexionMDP">
+                        <a href="">Mot de passe oublié</a>
+                    </div>
+                </div>
             </form>
         </section>
     </main>

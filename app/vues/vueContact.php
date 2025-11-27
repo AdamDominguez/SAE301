@@ -1,5 +1,5 @@
 <?php
-$title = "ACCUEIL";
+$title = "Contact | BeeLink";
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +20,7 @@ $title = "ACCUEIL";
         <section class="Contact">
             <div class="Gauche">
                 <div class="gauche-un">
-                    <h1>CONTACTER-NOUS</h1>
+                    <h1>CONTACTEZ-NOUS</h1>
                     <p>Une question, un besoin spécifique ? Nous sommes à votre service du tous les jours, 24h sur 24,
                         par
                         e-mail ou par téléphone.</p>
