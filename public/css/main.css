@@ -395,3 +395,13 @@ header a {
     flex-direction: column;
     gap: 10px;
 }
+
+nav a {
+    text-decoration: none;
+    padding: 10px;
+}
+
+nav a.active {
+    text-decoration: underline;
+    font-weight: bold;
+}

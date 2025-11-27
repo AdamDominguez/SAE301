@@ -1,5 +1,5 @@
 <?php
-$title = "ACCUEIL";
+$title = "Panel Administrateur | BeeLink";
 ?>
 <!DOCTYPE html>
 <html lang="fr">
