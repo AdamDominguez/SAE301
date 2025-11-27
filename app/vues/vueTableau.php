@@ -17,22 +17,24 @@ $title = "Tableau de bord | BeeLink";
 <body>
     <?php require "header.php"; ?>
     <main>
-        <nav class="FrontNav">
-            <div class="principal">
-                <h3>PRINCIPAL</h3>
-                <div class="accueil"><a href="#">Accueil</a></div>
-                <div class="valeurs"><a href="#">Valeurs</a></div>
-                <div class="donnees"><a href="#">Données</a></div>
-                <div class="alertes"><a href="#">Alertes</a></div>
-                <div class="campagne"><a href="#">Ma Campagne</a></div>
-            </div>
-            <div class="gestion">
-                <h3>GESTION</h3>
-                <div class="contacts"><a href="#">Contacts</a></div>
-                <div class="parametres"><a href="#">Paramètres</a></div>
-                <div class="profil"><a href="#">Profil</a></div>
-            </div>
-        </nav>
+        <section>
+            <nav class="FrontNav">
+                <div class="principal">
+                    <h3>PRINCIPAL</h3>
+                    <div class="accueil"><a href="#">Accueil</a></div>
+                    <div class="valeurs"><a href="#">Valeurs</a></div>
+                    <div class="donnees"><a href="#">Données</a></div>
+                    <div class="alertes"><a href="#">Alertes</a></div>
+                    <div class="campagne"><a href="#">Ma Campagne</a></div>
+                </div>
+                <div class="gestion">
+                    <h3>GESTION</h3>
+                    <div class="contacts"><a href="#">Contacts</a></div>
+                    <div class="parametres"><a href="#">Paramètres</a></div>
+                    <div class="profil"><a href="#">Profil</a></div>
+                </div>
+            </nav>
+        </section>
     </main>
     <?php require "footer.php"; ?>
 </body>

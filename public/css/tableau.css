@@ -2,11 +2,15 @@ body {
     background-color: #333333;
 }
 
+section{
+    height: 89lvh;
+}
+
 .FrontNav {
     width: 250px;
     padding-top: 20px;
     border-right: 2px solid #F0C753;
-    min-height: 90vh;
+    min-height: 89lvh;
 }
 
 .principal {
