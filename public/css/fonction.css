@@ -2,8 +2,16 @@ body {
     background: #333333;
 }
 
-h1 h2 {
-    font-weight: bold;
+h1 {
+    font-size: 45px;
+}
+
+h2 {
+    font-size: 45px;
+}
+
+p {
+    font-weight: lighter;
 }
 
 .titre {
@@ -66,6 +74,10 @@ h1 h2 {
     padding: 60px 0;
 }
 
+.interface p:first-child {
+    margin-bottom: 12px;
+}
+
 .texte {
     max-width: 40%; 
 }
@@ -78,11 +90,7 @@ h1 h2 {
 }
 
 .check svg {
-    min-width: 32px; 
-}
-
-.check p {
-    font-weight: bold;
+    min-width: 48px; 
 }
 
 img{
