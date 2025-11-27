@@ -1,5 +1,5 @@
 <?php
-$title = "BeeLink";
+$title = "Fonctionnalités | BeeLink";
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +17,7 @@ $title = "BeeLink";
 <body>
     <?php require "header.php"; ?>
     <main>
-
+        <div class="BlocJaune">
         <div class="titre">
             <h1>Capteurs intelligents</h1>
             <p>Une précision professionnelle pour surveiller la santé de vos colonies</p>
@@ -57,7 +57,78 @@ $title = "BeeLink";
                 <p><span class="jaune2">&lt;3 sec</span></p>
             </div>
         </div>
+        </div>
 
+        <div class="banniere">
+            <div class="fonctions">
+                <p class="jaune">24/7</p>
+                <p class="blanc">Surveillance active</p>
+            </div>
+            <div class="fonctions">
+                <p class="jaune">98%</p>
+                <p class="blanc">Taux de fiablité</p>
+            </div>
+            <div class="fonctions">
+                <p class="jaune">12</p>
+                <p class="blanc">Mois d'autonmie</p>
+            </div>
+            <div class="fonctions">
+                <p class="jaune">100</p>
+                <p class="blanc">Mètres de portée Bluetooth</p>
+            </div>
+        </div>
+
+        <div class="interface">
+            <div class="texte">
+                <h2 class="blanc"><span class="jaune">Interface </span>pensé pour vous</h2>
+                <p class="blanc">Une interface intuitive qui met toutes les données importantes à portée de main. Graphiques en temps réel, historiques détaillés et alertes pour une gestion optimale de votre rucher.</p>
+                <div class="check">
+                    <svg width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M44 22.16V24C43.9975 28.3128 42.601 32.5093 40.0187 35.9636C37.4363 39.4179 33.8066 41.9449 29.6707 43.1678C25.5349 44.3906 21.1145 44.2438 17.0689 42.7491C13.0234 41.2545 9.56931 38.4922 7.22192 34.8741C4.87453 31.256 3.75958 26.9761 4.04335 22.6726C4.32712 18.3691 5.99441 14.2726 8.79656 10.9941C11.5987 7.71561 15.3856 5.43074 19.5924 4.48026C23.7992 3.52979 28.2005 3.96465 32.14 5.71997M44 7.99997L24 28.02L18 22.02" stroke="#ECC655" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <p class="blanc">Historique illimié</p>
+                </div>
+                 <div class="check">
+                    <svg width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M44 22.16V24C43.9975 28.3128 42.601 32.5093 40.0187 35.9636C37.4363 39.4179 33.8066 41.9449 29.6707 43.1678C25.5349 44.3906 21.1145 44.2438 17.0689 42.7491C13.0234 41.2545 9.56931 38.4922 7.22192 34.8741C4.87453 31.256 3.75958 26.9761 4.04335 22.6726C4.32712 18.3691 5.99441 14.2726 8.79656 10.9941C11.5987 7.71561 15.3856 5.43074 19.5924 4.48026C23.7992 3.52979 28.2005 3.96465 32.14 5.71997M44 7.99997L24 28.02L18 22.02" stroke="#ECC655" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <p class="blanc">Responsive ergonomique</p>
+                </div>
+                 <div class="check">
+                    <svg width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M44 22.16V24C43.9975 28.3128 42.601 32.5093 40.0187 35.9636C37.4363 39.4179 33.8066 41.9449 29.6707 43.1678C25.5349 44.3906 21.1145 44.2438 17.0689 42.7491C13.0234 41.2545 9.56931 38.4922 7.22192 34.8741C4.87453 31.256 3.75958 26.9761 4.04335 22.6726C4.32712 18.3691 5.99441 14.2726 8.79656 10.9941C11.5987 7.71561 15.3856 5.43074 19.5924 4.48026C23.7992 3.52979 28.2005 3.96465 32.14 5.71997M44 7.99997L24 28.02L18 22.02" stroke="#ECC655" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <p class="blanc">Graphiques visuels</p>
+                </div>
+            </div>
+            <img loading=lazy (max-width: 800px) 100vw, 800px
+                srcset="
+                public/img/interface/Interface_ftmteo_c_scale,w_200.png 200w,
+                public/img/interface/Interface_ftmteo_c_scale,w_326.png 326w,
+                public/img/interface/Interface_ftmteo_c_scale,w_424.png 424w,
+                public/img/interface/Interface_ftmteo_c_scale,w_431.png 431w,
+                public/img/interface/Interface_ftmteo_c_scale,w_586.png 586w,
+                public/img/interface/Interface_ftmteo_c_scale,w_601.png 601w,
+                public/img/interface/Interface_ftmteo_c_scale,w_678.png 678w,
+                public/img/interface/Interface_ftmteo_c_scale,w_660.png 660w,
+                public/img/interface/Interface_ftmteo_c_scale,w_720.png 720w,
+                public/img/interface/Interface_ftmteo_c_scale,w_747.png 747w,
+                public/img/interface/Interface_ftmteo_c_scale,w_755.png 755w,
+                public/img/interface/Interface_ftmteo_c_scale,w_763.png 763w,
+                public/img/interface/Interface_ftmteo_c_scale,w_764.png 764w,
+                public/img/interface/Interface_ftmteo_c_scale,w_960.png 960w,
+                public/img/interface/Interface_ftmteo_c_scale,w_953.png 953w,
+                public/img/interface/Interface_ftmteo_c_scale,w_962.png 962w,
+                public/img/interface/Interface_ftmteo_c_scale,w_966.png 966w,
+                public/img/interface/Interface_ftmteo_c_scale,w_1080.png 1080w"
+                src="public/img/interface/Interface_ftmteo_c_scale,w_1080.png"
+                alt="Image de l'interface">
+        </div>
+
+        <div class="avis">
+            <h2 class="blanc">Ce que vous en <span class="jaune"> pensez</span></h2>
+        </div>
+    
     </main>
     <?php require "footer.php"; ?>
 </body>
