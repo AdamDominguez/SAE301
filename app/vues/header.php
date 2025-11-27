@@ -5,7 +5,7 @@
     <div class="Liens">
         <a href='index.php?action=accueil'>Accueil</a>
         <a href='index.php?action=fonctionnalites'>Fonctionnalités</a>
-        <a href='index.php?action=tableau'>Tableau de bord</a>
+        <a href='index.php?action=tableauAccueil'>Tableau de bord</a>
         <a href='index.php?action=contact'>Nous Contacter</a>
     </div>
     <div class="Connecter" id="menuConnexion">

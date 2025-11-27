@@ -9,17 +9,12 @@ body {
     min-height: 90vh;
 }
 
-.principal {
+.element-menu {
     margin-bottom: 20px;
     padding: 0 15px;
 }
 
-.gestion {
-    margin-bottom: 20px;
-    padding: 0 15px;
-}
-
-h3 {
+.FonctionNav h3 {
     color: #AAAAAA;
     font-size: 0.8em;
     font-weight: bold;
@@ -28,7 +23,7 @@ h3 {
     margin-bottom: 5px;
 }
 
-.gestion a {
+.element-menu a {
     display: flex;
     align-items: center;
     text-decoration: none;
@@ -40,29 +35,12 @@ h3 {
     margin-bottom: 12px;
 }
 
-.principal a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 4px;
-    transition: background-color 0.2s, color 0.2s;
-    font-weight: 500;
-    margin-bottom: 12px;
-}
-
-.principal div:hover a {
+.element-menu :hover a {
     background-color: #F0C753;
     color: #333333;
 }
 
-.gestion div:hover a {
-    background-color: #F0C753;
-    color: #333333;
-}
-
-.accueil a{
+.element-menu.actif a{
     background-color: #F0C753;
     color: #333333;
     border-radius: 4px;

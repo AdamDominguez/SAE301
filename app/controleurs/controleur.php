@@ -17,8 +17,50 @@ function fonctionnalites()
 
 function tableau()
 {
-    setcookie('page', '?action=tableau', time() + 3600);
-    require __DIR__ . "/../vues/vueTableau.php";
+    setcookie('page', '?action=tableauAccueil', time() + 3600);
+    require __DIR__ . "/../vues/vueTableauAccueil.php";
+}
+
+function tableauValeurs()
+{
+    setcookie('page', '?action=tableauValeurs', time() + 3600);
+    require __DIR__ . "/../vues/vueTableauValeurs.php";
+}
+
+function tableauDonnees()
+{
+    setcookie('page', '?action=tableauDonnees', time() + 3600);
+    require __DIR__ . "/../vues/vueTableauDonnees.php";
+}
+
+function tableauAlertes()
+{
+    setcookie('page', '?action=tableauAlertes', time() + 3600);
+    require __DIR__ . "/../vues/vueTableauAlertes.php";
+}
+
+function tableauCampagne()
+{
+    setcookie('page', '?action=tableauCampagne', time() + 3600);
+    require __DIR__ . "/../vues/vueTableauCampagne.php";
+}
+
+function tableauContacts()
+{
+    setcookie('page', '?action=tableauContacts', time() + 3600);
+    require __DIR__ . "/../vues/vueTableauContacts.php";
+}
+
+function tableauParametres()
+{
+    setcookie('page', '?action=tableauParametres', time() + 3600);
+    require __DIR__ . "/../vues/vueTableauParametres.php";
+}
+
+function tableauProfil()
+{
+    setcookie('page', '?action=tableauProfil', time() + 3600);
+    require __DIR__ . "/../vues/vueTableauProfil.php";
 }
 
 function contact()
