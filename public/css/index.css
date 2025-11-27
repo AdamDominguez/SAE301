@@ -33,22 +33,13 @@ a {
 .Arrow {
     position: absolute;
     max-width: 100%;
-    width: 150px;
-    height: 150px;
-    /* Use % or vw for the right side to prevent it going off-screen on mobile */
+    width: 100px;
+    height: 100px;
     right: 5%;
-
-    /* 1. Anchor the arrow to the exact height of the HomeHero (20lvh) */
     bottom: 20lvh;
-
-    /* 2. Move it down by 50% of its own height so it sits perfectly 
-       centered on the line between the yellow content and the dark bar */
     transform: translateY(50%);
-
     border-radius: 100%;
     background: #F0C753;
-
-    /* Ensure it sits above the other elements */
     z-index: 10;
 }
 
@@ -63,8 +54,8 @@ a {
     background: #333333;
     border-radius: 100%;
     max-width: 100%;
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 70px;
 }
 
 .Home {
