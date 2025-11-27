@@ -17,7 +17,7 @@ $title = "ACCUEIL";
 <body>
     <?php require "header.php"; ?>
     <main>
-        <nav>
+        <nav class="FonctionNav">
             <div class="principal">
                 <h3>PRINCIPAL</h3>
                 <div class="accueil"><a href="#">Accueil</a></div>
