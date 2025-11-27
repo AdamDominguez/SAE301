@@ -41,6 +41,12 @@ function inscription()
     require __DIR__ . "/../vues/vueInscription.php";
 }
 
+function connexionadmin()
+{
+    setcookie('page', '?action=connexionadmin', time() + 3600);
+    require __DIR__ . "/../vues/vueConnexionAdmin.php";
+}
+
 // Affichage de la page d'erreur (utilisation de __DIR__ . "/..." pour forcer le lien)
 function erreur($message)
 {

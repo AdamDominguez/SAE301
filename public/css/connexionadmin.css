@@ -1,13 +1,29 @@
 body {
     background: #F0C753;
+    margin: 0;
+    height: 100lvh;
 }
 
-.Inscription {
+main {
+    padding-top: 0;
+}
+
+.ConnexionAdmin {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 5vw;
-    min-height: 89lvh;
+    width: 100%;
+    min-height: 100lvh;
+}
+
+.ConnexionAdmin img {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: -75px;
+    z-index: 10;
 }
 
 form {
@@ -16,12 +32,11 @@ form {
     flex-direction: column;
     background: #333333;
     border-radius: 15px;
-    padding: 40px;
+    padding: 85px 40px 40px 40px;
     max-width: 100%;
     width: 30vw;
-    height: auto;
-    max-height: none;
     box-shadow: 0 0 8px #000000;
+    position: relative;
 }
 
 form h3 {
@@ -67,7 +82,6 @@ fieldset {
 .form-group {
     display: flex;
     flex-direction: column;
-    gap: 30px;
 }
 
 .form-row {

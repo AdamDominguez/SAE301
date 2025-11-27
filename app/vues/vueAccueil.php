@@ -309,7 +309,7 @@ $title = "BeeLink";
             <div class="BeelinkTab">
                 <h3>BeeLink</h3>
                 <p class="BeelinkDesc">Rejoignez l'aventure de la surveillance intelligente des ruches</p>
-                <a href="">
+                <a href="index.php?action=inscription">
                     <div class="BeelinkBouton">
                         <p>Nous rejoindre</p><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
                             viewBox="0 0 22 22" fill="none">
