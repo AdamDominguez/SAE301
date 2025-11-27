@@ -1,7 +1,12 @@
 <?php
 // var qui permet de récup l'action d'url et sinon retourner accueil en url
 $pageActive = $_GET['action'] ?? 'accueil';
+
+// Nouvelle variable pour vérifier si l'action actuelle commence par 'tableau',
+// indiquant que nous sommes dans la section "Tableau de bord" (Tableau, Valeurs, Données, Profil, etc.)
+$tableauPage = strpos($pageActive, 'tableau') === 0;
 ?>
+
 <header>
     <div><a href="index.php?action=accueil">
             <img src="./public/img/logo.avif" alt="Logo BEELINK">
@@ -17,7 +22,7 @@ $pageActive = $_GET['action'] ?? 'accueil';
             <a href='index.php?action=fonctionnalites'
                 class='<?= $pageActive == 'fonctionnalites' ? 'active' : '' ?>'>Fonctionnalités</a>
             <!-- Tableau de bord (Clément) -->
-            <a href='index.php?action=tableauAccueil' class='<?= $pageActive == 'tableauAccueil' ? 'active' : '' ?>'>Tableau de
+            <a href='index.php?action=tableauAccueil' class='<?= $tableauPage ? 'active' : '' ?>'>Tableau de
                 bord</a>
             <!-- Contact (Adam.D) -->
             <a href='index.php?action=contact' class='<?= $pageActive == 'contact' ? 'active' : '' ?>'>Nous
