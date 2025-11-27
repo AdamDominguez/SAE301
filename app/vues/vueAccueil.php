@@ -309,7 +309,7 @@ $title = "ACCUEIL";
             <div class="BeelinkTab">
                 <h3>BeeLink</h3>
                 <p class="BeelinkDesc">Rejoignez l'aventure de la surveillance intelligente des ruches</p>
-                <a href="">
+                <a href="index.php?action=inscription">
                     <div class="BeelinkBouton">
                         <p>Nous rejoindre</p><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
                             viewBox="0 0 22 22" fill="none">
@@ -341,7 +341,6 @@ $title = "ACCUEIL";
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="./public/js/accueilanim.js"></script>
-    <script src="./public/js/connecter.js"></script>
 </body>
 
 </html>

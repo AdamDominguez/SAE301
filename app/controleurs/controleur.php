@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . "/../modeles/contact.php";
+require_once __DIR__ . "/../modeles/inscription.php";
 
 // Affichage de la page d'accueil
 function accueil()
@@ -24,10 +25,26 @@ function contact()
 {
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $contactModel = new Contact();
-        $success = $contactModel->pushMail(); 
+        $success = $contactModel->pushMail();
     }
     setcookie('page', '?action=contact', time() + 3600);
     require __DIR__ . "/../vues/vueContact.php";
+}
+
+function inscription()
+{
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $inscriptionModel = new Inscription();
+        $success = $inscriptionModel->pushInscription();
+    }
+    setcookie('page', '?action=inscription', time() + 3600);
+    require __DIR__ . "/../vues/vueInscription.php";
+}
+
+function connexionadmin()
+{
+    setcookie('page', '?action=connexionadmin', time() + 3600);
+    require __DIR__ . "/../vues/vueConnexionAdmin.php";
 }
 
 // Affichage de la page d'erreur (utilisation de __DIR__ . "/..." pour forcer le lien)

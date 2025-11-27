@@ -10,6 +10,10 @@ if (isset($_GET["action"])) {
         tableau(); // Affichage du tableau de bord
     else if ($_GET["action"] == "contact")
         contact(); // Affichage du formulaire de contact
+    else if ($_GET["action"] == "inscription")
+        inscription(); // Affichage du formulaire d'inscription
+    else if ($_GET["action"] == "connexionadmin")
+        connexionadmin(); // Affichage du formulaire de connexion administrateur
     else {
         accueil();
     }
