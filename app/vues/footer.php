@@ -6,6 +6,13 @@
                 de la région.</p>
         </div>
 
+        <div class="Footer2A">
+            <h4>Nos partenaires</h4>
+            <p>IUT de Mulhouse</p>
+            <p>Département GEII</p>
+            <p>Département MMI</p>
+        </div>
+
         <div class="Footer1B">
             <h4>Liens</h4>
             <a href="index.php?action=accueil">Accueil</a>
@@ -29,18 +36,9 @@
         </div>
     </div>
 
-    <div class="Footer2">
-        <h4>Nos partenaires</h4>
-        <div class="Footer2A">
-            <p>IUT de Mulhouse</p>
-            <p>Département GEII</p>
-            <p>Département MMI</p>
-        </div>
-    </div>
-
     <div class="Footer3">
-        <p>© 2024 BeeLink. Projet étudiant - Tous droits réservés.</p>
-        <p>
+        <p class="Footer3A">© 2024 BeeLink. Projet étudiant - Tous droits réservés.</p>
+        <p class="Footer3B">
             <a href="">Mentions légales</a> -
             <a href="">Politique de confidentialité</a>
         </p>
