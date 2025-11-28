@@ -1,3 +1,10 @@
+/* utilisation de var css pour assigner couleurs */
+:root {
+    --jaune: #F0C753;
+    --noir: #333333;
+    --blanc: #ffffff;
+}
+
 html {
     scroll-behavior: smooth;
     height: 100%;
@@ -121,12 +128,12 @@ header {
     display: flex;
     align-items: center;
     min-height: 11lvh;
-    background: #F0C753;
+    background: var(--jaune);
     z-index: 2000;
     top: 0;
     left: 0;
     width: 100%;
-    box-shadow: 0 0 10px #333333;
+    box-shadow: 0 0 10px var(--noir);
 }
 
 footer {
@@ -134,9 +141,8 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* height: 60lvh; */
     padding: 50px 0 50px 0;
-    background: #F0C753;
+    background: var(--jaune);
     gap: 50px;
     width: 100%;
 }
@@ -144,49 +150,39 @@ footer {
 footer a {
     text-decoration: none;
     font-size: 16px;
-    color: #333333;
+    color: var(--noir);
 }
 
-.Footer1,
-.Footer2,
-.Footer3 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.Footer1 {
+    display: grid;
+    grid-template-columns: 1fr auto auto auto auto;
+    gap: 40px;
     width: 90%;
+    max-width: 85vw;
+    align-items: start;
 }
 
-.Footer2,
-.Footer3 {
+.Footer1A,
+.Footer2A,
+.Footer1B,
+.Footer1C,
+.Footer1D {
+    width: auto;
+    margin: 0;
+    display: flex;
     flex-direction: column;
-    align-items: center;
-    border-top: 2px solid #000000;
-    padding-top: 30px;
+    align-items: flex-start;
+    min-width: 120px;
 }
 
 .Footer1A {
-    width: 20vw;
-    margin: 0 auto 0 0;
-}
-
-.Footer1B,
-.Footer1C {
-    display: flex;
-    flex-direction: column;
+    padding-right: 0 20px 0 0;
+    max-width: 350px;
 }
 
 .Footer1B a,
 .Footer1C a {
-    margin: 15px 0 0 0;
-}
-
-.Footer1 {
-    gap: 120px;
-}
-
-.Footer2A {
-    display: flex;
-    gap: 70px;
+    margin: 10px 0 0 0;
 }
 
 .Footer1DBouton {
@@ -194,11 +190,28 @@ footer a {
     align-items: center;
     gap: 9px;
     border-radius: 15px;
-    border: #333333 solid;
+    border: var(--noir) solid;
+    margin-top: 15px;
+    padding: 5px 15px;
+    width: fit-content;
 }
 
-.Footer1DBouton p {
-    padding: 5px 15px 0 15px;
+.Footer3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 85vw;
+    border-top: 2px solid var(--noir);
+    padding-top: 30px;
+}
+
+.Footer3A {
+    margin: 0;
+}
+
+.Footer3B {
+    margin: 0;
 }
 
 header img {
@@ -215,7 +228,7 @@ footer img {
 }
 
 header a {
-    color: #333333;
+    color: var(--noir);
     text-decoration: none;
     font-size: 16px;
 }
@@ -227,19 +240,17 @@ header a {
     margin: 0 auto;
 }
 
-/* bouton se connecter */
 .Connecter {
     display: flex;
     align-items: center;
     gap: 9px;
     border-radius: 15px;
-    border: #333333 solid;
+    border: var(--noir) solid;
     padding: 10px;
     margin: 0 40px 0 0;
     cursor: pointer;
 }
 
-/*-- Menu de connexion --*/
 .ConnecterMenu {
     position: absolute;
     top: 0;
@@ -284,7 +295,7 @@ header a {
 .cross span {
     height: 2px;
     width: 15px;
-    background-color: black;
+    background-color: var(--noir);
 }
 
 .stick-active {
@@ -302,7 +313,7 @@ header a {
 .fond {
     position: fixed;
     pointer-events: none;
-    background-color: black;
+    background-color: var(--noir);
     opacity: 0;
     top: 0;
     bottom: 0;
@@ -327,12 +338,12 @@ header a {
 }
 
 .ConnecterContent a {
-    color: #F0C753;
+    color: var(--jaune);
 }
 
 .ConnecterContent h2,
 .ConnecterContent h3 {
-    color: #333333;
+    color: var(--noir);
 }
 
 .ConnecterContent h3 {
@@ -341,15 +352,15 @@ header a {
 }
 
 .ConnecterContent button {
-    color: #FFFFFF;
+    color: var(--blanc);
     border-radius: 15px;
-    background: #333333;
+    background: var(--noir);
     padding: 10px 50px 10px 50px;
     margin: 15px 0 0 0;
 }
 
 .ConnecterAdmin {
-    border-top: #333333 1px solid;
+    border-top: var(--noir) 1px solid;
     padding: 40px 0 0 0;
 }
 
@@ -373,7 +384,7 @@ header a {
 
 .ConnecterInput2a,
 .ConnecterInput1 {
-    border: #333333 1px solid;
+    border: var(--noir) 1px solid;
     padding: 10px;
     border-radius: 15px;
     display: flex;
@@ -387,11 +398,25 @@ header a {
     padding: 0 15px 0 0;
     width: 21px;
     height: 21px;
-    border-right: #333333 1px solid;
+    border-right: var(--noir) 1px solid;
 }
 
 .ConnecterInputs {
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+.ConnecterContent p {
+    text-align: center;
+}
+
+nav a {
+    text-decoration: none;
+    padding: 10px;
+}
+
+nav a.active {
+    text-decoration: underline;
+    font-weight: bold;
 }

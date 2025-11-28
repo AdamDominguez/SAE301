@@ -1,5 +1,5 @@
 <?php
-$title = "BeeLink";
+$title = "Contact | BeeLink";
 ?>
 
 <!DOCTYPE html>

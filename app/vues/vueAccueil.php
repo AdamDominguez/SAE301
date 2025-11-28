@@ -1,5 +1,5 @@
 <?php
-$title = "BeeLink";
+$title = "Accueil | BeeLink";
 ?>
 
 <!DOCTYPE html>
@@ -35,7 +35,7 @@ $title = "BeeLink";
                     <p>Un système intelligent de surveillance pour vos ruches connectées. Suivez la température, le
                         poids, l'humidité et la santé de vos colonies où que vous soyez.</p>
                     <div class="Boutons">
-                        <a href='index.php?action=tableau'>
+                        <a href='index.php?action=tableauAccueil'>
                             <div class="Decouvrir">Découvrir le tableau de bord <svg xmlns="http://www.w3.org/2000/svg"
                                     width="30" height="30" viewBox="0 0 30 30" fill="none">
                                     <path d="M6.25 15H23.75M23.75 15L15 6.25M23.75 15L15 23.75" stroke="white"
