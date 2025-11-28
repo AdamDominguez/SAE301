@@ -99,7 +99,32 @@ img{
     border-radius: 24px;
 }
 
-.avis h2 {
+.TitreAvis h2 {
     text-align: center;
     margin-bottom: 18px;
 }
+
+.avis {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 24px;
+    margin-top: 24px;
+}
+
+.carte {
+    background-color: #FFEEBD;
+    border: 12px solid #F0C753;
+    border-radius: 24px;
+    padding: 28px;
+}
+
+.compte {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.citation {
+    font-style: italic;
+}
+
