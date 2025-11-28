@@ -1,5 +1,5 @@
 body {
-    background: #333333;
+    background: var(--noir);
 }
 
 a {
@@ -39,7 +39,7 @@ a {
     bottom: 20lvh;
     transform: translateY(50%);
     border-radius: 100%;
-    background: #F0C753;
+    background: var(--jaune);
     z-index: 10;
 }
 
@@ -51,7 +51,7 @@ a {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    background: #333333;
+    background: var(--noir);
     border-radius: 100%;
     max-width: 100%;
     width: 70px;
@@ -70,28 +70,21 @@ a {
     justify-content: center;
     align-items: center;
     flex-grow: 1;
-    background: #F0C753;
+    background: var(--jaune);
 }
 
 .Content h1 {
     font-size: 45px;
-    color: #333333;
+    color: var(--noir);
 }
 
 .Content p {
     font-size: 20px;
-    color: #333333;
+    color: var(--noir);
 }
 
 .Boutons {
     display: flex;
-}
-
-.Decouvrir {
-    border-radius: 15px;
-    background: #333333;
-    padding: 15px;
-    margin: 0 40px 0 0;
 }
 
 .Decouvrir {
@@ -100,7 +93,11 @@ a {
     justify-content: center;
     gap: 12px;
     font-size: 16px;
-    color: #ffffff;
+    color: var(--blanc);
+    border-radius: 15px;
+    background: var(--noir);
+    padding: 15px;
+    margin: 0 40px 0 0;
 }
 
 .Savoir {
@@ -108,17 +105,17 @@ a {
     align-items: center;
     gap: 9px;
     border-radius: 15px;
-    border: #333333 solid;
+    border: var(--noir) solid;
     padding: 15px;
     margin: 0 40px 0 0;
-    color: #333333;
+    color: var(--noir);
 }
 
 .HomeHero {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #333333;
+    background: var(--noir);
     height: 20lvh;
     gap: 15vw;
 }
@@ -128,7 +125,7 @@ a {
     justify-content: center;
     align-items: center;
     gap: 15px;
-    color: #ffffff;
+    color: var(--blanc);
     font-weight: bold;
 }
 
@@ -138,7 +135,7 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #333333;
+    background-color: var(--noir);
     min-height: 89lvh;
     margin: 50px 5vw;
 }
@@ -168,18 +165,18 @@ a {
 }
 
 h3 {
-    color: #ffffff;
+    color: var(--blanc);
     font-weight: lighter;
 }
 
 h2 {
     font-size: 45px;
-    color: #ffffff;
+    color: var(--blanc);
     text-align: center;
 }
 
 h2 span {
-    color: #F0C753;
+    color: var(--jaune);
 }
 
 .ExplicationMenu {
@@ -190,7 +187,7 @@ h2 span {
 }
 
 .ExplicationTexte {
-    background: #F0C753;
+    background: var(--jaune);
     border-radius: 20px;
     width: 50vw;
     padding: 30px;
@@ -207,7 +204,7 @@ h2 span {
     width: 60px;
     height: 72.376px;
     margin: 10px 0;
-    background: #F0C753;
+    background: var(--jaune);
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     border-radius: 20px;
 }
@@ -223,7 +220,7 @@ h2 span {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #333333;
+    background-color: var(--noir);
     height: 89lvh;
     gap: 10lvh;
     margin: 15lvh 5vw 15lvh 5vw;
@@ -238,7 +235,7 @@ h2 span {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #333333;
+    background-color: var(--noir);
     height: 70lvh;
     gap: 10lvh;
     margin: 15lvh 5vw 15lvh 5vw;
@@ -250,7 +247,7 @@ h2 span {
 }
 
 .Passion p {
-    color: #ffffff;
+    color: var(--blanc);
 }
 
 .Check {
@@ -278,14 +275,14 @@ h2 span {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    background-color: #333333;
+    background-color: var(--noir);
     height: 70lvh;
     margin: 15lvh 5vw 15lvh 5vw;
-    color: #ffffff;
+    color: var(--blanc);
 }
 
 .Marche h4 {
-    color: #F0C753;
+    color: var(--jaune);
     margin: 15px;
 }
 
@@ -313,7 +310,7 @@ h2 span {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    background-color: #333333;
+    background-color: var(--noir);
     height: 89lvh;
     padding: 100px;
 }
@@ -325,7 +322,7 @@ h2 span {
     flex-direction: column;
     width: 95%;
     border-radius: 68px;
-    border: #F0C753 solid 5px;
+    border: var(--jaune) solid 5px;
     margin: 15lvh 5vw 15lvh 5vw;
     width: 80vw;
     max-width: 100%;
@@ -339,7 +336,7 @@ h2 span {
 .BeelinkTab h3,
 .BeelinkDesc,
 .BeelinkStats {
-    color: #ffffff;
+    color: var(--blanc);
 }
 
 .BeelinkDesc {
@@ -354,14 +351,14 @@ h2 span {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #F0C753;
+    background: var(--jaune);
     gap: 20px;
     padding: 10px 40px 10px 40px;
     border-radius: 25px;
 }
 
 .BeelinkBouton p {
-    color: #333333;
+    color: var(--noir);
     font-weight: bold;
     font-size: 25px;
 }
@@ -384,7 +381,7 @@ h2 span {
 }
 
 .BeelinkStats span {
-    color: #F0C753;
+    color: var(--jaune);
     font-size: 40px;
     font-weight: bold;
 }

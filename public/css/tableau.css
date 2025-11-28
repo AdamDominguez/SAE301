@@ -1,5 +1,5 @@
 body {
-    background-color: #333333;
+    background-color: var(--noir);
 }
 
 section{
@@ -9,7 +9,7 @@ section{
 .FonctionNav {
     width: 250px;
     padding-top: 10px;
-    border-right: 2px solid #F0C753;
+    border-right: 2px solid var(--jaune);
     min-height: 89lvh;
     margin-left: 20px;
 }
@@ -32,7 +32,7 @@ section{
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: white;
+    color: var(--blanc);
     padding: 10px 10px;
     border-radius: 4px;
     transition: background-color 0.2s, color 0.2s;
@@ -42,14 +42,14 @@ section{
 }
 
 .element-menu:hover a {
-    background-color: #F0C753;
-    color: #333333;
+    background-color: var(--jaune);
+    color: var(--noir);
     margin-right: 20px
 }
 
 .element-menu.actif a{
-    background-color: #F0C753;
-    color: #333333;
+    background-color: var(--jaune);
+    color: var(--noir);
     border-radius: 4px;
     margin-right: 20px;
 }
