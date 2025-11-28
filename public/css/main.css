@@ -113,6 +113,10 @@ body {
     cursor: url('../img/cursor/default.cur'), auto;
 }
 
+body::-webkit-scrollbar {
+    display: none; 
+}
+
 a,
 button {
     cursor: url('../img/cursor/pointer.cur'), pointer;

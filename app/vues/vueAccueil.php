@@ -17,6 +17,7 @@ $title = "Accueil | BeeLink";
 <body>
     <?php require "header.php"; ?>
     <main>
+
         <section class="Home">
             <a href="#Explication">
                 <div class="Arrow">
