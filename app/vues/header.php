@@ -21,7 +21,7 @@ $pageActive = $_GET['action'] ?? 'accueil';
                 bord</a>
             <!-- Contact (Adam.D) -->
             <a href='index.php?action=contact' class='<?= $pageActive == 'contact' ? 'active' : '' ?>'>Nous
-                Contacter</a>
+                contacter</a>
         </nav>
     </div>
     <div class="Connecter" id="menuConnexion">

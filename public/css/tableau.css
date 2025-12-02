@@ -15,8 +15,8 @@ section{
 }
 
 .element-menu {
-    margin-bottom: 20px;
-    padding: 0 10px;
+    /* margin-bottom: 20px;
+    padding: 0 10px; */
 }
 
 .FonctionNav h3 {
@@ -30,15 +30,13 @@ section{
 
 .element-menu a {
     display: flex;
-    align-items: center;
     text-decoration: none;
     color: white;
     padding: 10px 10px;
     border-radius: 4px;
     transition: background-color 0.2s, color 0.2s;
     font-weight: 500;
-    margin-bottom: 12px;
-    margin-right: 20px
+    margin-bottom: 5px;
 }
 
 .element-menu:hover a {
