@@ -1,3 +1,33 @@
+:root {
+    /* --- Couleurs de base du thème --- */
+    --noir: #333333;
+    /* Utilisé pour le fond du body et le texte sur fond jaune */
+    --blanc: #FFFFFF;
+    /* Texte par défaut sur fond sombre */
+    --jaune: #F0C753;
+    /* Le jaune principal du thème BeeLink (remplace --couleur-jaune-primaire) */
+
+    /* --- Couleurs spécifiques au tableau de bord --- */
+    --couleur-fond-sombre: #333333;
+    /* Alias pour --noir */
+    --couleur-fond-widget: #2B2B2B;
+    /* Fond des widgets sombres (Alertes, KPI) */
+    --couleur-texte-sombre: #FFFFFF;
+    /* Alias pour --blanc */
+    --couleur-texte-clair: #AAAAAA;
+    /* Gris clair pour les étiquettes et petits textes */
+
+    /* --- Couleurs d'état (Statuts et Indicateurs) --- */
+    --couleur-succes: #4CAF50;
+    /* Vert pour OK ou positif */
+    --couleur-avertissement: #FF9800;
+    /* Orange pour alerte ou élevé */
+    --couleur-vert-etat: #4CAF50;
+    /* Vert pour la widget 'État général' */
+    --couleur-bleu-alertes: #2196F3;
+    /* Bleu pour la widget 'Alertes actives' */
+}
+
 body {
     background-color: var(--noir);
 }
@@ -45,6 +75,7 @@ body {
 /* --- 1. Conteneur principal (Layout) --- */
 main {
     display: flex;
+    min-height: 89lvh;
 }
 
 .contenu-tableau {
@@ -180,6 +211,71 @@ main {
     margin: 5px 0 0 0;
 }
 
+/* --- Étiquette d'État (Optimal/Élevée) --- */
+.etiquette-etat {
+    font-size: 0.7em;
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 15px;
+    text-transform: uppercase;
+}
+
+.etiquette-optimal {
+    color: var(--couleur-succes);
+    /* Vert */
+    background-color: rgba(76, 175, 80, 0.1);
+}
+
+.etiquette-elevee {
+    color: var(--couleur-avertissement);
+    /* Orange/Rouge */
+    background-color: rgba(255, 152, 0, 0.1);
+}
+
+/* Modifiez l'entête-indicateur pour aligner l'étiquette d'état à droite */
+.entete-indicateur {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    /* Réduire la marge pour faire de la place */
+}
+
+/* Vous pouvez supprimer les styles .changement.positif et .changement.negatif
+   si vous n'utilisez plus les changements (+0.3°C) et préférez l'étiquette d'état. */
+
+
+/* --- Min/Max 24h --- */
+.min-max {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    /* Aligner les textes de valeur en bas */
+    border-top: 1px solid #444444;
+    /* Séparateur horizontal fin */
+    padding-top: 10px;
+    margin-top: 20px;
+    /* Espace avant le Min/Max */
+}
+
+.min-max small {
+    display: block;
+    color: var(--couleur-texte-clair);
+    font-size: 0.8em;
+    margin-bottom: 2px;
+}
+
+.min-max p {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: var(--couleur-texte-sombre);
+    margin: 0;
+}
+
+.min-max .max {
+    text-align: right;
+}
+
 /* --- 6. Styles des Alertes Récentes --- */
 
 .titre-widget {
@@ -303,9 +399,75 @@ main {
 }
 
 .statut-ok {
-    background-color:#4CAF50;
+    background-color: #4CAF50;
 }
 
 .statut-alerte {
     background-color: #FF9800;
+}
+
+/* ------------------------------------------- */
+/* --- 9. Widgets Colorées (Pleine Largeur Égale) --- */
+
+/* 1. Conteneur Flexbox (Prend toute la largeur de la grille) */
+.conteneur-widgets-egaux {
+    padding-top: 20px;
+    grid-column: 1 / -1;
+    /* Indique au conteneur PARENT (grille-widgets) de prendre 4 colonnes */
+    display: flex;
+    /* Active le mode Flexbox pour ses enfants */
+    gap: 20px;
+    /* Espace entre les 3 widgets */
+}
+
+/* 2. Widgets Enfants (Style et Flex) */
+.widget-color {
+    /* Styles génériques (padding, shadow, text color) */
+    padding: 20px;
+    border-radius: 8px;
+    color: var(--couleur-texte-sombre);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+
+    /* PROPRIÉTÉ CLÉ : Dit à chaque widget de s'étirer également */
+    flex: 1;
+}
+
+/* Styles spécifiques aux contenus (conservés) */
+.titre-bloc-couleur {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.valeur-bloc-couleur {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin: 0 0 5px 0;
+}
+
+.widget-color small {
+    display: block;
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* --- Application des Couleurs de Fond (CORRECT) --- */
+
+.couleur-synchro {
+    background-color: var(--jaune);
+    color: var(--couleur-fond-sombre);
+}
+
+.couleur-synchro .titre-bloc-couleur,
+.couleur-synchro small {
+    color: rgba(51, 51, 51, 0.7);
+}
+
+.couleur-etat {
+    background-color: var(--couleur-vert-etat);
+}
+
+.couleur-alertes {
+    background-color: var(--couleur-bleu-alertes);
 }
