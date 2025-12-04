@@ -126,12 +126,6 @@ img {
     animation-play-state: paused;
 }
 
-.avis {
-    margin: 0;
-    display: flex;
-    gap: 24px;
-}
-
 @keyframes scroll-left {
     0% {
         transform: translateX(0);
