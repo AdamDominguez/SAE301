@@ -1,12 +1,33 @@
+<?php
+// var qui permet de récup l'action d'url et sinon retourner accueil en url
+$pageActive = $_GET['action'] ?? 'accueil';
+
+// Nouvelle variable pour vérifier si l'action actuelle commence par 'tableau',
+// indiquant que nous sommes dans la section "Tableau de bord" (Tableau, Valeurs, Données, Profil, etc.)
+$tableauPage = strpos($pageActive, 'tableau') === 0;
+?>
+
 <header>
     <div><a href="index.php?action=accueil">
             <img src="./public/img/logo.avif" alt="Logo BEELINK">
         </a></div>
     <div class="Liens">
-        <a href='index.php?action=accueil'>Accueil</a>
-        <a href='index.php?action=fonctionnalites'>Fonctionnalités</a>
-        <a href='index.php?action=tableau'>Tableau de bord</a>
-        <a href='index.php?action=contact'>Nous Contacter</a>
+        <nav>
+            <!-- L'attribut class permet au ternaire de vérifier si 
+             on a bien l'action qu'on souhaite, si oui alors on met 
+             la classe active, sinon on fait rien psk ça marche pas  -->
+            <!-- Accueil (Adam.D) -->
+            <a href='index.php?action=accueil' class='<?= $pageActive == 'accueil' ? 'active' : '' ?>'>Accueil</a>
+            <!-- Fonctionnalités (Adam.L) -->
+            <a href='index.php?action=fonctionnalites'
+                class='<?= $pageActive == 'fonctionnalites' ? 'active' : '' ?>'>Fonctionnalités</a>
+            <!-- Tableau de bord (Clément) -->
+            <a href='index.php?action=tableauAccueil' class='<?= $tableauPage ? 'active' : '' ?>'>Tableau de
+                bord</a>
+            <!-- Contact (Adam.D) -->
+            <a href='index.php?action=contact' class='<?= $pageActive == 'contact' ? 'active' : '' ?>'>Nous
+                contacter</a>
+        </nav>
     </div>
     <div class="Connecter" id="menuConnexion">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -59,7 +80,8 @@
             </fieldset>
             <button type="submit">CONNEXION</button>
             <p>Pas encore de compte ? <a href="index.php?action=inscription">S’inscrire</a></p>
-            <p class="ConnecterAdmin">Vous êtes administrateur ? <a href="index.php?action=connexionadmin">Connectez-vous</a></p>
+            <p class="ConnecterAdmin">Vous êtes administrateur ? <a
+                    href="index.php?action=connexionadmin">Connectez-vous</a></p>
         </div>
     </div>
 </header>
