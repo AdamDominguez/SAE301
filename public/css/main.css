@@ -117,6 +117,31 @@ body::-webkit-scrollbar {
     display: none; 
 }
 
+h1 {
+    font-size: 52px;
+    color:  var(--noir);
+}
+
+h2 {
+    font-size: 36px;
+    color:  var(--noir);
+}
+
+h3 {
+    font-size: 24px;
+    color:  var(--noir);
+}
+
+h4 {
+    font-size: 18px;
+    color:  var(--noir);
+}
+
+p {
+    font-size: 16px;
+    color:  var(--noir);
+}
+
 a,
 button {
     cursor: url('../img/cursor/pointer.cur'), pointer;
@@ -184,6 +209,7 @@ footer a {
     max-width: 350px;
 }
 
+.Footer2A a,
 .Footer1B a,
 .Footer1C a {
     margin: 10px 0 0 0;
