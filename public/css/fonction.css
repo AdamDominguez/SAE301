@@ -82,7 +82,7 @@ body {
     min-width: 48px;
 }
 
-img {
+.interface img {
     max-width: 25%;
     height: auto;
     border-radius: 24px;
