@@ -101,39 +101,45 @@ $title = "Tableau de bord | BeeLink";
                 <div class="widget-actions">
                     <h3 class="titre-widget">Actions rapides</h3>
                     <div class="liste-actions">
-                        <a href="#"><div class="icone-action">📈</div> Voir les valeurs</a>
-                        <a href="#"><div class="icone-action">📊</div> Analyser les données</a>
-                        <a href="#"><div class="icone-action">🔄</div> Synchroniser</a>
+                        <a href="#">
+                            <div class="icone-action">📈</div> Voir les valeurs
+                        </a>
+                        <a href="#">
+                            <div class="icone-action">📊</div> Analyser les données
+                        </a>
+                        <a href="#">
+                            <div class="icone-action">🔄</div> Synchroniser
+                        </a>
                     </div>
                 </div>
 
                 <div class="widget-ruches">
                     <h3 class="titre-widget">Vos ruches</h3>
                     <div class="liste-ruches">
-                        <div class="ruche-item">
+                        <a class="ruche-item" href="#">
                             <div class="icone-ruche">🍯</div>
                             <p>Ruche IUT</p>
                             <small>Zone A</small>
                             <div class="statut statut-ok"></div>
-                        </div>
-                        <div class="ruche-item">
+                        </a>
+                        <a class="ruche-item" href="#">
                             <div class="icone-ruche">🍯</div>
                             <p>Ruche IUT</p>
                             <small>Zone A</small>
                             <div class="statut statut-ok"></div>
-                        </div>
-                        <div class="ruche-item">
+                        </a>
+                        <a class="ruche-item" href="#">
                             <div class="icone-ruche">🍯</div>
                             <p>Ruche IUT</p>
                             <small>Zone A</small>
                             <div class="statut statut-alerte"></div>
-                        </div>
-                        <div class="ruche-item">
+                        </a>
+                        <a class="ruche-item" href="#">
                             <div class="icone-ruche">🍯</div>
                             <p>Ruche IUT</p>
                             <small>Zone A</small>
                             <div class="statut statut-ok"></div>
-                        </div>
+                        </a>
                     </div>
                 </div>
 

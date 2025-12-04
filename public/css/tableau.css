@@ -57,12 +57,13 @@ body {
     transition: background-color 0.2s, color 0.2s;
     font-weight: 500;
     margin-bottom: 5px;
+    margin-right: 20px;
 }
 
 .element-menu:hover a {
     background-color: var(--jaune);
     color: var(--noir);
-    margin-right: 20px
+    margin-right: 20px;
 }
 
 .element-menu.actif a {
@@ -371,6 +372,16 @@ main {
     text-align: center;
     position: relative;
     border: 1px solid #444444;
+    text-decoration: none;
+    color: #FFFFFF;
+    transition: border-color, color, background-color, 0.4s;
+}
+
+.ruche-item:hover {
+    border-color: #F0C753;
+    background-color: #3D3D3D;
+    transition: border-color, color, background-color, 0.4s;
+    color: #F0C753;
 }
 
 .icone-ruche {
