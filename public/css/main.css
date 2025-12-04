@@ -398,14 +398,14 @@ header a {
     padding: 40px 0 0 0;
 }
 
-.ConnecterContent fieldset,
+.ConnecterContent form,
 .ConnecterContent input {
     border: 0;
     padding: 0;
     float: none;
 }
 
-.ConnecterContent fieldset {
+.ConnecterContent form {
     display: flex;
     flex-direction: column;
     gap: 15px;
