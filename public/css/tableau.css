@@ -2,9 +2,7 @@
     --noir: #333333;
     --blanc: #FFFFFF;
     --jaune: #F0C753;
-    --couleur-fond-sombre: #333333;
     --couleur-fond-widget: #2B2B2B;
-    --couleur-texte-sombre: #FFFFFF;
     --couleur-texte-clair: #AAAAAA;
     --couleur-succes: #4CAF50;
     --couleur-avertissement: #FF9800;
@@ -25,7 +23,7 @@ body {
 }
 
 .FonctionNav h3 {
-    color: var(--couleur-texte-sombre);
+    color: var(--blanc);
     font-size: 0.8em;
     font-weight: bold;
     padding: 10px 0;
@@ -254,7 +252,7 @@ main {
 .min-max p {
     font-size: 1.1em;
     font-weight: bold;
-    color: var(--couleur-texte-sombre);
+    color: var(--blanc);
     margin: 0;
 }
 
@@ -421,7 +419,7 @@ main {
     /* Styles génériques (padding, shadow, text color) */
     padding: 20px;
     border-radius: 8px;
-    color: var(--couleur-texte-sombre);
+    color: var(--blanc);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 
     /* PROPRIÉTÉ CLÉ : Dit à chaque widget de s'étirer également */
@@ -452,7 +450,7 @@ main {
 
 .couleur-synchro {
     background-color: var(--jaune);
-    color: var(--couleur-fond-sombre);
+    color: var(--noir);
 }
 
 .couleur-synchro .titre-bloc-couleur,
