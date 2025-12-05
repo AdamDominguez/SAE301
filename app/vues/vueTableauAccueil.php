@@ -21,7 +21,6 @@ $title = "Tableau de bord | BeeLink";
             <div class="principal">
                 <h3>PRINCIPAL</h3>
                 <div class="accueil element-menu actif"><a href="index.php?action=tableauAccueil">Accueil</a></div>
-                <div class="valeurs element-menu"><a href="index.php?action=tableauValeurs">Valeurs</a></div>
                 <div class="donnees element-menu"><a href="index.php?action=tableauDonnees">Données</a></div>
                 <div class="alertes element-menu"><a href="index.php?action=tableauAlertes">Alertes</a></div>
                 <div class="campagne element-menu"><a href="index.php?action=tableauCampagne">Ma Campagne</a></div>
