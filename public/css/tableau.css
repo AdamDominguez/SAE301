@@ -108,7 +108,7 @@ main {
 
 .btn-primaire {
     background-color: var(--noir);
-    color: var(--jaune);
+    color: var(--blanc);
 }
 
 .btn-secondaire {
