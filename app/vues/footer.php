@@ -8,9 +8,9 @@
 
         <div class="Footer2A">
             <h4>Nos partenaires</h4>
-            <p>IUT de Mulhouse</p>
-            <p>Département GEII</p>
-            <p>Département MMI</p>
+            <a href="">IUT de Mulhouse</a>
+            <a href="">Département GEII</a>
+            <a href="">Département MMI</a>
         </div>
 
         <div class="Footer1B">

@@ -17,6 +17,7 @@ $title = "Fonctionnalités | BeeLink";
 <body>
     <?php require "header.php"; ?>
     <main>
+
         <div class="BlocJaune">
             <div class="titre">
                 <h1>Capteurs intelligents</h1>

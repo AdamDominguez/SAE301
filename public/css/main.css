@@ -113,6 +113,39 @@ body {
     cursor: url('../img/cursor/default.cur'), auto;
 }
 
+body::-webkit-scrollbar {
+    display: none; 
+}
+
+h1 {
+    font-size: 52px;
+    color:  var(--noir);
+}
+
+h2 {
+    font-size: 36px;
+    color:  var(--noir);
+}
+
+h3 {
+    font-size: 24px;
+    color:  var(--noir);
+}
+
+h4 {
+    font-size: 18px;
+    color:  var(--noir);
+}
+
+p {
+    font-size: 16px;
+    color:  var(--noir);
+}
+
+.blanc {
+    color: #ffffff;
+}
+
 a,
 button {
     cursor: url('../img/cursor/pointer.cur'), pointer;
@@ -180,6 +213,7 @@ footer a {
     max-width: 350px;
 }
 
+.Footer2A a,
 .Footer1B a,
 .Footer1C a {
     margin: 10px 0 0 0;
@@ -413,10 +447,30 @@ header a {
 
 nav a {
     text-decoration: none;
+    color: var(--noir);
     padding: 10px;
+    display: inline-block;
+    position: relative;
 }
 
-nav a.active {
-    text-decoration: underline;
-    font-weight: bold;
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
+    right: 10px;
+    height: 2px;
+    background-color: var(--noir);
+    width: 0;
+    transition: width 0.2s ease-out;
+}
+
+nav a:hover::after {
+    width: calc(100% - 20px);
+    height: 3px;
+}
+
+nav a.active::after {
+    width: calc(100% - 20px);
+    height: 3px;
 }

@@ -74,12 +74,10 @@ a {
 }
 
 .Content h1 {
-    font-size: 45px;
     color: var(--noir);
 }
 
 .Content p {
-    font-size: 20px;
     color: var(--noir);
 }
 
@@ -166,11 +164,9 @@ a {
 
 h3 {
     color: var(--blanc);
-    font-weight: lighter;
 }
 
 h2 {
-    font-size: 45px;
     color: var(--blanc);
     text-align: center;
 }
@@ -339,9 +335,6 @@ h2 span {
     color: var(--blanc);
 }
 
-.BeelinkDesc {
-    font-size: 30px;
-}
 
 .BeelinkTab a {
     text-decoration: none;
@@ -360,7 +353,6 @@ h2 span {
 .BeelinkBouton p {
     color: var(--noir);
     font-weight: bold;
-    font-size: 25px;
 }
 
 .BeelinkStat {
@@ -382,17 +374,14 @@ h2 span {
 
 .BeelinkStats span {
     color: var(--jaune);
-    font-size: 40px;
     font-weight: bold;
 }
 
 .BeelinkStats p {
-    font-size: 20px;
     text-align: center;
 }
 
 .BeelinkTab h3 {
-    font-size: 60px;
     font-weight: bolder;
 }
 
