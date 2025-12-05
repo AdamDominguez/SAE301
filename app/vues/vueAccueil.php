@@ -308,12 +308,12 @@ $title = "Accueil | BeeLink";
         </section>
         <section class="Beelink">
             <div class="BeelinkTab">
-                <h3>BeeLink</h3>
-                <p class="BeelinkDesc">Rejoignez l'aventure de la surveillance intelligente des ruches</p>
+                <h2>BeeLink</h2>
+                <h3 class="BeelinkDesc">Rejoignez l'aventure de la surveillance intelligente des ruches</h3>
                 <a href="index.php?action=inscription">
                     <div class="BeelinkBouton">
-                        <p>Nous rejoindre</p><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
-                            viewBox="0 0 22 22" fill="none">
+                        <p>Nous rejoindre</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
                             <path d="M2 10.75H19.5M19.5 10.75L10.75 2M19.5 10.75L10.75 19.5" stroke="#333333"
                                 stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
@@ -335,6 +335,7 @@ $title = "Accueil | BeeLink";
                 </div>
                 <p class="BeelinkService">Service 100% gratuit • Places limitées pour la phase de test</p>
             </div>
+        </section>
         </section>
     </main>
     <?php require "footer.php"; ?>
