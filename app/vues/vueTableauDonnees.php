@@ -41,12 +41,12 @@ $title = "Tableau de bord | BeeLink";
                 </div>
                 <div class="actions-globales">
                     <select class="select-ruche">
-                        <option>Ruche 000001</option>
-                        <option>Ruche 000002</option>
+                        <option>Ruche 001</option>
+                        <option>Ruche 002</option>
+                        <option>Ruche 003</option>
                     </select>
                     <select class="select-donnees">
                         <option>Toutes les données</option>
-                        <option>Température</option>
                     </select>
                     <button class="btn-export">
                         <span class="icone-action">⬇️</span> Exporter
