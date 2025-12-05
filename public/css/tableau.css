@@ -3,17 +3,30 @@
     --blanc: #FFFFFF;
     --jaune: #F0C753;
     --couleur-fond-widget: #2B2B2B;
+    --couleur-border: #444444;
     --couleur-texte-clair: #AAAAAA;
     --couleur-succes: #4CAF50;
     --couleur-avertissement: #FF9800;
     --couleur-bleu-alertes: #2196F3;
-    --couleur-border: #444444;
     --couleur-negatif: #F44336;
+    --couleur-normal: #4A90E2;
 }
 
 body {
     background-color: var(--noir);
 }
+
+main {
+    display: flex;
+    min-height : 89lvh;
+}
+
+.contenu-tableau {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+/* --- Menu Latéral --- */
 
 .FonctionNav {
     width: 250px;
@@ -56,18 +69,25 @@ body {
     margin-right: 20px;
 }
 
-/* --- 1. Conteneur principal (Layout) --- */
-main {
-    display: flex;
-    min-height: 89lvh;
+.grille-widgets,
+.grille-widgets-donnees {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
 }
 
-.contenu-tableau {
-    flex-grow: 1;
+.widget-indicateur,
+.widget-alerte,
+.widget-actions,
+.widget-ruches,
+.widget-principal,
+.widget-lateral {
+    background-color: var(--couleur-fond-widget);
     padding: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--couleur-border);
+    color: var(--blanc);
 }
-
-/* --- 2. Bandeau de Bienvenue Jaune --- */
 
 .bandeau-accueil {
     display: flex;
@@ -117,46 +137,11 @@ main {
     color: var(--noir);
 }
 
-/* --- 3. Grille Principale des Widgets --- */
-
-.grille-widgets {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-}
-
-.widget-indicateur,
-.widget-alerte,
-.widget-actions,
-.widget-ruches {
-    background-color:var(--couleur-fond-widget);
-    padding: 20px;
-    border-radius: 8px;
-    border: 1px solid var(--couleur-border);
-    color: var(--blanc);
-}
-
-/* --- 4. Mise en page des grands blocs dans la grille --- */
-
-.widget-alerte {
-    grid-column: span 3;
-}
-
-.widget-actions {
-    grid-column: span 1;
-}
-
-.widget-ruches {
-    grid-column: 1 / -1;
-}
-
-/* --- 5. Styles des Indicateurs Clés (KPI) --- */
-
 .entete-indicateur {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
 
 .icone-indicateur {
@@ -164,23 +149,6 @@ main {
     padding: 10px;
     background-color: var(--couleur-border);
     border-radius: 4px;
-}
-
-.changement {
-    font-weight: bold;
-    font-size: 0.9em;
-    padding: 5px 8px;
-    border-radius: 15px;
-}
-
-.changement.positif {
-    color: var(--couleur-succes);
-    background-color: rgba(76, 175, 80, 0.1);
-}
-
-.changement.negatif {
-    color: var(--couleur-negatif);
-    background-color: rgba(244, 67, 54, 0.1);
 }
 
 .etiquette-indicateur {
@@ -195,7 +163,6 @@ main {
     margin: 5px 0 0 0;
 }
 
-/* --- Étiquette d'État (Optimal/Élevée) --- */
 .etiquette-etat {
     font-size: 0.7em;
     font-weight: bold;
@@ -204,42 +171,29 @@ main {
     text-transform: uppercase;
 }
 
-.etiquette-optimal {
+.etiquette-optimal,
+.etiquette-bon {
     color: var(--couleur-succes);
-    /* Vert */
     background-color: rgba(76, 175, 80, 0.1);
 }
 
 .etiquette-elevee {
     color: var(--couleur-avertissement);
-    /* Orange/Rouge */
     background-color: rgba(255, 152, 0, 0.1);
 }
 
-/* Modifiez l'entête-indicateur pour aligner l'étiquette d'état à droite */
-.entete-indicateur {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 5px;
-    /* Réduire la marge pour faire de la place */
+.etiquette-normal {
+    color: var(--couleur-normal);
+    background-color: rgba(74, 144, 226, 0.1);
 }
 
-/* Vous pouvez supprimer les styles .changement.positif et .changement.negatif
-   si vous n'utilisez plus les changements (+0.3°C) et préférez l'étiquette d'état. */
-
-
-/* --- Min/Max 24h --- */
 .min-max {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    /* Aligner les textes de valeur en bas */
     border-top: 1px solid var(--couleur-border);
-    /* Séparateur horizontal fin */
     padding-top: 10px;
     margin-top: 20px;
-    /* Espace avant le Min/Max */
 }
 
 .min-max small {
@@ -260,7 +214,17 @@ main {
     text-align: right;
 }
 
-/* --- 6. Styles des Alertes Récentes --- */
+.widget-alerte {
+    grid-column: span 3;
+}
+
+.widget-actions {
+    grid-column: span 1;
+}
+
+.widget-ruches {
+    grid-column: 1 / -1;
+}
 
 .titre-widget {
     display: flex;
@@ -311,8 +275,6 @@ main {
     font-size: 0.8em;
 }
 
-/* --- 7. Styles des Actions Rapides --- */
-
 .liste-actions a {
     display: flex;
     align-items: center;
@@ -336,8 +298,6 @@ main {
     color: var(--jaune);
 }
 
-/* --- 8. Styles de la Liste des Ruches --- */
-
 .liste-ruches {
     display: flex;
     gap: 20px;
@@ -357,13 +317,12 @@ main {
     border: 1px solid var(--couleur-border);
     text-decoration: none;
     color: var(--blanc);
-    transition: border-color, color, background-color, 0.4s;
+    transition: border-color 0.2s, color 0.2s, background-color 0.2s;
 }
 
 .ruche-item:hover {
     border-color: var(--jaune);
     background-color: #3D3D3D;
-    transition: border-color, color, background-color, 0.4s;
     color: var(--jaune);
 }
 
@@ -400,33 +359,21 @@ main {
     background-color: var(--couleur-avertissement);
 }
 
-/* ------------------------------------------- */
-/* --- 9. Widgets Colorées (Pleine Largeur Égale) --- */
-
-/* 1. Conteneur Flexbox (Prend toute la largeur de la grille) */
 .conteneur-widgets-egaux {
     padding-top: 20px;
     grid-column: 1 / -1;
-    /* Indique au conteneur PARENT (grille-widgets) de prendre 4 colonnes */
     display: flex;
-    /* Active le mode Flexbox pour ses enfants */
     gap: 20px;
-    /* Espace entre les 3 widgets */
 }
 
-/* 2. Widgets Enfants (Style et Flex) */
 .widget-color {
-    /* Styles génériques (padding, shadow, text color) */
     padding: 20px;
     border-radius: 8px;
     color: var(--blanc);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-
-    /* PROPRIÉTÉ CLÉ : Dit à chaque widget de s'étirer également */
     flex: 1;
 }
 
-/* Styles spécifiques aux contenus (conservés) */
 .titre-bloc-couleur {
     font-size: 1.1em;
     margin-bottom: 5px;
@@ -446,8 +393,6 @@ main {
     color: rgba(255, 255, 255, 0.7);
 }
 
-/* --- Application des Couleurs de Fond (CORRECT) --- */
-
 .couleur-synchro {
     background-color: var(--jaune);
     color: var(--noir);
@@ -464,4 +409,98 @@ main {
 
 .couleur-alertes {
     background-color: var(--couleur-bleu-alertes);
+}
+
+.entete-page-donnees {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 20px;
+}
+
+.titre-principal {
+    color: var(--jaune);
+    font-size: 1.8em;
+    margin: 0;
+}
+
+.sous-titre {
+    color: var(--couleur-texte-clair);
+    margin: 5px 0 0 0;
+    font-size: 0.9em;
+}
+
+.actions-globales {
+    display: flex;
+    gap: 10px;
+}
+
+.actions-globales select {
+    padding: 8px 12px;
+    border: 1px solid var(--couleur-border);
+    border-radius: 4px;
+    background-color: var(--couleur-fond-widget);
+    color: var(--blanc);
+    font-size: 0.9em;
+    appearance: none;
+}
+
+.btn-export {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--jaune);
+    color: var(--noir);
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.2s;
+}
+
+.btn-export .icone-action {
+    font-size: 1.2em;
+    margin-right: 5px;
+    line-height: 1;
+}
+
+.nav-onglets {
+    display: flex;
+    border-bottom: 1px solid var(--couleur-border);
+    margin-bottom: 20px;
+}
+
+.nav-onglets .onglet {
+    text-decoration: none;
+    color: var(--couleur-texte-clair);
+    padding: 10px 15px;
+    margin-right: 5px;
+    transition: color 0.2s;
+    font-weight: 500;
+}
+
+.nav-onglets .onglet:hover {
+    color: var(--blanc);
+}
+
+.nav-onglets .actif {
+    color: var(--jaune);
+    border-bottom: 3px solid var(--jaune);
+    margin-bottom: -1px;
+    font-weight: bold;
+}
+
+.grille-widgets-donnees {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.widget-principal {
+    grid-column: span 3;
+    min-height: 600px;
+}
+
+.widget-lateral {
+    grid-column: span 1;
 }

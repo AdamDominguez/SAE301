@@ -33,23 +33,50 @@ $title = "Tableau de bord | BeeLink";
             </div>
         </nav>
         <section class="contenu-tableau">
-            <div class="grille-widgets">
+
+            <div class="entete-page-donnees">
+                <div class="titres">
+                    <h1 class="titre-principal">Données et Valeurs</h1>
+                    <p class="sous-titre">Surveillance complète et analyse en temps réel de vos ruches.</p>
+                </div>
+                <div class="actions-globales">
+                    <select class="select-ruche">
+                        <option>Ruche 000001</option>
+                        <option>Ruche 000002</option>
+                    </select>
+                    <select class="select-donnees">
+                        <option>Toutes les données</option>
+                        <option>Température</option>
+                    </select>
+                    <button class="btn-export">
+                        <span class="icone-action">⬇️</span> Exporter
+                    </button>
+                </div>
+            </div>
+
+            <nav class="nav-onglets">
+                <a href="#" class="onglet actif">Aperçu</a>
+                <a href="#" class="onglet">Graphiques</a>
+                <a href="#" class="onglet">Tableau</a>
+            </nav>
+
+            <div class="grille-widgets-donnees">
+
                 <div class="widget-indicateur">
                     <div class="entete-indicateur">
                         <span class="icone-indicateur">🌡️</span>
                         <span class="etiquette-etat etiquette-optimal">optimal</span>
                     </div>
                     <p class="etiquette-indicateur">Température</p>
-                    <p class="valeur-indicateur">22°C</p>
-
+                    <p class="valeur-indicateur">21.0°C</p>
                     <div class="min-max">
                         <div class="min">
-                            <small>Min (24h)</small>
-                            <p>20°C</p>
+                            <small>Min</small>
+                            <p>20.0°C</p>
                         </div>
                         <div class="max">
-                            <small>Max (24h)</small>
-                            <p>23°C</p>
+                            <small>Max</small>
+                            <p>23.0°C</p>
                         </div>
                     </div>
                 </div>
@@ -60,14 +87,14 @@ $title = "Tableau de bord | BeeLink";
                         <span class="etiquette-etat etiquette-optimal">optimal</span>
                     </div>
                     <p class="etiquette-indicateur">Humidité</p>
-                    <p class="valeur-indicateur">81%</p>
+                    <p class="valeur-indicateur">82%</p>
                     <div class="min-max">
                         <div class="min">
-                            <small>Min (24h)</small>
+                            <small>Min</small>
                             <p>80%</p>
                         </div>
                         <div class="max">
-                            <small>Max (24h)</small>
+                            <small>Max</small>
                             <p>85%</p>
                         </div>
                     </div>
@@ -76,17 +103,17 @@ $title = "Tableau de bord | BeeLink";
                 <div class="widget-indicateur">
                     <div class="entete-indicateur">
                         <span class="icone-indicateur">⚖️</span>
-                        <span class="etiquette-etat etiquette-optimal">optimal</span>
+                        <span class="etiquette-etat etiquette-bon">bon</span>
                     </div>
                     <p class="etiquette-indicateur">Poids total</p>
                     <p class="valeur-indicateur">15.6 kg</p>
                     <div class="min-max">
                         <div class="min">
-                            <small>Min (24h)</small>
+                            <small>Min</small>
                             <p>15.4 kg</p>
                         </div>
                         <div class="max">
-                            <small>Max (24h)</small>
+                            <small>Max</small>
                             <p>15.8 kg</p>
                         </div>
                     </div>
@@ -95,40 +122,42 @@ $title = "Tableau de bord | BeeLink";
                 <div class="widget-indicateur">
                     <div class="entete-indicateur">
                         <span class="icone-indicateur">〰️</span>
-                        <span class="etiquette-etat etiquette-elevee">élevée</span>
+                        <span class="etiquette-etat etiquette-normal">normal</span>
                     </div>
                     <p class="etiquette-indicateur">Fréquence</p>
                     <p class="valeur-indicateur">233 Hz</p>
                     <div class="min-max">
                         <div class="min">
-                            <small>Min (24h)</small>
+                            <small>Min</small>
                             <p>205 Hz</p>
                         </div>
                         <div class="max">
-                            <small>Max (24h)</small>
+                            <small>Max</small>
                             <p>244 Hz</p>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="conteneur-widgets-egaux">
-                <div class="widget-color couleur-synchro">
-                    <h3 class="titre-bloc-couleur">Dernière synchronisation</h3>
-                    <p class="valeur-bloc-couleur">Il y a 2 min</p>
-                    <small>Prochain sync dans 3 min</small>
+
+                <div class="conteneur-widgets-egaux">
+                    <div class="widget-color couleur-synchro">
+                        <h3 class="titre-bloc-couleur">Dernière synchronisation</h3>
+                        <p class="valeur-bloc-couleur">Il y a 2 min</p>
+                        <small>Prochain sync dans 3 min</small>
+                    </div>
+
+                    <div class="widget-color couleur-etat">
+                        <h3 class="titre-bloc-couleur">État général</h3>
+                        <p class="valeur-bloc-couleur">Excellent</p>
+                        <small>4/4 ruches opérationnelles</small>
+                    </div>
+
+                    <div class="widget-color couleur-alertes">
+                        <h3 class="titre-bloc-couleur">Alertes actives</h3>
+                        <p class="valeur-bloc-couleur">1</p>
+                        <small>Température élevée - Ruche #3</small>
+                    </div>
                 </div>
 
-                <div class="widget-color couleur-etat">
-                    <h3 class="titre-bloc-couleur">État général</h3>
-                    <p class="valeur-bloc-couleur">Excellent</p>
-                    <small>4/4 ruches opérationnelles</small>
-                </div>
-
-                <div class="widget-color couleur-alertes">
-                    <h3 class="titre-bloc-couleur">Alertes actives</h3>
-                    <p class="valeur-bloc-couleur">1</p>
-                    <small>Température élevée - Ruche #3</small>
-                </div>
             </div>
         </section>
     </main>
