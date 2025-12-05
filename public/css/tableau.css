@@ -1,16 +1,31 @@
 :root {
+    /* --- Couleurs de base du thème --- */
     --noir: #333333;
     --blanc: #FFFFFF;
     --jaune: #F0C753;
+
+    /* --- Couleurs des widgets et bordures --- */
     --couleur-fond-widget: #2B2B2B;
     --couleur-border: #444444;
+
+    /* --- Couleurs de texte et d'état --- */
     --couleur-texte-clair: #AAAAAA;
+    /* Gris clair */
     --couleur-succes: #4CAF50;
+    /* Vert (Optimal/Bon) */
     --couleur-avertissement: #FF9800;
+    /* Orange (Élevée) */
     --couleur-bleu-alertes: #2196F3;
+    /* Bleu (Information) */
     --couleur-negatif: #F44336;
+    /* Rouge */
     --couleur-normal: #4A90E2;
+    /* Bleu clair pour état "normal" */
 }
+
+/* ---------------------------------------------------------------- */
+/* --- GENERAL & LAYOUT --- */
+/* ---------------------------------------------------------------- */
 
 body {
     background-color: var(--noir);
@@ -18,7 +33,7 @@ body {
 
 main {
     display: flex;
-    min-height : 89lvh;
+    /* min-height: 89lvh; - Laisser commenté ou retirer */
 }
 
 .contenu-tableau {
@@ -69,6 +84,10 @@ main {
     margin-right: 20px;
 }
 
+/* ---------------------------------------------------------------- */
+/* --- GRILLES & WIDGETS GÉNÉRAUX --- */
+/* ---------------------------------------------------------------- */
+
 .grille-widgets,
 .grille-widgets-donnees {
     display: grid;
@@ -76,6 +95,7 @@ main {
     gap: 20px;
 }
 
+/* Style de base pour les widgets (Fond sombre, Texte BLANC par défaut) */
 .widget-indicateur,
 .widget-alerte,
 .widget-actions,
@@ -87,13 +107,17 @@ main {
     border-radius: 8px;
     border: 1px solid var(--couleur-border);
     color: var(--blanc);
+    /* Assure que le texte par défaut est blanc */
 }
+
+/* --- Bandeau de Bienvenue Jaune --- */
 
 .bandeau-accueil {
     display: flex;
     align-items: flex-start;
     background-color: var(--jaune);
     color: var(--noir);
+    /* Texte noir sur fond jaune */
     padding: 30px;
     border-radius: 8px;
     margin-bottom: 20px;
@@ -137,6 +161,10 @@ main {
     color: var(--noir);
 }
 
+/* ---------------------------------------------------------------- */
+/* --- KPIs & ÉTATS --- */
+/* ---------------------------------------------------------------- */
+
 .entete-indicateur {
     display: flex;
     justify-content: space-between;
@@ -161,7 +189,11 @@ main {
     font-size: 2.2em;
     font-weight: bold;
     margin: 5px 0 0 0;
+    color: var(--blanc);
+    /* CORRIGÉ : Assure que la valeur principale est blanche */
 }
+
+/* --- Étiquettes d'État --- */
 
 .etiquette-etat {
     font-size: 0.7em;
@@ -187,6 +219,7 @@ main {
     background-color: rgba(74, 144, 226, 0.1);
 }
 
+/* --- Min/Max 24h --- */
 .min-max {
     display: flex;
     justify-content: space-between;
@@ -214,6 +247,11 @@ main {
     text-align: right;
 }
 
+/* ---------------------------------------------------------------- */
+/* --- WIDGETS DE GRILLE (Accueil) --- */
+/* ---------------------------------------------------------------- */
+
+/* Mise en page des grands blocs (Accueil) */
 .widget-alerte {
     grid-column: span 3;
 }
@@ -226,6 +264,7 @@ main {
     grid-column: 1 / -1;
 }
 
+/* --- Alertes Récentes --- */
 .titre-widget {
     display: flex;
     justify-content: space-between;
@@ -268,6 +307,8 @@ main {
     flex-grow: 1;
     margin: 0;
     font-weight: 500;
+    color: var(--blanc);
+    /* CORRIGÉ : Assure que le texte des alertes est blanc */
 }
 
 .alerte small {
@@ -275,6 +316,7 @@ main {
     font-size: 0.8em;
 }
 
+/* --- Actions Rapides --- */
 .liste-actions a {
     display: flex;
     align-items: center;
@@ -285,18 +327,9 @@ main {
     transition: background-color 0.2s;
 }
 
-.liste-actions a:last-child {
-    border-bottom: none;
-}
-
-.icone-action {
-    margin-right: 10px;
-    font-size: 1.2em;
-}
-
-.liste-actions a:hover {
-    color: var(--jaune);
-}
+/* ---------------------------------------------------------------- */
+/* --- WIDGETS ÉGAUX & RUCHE ITEMS --- */
+/* ---------------------------------------------------------------- */
 
 .liste-ruches {
     display: flex;
@@ -335,6 +368,8 @@ main {
 .ruche-item p {
     margin: 0;
     font-weight: bold;
+    color: var(--blanc);
+    /* Assure que le titre de ruche est blanc */
 }
 
 .ruche-item small {
@@ -358,6 +393,8 @@ main {
 .statut-alerte {
     background-color: var(--couleur-avertissement);
 }
+
+/* --- Widgets Colorés --- */
 
 .conteneur-widgets-egaux {
     padding-top: 20px;
@@ -400,7 +437,7 @@ main {
 
 .couleur-synchro .titre-bloc-couleur,
 .couleur-synchro small {
-    color: rgba(51, 51, 51, 0.7);
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .couleur-etat {
@@ -410,6 +447,10 @@ main {
 .couleur-alertes {
     background-color: var(--couleur-bleu-alertes);
 }
+
+/* ---------------------------------------------------------------- */
+/* --- VUE SPÉCIFIQUE : DONNÉES ET VALEURS --- */
+/* ---------------------------------------------------------------- */
 
 .entete-page-donnees {
     display: flex;
@@ -497,7 +538,8 @@ main {
 }
 
 .widget-principal {
-    grid-column: span 3;
+    grid-column: 1 / -1;
+    /* Défini sur 4 colonnes, car le contenu n'était pas précisé */
     min-height: 600px;
 }
 
