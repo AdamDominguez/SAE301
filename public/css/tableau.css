@@ -33,7 +33,7 @@ body {
 
 main {
     display: flex;
-    /* min-height: 89lvh; - Laisser commenté ou retirer */
+    min-height: 89lvh;
 }
 
 .contenu-tableau {
@@ -41,7 +41,7 @@ main {
     padding: 20px;
 }
 
-/* --- Menu Latéral --- */
+/* Menu gauche */
 
 .FonctionNav {
     width: 250px;
@@ -80,13 +80,9 @@ main {
 .element-menu.actif a {
     background-color: var(--jaune);
     color: var(--noir);
-    border-radius: 4px;
-    margin-right: 20px;
 }
 
-/* ---------------------------------------------------------------- */
-/* --- GRILLES & WIDGETS GÉNÉRAUX --- */
-/* ---------------------------------------------------------------- */
+/* Contenu (grid) */
 
 .grille-widgets,
 .grille-widgets-donnees {
@@ -99,9 +95,7 @@ main {
 .widget-indicateur,
 .widget-alerte,
 .widget-actions,
-.widget-ruches,
-.widget-principal,
-.widget-lateral {
+.widget-ruches {
     background-color: var(--couleur-fond-widget);
     padding: 20px;
     border-radius: 8px;
@@ -110,7 +104,7 @@ main {
     /* Assure que le texte par défaut est blanc */
 }
 
-/* --- Bandeau de Bienvenue Jaune --- */
+/* Bandeau Jaune */
 
 .bandeau-accueil {
     display: flex;
@@ -161,9 +155,7 @@ main {
     color: var(--noir);
 }
 
-/* ---------------------------------------------------------------- */
-/* --- KPIs & ÉTATS --- */
-/* ---------------------------------------------------------------- */
+/* Widgets */
 
 .entete-indicateur {
     display: flex;
@@ -247,11 +239,8 @@ main {
     text-align: right;
 }
 
-/* ---------------------------------------------------------------- */
-/* --- WIDGETS DE GRILLE (Accueil) --- */
-/* ---------------------------------------------------------------- */
+/* Widgets pages Accueil */
 
-/* Mise en page des grands blocs (Accueil) */
 .widget-alerte {
     grid-column: span 3;
 }
@@ -422,6 +411,7 @@ main {
     font-size: 2.5em;
     font-weight: bold;
     margin: 0 0 5px 0;
+    color: var(--blanc);
 }
 
 .widget-color small {
@@ -437,7 +427,11 @@ main {
 
 .couleur-synchro .titre-bloc-couleur,
 .couleur-synchro small {
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--noir);
+}
+
+.couleur-synchro .valeur-bloc-couleur {
+    color: var(--noir);
 }
 
 .couleur-etat {
