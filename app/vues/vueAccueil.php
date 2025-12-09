@@ -60,7 +60,7 @@ $title = "Accueil | BeeLink";
                             d="M8.85417 0C10.0169 0 11.1683 0.22902 12.2425 0.673984C13.3168 1.11895 14.2928 1.77114 15.115 2.59333C15.9372 3.41551 16.5894 4.39159 17.0344 5.46582C17.4793 6.54006 17.7083 7.69142 17.7083 8.85417V17.7083H8.85417C6.5059 17.7083 4.25381 16.7755 2.59333 15.115C0.932851 13.4545 3.78581e-06 11.2024 3.78581e-06 8.85417C3.78581e-06 6.5059 0.932851 4.2538 2.59333 2.59333C4.25381 0.932847 6.5059 0 8.85417 0ZM8.85417 21.875H17.7083V30.7292C17.7083 32.4804 17.1891 34.1922 16.2161 35.6483C15.2432 37.1043 13.8604 38.2392 12.2425 38.9094C10.6246 39.5795 8.84435 39.7548 7.12681 39.4132C5.40927 39.0716 3.83161 38.2283 2.59333 36.99C1.35505 35.7517 0.511774 34.1741 0.170134 32.4565C-0.171506 30.739 0.00383637 28.9587 0.673987 27.3408C1.34414 25.7229 2.479 24.3401 3.93506 23.3672C5.39112 22.3943 7.10298 21.875 8.85417 21.875ZM30.7292 0C33.0774 0 35.3295 0.932847 36.99 2.59333C38.6505 4.2538 39.5833 6.5059 39.5833 8.85417C39.5833 11.2024 38.6505 13.4545 36.99 15.115C35.3295 16.7755 33.0774 17.7083 30.7292 17.7083H21.875V8.85417C21.875 6.5059 22.8079 4.2538 24.4683 2.59333C26.1288 0.932847 28.3809 0 30.7292 0ZM21.875 21.875H30.7292C32.4804 21.875 34.1922 22.3943 35.6483 23.3672C37.1043 24.3401 38.2392 25.7229 38.9094 27.3408C39.5795 28.9587 39.7548 30.739 39.4132 32.4565C39.0716 34.1741 38.2283 35.7517 36.99 36.99C35.7517 38.2283 34.1741 39.0716 32.4565 39.4132C30.739 39.7548 28.9587 39.5795 27.3408 38.9094C25.7229 38.2392 24.3401 37.1043 23.3672 35.6483C22.3943 34.1922 21.875 32.4804 21.875 30.7292V21.875Z"
                             fill="#F0C753" />
                     </svg>
-                    <p>Fonctionnalités essentielles</p>
+                    <p class="blanc">Fonctionnalités essentielles</p>
                 </div>
                 <div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41" fill="none">
@@ -68,7 +68,7 @@ $title = "Accueil | BeeLink";
                             d="M4.5098 0C3.31373 0 2.16664 0.475138 1.32089 1.32089C0.475138 2.16664 0 3.31373 0 4.5098V15.7843H40.5882V4.5098C40.5882 3.31373 40.1131 2.16664 39.2673 1.32089C38.4216 0.475138 37.2745 0 36.0784 0H4.5098ZM0 24.8039V20.2941H40.5882V24.8039C40.5882 26 40.1131 27.1471 39.2673 27.9928C38.4216 28.8386 37.2745 29.3137 36.0784 29.3137H22.549V36.0784H27.0588C27.6569 36.0784 28.2304 36.316 28.6533 36.7389C29.0762 37.1618 29.3137 37.7353 29.3137 38.3333C29.3137 38.9314 29.0762 39.5049 28.6533 39.9278C28.2304 40.3507 27.6569 40.5882 27.0588 40.5882H13.5294C12.9314 40.5882 12.3578 40.3507 11.935 39.9278C11.5121 39.5049 11.2745 38.9314 11.2745 38.3333C11.2745 37.7353 11.5121 37.1618 11.935 36.7389C12.3578 36.316 12.9314 36.0784 13.5294 36.0784H18.0392V29.3137H4.5098C3.31373 29.3137 2.16664 28.8386 1.32089 27.9928C0.475138 27.1471 0 26 0 24.8039Z"
                             fill="#F0C753" />
                     </svg>
-                    <p>Interface penser pour les apiculteurs</p>
+                    <p class="blanc">Interface penser pour les apiculteurs</p>
                 </div>
                 <div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="35" height="33" viewBox="0 0 35 33" fill="none">
@@ -76,7 +76,7 @@ $title = "Accueil | BeeLink";
                             d="M24.0673 20.9031L23.1952 21.7714C23.1952 21.7714 21.1195 23.8337 15.4557 18.2025C9.79197 12.5714 11.8677 10.509 11.8677 10.509L12.4159 9.96088C13.771 8.61538 13.8994 6.45338 12.7168 4.87404L10.3018 1.64829C8.83747 -0.306706 6.01039 -0.565456 4.33331 1.10204L1.32414 4.09204C0.494224 4.92004 -0.0616093 5.98954 0.005474 7.17788C0.177974 10.2196 1.55414 16.7612 9.22847 24.3934C17.3686 32.4855 25.0065 32.8075 28.1287 32.5162C29.1177 32.4242 29.9764 31.922 30.6683 31.232L33.39 28.5257C35.23 26.6991 34.7125 23.5654 32.3588 22.287L28.698 20.2955C27.1531 19.458 25.2748 19.7033 24.0673 20.9031Z"
                             fill="#F0C753" />
                     </svg>
-                    <p>Assistance 24h/24h</p>
+                    <p class="blanc">Assistance 24h/24h</p>
                 </div>
             </div>
         </section>
@@ -246,7 +246,7 @@ $title = "Accueil | BeeLink";
                         </defs>
                     </svg>
                     <h4>Installez le capteur</h4>
-                    <p>Placez simplement le capteur sous votre ruche. Installation en moins de 5 minutes.</p>
+                    <p class="blanc">Placez simplement le capteur sous votre ruche. Installation en moins de 5 minutes.</p>
                 </div>
                 <div class="MarcheEtape">
                     <svg xmlns="http://www.w3.org/2000/svg" width="181" height="152" viewBox="0 0 181 152" fill="none">
@@ -278,7 +278,7 @@ $title = "Accueil | BeeLink";
                         </defs>
                     </svg>
                     <h4>Connectez-vous à l'app</h4>
-                    <p>Téléchargez l'application BeeLink et connectez vos ruches via WiFi ou réseau mobile.</p>
+                    <p class="blanc">Téléchargez l'application BeeLink et connectez vos ruches via WiFi ou réseau mobile.</p>
                 </div>
                 <div class="MarcheEtape">
                     <svg xmlns="http://www.w3.org/2000/svg" width="181" height="152" viewBox="0 0 181 152" fill="none">
@@ -301,7 +301,7 @@ $title = "Accueil | BeeLink";
                         </defs>
                     </svg>
                     <h4>Recevez vos données</h4>
-                    <p>Consultez vos graphiques, recevez des alertes personnalisées et gérez toutes vos ruches.</p>
+                    <p class="blanc">Consultez vos graphiques, recevez des alertes personnalisées et gérez toutes vos ruches.</p>
                 </div>
             </div>
         </section>
@@ -321,15 +321,15 @@ $title = "Accueil | BeeLink";
                 <div class="BeelinkStat">
                     <div class="BeelinkStats">
                         <p><span class="counter" data-target="400" data-prefix="+">0</span></p>
-                        <p>Ruches surveillées</p>
+                        <p class="blanc">Ruches surveillées</p>
                     </div>
                     <div class="BeelinkStats">
                         <p><span class="static-value">24/7</span></p>
-                        <p>Surveillance continue</p>
+                        <p class="blanc">Surveillance continue</p>
                     </div>
                     <div class="BeelinkStats">
                         <p><span class="counter" data-target="98" data-suffix="%">0</span></p>
-                        <p>Satisfaction utilisateurs</p>
+                        <p class="blanc">Satisfaction utilisateurs</p>
                     </div>
                 </div>
                 <p class="BeelinkService">Service 100% gratuit • Places limitées pour la phase de test</p>

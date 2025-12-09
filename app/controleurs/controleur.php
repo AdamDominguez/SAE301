@@ -89,6 +89,29 @@ function connexionadmin()
     require __DIR__ . "/../vues/vueConnexionAdmin.php";
 }
 
+function quit()
+{
+    session_destroy();
+    setcookie(session_name(), '', time() - 1, "/");
+    accueil();
+}
+
+function login($nom, $mdp)
+{
+    if ($mdp == ACCES_MDP && $mdp == ACCES_MDP) {
+        $_SESSION["acces"] = $nom;
+        // accueil();
+
+        if (isset($_COOKIE["page"])) {
+            $action = $_COOKIE["page"];
+        } else
+            $action = $_COOKIE["page"];
+
+        header("Location: index.php" . $action);
+    } else
+        accueil();
+}
+
 // Affichage de la page d'erreur (utilisation de __DIR__ . "/..." pour forcer le lien)
 function erreur($message)
 {
