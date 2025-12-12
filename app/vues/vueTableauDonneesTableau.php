@@ -1,0 +1,68 @@
+<?php
+$title = "Tableau de bord | BeeLink";
+?>
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title><?= $title ?></title>
+    <link href="./public/css/main.css" rel="stylesheet">
+    <link href="./public/css/tableau.css" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="./public/img/favicons/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./public/img/favicons/favicon-16.png">
+</head>
+
+<body>
+    <?php require "header.php"; ?>
+    <main>
+        <nav class="FonctionNav">
+            <div class="principal">
+                <h3>PRINCIPAL</h3>
+                <div class="accueil element-menu"><a href="index.php?action=tableauAccueil">Accueil</a></div>
+                <div class="donnees element-menu actif"><a href="index.php?action=tableauDonnees">Données</a></div>
+                <div class="alertes element-menu"><a href="index.php?action=tableauAlertes">Alertes</a></div>
+                <div class="campagne element-menu"><a href="index.php?action=tableauCampagne">Ma Campagne</a></div>
+            </div>
+            <div class="gestion">
+                <h3>GESTION</h3>
+                <div class="contacts element-menu"><a href="index.php?action=tableauContacts">Contacts</a></div>
+                <div class="parametres element-menu"><a href="index.php?action=tableauParametres">Paramètres</a></div>
+                <div class="profil element-menu"><a href="index.php?action=tableauProfil">Profil</a></div>
+            </div>
+        </nav>
+        <section class="contenu-tableau">
+
+            <div class="entete-page-donnees">
+                <div class="titres">
+                    <h1 class="titre-principal">Données et Valeurs</h1>
+                    <p class="sous-titre">Surveillance complète et analyse en temps réel de vos ruches.</p>
+                </div>
+                <div class="actions-globales">
+                    <select class="select-ruche">
+                        <option>Ruche 001</option>
+                        <option>Ruche 002</option>
+                        <option>Ruche 003</option>
+                    </select>
+                    <button class="btn-export">
+                        Exporter
+                    </button>
+                </div>
+            </div>
+
+            <nav class="nav-onglets">
+                <a href="index.php?action=tableauDonnees" class="onglet">Aperçu</a>
+                <a href="index.php?action=tableauDonneesGraphiques" class="onglet">Graphiques</a>
+                <a href="index.php?action=tableauDonneesTableau" class="onglet actif">Tableau</a>
+            </nav>
+
+            <div class="grille-widgets-donnees">
+
+            </div>
+        </section>
+    </main>
+    <?php require "footer.php"; ?>
+</body>
+
+</html>
