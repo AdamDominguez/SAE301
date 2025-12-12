@@ -178,6 +178,11 @@ footer a {
     text-decoration: none;
     font-size: 16px;
     color: var(--noir);
+    transition: text-decoration 0.3s ease;
+}
+
+footer a:hover { 
+    text-decoration: underline;
 }
 
 .Footer1 {
@@ -223,6 +228,7 @@ footer a {
     padding: 5px 15px;
     width: fit-content;
     transition: all 0.3s ease-in-out; 
+    text-decoration: none;
 }
 
 .Footer1DBouton:hover {
@@ -230,6 +236,7 @@ footer a {
 }
 
 .Footer1DBouton:hover a {
+    text-decoration: none;
     color: var(--jaune);
 }
 

@@ -359,11 +359,11 @@ h2 span {
     align-items: center;
     flex-direction: column;
     width: 95vw; 
-    max-width: 1200px; 
+    max-width: 1400px; 
     border-radius: 68px;
     border: var(--jaune) solid 5px;
     margin: auto;
-    height: 550px; 
+    height: 450px; 
     background-image: url(../img/TabBack.jpg);
     background-size: cover;
     background-position: center;
