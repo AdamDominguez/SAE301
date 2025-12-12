@@ -49,7 +49,7 @@ $title = "Tableau de bord | BeeLink";
                         <option>Toutes les données</option>
                     </select>
                     <button class="btn-export">
-                        <span class="icone-action">⬇️</span> Exporter
+                        Exporter
                     </button>
                 </div>
             </div>
@@ -65,7 +65,7 @@ $title = "Tableau de bord | BeeLink";
                 <div class="widget-indicateur">
                     <div class="entete-indicateur">
                         <span class="icone-indicateur">🌡️</span>
-                        <span class="etiquette-etat etiquette-optimal">optimal</span>
+                        <span class="etiquette-etat etiquette-optimal">OPTIMAL</span>
                     </div>
                     <p class="etiquette-indicateur">Température</p>
                     <p class="valeur-indicateur">21.0°C</p>
@@ -84,7 +84,7 @@ $title = "Tableau de bord | BeeLink";
                 <div class="widget-indicateur">
                     <div class="entete-indicateur">
                         <span class="icone-indicateur">💧</span>
-                        <span class="etiquette-etat etiquette-optimal">optimal</span>
+                        <span class="etiquette-etat etiquette-elevee">élevée</span>
                     </div>
                     <p class="etiquette-indicateur">Humidité</p>
                     <p class="valeur-indicateur">82%</p>
@@ -103,7 +103,7 @@ $title = "Tableau de bord | BeeLink";
                 <div class="widget-indicateur">
                     <div class="entete-indicateur">
                         <span class="icone-indicateur">⚖️</span>
-                        <span class="etiquette-etat etiquette-bon">bon</span>
+                        <span class="etiquette-etat etiquette-optimal">OPTIMAL</span>
                     </div>
                     <p class="etiquette-indicateur">Poids total</p>
                     <p class="valeur-indicateur">15.6 kg</p>
@@ -122,7 +122,7 @@ $title = "Tableau de bord | BeeLink";
                 <div class="widget-indicateur">
                     <div class="entete-indicateur">
                         <span class="icone-indicateur">〰️</span>
-                        <span class="etiquette-etat etiquette-normal">normal</span>
+                        <span class="etiquette-etat etiquette-normal">NORMAL</span>
                     </div>
                     <p class="etiquette-indicateur">Fréquence</p>
                     <p class="valeur-indicateur">233 Hz</p>
