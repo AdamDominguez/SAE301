@@ -10,7 +10,7 @@ body {
     min-height: 89lvh;
 }
 
-form {
+.InscriptionForm {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -18,18 +18,25 @@ form {
     border-radius: 15px;
     padding: 40px;
     max-width: 100%;
-    width: 30vw;
+    width: 50vw;
     height: auto;
     max-height: none;
     box-shadow: 0 0 8px var(--noir);
 }
 
-form h3 {
+.form-group1,
+.form-group2,
+.form-group3 {
+    display: flex;
+    gap: 3rem;
+}
+
+.InscriptionForm h3 {
     margin: 0;
 }
 
-form input,
-textarea {
+.InscriptionForm input,
+.InscriptionForm textarea {
     background: var(--noir);
     border: var(--jaune) 1px solid;
     border-radius: 5px;
@@ -41,24 +48,24 @@ textarea {
     height: 40px;
 }
 
-form button {
+.InscriptionForm button {
     background: var(--jaune);
     border-radius: 5px;
     border: none;
-    padding: 10px;
+    padding: 1rem;
     margin: 25px 0 0 0;
 }
 
-form input {
+.InscriptionForm input {
     padding: 10px;
 }
 
-form label,
-h3 {
+.InscriptionForm label,
+.InscriptionForm h3 {
     color: var(--blanc);
 }
 
-fieldset {
+.InscriptionForm fieldset {
     border: none;
     padding: 0;
     display: block;
