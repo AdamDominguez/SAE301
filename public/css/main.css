@@ -178,6 +178,11 @@ footer a {
     text-decoration: none;
     font-size: 16px;
     color: var(--noir);
+    transition: text-decoration 0.3s ease;
+}
+
+footer a:hover { 
+    text-decoration: underline;
 }
 
 .Footer1 {
@@ -217,11 +222,22 @@ footer a {
     display: flex;
     align-items: center;
     gap: 9px;
-    border-radius: 15px;
+    border-radius: 26px;
     border: var(--noir) solid;
     margin-top: 15px;
     padding: 5px 15px;
     width: fit-content;
+    transition: all 0.3s ease-in-out; 
+    text-decoration: none;
+}
+
+.Footer1DBouton:hover {
+    background-color: var(--noir);
+}
+
+.Footer1DBouton:hover a {
+    text-decoration: none;
+    color: var(--jaune);
 }
 
 .Footer3 {
@@ -272,11 +288,27 @@ header a {
     display: flex;
     align-items: center;
     gap: 9px;
-    border-radius: 15px;
-    border: var(--noir) solid;
+    border-radius: 22px;
+    border: var(--noir) solid 2px;
     padding: 10px;
     margin: 0 40px 0 0;
     cursor: pointer;
+    color: var(--noir);
+
+    transition: all 0.3s ease-in-out; 
+}
+
+.Connecter svg {
+    transition: all 0.3s ease-in-out;
+}
+
+.Connecter:hover {
+    background-color: var(--noir);
+    color: var(--jaune);
+}
+
+.Connecter:hover svg {
+    stroke: var(--jaune);
 }
 
 .ConnecterMenu {

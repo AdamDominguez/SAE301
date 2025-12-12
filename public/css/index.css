@@ -41,6 +41,7 @@ a {
     border-radius: 100%;
     background: var(--jaune);
     z-index: 10;
+    cursor: pointer;
 }
 
 .Arrow div {
@@ -56,6 +57,16 @@ a {
     max-width: 100%;
     width: 70px;
     height: 70px;
+    transition: transform 0.4s ease;
+}
+
+.Arrow div svg path {
+    transition: none; 
+}
+
+.Arrow:hover div {
+    transform: translate(-50%, -50%) rotate(360deg);
+    background: #333333;
 }
 
 .Home {
@@ -92,21 +103,52 @@ a {
     gap: 12px;
     font-size: 16px;
     color: var(--blanc);
-    border-radius: 15px;
+    border-radius: 22px;
     background: var(--noir);
     padding: 15px;
     margin: 0 40px 0 0;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Courbe de transition plus stylée */
+    cursor: pointer;
+}
+
+.Decouvrir svg {
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.Decouvrir svg path {
+    transition: transform 0.3s ease-out;
+}
+
+.Decouvrir:hover {
+    color: var(--jaune);
+}
+
+.Decouvrir:hover svg {
+    transform: translateX(10px);
+}
+
+.Decouvrir:hover svg path { 
+    stroke: var(--jaune);
 }
 
 .Savoir {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 9px;
-    border-radius: 15px;
-    border: var(--noir) solid;
+    border-radius: 22px;
+    border: var(--noir) solid 2px;
     padding: 15px;
     margin: 0 40px 0 0;
     color: var(--noir);
+    background-color: transparent; 
+    transition: background-color 0.2s ease, color 0.2s ease;
+    cursor: pointer;
+}
+
+.Savoir:hover {
+    background-color: var(--noir); 
+    color: var(--blanc);
 }
 
 .HomeHero {
@@ -307,8 +349,8 @@ h2 span {
     flex-direction: column;
     align-items: center;
     background-color: var(--noir);
-    height: 89lvh;
-    padding: 100px;
+    height: 100vh;
+    padding: 0;
 }
 
 .BeelinkTab {
@@ -316,25 +358,33 @@ h2 span {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 95%;
+    width: 95vw; 
+    max-width: 1400px; 
     border-radius: 68px;
     border: var(--jaune) solid 5px;
-    margin: 15lvh 5vw 15lvh 5vw;
-    width: 80vw;
-    max-width: 100%;
-    height: 625px;
+    margin: auto;
+    height: 450px; 
     background-image: url(../img/TabBack.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    padding: 40px 20px; 
+}
+
+.BeelinkTab h2 {
+    color: var(--blanc);
+    font-size: 48px;
+    margin-bottom: 5px;
 }
 
 .BeelinkTab h3,
-.BeelinkDesc,
-.BeelinkStats {
+.BeelinkDesc {
     color: var(--blanc);
+    font-size: 24px;
+    font-weight: normal; 
+    margin-top: 5px;
+    margin-bottom: 40px;
 }
-
 
 .BeelinkTab a {
     text-decoration: none;
@@ -345,14 +395,46 @@ h2 span {
     justify-content: center;
     align-items: center;
     background: var(--jaune);
-    gap: 20px;
-    padding: 10px 40px 10px 40px;
-    border-radius: 25px;
+    gap: 15px;
+    padding: 15px 50px;
+    border-radius: 48px;
+    cursor: pointer;
+    margin-bottom: 50px;
+    border: 2px solid transparent; 
+    transition: all 0.3s ease-in-out; 
 }
 
 .BeelinkBouton p {
     color: var(--noir);
     font-weight: bold;
+    font-size: 18px;
+    margin: 0;
+    transition: color 0.3s ease-in-out;
+}
+
+.BeelinkBouton svg path {
+    transition: all 0.3s ease-in-out;
+}
+
+.BeelinkBouton:hover {
+    background: var(--noir); 
+    border: 2px solid var(--jaune);
+}
+
+.BeelinkBouton:hover p {
+    color: var(--jaune);
+}
+
+.BeelinkBouton svg {
+    transition: transform 0.3s ease-in-out; 
+}
+
+.BeelinkBouton:hover svg {
+    transform: translateX(5px);
+}
+
+.BeelinkBouton:hover svg path {
+    stroke: var(--jaune);
 }
 
 .BeelinkStat {
@@ -360,8 +442,8 @@ h2 span {
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    gap: 10vw;
-    width: 10vw;
+    gap: 100px; 
+    margin-bottom: 30px;
 }
 
 .BeelinkStats {
@@ -369,23 +451,26 @@ h2 span {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 300px;
+    width: auto; 
 }
 
 .BeelinkStats span {
     color: var(--jaune);
     font-weight: bold;
+    font-size: 42px;
+    margin-bottom: 0;
 }
 
 .BeelinkStats p {
     text-align: center;
-}
-
-.BeelinkTab h3 {
-    font-weight: bolder;
+    font-size: 18px; 
+    margin-top: 5px;
+    line-height: 1.2;
+    white-space: nowrap; 
 }
 
 .BeelinkService {
     color: #8F8F8F;
-    font-size: 20px;
+    font-size: 16px;
+    margin-top: 10px;
 }

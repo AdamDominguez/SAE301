@@ -18,38 +18,45 @@ $title = "Inscription | BeeLink";
     <?php require "header.php"; ?>
     <main>
         <section class="Inscription">
-            <form method="POST">
+            <form class="InscriptionForm" method="POST">
                 <h3>Remplissez le formulaire d'inscription</h3>
                 <fieldset>
                     <div class="form-group">
-                        <div class="form-row">
-                            <label for="email">Email <span>*</span></label>
-                            <input type="email" id="email" name="email" placeholder="nom@example.com" required>
+                        <div class="form-group1">
+                            <div class="form-row">
+                                <label for="email">Email <span>*</span></label>
+                                <input type="email" id="email" name="email" placeholder="nom@example.com" required>
+                            </div>
+
+                            <div class="form-row">
+                                <label for="telephone">Numéro de téléphone</label>
+                                <input type="tel" id="telephone" name="numero" placeholder="01 23 45 67 89">
+                            </div>
                         </div>
 
-                        <div class="form-row">
-                            <label for="telephone">Numéro de téléphone</label>
-                            <input type="tel" id="telephone" name="numero" placeholder="01 23 45 67 89">
+                        <div class="form-group2">
+                            <div class="form-row">
+                                <label for="dob">Date de naissance <span>*</span></label>
+                                <input type="text" id="dob" name="dob" placeholder="02/12/2005" required>
+                            </div>
+
+                            <div class="form-row">
+                                <label for="mdp">Mot de passe <span>*</span></label>
+                                <input type="text" id="mdp" name="mdp" placeholder="MDP123$" required>
+                            </div>
+
                         </div>
 
-                        <div class="form-row">
-                            <label for="dob">Date de naissance <span>*</span></label>
-                            <input type="text" id="dob" name="dob" placeholder="02/12/2005" required>
-                        </div>
+                        <div class="form-group3">
+                            <div class="form-row">
+                                <label for="nom">Nom <span>*</span></label>
+                                <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+                            </div>
 
-                        <div class="form-row">
-                            <label for="mdp">Mot de passe <span>*</span></label>
-                            <input type="text" id="mdp" name="mdp" placeholder="MDP123$" required>
-                        </div>
-
-                        <div class="form-row">
-                            <label for="nom">Nom <span>*</span></label>
-                            <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
-                        </div>
-
-                        <div class="form-row">
-                            <label for="prenom">Prénom <span>*</span></label>
-                            <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
+                            <div class="form-row">
+                                <label for="prenom">Prénom <span>*</span></label>
+                                <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
+                            </div>
                         </div>
                     </div>
                 </fieldset>
