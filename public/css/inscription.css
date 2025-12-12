@@ -18,10 +18,17 @@ body {
     border-radius: 15px;
     padding: 40px;
     max-width: 100%;
-    width: 30vw;
+    width: 50vw;
     height: auto;
     max-height: none;
     box-shadow: 0 0 8px var(--noir);
+}
+
+.form-group1,
+.form-group2,
+.form-group3 {
+    display: flex;
+    gap: 3rem;
 }
 
 .InscriptionForm h3 {
