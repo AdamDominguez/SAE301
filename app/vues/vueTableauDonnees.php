@@ -12,6 +12,9 @@ $title = "Tableau de bord | BeeLink";
     <link href="./public/css/tableau.css" rel="stylesheet">
     <link rel="icon" type="image/png" sizes="32x32" href="./public/img/favicons/favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./public/img/favicons/favicon-16.png">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin="" />
 </head>
 
 <body>
@@ -45,9 +48,6 @@ $title = "Tableau de bord | BeeLink";
                         <option>Ruche 002</option>
                         <option>Ruche 003</option>
                     </select>
-                    <select class="select-donnees">
-                        <option>Toutes les données</option>
-                    </select>
                     <button class="btn-export">
                         Exporter
                     </button>
@@ -55,9 +55,9 @@ $title = "Tableau de bord | BeeLink";
             </div>
 
             <nav class="nav-onglets">
-                <a href="#" class="onglet actif">Aperçu</a>
-                <a href="#" class="onglet">Graphiques</a>
-                <a href="#" class="onglet">Tableau</a>
+                <a href="index.php?action=tableauDonnees" class="onglet actif">Aperçu</a>
+                <a href="index.php?action=tableauDonneesGraphiques" class="onglet">Graphiques</a>
+                <a href="index.php?action=tableauDonneesTableau" class="onglet">Tableau</a>
             </nav>
 
             <div class="grille-widgets-donnees">
@@ -158,10 +158,16 @@ $title = "Tableau de bord | BeeLink";
                     </div>
                 </div>
 
+                <div id="map"></div>
+
             </div>
         </section>
     </main>
     <?php require "footer.php"; ?>
 </body>
+<script src="./public/js/tableau.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
 
 </html>

@@ -15,6 +15,10 @@ try {
                 tableauValeurs(); // Affichage de la page "Valeurs" du tableau de bord
             else if ($_GET["action"] == "tableauDonnees")
                 tableauDonnees(); // Affichage de la page "Données" du tableau de bord
+            else if ($_GET["action"] == "tableauDonneesGraphiques")
+                tableauDonneesGraphiques(); // Affichage de la page "Graphiques" de la page"Données" du tableau de bord
+            else if ($_GET["action"] == "tableauDonneesTableau")
+                tableauDonneesTableau(); // Affichage de la page "Tableau" de la page"Données" du tableau de bord
             else if ($_GET["action"] == "tableauAlertes")
                 tableauAlertes(); // Affichage de la page "Alertes" du tableau de bord
             else if ($_GET["action"] == "tableauCampagne")

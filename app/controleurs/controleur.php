@@ -33,6 +33,18 @@ function tableauDonnees()
     require __DIR__ . "/../vues/vueTableauDonnees.php";
 }
 
+function tableauDonneesGraphiques()
+{
+    setcookie('page', '?action=tableauDonneesGraphiques', time() + 3600);
+    require __DIR__ . "/../vues/vueTableauDonneesGraphiques.php";
+}
+
+function tableauDonneesTableau()
+{
+    setcookie('page', '?action=tableauDonneesTableau', time() + 3600);
+    require __DIR__ . "/../vues/vueTableauDonneesTableau.php";
+}
+
 function tableauAlertes()
 {
     setcookie('page', '?action=tableauAlertes', time() + 3600);
