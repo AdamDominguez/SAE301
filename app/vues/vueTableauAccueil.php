@@ -85,12 +85,12 @@ $title = "Tableau de bord | BeeLink";
                     <h3 class="titre-widget">Alertes récentes <a href="#">Tout voir</a></h3>
                     <div class="liste-alertes">
                         <div class="alerte">
-                            <div class="icone-alerte icone-avertissement">⚠️</div>
+                            <div class="icone-alerte">⚠️</div>
                             <p>Température élevée dans Ruche #3</p>
                             <small>Il y a 2h</small>
                         </div>
                         <div class="alerte">
-                            <div class="icone-alerte icone-information">ℹ️</div>
+                            <div class="icone-alerte">ℹ️</div>
                             <p>Production de miel en hausse - Ruche #1</p>
                             <small>Il y a 5h</small>
                         </div>
