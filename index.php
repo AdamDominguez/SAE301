@@ -33,6 +33,8 @@ try {
                 connexionadmin(); // Affichage du formulaire de connexion administrateur
             else if ($_GET["action"] == "accueil")
                 accueil();
+            else if ($_GET["action"] == "quit")
+                quit();
         } else
             accueil();
     } else {
