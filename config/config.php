@@ -2,7 +2,7 @@
 define("DBHOST", "localhost");
 define("DBNAME", "beelink");
 define("DBUSER", "root");
-define("DBPWD", "");
+define("DBPWD", "root");
 
 // login
 define("ACCES_NOM", "test");
