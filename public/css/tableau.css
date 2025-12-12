@@ -165,13 +165,13 @@ main {
     {
     color: var(--couleur-texte-clair);
     margin: 0;
-    font-size: 0.9em;   
+    font-size: 0.9em;
 }
 
-.valeur-indicateur 
+.valeur-indicateur
 
 /* Valeur du widget (température, poids etc) */
-{
+    {
     font-size: 2.2em;
     font-weight: bold;
     margin: 5px 0 0 0;
@@ -249,7 +249,7 @@ main {
 }
 
 .liste-actions a:last-child {
-    border-bottom: none; 
+    border-bottom: none;
 }
 
 .icone-action {
@@ -518,4 +518,21 @@ main {
 
 .couleur-alertes {
     background-color: var(--couleur-bleu-alertes);
+}
+
+/* tableau profil */
+.container-profil {
+    display: flex;
+    margin: 20px auto;
+}
+
+.recap-profil{
+    background-color: var(--couleur-fond-widget);
+    padding: 20px;
+}
+
+.photo-profil{
+    padding: 50px;
+    background-color: var(--couleur-texte-clair);
+    border-radius: 100%;
 }

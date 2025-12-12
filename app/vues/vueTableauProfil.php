@@ -32,6 +32,23 @@ $title = "Tableau de bord | BeeLink";
                 <div class="profil element-menu actif"><a href="index.php?action=tableauProfil">Profil</a></div>
             </div>
         </nav>
+
+        <section class="contenu-tableau">
+
+            <div class="entete-page-profil">
+                <div class="titres">
+                    <h1 class="titre-principal">Mon profil</h1>
+                    <p class="sous-titre">Gérez vos informations personnelles.</p>
+                </div>
+
+                <div class="container-profil">
+                    <div class="recap-profil">
+                        <div class="photo-profil"></div>
+                    </div>
+                    <div class="info-profil"></div>
+                </div>
+            </div>
+        </section>
     </main>
     <?php require "footer.php"; ?>
 </body>
