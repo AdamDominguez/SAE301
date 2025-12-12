@@ -22,7 +22,7 @@ body {
     width: 45vw;
 }
 
-form {
+.Droite form {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -34,12 +34,12 @@ form {
     box-shadow: 0 0 8px var(--noir);
 }
 
-form h3 {
+.Droite form h3 {
     margin: 0;
 }
 
-form input,
-textarea {
+.Droite form input,
+.Droite textarea {
     background: var(--noir);
     border: var(--jaune) 1px solid;
     border-radius: 5px;
@@ -50,7 +50,7 @@ textarea {
     color: var(--blanc);
 }
 
-form button {
+.Droite form button {
     background: var(--jaune);
     border-radius: 5px;
     border: none;
@@ -58,16 +58,16 @@ form button {
     margin: 25px 0 0 0;
 }
 
-form input {
+.Droite form input {
     padding: 10px;
 }
 
-form label,
-h3 {
+.Droite label,
+.Droite h3 {
     color: var(--blanc);
 }
 
-fieldset {
+.Droite fieldset {
     border: none;
     padding: 0;
     display: block;
