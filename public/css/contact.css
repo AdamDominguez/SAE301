@@ -1,5 +1,6 @@
 body {
-    background: var(--jaune);
+    background: var(--noir);
+    color: var(--blanc);
 }
 
 .Contact {
@@ -26,7 +27,7 @@ body {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background: var(--noir);
+    background: var(--blanc);
     border-radius: 15px;
     padding: 40px;
     max-width: 100%;
@@ -40,14 +41,14 @@ body {
 
 .Droite form input,
 .Droite textarea {
-    background: var(--noir);
+    background: var(--blanc);
     border: var(--jaune) 1px solid;
     border-radius: 5px;
     width: 100%;
     box-sizing: border-box;
     padding: 15px;
     margin: 0;
-    color: var(--blanc);
+    color: var(--noir);
 }
 
 .Droite form button {
@@ -94,7 +95,7 @@ body {
 
 .gauche-trois,
 .gauche-deux {
-    border-top: var(--noir) 1px solid;
+    border-top: var(--blanc) 1px solid;
 }
 
 span {

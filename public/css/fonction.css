@@ -1,5 +1,5 @@
 body {
-    background: #333333;
+    background: var(--noir);
     overflow-x: hidden;
 }
 
@@ -18,21 +18,21 @@ body {
 }
 
 .bloc {
-    background-color: #333333;
+    background-color: var(--noir);
     border-radius: 24px;
     padding: 40px;
 }
 
 .BlocJaune {
-    background-color: #F0C753;
+    background-color: var(--jaune);
 }
 
 .blanc {
-    color: white;
+    color: var(--blanc);
 }
 
 .jaune {
-    color: #F0C753;
+    color: var(--jaune);
     font-weight: bold;
 }
 
@@ -41,7 +41,7 @@ body {
 }
 
 .jaune2 {
-    color: #F0C753;
+    color: var(--jaune);
 }
 
 .banniere {
@@ -145,8 +145,8 @@ body {
 }
 
 .carte {
-    background-color: #ffffff;
-    border: 12px solid #F0C753;
+    background-color: var(--blanc);
+    border: 10px solid var(--jaune);
     border-radius: 24px;
     padding: 28px;
     max-width: 100%;
