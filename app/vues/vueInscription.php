@@ -18,7 +18,7 @@ $title = "Inscription | BeeLink";
     <?php require "header.php"; ?>
     <main>
         <section class="Inscription">
-            <form method="POST">
+            <form class="InscriptionForm" method="POST">
                 <h3>Remplissez le formulaire d'inscription</h3>
                 <fieldset>
                     <div class="form-group">
