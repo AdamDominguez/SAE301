@@ -113,32 +113,32 @@ body {
 }
 
 body::-webkit-scrollbar {
-    display: none; 
+    display: none;
 }
 
 h1 {
     font-size: 52px;
-    color:  var(--noir);
+    color: var(--noir);
 }
 
 h2 {
     font-size: 36px;
-    color:  var(--noir);
+    color: var(--noir);
 }
 
 h3 {
     font-size: 24px;
-    color:  var(--noir);
+    color: var(--noir);
 }
 
 h4 {
     font-size: 18px;
-    color:  var(--noir);
+    color: var(--noir);
 }
 
 p {
     font-size: 16px;
-    color:  var(--noir);
+    color: var(--noir);
 }
 
 .blanc {
@@ -222,7 +222,7 @@ footer a {
     margin-top: 15px;
     padding: 5px 15px;
     width: fit-content;
-    transition: all 0.3s ease-in-out; 
+    transition: all 0.3s ease-in-out;
 }
 
 .Footer1DBouton:hover {
@@ -287,8 +287,8 @@ header a {
     margin: 0 40px 0 0;
     cursor: pointer;
     color: var(--noir);
-
-    transition: all 0.3s ease-in-out; 
+    position: relative;
+    transition: all 0.3s ease-in-out;
 }
 
 .Connecter svg {
@@ -322,6 +322,75 @@ header a {
     backdrop-filter: blur(12.9px);
     -webkit-backdrop-filter: blur(12.9px);
     border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.UserMenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--noir);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.2s;
+    transition-delay: 0.2s;
+    padding: 15px 30px;
+    border-radius: 20px;
+    text-wrap: nowrap;
+}
+
+.UserMenuLiens {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.UserMenuLienA,
+.UserMenuLienB {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    border-radius: 22px;
+    padding: 10px;
+    margin: 0 40px 0 0;
+    cursor: pointer;
+}
+
+.UserMenuLienA {
+    background: var(--jaune);
+    margin-left: auto;
+}
+
+.UserMenuLienB {
+    border: var(--jaune) solid 2px;
+    margin-right: auto;
+}
+
+.UserMenuPP {
+    width: 130px;
+    height: 130px;
+    background-color: var(--jaune);
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+.UserMenuPP img {
+    margin: auto
+}
+
+.UserMenu p,
+.UserMenu a {
+    color: var(--blanc);
+}
+
+.Connecter:hover>.UserMenu {
+    transform: translateY(0);
+    opacity: 1;
+    transition-delay: 0s;
+    pointer-events: initial;
 }
 
 .ConnecterMenu-active {

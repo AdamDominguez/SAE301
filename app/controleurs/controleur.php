@@ -94,7 +94,7 @@ function quit()
 {
     session_destroy();
     setcookie(session_name(), '', time() - 1, "/");
-    accueil();
+    header("Location: index.php?action=accueil");
 }
 
 // ici on utilise password_verify pour justement vérifier qu'on ai bien un password 'encrypté' ou hash!
@@ -105,6 +105,7 @@ function login($email, $mdp)
 
     if ($userData && password_verify($mdp, $userData['mdp'])) {
         $_SESSION['acces'] = $userData['prenom'];
+        $_SESSION['email'] = $userData['email'];
 
         if (isset($_COOKIE["page"])) {
             $action = $_COOKIE["page"];
