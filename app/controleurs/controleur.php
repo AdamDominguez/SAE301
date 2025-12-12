@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . "/../modeles/contact.php";
 require_once __DIR__ . "/../modeles/inscription.php";
+require_once __DIR__ . "/../modeles/connexion.php";
 
 // Affichage de la page d'accueil
 function accueil()
@@ -96,11 +97,14 @@ function quit()
     accueil();
 }
 
-function login($nom, $mdp)
+// ici on utilise password_verify pour justement vérifier qu'on ai bien un password 'encrypté' ou hash!
+function login($email, $mdp)
 {
-    if ($mdp == ACCES_MDP && $mdp == ACCES_MDP) {
-        $_SESSION["acces"] = $nom;
-        // accueil();
+    $userDB = new Connexion();
+    $userData = $userDB->getUserContent($email);
+
+    if ($userData && password_verify($mdp, $userData['mdp'])) {
+        $_SESSION['acces'] = $userData['prenom'];
 
         if (isset($_COOKIE["page"])) {
             $action = $_COOKIE["page"];

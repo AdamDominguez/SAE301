@@ -3,7 +3,7 @@ require_once "database.php";
 class Inscription extends Database
 {
     /*******************************************************
-    Permet l'inscription d'un user avec un insert en bdd en utilisant une requête préparée
+    Permet l'inscription d'un user avec un insert en bdd en utilisant une requête préparée, on utilise password_hash pour encrypter le mdp :D (https://www.php.net/manual/en/function.password-hash.php)
     Entrée : $nom, $prenom, $email, $numero, $message
     Retour : $success
     *******************************************************/
@@ -19,6 +19,7 @@ class Inscription extends Database
 
         if ($nom && $prenom && filter_var($email, FILTER_VALIDATE_EMAIL) && $dob && $mdp) {
 
+            $mdpHashed = password_hash($mdp, PASSWORD_DEFAULT);
             $req = 'INSERT INTO membres (nom, prenom, email, numero, dob, mdp, date_envoi)
                 VALUES (:nom, :prenom, :email, :numero, :dob, :mdp, NOW())';
 
@@ -28,7 +29,7 @@ class Inscription extends Database
                 'email' => $email,
                 'numero' => $numero ?: null,
                 'dob' => $dob,
-                'mdp' => $mdp
+                'mdp' => $mdpHashed
             ];
 
             $success = $this->execReqPrep($req, $data);
