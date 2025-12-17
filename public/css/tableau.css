@@ -624,14 +624,42 @@ main {
     flex-direction: column;
     align-items: center;
     padding: 16px;
-    gap: 10px;
+    gap: 24px;
     border-bottom: 1px solid var(--couleur-texte-clair);
 }
 
 .photo-profil {
+    position: relative;
     padding: 5rem;
     border-radius: 100%;
     background-color: var(--couleur-texte-clair);
+}
+
+.upload-photo {
+    position: absolute;
+    padding: 8px;
+    border-radius: 100%;
+    top: 70%;
+    left: 70%;
+    background-color: var(--noir);
+    border: 1px solid var(--couleur-border);
+}
+
+.upload-photo:hover {
+    cursor: pointer;
+    background-color: var(--blanc);
+
+    .lucide.lucide-camera.w-5.h-5 {
+        stroke: var(--noir);
+    }
+}
+
+.utilisateur-profil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    gap: 6px;
 }
 
 .container-profil-contact {
