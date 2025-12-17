@@ -520,19 +520,70 @@ main {
     background-color: var(--couleur-bleu-alertes);
 }
 
-/* tableau profil */
-.container-profil {
+/* Div moyennes page Graphiques de la page Données */
+
+.indicateur-bas {
     display: flex;
-    margin: 20px auto;
+    justify-content: space-between;
+    align-items: center;
+    /* Alignement vertical au centre */
+    border-top: 1px solid var(--couleur-border);
+    padding-top: 10px;
+    margin-top: 20px;
 }
 
-.recap-profil{
-    background-color: var(--couleur-fond-widget);
-    padding: 20px;
+/* Texte de la plage cible (similaire aux anciens min/max) */
+.plage-cible {
+    font-size: 0.9em;
+    color: var(--couleur-texte-clair);
+    /* Texte plus clair */
+    margin: 0;
 }
 
-.photo-profil{
-    padding: 50px;
-    background-color: var(--couleur-texte-clair);
-    border-radius: 100%;
+/* --- Style de l'étiquette de variation (la pastille) --- */
+.etiquette-variation {
+    font-size: 0.8em;
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 4px;
+    /* Un peu moins arrondi que les étiquettes d'état */
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    line-height: 1;
+    /* Assure un bon alignement vertical du texte */
+}
+
+/* Flèche (symbole unicode) */
+.etiquette-variation span {
+    font-size: 1.1em;
+    font-weight: bolder;
+}
+
+/* Classe pour la variation positive (verte) */
+.variation-verte {
+    color: var(--couleur-succes);
+    /* Couleur du texte verte */
+    background-color: rgba(76, 175, 80, 0.15);
+    /* Fond très légèrement vert */
+}
+
+/* Classe pour la variation négative (rouge) */
+.variation-rouge {
+    color: var(--couleur-danger);
+    /* Couleur du texte rouge */
+    background-color: rgba(244, 67, 54, 0.15);
+    /* Fond très légèrement rouge */
+}
+
+/* Map Leaflet */
+
+#map {
+    grid-column: 1 / -1;
+    /* Permet à la carte de prendre toute la largeur de la grille (4 colonnes) */
+    height: 400px;
+    /* Augmenter la hauteur pour la rendre plus visible, 180px était très petit */
+    margin-top: 20px;
+    border-radius: 8px;
+    /* Ajout d'un style cohérent avec les widgets */
 }
