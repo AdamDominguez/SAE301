@@ -87,7 +87,7 @@ $title = "Tableau de bord | BeeLink";
                         <h3>Informations personnelles</h3>
                         <div class="container-info-perso">
                             <div class="flex-element info">
-                                <div class="element-info-perso">
+                                <div class="element-info perso">
                                     <label class="prenom" for="firstname">Prénom</label>
                                     <input type="text" id="firstname" value="Jean">
                                 </div>
@@ -147,7 +147,25 @@ $title = "Tableau de bord | BeeLink";
                     </div>
                 </div>
 
-            </div>
+                <div class="flex-info-ruche">
+                    <div class="widget-indicateur">
+                        <p class="etiquette-indicateur">Ruches actives</p>
+                        <p class="valeur-indicateur">4</p>
+                    </div>
+                    <div class="widget-indicateur">
+                        <p class="etiquette-indicateur">Production totale</p>
+                        <p class="valeur-indicateur">165 kg</p>
+                    </div>
+                    <div class="widget-indicateur">
+                        <p class="etiquette-indicateur">Alertes traitées</p>
+                        <p class="valeur-indicateur">12</p>
+                    </div>
+                    <div class="widget-indicateur">
+                        <p class="etiquette-indicateur">Taux de satisfaction</p>
+                        <p class="valeur-indicateur">98%</p>
+                    </div>
+                </div>
+
             </div>
         </section>
     </main>
