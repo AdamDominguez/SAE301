@@ -587,3 +587,84 @@ main {
     border-radius: 8px;
     /* Ajout d'un style cohérent avec les widgets */
 }
+
+
+
+
+
+
+
+
+
+
+/******* tableauProfil *******/
+.entete-page-profil {
+    margin: 0 auto;
+}
+
+.container-profil {
+    display: flex;
+    margin: 10px;
+    gap: 24px;
+}
+
+.recap-profil {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 24rem;
+    gap: 50px;
+    background-color: var(--couleur-fond-widget);
+    border-radius: 10px;
+}
+
+.container-profil-photo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+    gap: 10px;
+    border-bottom: 1px solid var(--couleur-texte-clair);
+}
+
+.photo-profil {
+    padding: 5rem;
+    border-radius: 100%;
+    background-color: var(--couleur-texte-clair);
+}
+
+.container-profil-contact {
+    color: var(--couleur-texte-clair);
+}
+
+.element-profil {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 10px;
+}
+
+/* .info-profil contient les infos détaillées de l'utilisateur */
+.info-profil {
+    padding: 20px;
+    background-color: var(--couleur-fond-widget);
+    border-radius: 10px;
+    width: 72rem;
+}
+
+h3 {
+    color: white;
+}
+
+.container-info-perso {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 24px;
+    padding: 20px;
+}
+
+.flex-element {
+    display: flex;
+    gap: 16px;
+}
