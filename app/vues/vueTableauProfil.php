@@ -53,7 +53,7 @@ $title = "Tableau de bord | BeeLink";
                                 </button>
                             </div>
                             <div class="utilisateur-profil">
-                                <div class="nom-utilisateur">TEST</div>
+                                <div class="nom-utilisateur"><?= $_SESSION['acces'] ?></div>
                                 <div class="fonction">Apiculteur</div>
                             </div>
 
@@ -98,48 +98,48 @@ $title = "Tableau de bord | BeeLink";
                         <div class="container-info-perso">
                             <div class="flex-element info">
                                 <div class="element-info perso">
-                                    <label class="prenom" for="firstname">Prénom</label>
-                                    <input type="text" id="firstname" value="Jean">
+                                    <label class="prenom" for="firstname">Prénom<span style="color: var(--jaune);">*</span></label>
+                                    <input type="text" id="firstname" name="firstname" value="Jean">
                                 </div>
                                 <div class="element-info perso-2">
-                                    <label class="nom" for="lastname">Nom</label>
-                                    <input type="text" id="lastname" value="Dupont">
+                                    <label class="nom" for="lastname">Nom<span style="color: var(--jaune);">*</span></label>
+                                    <input type="text" id="lastname" name="lastname" value="Dupont">
                                 </div>
                             </div>
 
                             <div class="element-info perso-3">
-                                <label class="email" for="email">Email</label>
-                                <input type="text" id="email" value="test@gmail.com">
+                                <label class="email" for="email">Email<span style="color: var(--jaune);">*</span></label>
+                                <input type="text" id="email" name="email" value="test@gmail.com">
                             </div>
 
                             <div class="element-info perso-4">
                                 <label class="mobile" for="mobile">Mobile</label>
-                                <input type="text" id="mobile" value="06 12 34 56 78">
+                                <input type="text" id="mobile" name="mobile" value="" placeholder="Veuillez rentrer votre numéro de téléphone...">
                             </div>
 
                             <div class="element-info perso-5">
-                                <label class="adresse" for="address">Adresse</label>
-                                <input type="text" id="adresse" value="123 Route de Provence">
+                                <label class="adresse" for="adresse">Adresse<span style="color: var(--jaune);">*</span></label>
+                                <input type="text" id="adresse" name="adresse" value="123 Route de Provence">
                             </div>
 
                             <div class="flex-element info-2">
                                 <div class="element-info perso-6">
-                                    <label class="ville" for="ville">Ville</label>
-                                    <input type="text" id="ville" value="Aix-en-Provence">
+                                    <label class="ville" for="ville">Ville<span style="color: var(--jaune);">*</span></label>
+                                    <input type="text" id="ville" name="ville" value="Aix-en-Provence">
                                 </div>
                                 <div class="element-info perso-7">
-                                    <label class="postal" for="postal">Code postal</label>
-                                    <input type="text" id="postal" value="13100">
+                                    <label class="postal" for="postal">Code postal<span style="color: var(--jaune);">*</span></label>
+                                    <input type="text" id="postal" name="postal" value="13100">
                                 </div>
                                 <div class="element-info perso-8">
-                                    <label class="pays" for="country">France</label>
-                                    <input type="text" id="country" value="France">
+                                    <label class="pays" for="pays">France<span style="color: var(--jaune);">*</span></label>
+                                    <input type="text" id="pays" name="pays" value="France">
                                 </div>
                             </div>
 
                             <div class="element-info perso-9">
                                 <label class="bio" for="bio">Biographie</label>
-                                <textarea type="text" id="bio" value="123 Route de Provence">Apiculteur passionné depuis 15 ans, spécialisé dans la production de miel de lavande en Provence.</textarea>
+                                <textarea type="text" id="bio" name="bio" placeholder="Veuillez rentrer votre description..."></textarea>
                             </div>
 
                             <div class="flex-bouton">
