@@ -12,7 +12,7 @@ Retour : $result
 *******************************************************/
     public function getUserContent($loginInput)
     {
-        $sql = "SELECT nom, prenom, email, mdp FROM membres WHERE email = ?";
+        $sql = "SELECT nom, prenom, email, mdp, postal, ville, adresse, numero, pays FROM membres WHERE email = ?";
 
         $result = $this->execReqPrep($sql, array($loginInput));
 

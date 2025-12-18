@@ -19,14 +19,14 @@ $title = "Tableau de bord | BeeLink";
     <main>
         <nav class="FonctionNav">
             <div class="principal">
-                <h3>PRINCIPAL</h3>
+                <h4>PRINCIPAL</h4>
                 <div class="accueil element-menu"><a href="index.php?action=tableauAccueil">Accueil</a></div>
                 <div class="donnees element-menu"><a href="index.php?action=tableauDonnees">Données</a></div>
                 <div class="alertes element-menu"><a href="index.php?action=tableauAlertes">Alertes</a></div>
                 <div class="campagne element-menu"><a href="index.php?action=tableauCampagne">Ma Campagne</a></div>
             </div>
             <div class="gestion">
-                <h3>GESTION</h3>
+                <h4>GESTION</h4>
                 <div class="contacts element-menu actif"><a href="index.php?action=tableauContacts">Contacts</a></div>
                 <div class="parametres element-menu"><a href="index.php?action=tableauParametres">Paramètres</a></div>
                 <div class="profil element-menu"><a href="index.php?action=tableauProfil">Profil</a></div>
