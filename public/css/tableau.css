@@ -530,57 +530,45 @@ main {
     margin-top: 20px;
 }
 
-/* Texte de la plage cible (similaire aux anciens min/max) */
 .plage-cible {
     font-size: 0.9em;
     color: var(--couleur-texte-clair);
-    /* Texte plus clair */
     margin: 0;
 }
 
-/* --- Style de l'étiquette de variation (la pastille) --- */
+/* --- Style de l'étiquette de variation (la pastille rouge ou verte) --- */
 .etiquette-variation {
     font-size: 0.8em;
     font-weight: bold;
     padding: 3px 8px;
     border-radius: 4px;
-    /* Un peu moins arrondi que les étiquettes d'état */
     display: flex;
     align-items: center;
     gap: 3px;
     line-height: 1;
-    /* Assure un bon alignement vertical du texte */
 }
 
-/* Flèche (symbole unicode) */
+/* Flèche */
 .etiquette-variation span {
     font-size: 1.1em;
     font-weight: bolder;
 }
 
-/* Classe pour la variation positive (verte) */
 .variation-verte {
     color: var(--couleur-succes);
-    /* Couleur du texte verte */
     background-color: rgba(76, 175, 80, 0.15);
-    /* Fond très légèrement vert */
 }
 
-/* Classe pour la variation négative (rouge) */
 .variation-rouge {
     color: var(--couleur-danger);
-    /* Couleur du texte rouge */
     background-color: rgba(244, 67, 54, 0.15);
-    /* Fond très légèrement rouge */
 }
 
 /* Map Leaflet */
 
 #map {
     grid-column: 1 / -1;
-    /* Permet à la carte de prendre toute la largeur de la grille (4 colonnes) */
     height: 400px;
-    /* Augmenter la hauteur pour la rendre plus visible, 180px était très petit */
     margin-top: 20px;
     border-radius: 8px;
     /* Ajout d'un style cohérent avec les widgets */
@@ -761,4 +749,65 @@ textarea {
     gap: 20px;
     margin: 32px 10px;
     box-sizing: border-box;
+}
+
+/* Tableau de donées */
+
+.table-container {
+    width: 100%;
+    border: 3px solid var(--jaune);
+    border-radius: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    color: var(--blanc);
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #444;
+}
+
+th {
+    color: var(--jaune);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    cursor: pointer;
+}
+
+th:hover {
+    text-decoration: underline;
+}
+
+tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Colonne 2 : Température */
+td:nth-child(2) {
+    color: #FF6900;
+    font-weight: 500;
+}
+
+/* Colonne 3 : Poids */
+td:nth-child(3) {
+    color: #AD46FF;
+    font-weight: 500;
+}
+
+/* Colonne 4 : Humidité */
+td:nth-child(4) {
+    color: #2B7FFF;
+    font-weight: 500;
+}
+
+/* Colonne 5 : Fréquence */
+td:nth-child(5) {
+    color: #00C951;
+    font-weight: 500;
 }

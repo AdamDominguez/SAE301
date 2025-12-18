@@ -124,6 +124,7 @@ function login($email, $mdp)
         $_SESSION['ville'] = $userData['ville'];
         $_SESSION['postal'] = $userData['postal'];
         $_SESSION['pays'] = $userData['pays'];
+        $_SESSION['date_envoi'] = $userData['date_envoi'];
 
         if (isset($_COOKIE["page"])) {
             $action = $_COOKIE["page"];
