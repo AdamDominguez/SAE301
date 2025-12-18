@@ -1,103 +1,120 @@
-body {
-    background: var(--jaune);
+.main-inscription {
+    background: var(--noir); 
+    min-height: 89vh;
+    padding: 60px 0; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .Inscription {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5vw;
-    min-height: 89lvh;
-}
-
-.InscriptionForm {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    background: var(--noir);
-    border-radius: 15px;
-    padding: 40px;
-    max-width: 100%;
-    width: 50vw;
-    height: auto;
-    max-height: none;
-    box-shadow: 0 0 8px var(--noir);
-}
-
-.form-group1,
-.form-group2,
-.form-group3,
-.form-group4,
-.form-group5 {
-    display: flex;
-    gap: 3rem;
-}
-
-.InscriptionForm h3 {
-    margin: 0;
-}
-
-.InscriptionForm input,
-.InscriptionForm textarea {
-    background: var(--noir);
-    border: var(--jaune) 1px solid;
-    border-radius: 5px;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 80px;
+}
+
+.page-title {
+    color: var(--blanc);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.page-title .accent {
+    color: var(--jaune);
+}
+
+.InscriptionForm-card {
+    background: var(--blanc);
+    border-radius: 8px;
+    padding: 40px 50px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 750px; 
     box-sizing: border-box;
-    padding: 15px;
-    margin: 0;
-    color: var(--blanc);
-    height: 40px;
 }
 
-.InscriptionForm button {
-    background: var(--jaune);
-    border-radius: 5px;
-    border: none;
-    padding: 1rem;
-    margin: 25px 0 0 0;
+.form-title {
+    color: var(--noir);
+    margin: 0 0 30px 0;
+    text-align: center;
 }
 
-.InscriptionForm input {
-    padding: 10px;
-}
-
-.InscriptionForm label,
-.InscriptionForm h3 {
-    color: var(--blanc);
-}
-
-.InscriptionForm fieldset {
+.InscriptionForm-card fieldset {
     border: none;
     padding: 0;
-    display: block;
 }
 
-.form-group {
+.form-group-container {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 25px; 
+}
+
+.form-group-row {
+    display: flex;
+    gap: 30px; 
+    flex-wrap: wrap;
 }
 
 .form-row {
-    margin: 25px 0 0 0;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    flex: 1;
+    gap: 5px; 
+    flex: 1; 
+    min-width: 200px;
 }
 
-.form-message {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.InscriptionForm-card label {
+    color: var(--noir);
+    margin-bottom: 3px;
 }
 
-.gauche-trois,
-.gauche-deux {
-    border-top: var(--noir) 1px solid;
-}
-
-span {
+.InscriptionForm-card span {
     color: var(--jaune);
+}
+
+.InscriptionForm-card input {
+    background: var(--blanc);
+    border: 2px solid var(--jaune); 
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 15px;
+    color: var(--noir);
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.InscriptionForm-card input[type="date"] {
+    color: #AAAAAA;
+}
+
+.InscriptionForm-card input:focus {
+    border: 2px solid var(--noir); 
+    outline: none;
+}
+
+.InscriptionForm-card input::placeholder {
+    color: #AAAAAA;
+    opacity: 1;
+}
+
+.submit-button {
+    background: var(--jaune);
+    color: var(--noir);
+    border-radius: 14px;
+    font-size: 16px;
+    border: none;
+    padding: 15px 30px;
+    cursor: pointer;
+    margin-top: 35px;
+    transition: all 0.3s;
+    width: 100%;
+}
+
+.submit-button:hover {
+    background-color: var(--noir);
+    color: var(--jaune); 
 }
