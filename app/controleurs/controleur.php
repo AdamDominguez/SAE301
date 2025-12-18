@@ -117,7 +117,13 @@ function login($email, $mdp)
 
     if ($userData && password_verify($mdp, $userData['mdp'])) {
         $_SESSION['acces'] = $userData['prenom'];
+        $_SESSION['nom'] = $userData['nom'];
         $_SESSION['email'] = $userData['email'];
+        $_SESSION['numero'] = $userData['numero'];
+        $_SESSION['adresse'] = $userData['adresse'];
+        $_SESSION['ville'] = $userData['ville'];
+        $_SESSION['postal'] = $userData['postal'];
+        $_SESSION['pays'] = $userData['pays'];
 
         if (isset($_COOKIE["page"])) {
             $action = $_COOKIE["page"];

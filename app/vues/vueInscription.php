@@ -58,6 +58,28 @@ $title = "Inscription | BeeLink";
                                 <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
                             </div>
                         </div>
+
+                        <div class="form-group4">
+                            <div class="form-row">
+                                <label for="nom">Adresse <span>*</span></label>
+                                <input type="text" id="adresse" name="adresse" placeholder="Votre adresse" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group5">
+                            <div class="form-row">
+                                <label for="nom">Ville <span>*</span></label>
+                                <input type="text" id="ville" name="ville" placeholder="Votre ville" required>
+                            </div>
+                            <div class="form-row">
+                                <label for="nom">Code Postal <span>*</span></label>
+                                <input type="text" id="postal" name="postal" placeholder="Votre code postal" required>
+                            </div>
+                            <div class="form-row">
+                                <label for="nom">Pays <span>*</span></label>
+                                <input type="text" id="pays" name="pays" placeholder="Votre pays" required>
+                            </div>
+                        </div>
                     </div>
                 </fieldset>
 

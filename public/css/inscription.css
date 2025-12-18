@@ -26,7 +26,9 @@ body {
 
 .form-group1,
 .form-group2,
-.form-group3 {
+.form-group3,
+.form-group4,
+.form-group5 {
     display: flex;
     gap: 3rem;
 }
