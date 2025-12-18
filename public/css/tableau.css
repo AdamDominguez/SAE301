@@ -1,31 +1,16 @@
 :root {
-    /* --- Couleurs de base du thème --- */
     --noir: #333333;
     --blanc: #FFFFFF;
     --jaune: #F0C753;
-
-    /* --- Couleurs des widgets et bordures --- */
     --couleur-fond-widget: #2B2B2B;
     --couleur-border: #444444;
-
-    /* --- Couleurs de texte et d'état --- */
     --couleur-texte-clair: #AAAAAA;
-    /* Gris clair */
     --couleur-succes: #4CAF50;
-    /* Vert (Optimal/Bon) */
     --couleur-avertissement: #FF9800;
-    /* Orange (Élevée) */
     --couleur-bleu-alertes: #2196F3;
-    /* Bleu (Information) */
     --couleur-negatif: #F44336;
-    /* Rouge */
     --couleur-normal: #4A90E2;
-    /* Bleu clair pour état "normal" */
 }
-
-/* ---------------------------------------------------------------- */
-/* --- GENERAL & LAYOUT --- */
-/* ---------------------------------------------------------------- */
 
 body {
     background-color: var(--noir);
@@ -50,9 +35,8 @@ main {
     margin-left: 20px;
 }
 
-.FonctionNav h3 {
+.FonctionNav h4 {
     color: var(--blanc);
-    font-size: 0.8em;
     font-weight: bold;
     padding: 10px 0;
     margin-top: 15px;
@@ -85,23 +69,14 @@ main {
 /* Contenu (grid) */
 
 .grille-widgets,
-.grille-widgets-donnees {
+/* Accueil */
+.grille-widgets-donnees
+
+/* Données */
+    {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-}
-
-/* Style de base pour les widgets (Fond sombre, Texte BLANC par défaut) */
-.widget-indicateur,
-.widget-alerte,
-.widget-actions,
-.widget-ruches {
-    background-color: var(--couleur-fond-widget);
-    padding: 20px;
-    border-radius: 8px;
-    border: 1px solid var(--couleur-border);
-    color: var(--blanc);
-    /* Assure que le texte par défaut est blanc */
 }
 
 /* Bandeau Jaune */
@@ -111,7 +86,6 @@ main {
     align-items: flex-start;
     background-color: var(--jaune);
     color: var(--noir);
-    /* Texte noir sur fond jaune */
     padding: 30px;
     border-radius: 8px;
     margin-bottom: 20px;
@@ -124,9 +98,8 @@ main {
     line-height: 1;
 }
 
-.bandeau-accueil h2 {
+.bandeau-accueil h3 {
     margin: 0 0 5px 0;
-    font-size: 1.5em;
 }
 
 .bandeau-accueil p {
@@ -136,107 +109,71 @@ main {
 
 .bandeau-accueil .actions button {
     padding: 10px 20px;
-    border: none;
     border-radius: 4px;
     font-weight: bold;
     cursor: pointer;
     margin-right: 10px;
-    transition: background-color 0.2s;
-}
-
-.btn-primaire {
     background-color: var(--noir);
     color: var(--blanc);
+    border: none;
+    transition: color 0.2s;
 }
 
-.btn-secondaire {
-    background-color: transparent;
-    border: 1px solid var(--noir);
-    color: var(--noir);
+.bandeau-accueil .actions button:hover {
+    color: var(--jaune);
 }
 
 /* Widgets */
 
-.entete-indicateur {
+/* Style de base pour les widgets (Fond sombre, Texte blanc) */
+.widget-indicateur,
+.widget-alerte,
+.widget-actions,
+.widget-ruches {
+    background-color: var(--couleur-fond-widget);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--couleur-border);
+    color: var(--blanc);
+}
+
+.entete-indicateur
+
+/* Contient la div de l'icone et la valeur de changement (positif ou negatif) ) */
+    {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 5px;
 }
 
-.icone-indicateur {
+.icone-indicateur
+
+/* Div qui contient le svg */
+    {
     font-size: 1.5em;
     padding: 10px;
     background-color: var(--couleur-border);
     border-radius: 4px;
 }
 
-.etiquette-indicateur {
+.etiquette-indicateur
+
+/* Titre du widget (température, poids etc) */
+    {
     color: var(--couleur-texte-clair);
     margin: 0;
     font-size: 0.9em;
 }
 
-.valeur-indicateur {
+.valeur-indicateur
+
+/* Valeur du widget (température, poids etc) */
+    {
     font-size: 2.2em;
     font-weight: bold;
     margin: 5px 0 0 0;
     color: var(--blanc);
-    /* CORRIGÉ : Assure que la valeur principale est blanche */
-}
-
-/* --- Étiquettes d'État --- */
-
-.etiquette-etat {
-    font-size: 0.7em;
-    font-weight: bold;
-    padding: 3px 8px;
-    border-radius: 15px;
-    text-transform: uppercase;
-}
-
-.etiquette-optimal,
-.etiquette-bon {
-    color: var(--couleur-succes);
-    background-color: rgba(76, 175, 80, 0.1);
-}
-
-.etiquette-elevee {
-    color: var(--couleur-avertissement);
-    background-color: rgba(255, 152, 0, 0.1);
-}
-
-.etiquette-normal {
-    color: var(--couleur-normal);
-    background-color: rgba(74, 144, 226, 0.1);
-}
-
-/* --- Min/Max 24h --- */
-.min-max {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    border-top: 1px solid var(--couleur-border);
-    padding-top: 10px;
-    margin-top: 20px;
-}
-
-.min-max small {
-    display: block;
-    color: var(--couleur-texte-clair);
-    font-size: 0.8em;
-    margin-bottom: 2px;
-}
-
-.min-max p {
-    font-size: 1.1em;
-    font-weight: bold;
-    color: var(--blanc);
-    margin: 0;
-}
-
-.min-max .max {
-    text-align: right;
 }
 
 /* Widgets pages Accueil */
@@ -253,7 +190,8 @@ main {
     grid-column: 1 / -1;
 }
 
-/* --- Alertes Récentes --- */
+/*  Alertes  */
+
 .titre-widget {
     display: flex;
     justify-content: space-between;
@@ -284,20 +222,11 @@ main {
     margin-right: 15px;
 }
 
-.icone-alerte.icone-avertissement {
-    color: var(--couleur-avertissement);
-}
-
-.icone-alerte.icone-information {
-    color: var(--couleur-bleu-alertes);
-}
-
 .alerte p {
     flex-grow: 1;
     margin: 0;
     font-weight: 500;
     color: var(--blanc);
-    /* CORRIGÉ : Assure que le texte des alertes est blanc */
 }
 
 .alerte small {
@@ -305,7 +234,8 @@ main {
     font-size: 0.8em;
 }
 
-/* --- Actions Rapides --- */
+/*  Actions rapides  */
+
 .liste-actions a {
     display: flex;
     align-items: center;
@@ -316,9 +246,20 @@ main {
     transition: background-color 0.2s;
 }
 
-/* ---------------------------------------------------------------- */
-/* --- WIDGETS ÉGAUX & RUCHE ITEMS --- */
-/* ---------------------------------------------------------------- */
+.liste-actions a:last-child {
+    border-bottom: none;
+}
+
+.icone-action {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+.liste-actions a:hover {
+    color: var(--jaune);
+}
+
+/* Liste des ruches* */
 
 .liste-ruches {
     display: flex;
@@ -358,7 +299,6 @@ main {
     margin: 0;
     font-weight: bold;
     color: var(--blanc);
-    /* Assure que le titre de ruche est blanc */
 }
 
 .ruche-item small {
@@ -383,7 +323,142 @@ main {
     background-color: var(--couleur-avertissement);
 }
 
-/* --- Widgets Colorés --- */
+/* Entête de la page Données */
+
+.entete-page-donnees {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 20px;
+}
+
+.titre-principal {
+    color: var(--jaune);
+    font-size: 1.8em;
+    margin: 0;
+}
+
+.sous-titre {
+    color: var(--couleur-texte-clair);
+    margin: 5px 0 0 0;
+    font-size: 0.9em;
+}
+
+.actions-globales {
+    display: flex;
+    gap: 10px;
+}
+
+.actions-globales select {
+    padding: 8px 12px;
+    border: 1px solid var(--couleur-border);
+    border-radius: 4px;
+    background-color: var(--couleur-fond-widget);
+    color: var(--blanc);
+    font-size: 0.9em;
+}
+
+.btn-export {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--jaune);
+    color: var(--noir);
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.2s;
+}
+
+.nav-onglets {
+    display: flex;
+    border-bottom: 1px solid var(--couleur-border);
+    margin-bottom: 20px;
+}
+
+.nav-onglets .onglet {
+    text-decoration: none;
+    color: var(--couleur-texte-clair);
+    padding: 10px 15px;
+    margin-right: 5px;
+    transition: color 0.2s;
+    font-weight: 500;
+}
+
+.nav-onglets .onglet:hover {
+    color: var(--blanc);
+}
+
+.nav-onglets .actif {
+    color: var(--jaune);
+    border-bottom: 3px solid var(--jaune);
+    margin-bottom: -1px;
+    font-weight: bold;
+}
+
+/* Widgets de la page Données */
+
+.grille-widgets-donnees {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/*  Étiquettes d'état des widgets de la page Données  */
+
+.etiquette-etat {
+    font-size: 0.7em;
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 15px;
+    text-transform: uppercase;
+}
+
+.etiquette-optimal {
+    color: var(--couleur-succes);
+    background-color: rgba(76, 175, 80, 0.1);
+}
+
+.etiquette-elevee {
+    color: var(--couleur-avertissement);
+    background-color: rgba(255, 152, 0, 0.1);
+}
+
+.etiquette-normal {
+    color: var(--couleur-normal);
+    background-color: rgba(74, 144, 226, 0.1);
+}
+
+/*  Min/Max  */
+.min-max {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-top: 1px solid var(--couleur-border);
+    padding-top: 10px;
+    margin-top: 20px;
+}
+
+.min-max small {
+    display: block;
+    color: var(--couleur-texte-clair);
+    font-size: 0.8em;
+    margin-bottom: 2px;
+}
+
+.min-max p {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: var(--blanc);
+    margin: 0;
+}
+
+.min-max .max {
+    text-align: right;
+}
+
+/*  Widgets colorés  */
 
 .conteneur-widgets-egaux {
     padding-top: 20px;
@@ -420,17 +495,18 @@ main {
     color: rgba(255, 255, 255, 0.7);
 }
 
-.couleur-synchro {
-    background-color: var(--jaune);
-    color: var(--noir);
-}
-
+/* Couleur des textes en noir pour contrast */
 .couleur-synchro .titre-bloc-couleur,
 .couleur-synchro small {
     color: var(--noir);
 }
 
 .couleur-synchro .valeur-bloc-couleur {
+    color: var(--noir);
+}
+
+.couleur-synchro {
+    background-color: var(--jaune);
     color: var(--noir);
 }
 
@@ -442,101 +518,118 @@ main {
     background-color: var(--couleur-bleu-alertes);
 }
 
-/* ---------------------------------------------------------------- */
-/* --- VUE SPÉCIFIQUE : DONNÉES ET VALEURS --- */
-/* ---------------------------------------------------------------- */
+/* Div moyennes page Graphiques de la page Données */
 
-.entete-page-donnees {
+.indicateur-bas {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 20px;
+    align-items: center;
+    /* Alignement vertical au centre */
+    border-top: 1px solid var(--couleur-border);
+    padding-top: 10px;
+    margin-top: 20px;
 }
 
-.titre-principal {
-    color: var(--jaune);
-    font-size: 1.8em;
+.plage-cible {
+    font-size: 0.9em;
+    color: var(--couleur-texte-clair);
     margin: 0;
 }
 
-.sous-titre {
-    color: var(--couleur-texte-clair);
-    margin: 5px 0 0 0;
-    font-size: 0.9em;
-}
-
-.actions-globales {
-    display: flex;
-    gap: 10px;
-}
-
-.actions-globales select {
-    padding: 8px 12px;
-    border: 1px solid var(--couleur-border);
-    border-radius: 4px;
-    background-color: var(--couleur-fond-widget);
-    color: var(--blanc);
-    font-size: 0.9em;
-    appearance: none;
-}
-
-.btn-export {
-    padding: 8px 15px;
-    border: none;
-    border-radius: 4px;
-    background-color: var(--jaune);
-    color: var(--noir);
+/* --- Style de l'étiquette de variation (la pastille rouge ou verte) --- */
+.etiquette-variation {
+    font-size: 0.8em;
     font-weight: bold;
-    cursor: pointer;
+    padding: 3px 8px;
+    border-radius: 4px;
     display: flex;
     align-items: center;
-    transition: background-color 0.2s;
-}
-
-.btn-export .icone-action {
-    font-size: 1.2em;
-    margin-right: 5px;
+    gap: 3px;
     line-height: 1;
 }
 
-.nav-onglets {
-    display: flex;
-    border-bottom: 1px solid var(--couleur-border);
-    margin-bottom: 20px;
+/* Flèche */
+.etiquette-variation span {
+    font-size: 1.1em;
+    font-weight: bolder;
 }
 
-.nav-onglets .onglet {
-    text-decoration: none;
-    color: var(--couleur-texte-clair);
-    padding: 10px 15px;
-    margin-right: 5px;
-    transition: color 0.2s;
+.variation-verte {
+    color: var(--couleur-succes);
+    background-color: rgba(76, 175, 80, 0.15);
+}
+
+.variation-rouge {
+    color: var(--couleur-danger);
+    background-color: rgba(244, 67, 54, 0.15);
+}
+
+/* Map Leaflet */
+
+#map {
+    grid-column: 1 / -1;
+    height: 400px;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+/* Tableau de donées */
+
+.table-container {
+    width: 100%;
+    border: 3px solid var(--jaune);
+    border-radius: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    color: var(--blanc);
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #444;
+}
+
+th {
+    color: var(--jaune);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    cursor: pointer;
+}
+
+th:hover {
+    text-decoration: underline;
+}
+
+tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Colonne 2 : Température */
+td:nth-child(2) {
+    color: #FF6900;
     font-weight: 500;
 }
 
-.nav-onglets .onglet:hover {
-    color: var(--blanc);
+/* Colonne 3 : Poids */
+td:nth-child(3) {
+    color: #AD46FF;
+    font-weight: 500;
 }
 
-.nav-onglets .actif {
-    color: var(--jaune);
-    border-bottom: 3px solid var(--jaune);
-    margin-bottom: -1px;
-    font-weight: bold;
+/* Colonne 4 : Humidité */
+td:nth-child(4) {
+    color: #2B7FFF;
+    font-weight: 500;
 }
 
-.grille-widgets-donnees {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-}
-
-.widget-principal {
-    grid-column: 1 / -1;
-    /* Défini sur 4 colonnes, car le contenu n'était pas précisé */
-    min-height: 600px;
-}
-
-.widget-lateral {
-    grid-column: span 1;
+/* Colonne 5 : Fréquence */
+td:nth-child(5) {
+    color: #00C951;
+    font-weight: 500;
 }

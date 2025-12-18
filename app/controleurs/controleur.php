@@ -34,6 +34,18 @@ function tableauDonnees()
     require __DIR__ . "/../vues/vueTableauDonnees.php";
 }
 
+function tableauDonneesGraphiques()
+{
+    setcookie('page', '?action=tableauDonneesGraphiques', time() + 3600);
+    require __DIR__ . "/../vues/vueTableauDonneesGraphiques.php";
+}
+
+function tableauDonneesTableau()
+{
+    setcookie('page', '?action=tableauDonneesTableau', time() + 3600);
+    require __DIR__ . "/../vues/vueTableauDonneesTableau.php";
+}
+
 function tableauAlertes()
 {
     setcookie('page', '?action=tableauAlertes', time() + 3600);
@@ -94,7 +106,7 @@ function quit()
 {
     session_destroy();
     setcookie(session_name(), '', time() - 1, "/");
-    accueil();
+    header("Location: index.php?action=accueil");
 }
 
 // ici on utilise password_verify pour justement vérifier qu'on ai bien un password 'encrypté' ou hash!
@@ -105,6 +117,14 @@ function login($email, $mdp)
 
     if ($userData && password_verify($mdp, $userData['mdp'])) {
         $_SESSION['acces'] = $userData['prenom'];
+        $_SESSION['nom'] = $userData['nom'];
+        $_SESSION['email'] = $userData['email'];
+        $_SESSION['numero'] = $userData['numero'];
+        $_SESSION['adresse'] = $userData['adresse'];
+        $_SESSION['ville'] = $userData['ville'];
+        $_SESSION['postal'] = $userData['postal'];
+        $_SESSION['pays'] = $userData['pays'];
+        $_SESSION['date_envoi'] = $userData['date_envoi'];
 
         if (isset($_COOKIE["page"])) {
             $action = $_COOKIE["page"];

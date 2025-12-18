@@ -16,18 +16,26 @@ class Inscription extends Database
         $dob_raw = $_POST['dob'] ?? '';
         $dob = date('Y-m-d', strtotime(str_replace('/', '-', $dob_raw)));
         $mdp = $_POST['mdp'] ?? '';
+        $pays = $_POST['pays'] ?? '';
+        $postal = $_POST['postal'] ?? '';
+        $ville = $_POST['ville'] ?? '';
+        $adresse = $_POST['adresse'] ?? '';
 
-        if ($nom && $prenom && filter_var($email, FILTER_VALIDATE_EMAIL) && $dob && $mdp) {
+        if ($nom && $prenom && filter_var($email, FILTER_VALIDATE_EMAIL) && $dob && $mdp && $pays && $postal && $ville && $adresse) {
 
             $mdpHashed = password_hash($mdp, PASSWORD_DEFAULT);
-            $req = 'INSERT INTO membres (nom, prenom, email, numero, dob, mdp, date_envoi)
-                VALUES (:nom, :prenom, :email, :numero, :dob, :mdp, NOW())';
+            $req = 'INSERT INTO membres (nom, prenom, email, numero, dob, mdp, adresse, ville, postal, pays, date_envoi)
+                VALUES (:nom, :prenom, :email, :numero, :dob, :mdp, :adresse, :ville, :postal, :pays, NOW())';
 
             $data = [
                 'nom' => $nom,
                 'prenom' => $prenom,
                 'email' => $email,
                 'numero' => $numero ?: null,
+                'adresse' => $adresse,
+                'ville' => $ville,
+                'postal' => $postal,
+                'pays' => $pays,
                 'dob' => $dob,
                 'mdp' => $mdpHashed
             ];

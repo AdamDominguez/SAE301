@@ -19,14 +19,14 @@ $title = "Tableau de bord | BeeLink";
     <main>
         <nav class="FonctionNav">
             <div class="principal">
-                <h3>PRINCIPAL</h3>
+                <h4>PRINCIPAL</h4>
                 <div class="accueil element-menu actif"><a href="index.php?action=tableauAccueil">Accueil</a></div>
                 <div class="donnees element-menu"><a href="index.php?action=tableauDonnees">Données</a></div>
                 <div class="alertes element-menu"><a href="index.php?action=tableauAlertes">Alertes</a></div>
                 <div class="campagne element-menu"><a href="index.php?action=tableauCampagne">Ma Campagne</a></div>
             </div>
             <div class="gestion">
-                <h3>GESTION</h3>
+                <h4>GESTION</h4>
                 <div class="contacts element-menu"><a href="index.php?action=tableauContacts">Contacts</a></div>
                 <div class="parametres element-menu"><a href="index.php?action=tableauParametres">Paramètres</a></div>
                 <div class="profil element-menu"><a href="index.php?action=tableauProfil">Profil</a></div>
@@ -37,7 +37,7 @@ $title = "Tableau de bord | BeeLink";
             <div class="bandeau-accueil">
                 <div class="icone">💡</div>
                 <div class="contenu-bandeau">
-                    <h2>Bienvenue sur BeeLink</h2>
+                    <h3>Bienvenue sur BeeLink</h3>
                     <p>Découvrez toutes les fonctionnalités pour surveiller vos ruches connectées. Explorez les différentes sections via la navigation de gauche.</p>
                     <div class="actions">
                         <button class="btn-primaire">Voir les valeurs en temps réel</button>
@@ -85,12 +85,12 @@ $title = "Tableau de bord | BeeLink";
                     <h3 class="titre-widget">Alertes récentes <a href="#">Tout voir</a></h3>
                     <div class="liste-alertes">
                         <div class="alerte">
-                            <div class="icone-alerte icone-avertissement">⚠️</div>
+                            <div class="icone-alerte">⚠️</div>
                             <p>Température élevée dans Ruche #3</p>
                             <small>Il y a 2h</small>
                         </div>
                         <div class="alerte">
-                            <div class="icone-alerte icone-information">ℹ️</div>
+                            <div class="icone-alerte">ℹ️</div>
                             <p>Production de miel en hausse - Ruche #1</p>
                             <small>Il y a 5h</small>
                         </div>

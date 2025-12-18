@@ -62,8 +62,29 @@ $title = "Inscription | BeeLink";
                                 <label for="mdp">Mot de passe <span>*</span></label>
                                 <input type="password" id="mdp" name="mdp" placeholder="MDP123$" required>
                             </div>
+                        </div>                        
+
+                        <div class="form-group-row">
+                            <div class="form-row">
+                                <label for="nom">Adresse <span>*</span></label>
+                                <input type="text" id="adresse" name="adresse" placeholder="Votre adresse" required>
+                            </div>
                         </div>
-                        
+
+                        <div class="form-group-row">
+                            <div class="form-row">
+                                <label for="nom">Ville <span>*</span></label>
+                                <input type="text" id="ville" name="ville" placeholder="Votre ville" required>
+                            </div>
+                            <div class="form-row">
+                                <label for="nom">Code Postal <span>*</span></label>
+                                <input type="text" id="postal" name="postal" placeholder="Votre code postal" required>
+                            </div>
+                            <div class="form-row">
+                                <label for="nom">Pays <span>*</span></label>
+                                <input type="text" id="pays" name="pays" placeholder="Votre pays" required>
+                            </div>
+                        </div>
                     </div>
                 </fieldset>
 
