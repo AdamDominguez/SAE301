@@ -573,6 +573,8 @@ main {
     border-radius: 8px;
 }
 
+/* Tableau de donées */
+
 .table-container {
     width: 100%;
     border: 3px solid var(--jaune);
@@ -601,4 +603,28 @@ th {
 
 tbody tr:hover {
     background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Colonne 2 : Température */
+td:nth-child(2) {
+    color: #FF6900;
+    font-weight: 500;
+}
+
+/* Colonne 3 : Poids */
+td:nth-child(3) {
+    color: #AD46FF;
+    font-weight: 500;
+}
+
+/* Colonne 4 : Humidité */
+td:nth-child(4) {
+    color: #2B7FFF;
+    font-weight: 500;
+}
+
+/* Colonne 5 : Fréquence */
+td:nth-child(5) {
+    color: #00C951;
+    font-weight: 500;
 }
