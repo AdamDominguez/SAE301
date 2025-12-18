@@ -1,5 +1,5 @@
 body {
-    background: var(--jaune);
+    background: var(--noir);
     margin: 0;
     height: 100lvh;
 }
@@ -30,7 +30,7 @@ form {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background: var(--noir);
+    background: var(--blanc);
     border-radius: 15px;
     padding: 85px 40px 40px 40px;
     max-width: 100%;
@@ -45,14 +45,14 @@ form h3 {
 
 form input,
 textarea {
-    background: var(--noir);
+    background: var(--blanc);
     border: var(--jaune) 1px solid;
     border-radius: 5px;
     width: 100%;
     box-sizing: border-box;
     padding: 15px;
     margin: 0;
-    color: var(--blanc);
+    color: var(--noir);
     height: 40px;
 }
 
@@ -70,7 +70,7 @@ form input {
 
 form label,
 h3 {
-    color: var(--blanc);
+    color: var(--noir);
 }
 
 fieldset {
@@ -112,7 +112,7 @@ span {
     left: 3%;
     top: 5%;
     text-decoration: none;
-    color: var(--noir);
+    color: var(--blanc);
 }
 
 .BackAccueil:hover {

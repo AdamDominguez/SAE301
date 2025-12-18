@@ -1,5 +1,5 @@
 body {
-    background: #333333;
+    background: var(--noir);
     overflow-x: hidden;
 }
 
@@ -18,21 +18,26 @@ body {
 }
 
 .bloc {
-    background-color: #333333;
+    background-color: var(--noir);
     border-radius: 24px;
     padding: 40px;
 }
 
 .BlocJaune {
-    background-color: #F0C753;
+    background-color: var(--jaune);
 }
 
 .blanc {
-    color: white;
+    color: var(--blanc);
+}
+
+.blanc2 {
+    white-space: nowrap;
+    color: var(--blanc);
 }
 
 .jaune {
-    color: #F0C753;
+    color: var(--jaune);
     font-weight: bold;
 }
 
@@ -41,18 +46,22 @@ body {
 }
 
 .jaune2 {
-    color: #F0C753;
+    color: var(--jaune);
 }
 
 .banniere {
     display: flex;
     justify-content: center;
-    gap: 388px;
+    gap: 300px;
     margin-top: 18px;
 }
 
 .fonctions {
     text-align: center;
+}
+
+.fonctions p {
+    white-space: nowrap;
 }
 
 .interface {
@@ -145,8 +154,8 @@ body {
 }
 
 .carte {
-    background-color: #ffffff;
-    border: 12px solid #F0C753;
+    background-color: var(--blanc);
+    border: 10px solid var(--jaune);
     border-radius: 24px;
     padding: 28px;
     max-width: 100%;
