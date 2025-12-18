@@ -19,14 +19,14 @@ $title = "Tableau de bord | BeeLink";
     <main>
         <nav class="FonctionNav">
             <div class="principal">
-                <h3>PRINCIPAL</h3>
+                <h4>PRINCIPAL</h4>
                 <div class="accueil element-menu"><a href="index.php?action=tableauAccueil">Accueil</a></div>
                 <div class="donnees element-menu"><a href="index.php?action=tableauDonnees">Données</a></div>
                 <div class="alertes element-menu"><a href="index.php?action=tableauAlertes">Alertes</a></div>
                 <div class="campagne element-menu"><a href="index.php?action=tableauCampagne">Ma Campagne</a></div>
             </div>
             <div class="gestion">
-                <h3>GESTION</h3>
+                <h4>GESTION</h4>
                 <div class="contacts element-menu"><a href="index.php?action=tableauContacts">Contacts</a></div>
                 <div class="parametres element-menu"><a href="index.php?action=tableauParametres">Paramètres</a></div>
                 <div class="profil element-menu actif"><a href="index.php?action=tableauProfil">Profil</a></div>
@@ -53,7 +53,7 @@ $title = "Tableau de bord | BeeLink";
                                 </button>
                             </div>
                             <div class="utilisateur-profil">
-                                <div class="nom-utilisateur"><?= $_SESSION['acces'] ?></div>
+                                <div class="nom-utilisateur"><?= $_SESSION['acces'] ?> <?= $_SESSION['nom'] ?></div>
                                 <div class="fonction">Apiculteur</div>
                             </div>
 
@@ -65,20 +65,20 @@ $title = "Tableau de bord | BeeLink";
                                     <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path>
                                     <rect x="2" y="4" width="20" height="16" rx="2"></rect>
                                 </svg>
-                                <span>Mail</span>
+                                <span><?= $_SESSION['email'] ?></span>
                             </div>
                             <div class="element-profil">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--jaune)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone w-4 h-4 text-[#E5B444]" aria-hidden="true">
                                     <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path>
                                 </svg>
-                                <span>Numéro tel</span>
+                                <span><?= $_SESSION['numero'] ?></span>
                             </div>
                             <div class="element-profil">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--jaune)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin w-4 h-4 text-[#E5B444]" aria-hidden="true">
                                     <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path>
                                     <circle cx="12" cy="10" r="3"></circle>
                                 </svg>
-                                <span>Localisation</span>
+                                <span><?= $_SESSION['adresse'] ?><br><?= $_SESSION['postal'] ?> <?= $_SESSION['ville'] ?></span>
                             </div>
                             <div class="element-profil">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--jaune)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar w-4 h-4 text-[#E5B444]" aria-hidden="true">
@@ -87,7 +87,7 @@ $title = "Tableau de bord | BeeLink";
                                     <rect width="18" height="18" x="3" y="4" rx="2"></rect>
                                     <path d="M3 10h18"></path>
                                 </svg>
-                                <span>Membre depuis</span>
+                                <span><?= $_SESSION['date_envoi'] ?></span>
                             </div>
                         </div>
 
