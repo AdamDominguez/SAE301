@@ -87,7 +87,7 @@ $title = "Tableau de bord | BeeLink";
                                     <rect width="18" height="18" x="3" y="4" rx="2"></rect>
                                     <path d="M3 10h18"></path>
                                 </svg>
-                                <span><?= $_SESSION['date_envoi'] ?></span>
+                                <span>Membre depuis: <?= $_SESSION['date_envoi'] ?></span>
                             </div>
                         </div>
 
