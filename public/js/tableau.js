@@ -1,17 +1,11 @@
-document.addEventListener('DOMContentLoaded', () => {
+// Leaflet 
 
-    // Leaflet 
+var map = L.map('map').setView([47.769622034321365, 7.270559009574735], 13);
 
-    var map = L.map('map').setView([47.769622034321365, 7.270559009574735], 13);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-    }).addTo(map);
-
-    L.marker([47.769622034321365, 7.270559009574735]).addTo(map)
-        .bindPopup('Votre ruche principale')
-        .openPopup();
-
-    // Tri du tableau dans la page tableau de la page données de la page tableau de bord
-
-});
+L.marker([47.769622034321365, 7.270559009574735]).addTo(map)
+    .bindPopup('Votre ruche principale')
+    .openPopup();
