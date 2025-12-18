@@ -74,19 +74,19 @@ $title = "Fonctionnalités | BeeLink";
         <div class="banniere">
             <div class="fonctions">
                 <h3 class="jaune">24/7</h3>
-                <p class="blanc">Surveillance active</p>
+                <p class="blanc2">Surveillance active</p>
             </div>
             <div class="fonctions">
                 <h3 class="jaune">98%</h3>
-                <p class="blanc">Taux de fiablité</p>
+                <p class="blanc2">Taux de fiablité</p>
             </div>
             <div class="fonctions">
                 <h3 class="jaune">12</h3>
-                <p class="blanc">Mois d'autonmie</p>
+                <p class="blanc2">Mois d'autonmie</p>
             </div>
             <div class="fonctions">
                 <h3 class="jaune">100</h3>
-                <p class="blanc">Mètres de portée Bluetooth</p>
+                <p class="blanc2">Mètres de portée Bluetooth</p>
             </div>
         </div>
 

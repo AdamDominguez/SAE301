@@ -31,6 +31,11 @@ body {
     color: var(--blanc);
 }
 
+.blanc2 {
+    white-space: nowrap;
+    color: var(--blanc);
+}
+
 .jaune {
     color: var(--jaune);
     font-weight: bold;
@@ -47,12 +52,16 @@ body {
 .banniere {
     display: flex;
     justify-content: center;
-    gap: 388px;
+    gap: 300px;
     margin-top: 18px;
 }
 
 .fonctions {
     text-align: center;
+}
+
+.fonctions p {
+    white-space: nowrap;
 }
 
 .interface {

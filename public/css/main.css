@@ -417,6 +417,12 @@ header a {
     background: var(--noir);
     padding: 10px 50px 10px 50px;
     margin: 15px 0 0 0;
+    transition: background-color 0.3s;
+}
+
+.ConnecterContent button:hover {
+    color: var(--noir);
+    background-color: var(--jaune);
 }
 
 .ConnecterAdmin {

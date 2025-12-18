@@ -1,6 +1,5 @@
 body {
     background: var(--noir);
-    color: var(--blanc);
 }
 
 .Contact {
@@ -16,6 +15,31 @@ body {
     flex-direction: column;
     width: 35vw;
     margin: 0 0 0 auto;
+    color: var(--blanc);
+}
+
+.gauche-un h1 {
+    color: var(--jaune);
+}
+
+.gauche-un p {
+    color: var(--blanc);
+}
+
+.gauche-deux h2 {
+    color: var(--jaune);
+}
+
+.gauche-deux p {
+    color: var(--blanc);
+}
+
+.gauche-trois h2 {
+    color: var(--jaune);
+}
+
+.gauche-trois p {
+    color: var(--blanc);
 }
 
 .Droite {
@@ -37,12 +61,13 @@ body {
 
 .Droite form h3 {
     margin: 0;
+    color: var(--noir);
 }
 
 .Droite form input,
 .Droite textarea {
     background: var(--blanc);
-    border: var(--jaune) 1px solid;
+    border: var(--jaune) 2px solid;
     border-radius: 5px;
     width: 100%;
     box-sizing: border-box;
@@ -57,13 +82,22 @@ body {
     border: none;
     padding: 10px;
     margin: 25px 0 0 0;
+    transition: background-color 0.3s;
+}
+
+.Droite form button:hover {
+    background-color: var(--noir);
+    color: var(--jaune);
 }
 
 .Droite form input {
     padding: 10px;
 }
 
-.Droite label,
+.Droite label {
+    color: var(--noir);
+}
+
 .Droite h3 {
     color: var(--blanc);
 }

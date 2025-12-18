@@ -53,7 +53,7 @@ $tableauPage = strpos($pageActive, 'tableau') === 0;
                 <h3>Connectez-vous pour accéder à votre espace client</h3>
                 <form method="post" action=<?= $_SERVER["PHP_SELF"] . "?action=login" ?>>
                     <div>
-                        <label for="email">Email</label>
+                        <label for="email">Email
                         <div class="ConnecterInput1">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 20 16" fill="none">
                                 <path
@@ -62,10 +62,11 @@ $tableauPage = strpos($pageActive, 'tableau') === 0;
                             </svg>
                             <input type="text" id="email" name="email" placeholder="Email" value="" required>
                         </div>
+                        </label>
                     </div>
 
                     <div>
-                        <label for="password">Mot de passe</label>
+                        <label for="password">Mot de passe
                         <div class="ConnecterInput2">
                             <div class="ConnecterInput2a">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="21" viewBox="0 0 16 21"
@@ -76,7 +77,8 @@ $tableauPage = strpos($pageActive, 'tableau') === 0;
                                 </svg>
                                 <input type="password" id="password" name="password" placeholder="Mot de passe" value=""
                                     required>
-                            </div>
+                        </div>
+                        </label>
                             <a href="">Mot de passe oublié ?</a>
                         </div>
                     </div>

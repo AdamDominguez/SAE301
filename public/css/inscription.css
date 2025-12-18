@@ -1,5 +1,5 @@
 .main-inscription {
-    background: #333333; 
+    background: var(--noir); 
     min-height: 89vh;
     padding: 60px 0; 
     display: flex;
@@ -55,6 +55,7 @@
 .form-group-row {
     display: flex;
     gap: 30px; 
+    flex-wrap: wrap;
 }
 
 .form-row {
@@ -62,6 +63,7 @@
     flex-direction: column;
     gap: 5px; 
     flex: 1; 
+    min-width: 200px;
 }
 
 .InscriptionForm-card label {
@@ -75,28 +77,26 @@
 
 .InscriptionForm-card input {
     background: var(--blanc);
-    border: 1px solid #DDDDDD; 
+    border: 2px solid var(--jaune); 
     border-radius: 4px;
     width: 100%;
     box-sizing: border-box;
     padding: 12px 15px;
     color: var(--noir);
     font-size: 1rem;
-    transition: border-color 0.3s;
+    transition: all 0.3s;
+}
+
+.InscriptionForm-card input[type="date"] {
+    color: #AAAAAA;
 }
 
 .InscriptionForm-card input:focus {
-    border-color: var(--jaune); 
-    box-shadow: 0 0 5px rgba(255, 215, 0, 0.5); 
+    border: 2px solid var(--noir); 
     outline: none;
 }
 
 .InscriptionForm-card input::placeholder {
-    color: #AAAAAA;
-    opacity: 1;
-}
-
-input[name="dob"] {
     color: #AAAAAA;
     opacity: 1;
 }
@@ -110,7 +110,7 @@ input[name="dob"] {
     padding: 15px 30px;
     cursor: pointer;
     margin-top: 35px;
-    transition: background-color 0.3s;
+    transition: all 0.3s;
     width: 100%;
 }
 
