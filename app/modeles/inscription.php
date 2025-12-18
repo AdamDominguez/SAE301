@@ -21,11 +21,11 @@ class Inscription extends Database
         $ville = $_POST['ville'] ?? '';
         $adresse = $_POST['adresse'] ?? '';
 
-        if ($nom && $prenom && filter_var($email, FILTER_VALIDATE_EMAIL) && $dob && $mdp) {
+        if ($nom && $prenom && filter_var($email, FILTER_VALIDATE_EMAIL) && $dob && $mdp && $pays && $postal && $ville && $adresse) {
 
             $mdpHashed = password_hash($mdp, PASSWORD_DEFAULT);
-            $req = 'INSERT INTO membres (nom, prenom, email, numero, dob, mdp, adresse, ville, postal, pays date_envoi)
-                VALUES (:nom, :prenom, :email, :numero, :dob, :mdp, :adresse, :ville, :postal, :pays NOW())';
+            $req = 'INSERT INTO membres (nom, prenom, email, numero, dob, mdp, adresse, ville, postal, pays, date_envoi)
+                VALUES (:nom, :prenom, :email, :numero, :dob, :mdp, :adresse, :ville, :postal, :pays, NOW())';
 
             $data = [
                 'nom' => $nom,
