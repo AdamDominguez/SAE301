@@ -102,7 +102,7 @@ $title = "Tableau de bord | BeeLink";
                         </span>
                     </div>
                 </div>
-            
+
             </div>
         </section>
     </main>

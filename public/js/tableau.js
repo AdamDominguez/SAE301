@@ -1,5 +1,3 @@
-// Leaflet 
-
 var map = L.map('map').setView([47.769622034321365, 7.270559009574735], 13);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
