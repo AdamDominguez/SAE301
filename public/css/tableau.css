@@ -751,6 +751,24 @@ textarea {
     box-sizing: border-box;
 }
 
+
+
+
+
+
+
+/* upload de la photo de profil */
+.formPhoto {
+    display: none;
+}
+
+.menu-photo-profil {
+    display: block;
+}
+
+
+
+
 /* Tableau de donées */
 
 .table-container {
@@ -766,7 +784,8 @@ table {
     margin-top: 20px;
 }
 
-th, td {
+th,
+td {
     padding: 12px 15px;
     text-align: left;
     border-bottom: 1px solid #444;
@@ -812,9 +831,6 @@ td:nth-child(5) {
     font-weight: 500;
 }
 
-#formPhoto{
-    background-color: rgb(230, 230, 230);
-    display: none;
 :root {
     --noir: #333333;
     --blanc: #FFFFFF;
@@ -1458,7 +1474,7 @@ td:nth-child(5) {
     grid-column: 1 / -1;
 }
 
-.widget-graphique-donnees.principal h3{
+.widget-graphique-donnees.principal h3 {
     color: var(--jaune);
 }
 
@@ -1470,7 +1486,7 @@ td:nth-child(5) {
     margin-top: 10px;
 }
 
-.ligne-graphiques-duo h3{
+.ligne-graphiques-duo h3 {
     color: var(--jaune);
 }
 

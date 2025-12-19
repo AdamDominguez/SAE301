@@ -62,7 +62,7 @@ $title = "Tableau de bord | BeeLink";
                         <!-- formulaire d'upload de la photo de profil -->
                         <form method="post"
                             action="index.php?action=enregArticlePhoto&idArt=<?= $article["Code"] ?>"
-                            enctype="multipart/form-data" id="formPhoto">
+                            enctype="multipart/form-data" class="formPhoto">
 
                             <div class="form_elt">
                                 <input type="hidden" name="MAX_FILE_SIZE" value="500000">
@@ -193,6 +193,8 @@ $title = "Tableau de bord | BeeLink";
         </section>
     </main>
     <?php require "footer.php"; ?>
+
+    <script src="js/photo.js"></script>
 </body>
 
 </html>
