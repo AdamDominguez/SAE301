@@ -38,7 +38,7 @@
     </div>
 
     <div class="Footer3">
-        <p class="Footer3A">© 2024 BeeLink. Projet étudiant - Tous droits réservés.</p>
+        <p class="Footer3A">© 2025 BeeLink. Projet étudiant - Tous droits réservés.</p>
         <p class="Footer3B">
             <a href="">Mentions légales</a> -
             <a href="">Politique de confidentialité</a>
