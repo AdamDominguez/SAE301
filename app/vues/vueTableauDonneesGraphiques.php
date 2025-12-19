@@ -8,10 +8,14 @@ $title = "Tableau de bord | BeeLink";
 <head>
     <meta charset="UTF-8">
     <title><?= $title ?></title>
+
     <link href="./public/css/main.css" rel="stylesheet">
     <link href="./public/css/tableau.css" rel="stylesheet">
+
     <link rel="icon" type="image/png" sizes="32x32" href="./public/img/favicons/favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./public/img/favicons/favicon-16.png">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
@@ -103,10 +107,41 @@ $title = "Tableau de bord | BeeLink";
                     </div>
                 </div>
 
+                <div class="widget-graphique-donnees principal">
+                    <h3>Température et Humidité</h3>
+                    <div class="canvas-container">
+                        <canvas id="chartDonnees"></canvas>
+                    </div>
+                </div>
+
+                <div class="ligne-graphiques-duo">
+                    <div class="widget-graphique-donnees">
+                        <h3>Évolution du poids</h3>
+                        <div class="canvas-container">
+                            <canvas id="chartPoids"></canvas>
+                        </div>
+                    </div>
+                    <div class="widget-graphique-donnees">
+                        <h3>Fréquence sonore</h3>
+                        <div class="canvas-container">
+                            <canvas id="chartFrequence"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="widget-graphique-donnees principal">
+                    <h3>Comparaison multi-métriques</h3>
+                    <div class="canvas-container">
+                        <canvas id="chartComparaison"></canvas>
+                    </div>
+                    <p class="note-graphique">Note: Les valeurs sont affichées sur la même échelle pour permettre la comparaison visuelle des tendances.</p>
+                </div>
+
             </div>
         </section>
     </main>
     <?php require "footer.php"; ?>
+    <script src="./public/js/tableau.js"></script>
 </body>
 
 </html>

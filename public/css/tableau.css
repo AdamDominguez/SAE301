@@ -129,7 +129,8 @@ main {
 .widget-indicateur,
 .widget-alerte,
 .widget-actions,
-.widget-ruches {
+.widget-ruches,
+.widget-graphique-donnees {
     background-color: var(--couleur-fond-widget);
     padding: 20px;
     border-radius: 8px;
@@ -190,7 +191,7 @@ main {
     grid-column: 1 / -1;
 }
 
-/*  Alertes  */
+/* Alertes  */
 
 .titre-widget {
     display: flex;
@@ -234,7 +235,7 @@ main {
     font-size: 0.8em;
 }
 
-/*  Actions rapides  */
+/* Actions rapides  */
 
 .liste-actions a {
     display: flex;
@@ -405,7 +406,7 @@ main {
     gap: 20px;
 }
 
-/*  Étiquettes d'état des widgets de la page Données  */
+/* Étiquettes d'état des widgets de la page Données  */
 
 .etiquette-etat {
     font-size: 0.7em;
@@ -430,7 +431,7 @@ main {
     background-color: rgba(74, 144, 226, 0.1);
 }
 
-/*  Min/Max  */
+/* Min/Max  */
 .min-max {
     display: flex;
     justify-content: space-between;
@@ -458,7 +459,7 @@ main {
     text-align: right;
 }
 
-/*  Widgets colorés  */
+/* Widgets colorés  */
 
 .conteneur-widgets-egaux {
     padding-top: 20px;
@@ -524,7 +525,6 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* Alignement vertical au centre */
     border-top: 1px solid var(--couleur-border);
     padding-top: 10px;
     margin-top: 20px;
@@ -560,7 +560,7 @@ main {
 }
 
 .variation-rouge {
-    color: var(--couleur-danger);
+    color: var(--couleur-negatif);
     background-color: rgba(244, 67, 54, 0.15);
 }
 
@@ -633,4 +633,44 @@ td:nth-child(4) {
 td:nth-child(5) {
     color: #00C951;
     font-weight: 500;
+}
+
+/* Graphiques */
+
+.widget-graphique-donnees.principal {
+    grid-column: 1 / -1;
+}
+
+.widget-graphique-donnees.principal h3{
+    color: var(--jaune);
+}
+
+/* Conteneur côte à côte */
+.ligne-graphiques-duo {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.ligne-graphiques-duo h3{
+    color: var(--jaune);
+}
+
+.ligne-graphiques-duo .widget-graphique-donnees {
+    flex: 1;
+    min-width: 0;
+}
+
+.canvas-container {
+    height: 350px;
+    position: relative;
+    width: 100%;
+}
+
+.note-graphique {
+    color: var(--couleur-texte-clair);
+    font-size: 0.85em;
+    margin-top: 15px;
+    font-style: italic;
 }
