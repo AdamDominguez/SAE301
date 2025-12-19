@@ -759,12 +759,9 @@ textarea {
 
 /* upload de la photo de profil */
 .formPhoto {
-    display: none;
-}
-
-.menu-photo-profil {
     display: block;
 }
+
 
 
 

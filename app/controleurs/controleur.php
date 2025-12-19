@@ -2,6 +2,7 @@
 require_once __DIR__ . "/../modeles/contact.php";
 require_once __DIR__ . "/../modeles/inscription.php";
 require_once __DIR__ . "/../modeles/connexion.php";
+require_once __DIR__ . "/../modeles/membre.php";
 require_once __DIR__ . "/../modeles/uploadPhoto.php";
 
 // Affichage de la page d'accueil
@@ -78,20 +79,19 @@ function tableauProfil()
 }
 
 // Changement de la photo d'un article
-function photoProfil($idArt)
+function photoProfil($idMembre)
 {
-    $objProfil = new UploadPhoto();
-    /* $photoProfil = $objProfil->getArticle($idArt); */
-    require "vue/vueArticlePhoto.php";
+    $objProfil = new Membre();
+    $objProfil = $objProfil->getPhoto($idMembre);
+    require __DIR__ . "/../vues/vueTableauProfil.php";
 }
-
 
 // Enregistrement de la photo d'un article
 function enregPhotoProfil($idArt)
 {
- $objProfil = new UploadPhoto();
- $objProfil -> updatePhotoProfil($idArt);
- tableau();
+    $objProfil = new UploadPhoto();
+    $objProfil->updatePhotoProfil($idArt);
+    tableau();
 }
 
 function contact()

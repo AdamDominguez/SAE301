@@ -12,7 +12,7 @@ class UploadPhoto extends Database
 
     Retour :
      *******************************************************/
-    public function updatePhotoProfil($idArt)
+    public function updatePhotoProfil($idMembre)
     {
         // Test s'il n'y a pas d'erreur
         if ($_FILES['photoArticle']['error'] == 0) {
@@ -26,13 +26,13 @@ class UploadPhoto extends Database
                     // Stockage définitif du fichier photo dans le dossier "photoArticle"
                     move_uploaded_file(
                         $_FILES['photoArticle']['tmp_name'],
-                        PHOTOARTDIR . "/" . $idArt . '.' . $extension_upload
+                        PHOTOARTDIR . "/" . $idMembre . '.' . $extension_upload
                     );
                 } else
-                    throw new Exception("Photo de l'article $idArt : type de fichier non autorisé");
+                    throw new Exception("Photo de l'article $idMembre : type de fichier non autorisé");
             } else
-                throw new Exception("Photo de l'article $idArt : Fichier trop volumineux");
+                throw new Exception("Photo de l'article $idMembre : Fichier trop volumineux");
         } else
-            throw new Exception("Photo de l'article $idArt : Code d'erreur : " . $_FILES['photoArticle']['error']);
+            throw new Exception("Photo de l'article $idMembre : Code d'erreur : " . $_FILES['photoArticle']['error']);
     }
 }
