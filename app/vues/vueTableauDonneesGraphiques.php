@@ -141,7 +141,7 @@ $title = "Tableau de bord | BeeLink";
         </section>
     </main>
     <?php require "footer.php"; ?>
-    <script src="./public/js/tableau.js"></script>
+    <script src="./public/js/graph.js"></script>
 </body>
 
 </html>
