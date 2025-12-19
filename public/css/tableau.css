@@ -811,3 +811,8 @@ td:nth-child(5) {
     color: #00C951;
     font-weight: 500;
 }
+
+#formPhoto{
+    background-color: rgb(230, 230, 230);
+    display: none;
+}

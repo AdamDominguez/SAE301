@@ -2,6 +2,7 @@
 require_once __DIR__ . "/../modeles/contact.php";
 require_once __DIR__ . "/../modeles/inscription.php";
 require_once __DIR__ . "/../modeles/connexion.php";
+require_once __DIR__ . "/../modeles/uploadPhoto.php";
 
 // Affichage de la page d'accueil
 function accueil()
@@ -74,6 +75,23 @@ function tableauProfil()
 {
     setcookie('page', '?action=tableauProfil', time() + 3600);
     require __DIR__ . "/../vues/vueTableauProfil.php";
+}
+
+// Changement de la photo d'un article
+function photoProfil($idArt)
+{
+    $objProfil = new UploadPhoto();
+    /* $photoProfil = $objProfil->getArticle($idArt); */
+    require "vue/vueArticlePhoto.php";
+}
+
+
+// Enregistrement de la photo d'un article
+function enregPhotoProfil($idArt)
+{
+ $objProfil = new UploadPhoto();
+ $objProfil -> updatePhotoProfil($idArt);
+ tableau();
 }
 
 function contact()

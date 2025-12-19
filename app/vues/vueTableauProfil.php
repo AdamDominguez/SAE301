@@ -44,7 +44,7 @@ $title = "Tableau de bord | BeeLink";
                 <div class="container-profil">
                     <div class="recap-profil">
                         <div class="container-profil-photo">
-                            <div class="photo-profil">
+                            <div class="photo-profil" id="photoProfil">
                                 <button class="upload-photo">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--blanc)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-camera w-5 h-5" aria-hidden="true">
                                         <path d="M13.997 4a2 2 0 0 1 1.76 1.05l.486.9A2 2 0 0 0 18.003 7H20a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1.997a2 2 0 0 0 1.759-1.048l.489-.904A2 2 0 0 1 10.004 4z"></path>
@@ -58,6 +58,19 @@ $title = "Tableau de bord | BeeLink";
                             </div>
 
                         </div>
+
+                        <!-- formulaire d'upload de la photo de profil -->
+                        <form method="post"
+                            action="index.php?action=enregArticlePhoto&idArt=<?= $article["Code"] ?>"
+                            enctype="multipart/form-data" id="formPhoto">
+
+                            <div class="form_elt">
+                                <input type="hidden" name="MAX_FILE_SIZE" value="500000">
+                                <input type="file" class="texte" name="photoArticle" accept="image/jpeg, image/png, image/jpg, img/webp">
+                            </div>
+
+                            <input type="submit" class="valid" name="ok" value="Valider">
+                        </form>
 
                         <div class="container-profil-contact">
                             <div class="element-profil">
@@ -109,7 +122,7 @@ $title = "Tableau de bord | BeeLink";
 
                             <div class="element-info perso-3">
                                 <label class="email" for="email">Email<span style="color: var(--jaune);">*</span></label>
-                                <input type="text" id="email" name="email" value="<?=$_SESSION['email']?>">
+                                <input type="text" id="email" name="email" value="<?= $_SESSION['email'] ?>">
                             </div>
 
                             <div class="element-info perso-4">
@@ -119,17 +132,17 @@ $title = "Tableau de bord | BeeLink";
 
                             <div class="element-info perso-5">
                                 <label class="adresse" for="adresse">Adresse<span style="color: var(--jaune);">*</span></label>
-                                <input type="text" id="adresse" name="adresse" value="<?= $_SESSION['adresse'] ?>"> 
+                                <input type="text" id="adresse" name="adresse" value="<?= $_SESSION['adresse'] ?>">
                             </div>
 
                             <div class="flex-element info-2">
                                 <div class="element-info perso-6">
                                     <label class="ville" for="ville">Ville<span style="color: var(--jaune);">*</span></label>
-                                    <input type="text" id="ville" name="ville" value="<?=$_SESSION['ville']?>">
+                                    <input type="text" id="ville" name="ville" value="<?= $_SESSION['ville'] ?>">
                                 </div>
                                 <div class="element-info perso-7">
                                     <label class="postal" for="postal">Code postal<span style="color: var(--jaune);">*</span></label>
-                                    <input type="text" id="postal" name="postal" value="<?=$_SESSION['postal']?>">
+                                    <input type="text" id="postal" name="postal" value="<?= $_SESSION['postal'] ?>">
                                 </div>
                                 <div class="element-info perso-8">
                                     <label class="pays" for="pays">France<span style="color: var(--jaune);">*</span></label>
@@ -137,7 +150,7 @@ $title = "Tableau de bord | BeeLink";
                                 </div>
                             </div>
 
-                           <!--  <div class="element-info perso-9">
+                            <!--  <div class="element-info perso-9">
                                 <label class="bio" for="bio">Biographie</label>
                                 <textarea type="text" id="bio" name="bio" placeholder="Veuillez rentrer votre description..."></textarea>
                             </div> -->
