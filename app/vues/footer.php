@@ -8,9 +8,10 @@
 
         <div class="Footer2A">
             <h4>Nos partenaires</h4>
-            <a href="">IUT de Mulhouse</a>
-            <a href="">Département GEII</a>
-            <a href="">Département MMI</a>
+            <a href="https://www.iutmulhouse.uha.fr/">IUT de Mulhouse</a>
+            <a href="https://www.iutmulhouse.uha.fr/b-u-t-genie-electrique-et-informatique-industrielle-geii/">Département
+                GEII</a>
+            <a href="https://www.mmi.uha.fr/">Département MMI</a>
         </div>
 
         <div class="Footer1B">
@@ -37,7 +38,7 @@
     </div>
 
     <div class="Footer3">
-        <p class="Footer3A">© 2024 BeeLink. Projet étudiant - Tous droits réservés.</p>
+        <p class="Footer3A">© 2025 BeeLink. Projet étudiant - Tous droits réservés.</p>
         <p class="Footer3B">
             <a href="">Mentions légales</a> -
             <a href="">Politique de confidentialité</a>
