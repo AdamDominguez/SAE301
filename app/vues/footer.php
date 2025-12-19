@@ -8,9 +8,10 @@
 
         <div class="Footer2A">
             <h4>Nos partenaires</h4>
-            <a href="">IUT de Mulhouse</a>
-            <a href="">Département GEII</a>
-            <a href="">Département MMI</a>
+            <a href="https://www.iutmulhouse.uha.fr/">IUT de Mulhouse</a>
+            <a href="https://www.iutmulhouse.uha.fr/b-u-t-genie-electrique-et-informatique-industrielle-geii/">Département
+                GEII</a>
+            <a href="https://www.mmi.uha.fr/">Département MMI</a>
         </div>
 
         <div class="Footer1B">
