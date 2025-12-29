@@ -1,5 +1,15 @@
 <?php
 $title = "Tableau de bord | BeeLink";
+
+$idUtilisateur = $_SESSION['id'];
+$urlPhoto = "photoArticle/defaut.png"; // Image par défaut
+
+// Vérification de l'existence d'une image personnalisée (jpg ou png)
+if (file_exists("photoArticle/" . $idUtilisateur . ".jpg")) {
+    $urlPhoto = "photoArticle/" . $idUtilisateur . ".jpg";
+} elseif (file_exists("photoArticle/" . $idUtilisateur . ".png")) {
+    $urlPhoto = "photoArticle/" . $idUtilisateur . ".png";
+}
 ?>
 
 <!DOCTYPE html>
@@ -44,7 +54,7 @@ $title = "Tableau de bord | BeeLink";
                 <div class="container-profil">
                     <div class="recap-profil">
                         <div class="container-profil-photo">
-                            <div class="photo-profil" id="photoProfil">
+                            <div class="photo-profil" id="photoProfil" style="background-image: url('<?= $urlPhoto ?>'); background-size: cover; background-position: center;">
                                 <button class="upload-photo">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--blanc)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-camera w-5 h-5" aria-hidden="true">
                                         <path d="M13.997 4a2 2 0 0 1 1.76 1.05l.486.9A2 2 0 0 0 18.003 7H20a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1.997a2 2 0 0 0 1.759-1.048l.489-.904A2 2 0 0 1 10.004 4z"></path>
@@ -61,7 +71,7 @@ $title = "Tableau de bord | BeeLink";
 
                         <!-- formulaire d'upload de la photo de profil -->
                         <form method="post"
-                            action="index.php?action=enregArticlePhoto&idArt=<?= $article["Code"] ?>"
+                            action="index.php?action=enregArticlePhoto&idArt=<?= $_SESSION['id'] ?>"
                             enctype="multipart/form-data" class="formPhoto">
 
                             <div class="form_elt">

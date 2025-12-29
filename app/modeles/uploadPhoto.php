@@ -5,9 +5,9 @@ class UploadPhoto extends Database
 {
 
     /*******************************************************
-    Enregistre la photo d'un article 
+    Enregistre la photo d'un membre
     Entrée :
-    idArt [string] : l'identifiant de l'article
+    idArt [string] : l'identifiant du membre
     _FILES [array] : tableau contenant les fichiers uploadé
 
     Retour :

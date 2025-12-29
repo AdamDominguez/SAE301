@@ -2,7 +2,6 @@
 require_once __DIR__ . "/../modeles/contact.php";
 require_once __DIR__ . "/../modeles/inscription.php";
 require_once __DIR__ . "/../modeles/connexion.php";
-require_once __DIR__ . "/../modeles/membre.php";
 require_once __DIR__ . "/../modeles/uploadPhoto.php";
 
 // Affichage de la page d'accueil
@@ -78,20 +77,18 @@ function tableauProfil()
     require __DIR__ . "/../vues/vueTableauProfil.php";
 }
 
-// Changement de la photo d'un article
-function photoProfil($idMembre)
+// Changement de la photo d'un membre
+function photoProfil()
 {
-    $objProfil = new Membre();
-    $objProfil = $objProfil->getPhoto($idMembre);
     require __DIR__ . "/../vues/vueTableauProfil.php";
 }
 
-// Enregistrement de la photo d'un article
+// Enregistrement de la photo d'un membre
 function enregPhotoProfil($idArt)
 {
     $objProfil = new UploadPhoto();
     $objProfil->updatePhotoProfil($idArt);
-    tableau();
+    tableauProfil();
 }
 
 function contact()
@@ -134,6 +131,7 @@ function login($email, $mdp)
     $userData = $userDB->getUserContent($email);
 
     if ($userData && password_verify($mdp, $userData['mdp'])) {
+        $_SESSION['id'] = $userData['id'];
         $_SESSION['acces'] = $userData['prenom'];
         $_SESSION['nom'] = $userData['nom'];
         $_SESSION['email'] = $userData['email'];
