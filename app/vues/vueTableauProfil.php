@@ -2,7 +2,7 @@
 $title = "Tableau de bord | BeeLink";
 
 $idUtilisateur = $_SESSION['id'];
-$urlPhoto = "photoArticle/defaut.png"; // Image par défaut
+$urlPhoto = "photoArticle/defaut.png"; // lien relatif image de profil par défaut 
 
 // Vérification de l'existence d'une image personnalisée (jpg ou png)
 if (file_exists("photoArticle/" . $idUtilisateur . ".jpg")) {
@@ -10,6 +10,7 @@ if (file_exists("photoArticle/" . $idUtilisateur . ".jpg")) {
 } elseif (file_exists("photoArticle/" . $idUtilisateur . ".png")) {
     $urlPhoto = "photoArticle/" . $idUtilisateur . ".png";
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -71,16 +72,17 @@ if (file_exists("photoArticle/" . $idUtilisateur . ".jpg")) {
 
                         <!-- formulaire d'upload de la photo de profil -->
                         <form method="post"
-                            action="index.php?action=enregArticlePhoto&idArt=<?= $_SESSION['id'] ?>"
+                            action="index.php?action=enregMembrePhoto&idMembre=<?= $_SESSION['id'] ?>"
                             enctype="multipart/form-data" class="formPhoto">
 
                             <div class="form_elt">
                                 <input type="hidden" name="MAX_FILE_SIZE" value="500000">
-                                <input type="file" class="texte" name="photoArticle" accept="image/jpeg, image/png, image/jpg, img/webp">
+                                <input type="file" class="texte" name="photoMembre" accept="image/jpeg, image/jpg, image/png,  img/webp">
                             </div>
 
                             <input type="submit" class="valid" name="ok" value="Valider">
                         </form>
+                        <!---->
 
                         <div class="container-profil-contact">
                             <div class="element-profil">
@@ -204,7 +206,7 @@ if (file_exists("photoArticle/" . $idUtilisateur . ".jpg")) {
     </main>
     <?php require "footer.php"; ?>
 
-    <script src="js/photo.js"></script>
+    <script src="public/js/photo.js"></script>
 </body>
 
 </html>

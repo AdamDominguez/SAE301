@@ -751,15 +751,9 @@ textarea {
     box-sizing: border-box;
 }
 
-
-
-
-
-
-
 /* upload de la photo de profil */
 .formPhoto {
-    display: block;
+    display: none;
 }
 
 

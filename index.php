@@ -40,7 +40,7 @@ try {
             else if ($_GET["action"] == "quit")
                 quit();
             else if ($_GET["action"] == "membrePhoto")
-                photoProfil($_GET["idMembre"]);  // Changement de la photo d'un article en fonction de son ID
+                photoProfil();  // Changement de la photo d'un article en fonction de son ID
 
             else if ($_GET["action"] == "enregMembrePhoto")    // Enregistrement de la photo d'un article 
                 enregPhotoProfil($_GET["idMembre"]);

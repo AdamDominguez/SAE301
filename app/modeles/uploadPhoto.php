@@ -1,13 +1,12 @@
 <?php
-require_once "database.php";
 
-class UploadPhoto extends Database
+class UploadPhoto
 {
 
     /*******************************************************
     Enregistre la photo d'un membre
     Entrée :
-    idArt [string] : l'identifiant du membre
+    idMembre [string] : l'identifiant du membre
     _FILES [array] : tableau contenant les fichiers uploadé
 
     Retour :
@@ -15,24 +14,24 @@ class UploadPhoto extends Database
     public function updatePhotoProfil($idMembre)
     {
         // Test s'il n'y a pas d'erreur
-        if ($_FILES['photoArticle']['error'] == 0) {
+        if ($_FILES['photoMembre']['error'] == 0) {
             // Test si la taille du fichier uploadé est conforme
-            if ($_FILES['photoArticle']['size'] <= 500000) {
+            if ($_FILES['photoMembre']['size'] <= 5000000) {
                 // Test si l'extension du fichier uploadé est autorisée
-                $infosfichier = new SplFileInfo($_FILES['photoArticle']['name']);
+                $infosfichier = new SplFileInfo($_FILES['photoMembre']['name']);
                 $extension_upload = $infosfichier->getExtension();
-                $extensions_autorisees = array('jpg', 'png');
+                $extensions_autorisees = array('jpeg', 'jpg', 'png', 'webp');
                 if (in_array($extension_upload, $extensions_autorisees)) {
-                    // Stockage définitif du fichier photo dans le dossier "photoArticle"
+                    // Stockage définitif du fichier photo dans le dossier "photoMembre"
                     move_uploaded_file(
-                        $_FILES['photoArticle']['tmp_name'],
+                        $_FILES['photoMembre']['tmp_name'],
                         PHOTOARTDIR . "/" . $idMembre . '.' . $extension_upload
                     );
                 } else
-                    throw new Exception("Photo de l'article $idMembre : type de fichier non autorisé");
+                    throw new Exception("Erreur : Type de fichier non autorisé. Veuillez utiliser une image au format JPG, PNG ou WEBP.");
             } else
-                throw new Exception("Photo de l'article $idMembre : Fichier trop volumineux");
+                throw new Exception("Erreur : L'image est trop volumineuse. La taille maximum autorisée est de 5 Mo.");
         } else
-            throw new Exception("Photo de l'article $idMembre : Code d'erreur : " . $_FILES['photoArticle']['error']);
+            throw new Exception("Une erreur est survenue lors du téléchargement de l'image. (Code d'erreur : " . $_FILES['photoMembre']['error'] . ")");
     }
 }

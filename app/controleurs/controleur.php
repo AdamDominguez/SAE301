@@ -84,11 +84,13 @@ function photoProfil()
 }
 
 // Enregistrement de la photo d'un membre
-function enregPhotoProfil($idArt)
+function enregPhotoProfil($idMembre)
 {
     $objProfil = new UploadPhoto();
-    $objProfil->updatePhotoProfil($idArt);
-    tableauProfil();
+    $objProfil->updatePhotoProfil($idMembre);
+    //  Ajout d'une redirection après l'enregistrement pour éviter la page blanche et le re-soumission du formulaire.
+    header("Location: index.php?action=tableauProfil");
+    exit(); // Toujours exit après une redirection
 }
 
 function contact()
