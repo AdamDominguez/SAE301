@@ -9,10 +9,10 @@ class Connexion extends Database
     sinon on retourne 0 (NULL)
     Entrée : $loginInput
 Retour : $result
-*******************************************************/
+     *******************************************************/
     public function getUserContent($loginInput)
     {
-        $sql = "SELECT nom, prenom, email, mdp, postal, ville, adresse, numero, pays, date_envoi FROM membres WHERE email = ?";
+        $sql = "SELECT id, nom, prenom, email, mdp, postal, ville, adresse, numero, pays, date_envoi FROM membres WHERE email = ?";
 
         $result = $this->execReqPrep($sql, array($loginInput));
 
