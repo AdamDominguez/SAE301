@@ -19,14 +19,6 @@ try {
                 tableauDonneesGraphiques(); // Affichage de la page "Graphiques" de la page"Données" du tableau de bord
             else if ($_GET["action"] == "tableauDonneesTableau")
                 tableauDonneesTableau(); // Affichage de la page "Tableau" de la page"Données" du tableau de bord
-            else if ($_GET["action"] == "tableauAlertes")
-                tableauAlertes(); // Affichage de la page "Alertes" du tableau de bord
-            else if ($_GET["action"] == "tableauCampagne")
-                tableauCampagne(); // Affichage de la page "Ma Camapgne" du tableau de bord
-            else if ($_GET["action"] == "tableauContacts")
-                tableauContacts(); // Affichage de la page "Contacts" du tableau de bord
-            else if ($_GET["action"] == "tableauParametres")
-                tableauParametres(); // Affichage de la page "Paramètres" du tableau de bord
             else if ($_GET["action"] == "tableauProfil")
                 tableauProfil(); // Affichage de la page "Profil" du tableau de bord
             else if ($_GET["action"] == "contact")
