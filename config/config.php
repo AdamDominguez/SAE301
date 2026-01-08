@@ -4,4 +4,4 @@ define("DBNAME", "beelink");
 define("DBUSER", "root");
 define("DBPWD", "root");
 
-define("PHOTOARTDIR", "photoArticle");
+define("PHOTOUSERDIR", "public/img/photoUtilisateur");

@@ -2,14 +2,19 @@
 $title = "Tableau de bord | BeeLink";
 
 $idUtilisateur = $_SESSION['id'];
-$urlPhoto = "photoArticle/defaut.png"; // lien relatif image de profil par défaut 
+$urlPhoto = "public/img/photoUtilisateur/defaut.png"; // lien relatif image de profil par défaut 
 
-// Vérification de l'existence d'une image personnalisée (jpg ou png)
-if (file_exists("photoArticle/" . $idUtilisateur . ".jpg")) {
-    $urlPhoto = "photoArticle/" . $idUtilisateur . ".jpg";
-} elseif (file_exists("photoArticle/" . $idUtilisateur . ".png")) {
-    $urlPhoto = "photoArticle/" . $idUtilisateur . ".png";
+// Vérification de l'existence d'une image personnalisée 
+$extensions = ['jpeg', 'jpg', 'png', 'webp'];
+foreach ($extensions as $ext) {
+    if (file_exists("public/img/photoUtilisateur/" . $idUtilisateur . "." . $ext)) {
+        $urlPhoto = "public/img/photoUtilisateur/" . $idUtilisateur . "." . $ext;
+        break;
+    }
 }
+
+// Ajout d'un timestamp pour vider le cache navigateur
+$urlPhoto .= "?v=" . time();
 
 ?>
 
@@ -65,7 +70,6 @@ if (file_exists("photoArticle/" . $idUtilisateur . ".jpg")) {
                             </div>
                             <div class="utilisateur-profil">
                                 <div class="nom-utilisateur"><?= $_SESSION['acces'] ?> <?= $_SESSION['nom'] ?></div>
-                                <div class="fonction">Apiculteur</div>
                             </div>
 
                         </div>

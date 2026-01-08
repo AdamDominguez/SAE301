@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
             inputPhoto.click();
         });
 
-        // Envoie automatiquement le formulaire quand un fichier est sélectionné
+        // Envoie automatiquement le formulaire quand un fichier est sélectionné 
         inputPhoto.addEventListener("change", () => {
             if (inputPhoto.files.length > 0) {
                 formPhoto.submit();

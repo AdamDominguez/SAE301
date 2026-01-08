@@ -88,7 +88,7 @@ function enregPhotoProfil($idMembre)
 {
     $objProfil = new UploadPhoto();
     $objProfil->updatePhotoProfil($idMembre);
-    //  Ajout d'une redirection après l'enregistrement pour éviter la page blanche et le re-soumission du formulaire.
+    //  Ajout d'une redirection après l'enregistrement pour éviter la page blanche et la re-soumission du formulaire.
     header("Location: index.php?action=tableauProfil");
     exit(); // Toujours exit après une redirection
 }

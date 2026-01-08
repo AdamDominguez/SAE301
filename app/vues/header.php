@@ -4,6 +4,8 @@ $pageActive = $_GET['action'] ?? 'accueil';
 
 // Nouvelle variable pour vérifier si l'action actuelle commence par 'tableau'
 $tableauPage = strpos($pageActive, 'tableau') === 0;
+
+
 ?>
 
 <header>
@@ -29,7 +31,20 @@ $tableauPage = strpos($pageActive, 'tableau') === 0;
         </nav>
     </div>
 
-    <?php if (isset($_SESSION['acces'])): ?>
+    <?php if (isset($_SESSION['acces'], $_SESSION['id'])):
+        $idUtilisateur = $_SESSION['id'];
+        $urlPhoto = "public/img/photoUtilisateur/defaut.png";
+
+        // Vérification de l'existence d'une image personnalisée 
+        $extensions = ['jpeg', 'jpg', 'png', 'webp'];
+        foreach ($extensions as $ext) {
+            if (file_exists("public/img/photoUtilisateur/" . $idUtilisateur . "." . $ext)) {
+                $urlPhoto = "public/img/photoUtilisateur/" . $idUtilisateur . "." . $ext;
+                break;
+            }
+        }
+        $urlPhoto .= "?v=" . time();
+    ?>
         <div class="Connecter">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#333333"
                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -39,8 +54,7 @@ $tableauPage = strpos($pageActive, 'tableau') === 0;
             </svg>
             <div class=UserMenu>
                 <p><?= $_SESSION['email'] ?></p>
-                <div class="UserMenuPP">
-                    <img src="https://media.tenor.com/zrQPuXUoB5QAAAAe/gilbert.png" alt="">
+                <div class="UserMenuPP" style="background-image: url('<?= $urlPhoto ?>'); background-size: cover; background-position: center;">
                 </div>
                 <p>Bonjour <?= $_SESSION['acces'] ?> !</p>
                 <div class="UserMenuLiens">
