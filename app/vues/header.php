@@ -46,7 +46,7 @@ $tableauPage = strpos($pageActive, 'tableau') === 0;
                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
                             <path
                                 d="M5.33333 8.66667H0V10.6667C0 11.0333 0.130667 11.3473 0.392 11.6087C0.653333 11.87 0.967111 12.0004 1.33333 12H5.33333V8.66667ZM6.66667 8.66667V12H10.6667C11.0333 12 11.3473 11.8696 11.6087 11.6087C11.87 11.3478 12.0004 11.0338 12 10.6667V8.66667H6.66667ZM5.33333 7.33333V4H0V7.33333H5.33333ZM6.66667 7.33333H12V4H6.66667V7.33333ZM0 2.66667H12V1.33333C12 0.966667 11.8696 0.652889 11.6087 0.392C11.3478 0.131111 11.0338 0.000444444 10.6667 0H1.33333C0.966667 0 0.652889 0.130667 0.392 0.392C0.131111 0.653333 0.000444444 0.967111 0 1.33333V2.66667Z"
-                                fill="#333333" />
+                                fill="white" />
                         </svg>
                         <a href="index.php?action=tableauAccueil">Tableau de Bord</a>
                     </div>
@@ -82,8 +82,8 @@ $tableauPage = strpos($pageActive, 'tableau') === 0;
                 <h2>BeeLink</h2>
                 <h3>Connectez-vous pour accéder à votre espace client</h3>
                 <form method="post" action=<?= $_SERVER["PHP_SELF"] . "?action=login" ?>>
-                    <div>
-                        <label for="email">Email
+                    <div class="ConnecterField">
+                        <label for="email">Email</label>
                         <div class="ConnecterInput1">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 20 16" fill="none">
                                 <path
@@ -92,11 +92,10 @@ $tableauPage = strpos($pageActive, 'tableau') === 0;
                             </svg>
                             <input type="text" id="email" name="email" placeholder="Email" value="" required>
                         </div>
-                        </label>
                     </div>
 
-                    <div>
-                        <label for="password">Mot de passe
+                    <div class="ConnecterField">
+                        <label for="password">Mot de passe</label>
                         <div class="ConnecterInput2">
                             <div class="ConnecterInput2a">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="21" viewBox="0 0 16 21"
@@ -107,8 +106,7 @@ $tableauPage = strpos($pageActive, 'tableau') === 0;
                                 </svg>
                                 <input type="password" id="password" name="password" placeholder="Mot de passe" value=""
                                     required>
-                        </div>
-                        </label>
+                            </div>
                             <a href="">Mot de passe oublié ?</a>
                         </div>
                     </div>

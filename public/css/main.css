@@ -470,6 +470,10 @@ header a {
     color: var(--jaune);
 }
 
+.ConnecterContent a:hover {
+    text-decoration: underline;
+}
+
 .ConnecterContent h2,
 .ConnecterContent h3 {
     color: var(--noir);
@@ -510,11 +514,30 @@ header a {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    width: 100%;
+}
+
+.ConnecterField {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 5px;
+}
+
+.ConnecterContent label {
+    display: block;
+    width: 100%;
+    color: var(--noir);
+    font-weight: 500;
+    padding-bottom: 5px;
 }
 
 .ConnecterContent input {
-    width: 15vw;
     background: 0;
+    flex: 1;
+    min-width: 0;
+    border: none;
+    outline: none;
 }
 
 .ConnecterInput2a,
@@ -523,8 +546,24 @@ header a {
     padding: 10px;
     border-radius: 15px;
     display: flex;
-    justify-content: center;
+    align-items: center;
     gap: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-width 0.2s ease;
+}
+
+.ConnecterInput2a:focus-within,
+.ConnecterInput1:focus-within {
+    border-width: 2px;
+}
+
+.ConnecterInput2 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 5px;
+    padding: 0;
 }
 
 .ConnecterInput2a svg,
