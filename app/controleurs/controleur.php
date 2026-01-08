@@ -47,30 +47,6 @@ function tableauDonneesTableau()
     require __DIR__ . "/../vues/vueTableauDonneesTableau.php";
 }
 
-function tableauAlertes()
-{
-    setcookie('page', '?action=tableauAlertes', time() + 3600);
-    require __DIR__ . "/../vues/vueTableauAlertes.php";
-}
-
-function tableauCampagne()
-{
-    setcookie('page', '?action=tableauCampagne', time() + 3600);
-    require __DIR__ . "/../vues/vueTableauCampagne.php";
-}
-
-function tableauContacts()
-{
-    setcookie('page', '?action=tableauContacts', time() + 3600);
-    require __DIR__ . "/../vues/vueTableauContacts.php";
-}
-
-function tableauParametres()
-{
-    setcookie('page', '?action=tableauParametres', time() + 3600);
-    require __DIR__ . "/../vues/vueTableauParametres.php";
-}
-
 function tableauProfil()
 {
     setcookie('page', '?action=tableauProfil', time() + 3600);
