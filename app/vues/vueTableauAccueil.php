@@ -32,7 +32,7 @@ $title = "Tableau de bord | BeeLink";
         <section class="contenu-tableau">
             <div class="titres">
                 <h1 class="titre-principal">Accueil</h1>
-                <p class="sous-titre1">Bienvenu sur BeeLink.</p>
+                <p class="sous-titre1">Bienvenue sur BeeLink.</p>
             </div>
             <div class="grille-widgets">
 
