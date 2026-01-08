@@ -2,6 +2,7 @@
 require_once __DIR__ . "/../modeles/contact.php";
 require_once __DIR__ . "/../modeles/inscription.php";
 require_once __DIR__ . "/../modeles/connexion.php";
+require_once __DIR__ . "/../modeles/uploadPhoto.php";
 
 // Affichage de la page d'accueil
 function accueil()
@@ -52,6 +53,22 @@ function tableauProfil()
     require __DIR__ . "/../vues/vueTableauProfil.php";
 }
 
+// Changement de la photo d'un membre
+function photoProfil()
+{
+    require __DIR__ . "/../vues/vueTableauProfil.php";
+}
+
+// Enregistrement de la photo d'un membre
+function enregPhotoProfil($idMembre)
+{
+    $objProfil = new UploadPhoto();
+    $objProfil->updatePhotoProfil($idMembre);
+    //  Ajout d'une redirection après l'enregistrement pour éviter la page blanche et le re-soumission du formulaire.
+    header("Location: index.php?action=tableauProfil");
+    exit(); // Toujours exit après une redirection
+}
+
 function contact()
 {
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -92,6 +109,7 @@ function login($email, $mdp)
     $userData = $userDB->getUserContent($email);
 
     if ($userData && password_verify($mdp, $userData['mdp'])) {
+        $_SESSION['id'] = $userData['id'];
         $_SESSION['acces'] = $userData['prenom'];
         $_SESSION['nom'] = $userData['nom'];
         $_SESSION['email'] = $userData['email'];
