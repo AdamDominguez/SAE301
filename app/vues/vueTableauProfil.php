@@ -177,26 +177,6 @@ if (file_exists("photoArticle/" . $idUtilisateur . ".jpg")) {
                         </div>
                     </div>
                 </div>
-
-                <div class="flex-info-ruche">
-                    <div class="widget-indicateur">
-                        <p class="etiquette-indicateur">Ruches actives</p>
-                        <p class="valeur-indicateur">4</p>
-                    </div>
-                    <div class="widget-indicateur">
-                        <p class="etiquette-indicateur">Production totale</p>
-                        <p class="valeur-indicateur">165 kg</p>
-                    </div>
-                    <div class="widget-indicateur">
-                        <p class="etiquette-indicateur">Alertes traitées</p>
-                        <p class="valeur-indicateur">12</p>
-                    </div>
-                    <div class="widget-indicateur">
-                        <p class="etiquette-indicateur">Taux de satisfaction</p>
-                        <p class="valeur-indicateur">98%</p>
-                    </div>
-                </div>
-
             </div>
         </section>
     </main>
