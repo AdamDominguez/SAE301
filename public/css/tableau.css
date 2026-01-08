@@ -1498,3 +1498,9 @@ td:nth-child(5) {
     margin-top: 15px;
     font-style: italic;
 }
+
+.sous-titre1 {
+    color: var(--couleur-texte-clair);
+    margin: 5px 0 20px 0;
+    font-size: 0.9em;
+}
