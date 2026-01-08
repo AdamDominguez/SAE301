@@ -22,30 +22,18 @@ $title = "Tableau de bord | BeeLink";
                 <h4>PRINCIPAL</h4>
                 <div class="accueil element-menu actif"><a href="index.php?action=tableauAccueil">Accueil</a></div>
                 <div class="donnees element-menu"><a href="index.php?action=tableauDonnees">Données</a></div>
-                <div class="alertes element-menu"><a href="index.php?action=tableauAlertes">Alertes</a></div>
-                <div class="campagne element-menu"><a href="index.php?action=tableauCampagne">Ma Campagne</a></div>
             </div>
             <div class="gestion">
                 <h4>GESTION</h4>
-                <div class="contacts element-menu"><a href="index.php?action=tableauContacts">Contacts</a></div>
-                <div class="parametres element-menu"><a href="index.php?action=tableauParametres">Paramètres</a></div>
                 <div class="profil element-menu"><a href="index.php?action=tableauProfil">Profil</a></div>
             </div>
         </nav>
 
         <section class="contenu-tableau">
-            <div class="bandeau-accueil">
-                <div class="icone">💡</div>
-                <div class="contenu-bandeau">
-                    <h3>Bienvenue sur BeeLink</h3>
-                    <p>Découvrez toutes les fonctionnalités pour surveiller vos ruches connectées. Explorez les différentes sections via la navigation de gauche.</p>
-                    <div class="actions">
-                        <button class="btn-primaire">Voir les valeurs en temps réel</button>
-                        <button class="btn-secondaire">Analyser les données</button>
-                    </div>
-                </div>
+            <div class="titres">
+                <h1 class="titre-principal">Accueil</h1>
+                <p class="sous-titre1">Bienvenue sur BeeLink.</p>
             </div>
-
             <div class="grille-widgets">
 
                 <div class="widget-indicateur">

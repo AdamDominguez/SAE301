@@ -38,13 +38,9 @@ $urlPhoto .= "?v=" . time();
                 <h4>PRINCIPAL</h4>
                 <div class="accueil element-menu"><a href="index.php?action=tableauAccueil">Accueil</a></div>
                 <div class="donnees element-menu"><a href="index.php?action=tableauDonnees">Données</a></div>
-                <div class="alertes element-menu"><a href="index.php?action=tableauAlertes">Alertes</a></div>
-                <div class="campagne element-menu"><a href="index.php?action=tableauCampagne">Ma Campagne</a></div>
             </div>
             <div class="gestion">
                 <h4>GESTION</h4>
-                <div class="contacts element-menu"><a href="index.php?action=tableauContacts">Contacts</a></div>
-                <div class="parametres element-menu"><a href="index.php?action=tableauParametres">Paramètres</a></div>
                 <div class="profil element-menu actif"><a href="index.php?action=tableauProfil">Profil</a></div>
             </div>
         </nav>
@@ -185,26 +181,6 @@ $urlPhoto .= "?v=" . time();
                         </div>
                     </div>
                 </div>
-
-                <div class="flex-info-ruche">
-                    <div class="widget-indicateur">
-                        <p class="etiquette-indicateur">Ruches actives</p>
-                        <p class="valeur-indicateur">4</p>
-                    </div>
-                    <div class="widget-indicateur">
-                        <p class="etiquette-indicateur">Production totale</p>
-                        <p class="valeur-indicateur">165 kg</p>
-                    </div>
-                    <div class="widget-indicateur">
-                        <p class="etiquette-indicateur">Alertes traitées</p>
-                        <p class="valeur-indicateur">12</p>
-                    </div>
-                    <div class="widget-indicateur">
-                        <p class="etiquette-indicateur">Taux de satisfaction</p>
-                        <p class="valeur-indicateur">98%</p>
-                    </div>
-                </div>
-
             </div>
         </section>
     </main>
