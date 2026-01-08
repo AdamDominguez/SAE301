@@ -52,8 +52,9 @@ body {
 .banniere {
     display: flex;
     justify-content: center;
-    gap: 300px;
-    margin-top: 18px;
+    /* utilisation de clamp pour gérér plusieurs tailles d'écran en même temps */
+    gap: clamp(20px, 15vw, 300px);
+    margin: 18px auto 0 auto;
 }
 
 .fonctions {

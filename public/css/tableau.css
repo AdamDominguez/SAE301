@@ -1,3 +1,5 @@
+/* --- GLOBAL --- */
+
 :root {
     --noir: #333333;
     --blanc: #FFFFFF;
@@ -24,12 +26,15 @@ main {
 .contenu-tableau {
     flex-grow: 1;
     padding: 20px;
+    min-width: 0;
+    overflow-x: hidden;
 }
 
 /* Menu gauche */
 
 .FonctionNav {
     width: 250px;
+    max-width: 100%;
     padding-top: 10px;
     border-right: 2px solid var(--jaune);
     margin-left: 20px;
@@ -66,70 +71,13 @@ main {
     color: var(--noir);
 }
 
-/* Contenu (grid) */
+/* Widgets Base Styles */
 
-.grille-widgets,
-/* Accueil */
-.grille-widgets-donnees
-
-/* Données */
-    {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-}
-
-/* Bandeau Jaune */
-
-.bandeau-accueil {
-    display: flex;
-    align-items: flex-start;
-    background-color: var(--jaune);
-    color: var(--noir);
-    padding: 30px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.bandeau-accueil .icone {
-    font-size: 2em;
-    margin-right: 20px;
-    line-height: 1;
-}
-
-.bandeau-accueil h3 {
-    margin: 0 0 5px 0;
-}
-
-.bandeau-accueil p {
-    margin-bottom: 15px;
-    max-width: 800px;
-}
-
-.bandeau-accueil .actions button {
-    padding: 10px 20px;
-    border-radius: 4px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-right: 10px;
-    background-color: var(--noir);
-    color: var(--blanc);
-    border: none;
-    transition: color 0.2s;
-}
-
-.bandeau-accueil .actions button:hover {
-    color: var(--jaune);
-}
-
-/* Widgets */
-
-/* Style de base pour les widgets (Fond sombre, Texte blanc) */
 .widget-indicateur,
 .widget-alerte,
 .widget-actions,
-.widget-ruches {
+.widget-ruches,
+.widget-graphique-donnees {
     background-color: var(--couleur-fond-widget);
     padding: 20px;
     border-radius: 8px;
@@ -137,46 +85,44 @@ main {
     color: var(--blanc);
 }
 
-.entete-indicateur
-
-/* Contient la div de l'icone et la valeur de changement (positif ou negatif) ) */
-    {
+.entete-indicateur {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 5px;
 }
 
-.icone-indicateur
-
-/* Div qui contient le svg */
-    {
+.icone-indicateur {
     font-size: 1.5em;
     padding: 10px;
     background-color: var(--couleur-border);
     border-radius: 4px;
 }
 
-.etiquette-indicateur
-
-/* Titre du widget (température, poids etc) */
-    {
+.etiquette-indicateur {
     color: var(--couleur-texte-clair);
     margin: 0;
     font-size: 0.9em;
 }
 
-.valeur-indicateur
-
-/* Valeur du widget (température, poids etc) */
-    {
+.valeur-indicateur {
     font-size: 2.2em;
     font-weight: bold;
     margin: 5px 0 0 0;
     color: var(--blanc);
 }
 
-/* Widgets pages Accueil */
+/* --- PAGE: ACCUEIL --- */
+
+.grille-widgets {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* Bandeau Jaune (Removed as per user edit) */
+
+/* Widgets Layout (Accueil) */
 
 .widget-alerte {
     grid-column: span 3;
@@ -190,7 +136,7 @@ main {
     grid-column: 1 / -1;
 }
 
-/*  Alertes  */
+/* Alertes & Titres Widgets */
 
 .titre-widget {
     display: flex;
@@ -234,7 +180,7 @@ main {
     font-size: 0.8em;
 }
 
-/*  Actions rapides  */
+/* Actions rapides */
 
 .liste-actions a {
     display: flex;
@@ -259,7 +205,7 @@ main {
     color: var(--jaune);
 }
 
-/* Liste des ruches* */
+/* Liste des ruches */
 
 .liste-ruches {
     display: flex;
@@ -323,7 +269,14 @@ main {
     background-color: var(--couleur-avertissement);
 }
 
-/* Entête de la page Données */
+
+/* --- PAGE: DONNÉES --- */
+
+.grille-widgets-donnees {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
 
 .entete-page-donnees {
     display: flex;
@@ -397,15 +350,7 @@ main {
     font-weight: bold;
 }
 
-/* Widgets de la page Données */
-
-.grille-widgets-donnees {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-}
-
-/*  Étiquettes d'état des widgets de la page Données  */
+/* Étiquettes d'état */
 
 .etiquette-etat {
     font-size: 0.7em;
@@ -430,7 +375,8 @@ main {
     background-color: rgba(74, 144, 226, 0.1);
 }
 
-/*  Min/Max  */
+/* Min/Max */
+
 .min-max {
     display: flex;
     justify-content: space-between;
@@ -458,7 +404,7 @@ main {
     text-align: right;
 }
 
-/*  Widgets colorés  */
+/* Widgets colorés (Conteneur Égaux) */
 
 .conteneur-widgets-egaux {
     padding-top: 20px;
@@ -518,52 +464,6 @@ main {
     background-color: var(--couleur-bleu-alertes);
 }
 
-/* Div moyennes page Graphiques de la page Données */
-
-.indicateur-bas {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* Alignement vertical au centre */
-    border-top: 1px solid var(--couleur-border);
-    padding-top: 10px;
-    margin-top: 20px;
-}
-
-.plage-cible {
-    font-size: 0.9em;
-    color: var(--couleur-texte-clair);
-    margin: 0;
-}
-
-/* --- Style de l'étiquette de variation (la pastille rouge ou verte) --- */
-.etiquette-variation {
-    font-size: 0.8em;
-    font-weight: bold;
-    padding: 3px 8px;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    gap: 3px;
-    line-height: 1;
-}
-
-/* Flèche */
-.etiquette-variation span {
-    font-size: 1.1em;
-    font-weight: bolder;
-}
-
-.variation-verte {
-    color: var(--couleur-succes);
-    background-color: rgba(76, 175, 80, 0.15);
-}
-
-.variation-rouge {
-    color: var(--couleur-danger);
-    background-color: rgba(244, 67, 54, 0.15);
-}
-
 /* Map Leaflet */
 
 #map {
@@ -573,7 +473,7 @@ main {
     border-radius: 8px;
 }
 
-/* Tableau de donées */
+/* Tableaux */
 
 .table-container {
     width: 100%;
@@ -588,7 +488,8 @@ table {
     margin-top: 20px;
 }
 
-th, td {
+th,
+td {
     padding: 12px 15px;
     text-align: left;
     border-bottom: 1px solid #444;
@@ -632,4 +533,273 @@ td:nth-child(4) {
 td:nth-child(5) {
     color: #00C951;
     font-weight: 500;
+}
+
+/* Graphiques */
+
+.widget-graphique-donnees.principal {
+    grid-column: 1 / -1;
+}
+
+.widget-graphique-donnees.principal h3 {
+    color: var(--jaune);
+}
+
+.ligne-graphiques-duo {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.ligne-graphiques-duo h3 {
+    color: var(--jaune);
+}
+
+.ligne-graphiques-duo .widget-graphique-donnees {
+    flex: 1;
+    min-width: 0;
+}
+
+.canvas-container {
+    height: 350px;
+    position: relative;
+    width: 100%;
+}
+
+.note-graphique {
+    color: var(--couleur-texte-clair);
+    font-size: 0.85em;
+    margin-top: 15px;
+    font-style: italic;
+}
+
+.sous-titre1 {
+    color: var(--couleur-texte-clair);
+    margin: 5px 0 20px 0;
+    font-size: 0.9em;
+}
+
+/* Indicateur bas (Graphiques) */
+
+.indicateur-bas {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--couleur-border);
+    padding-top: 10px;
+    margin-top: 20px;
+}
+
+.plage-cible {
+    font-size: 0.9em;
+    color: var(--couleur-texte-clair);
+    margin: 0;
+}
+
+.etiquette-variation {
+    font-size: 0.8em;
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    line-height: 1;
+}
+
+.etiquette-variation span {
+    font-size: 1.1em;
+    font-weight: bolder;
+}
+
+.variation-verte {
+    color: var(--couleur-succes);
+    background-color: rgba(76, 175, 80, 0.15);
+}
+
+.variation-rouge {
+    color: var(--couleur-negatif);
+    background-color: rgba(244, 67, 54, 0.15);
+}
+
+/* --- PAGE: PROFIL --- */
+
+.entete-page-profil {
+    margin: 0 auto;
+}
+
+.container-profil {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+    gap: 24px;
+    max-width: 100%;
+}
+
+.recap-profil {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 100%;
+    max-width: 300px;
+    gap: 30px;
+    background-color: var(--couleur-fond-widget);
+    border-radius: 10px;
+    border: 1px solid var(--couleur-border);
+}
+
+.container-profil-photo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+    gap: 24px;
+    border-bottom: 1px solid var(--couleur-texte-clair);
+}
+
+.photo-profil {
+    position: relative;
+    padding: 5rem;
+    border-radius: 100%;
+    background-color: var(--couleur-texte-clair);
+}
+
+.upload-photo {
+    position: absolute;
+    padding: 8px;
+    border-radius: 100%;
+    top: 70%;
+    left: 70%;
+    background-color: var(--noir);
+    border: 1px solid var(--couleur-border);
+}
+
+.upload-photo:hover {
+    cursor: pointer;
+    background-color: var(--blanc);
+}
+
+.upload-photo:hover .lucide.lucide-camera.w-5.h-5 {
+    stroke: var(--noir);
+}
+
+.formPhoto {
+    display: none;
+}
+
+.utilisateur-profil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    gap: 6px;
+}
+
+.container-profil-contact {
+    color: var(--couleur-texte-clair);
+}
+
+.element-profil {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 10px;
+}
+
+.nom-utilisateur {
+    color: var(--blanc);
+}
+
+.fonction {
+    color: var(--couleur-texte-clair);
+}
+
+.info-profil {
+    padding: 20px;
+    background-color: var(--couleur-fond-widget);
+    border-radius: 10px;
+    flex: 1;
+    border: 1px solid var(--couleur-border);
+}
+
+.info-profil h3 {
+    color: white;
+}
+
+.container-info-perso {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 32px;
+    padding: 20px;
+}
+
+.element-info {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    gap: 8px;
+}
+
+.element-info label {
+    color: var(--blanc);
+}
+
+.element-info input {
+    padding: 12px;
+    border-radius: 6px;
+}
+
+.element-info input,
+.element-info textarea {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.flex-element {
+    display: flex;
+    gap: 24px;
+}
+
+.flex-element .element-info {
+    flex: 1;
+}
+
+textarea {
+    resize: none;
+    min-height: 50px;
+    border-radius: 6px;
+    padding: 8px;
+}
+
+.flex-bouton {
+    display: flex;
+    gap: 32px;
+}
+
+.flex-bouton button {
+    padding: 8px 16px;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.flex-bouton button:hover {
+    cursor: pointer;
+    opacity: 80%;
+}
+
+.enregistrer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--jaune);
+}
+
+.flex-info-ruche {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    width: 100%;
 }

@@ -31,10 +31,12 @@ $tableauPage = strpos($pageActive, 'tableau') === 0;
 
     <?php if (isset($_SESSION['acces'])): ?>
         <div class="Connecter">
-            <div
-                style="text-decoration: none; color: inherit; font-weight: bold; display: flex; align-items: center; gap: 10px;">
-                <?= $_SESSION['acces'] ?>
-            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#333333"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5.52 19c.64-2.2 1.84-3 3.22-3h6.52c1.38 0 2.58.8 3.22 3" />
+                <circle cx="12" cy="10" r="3" />
+                <circle cx="12" cy="12" r="10" />
+            </svg>
             <div class=UserMenu>
                 <p><?= $_SESSION['email'] ?></p>
                 <div class="UserMenuPP">
@@ -94,8 +96,8 @@ $tableauPage = strpos($pageActive, 'tableau') === 0;
                         </div>
                     </div>
 
-                    <div class="ConnecterField">
-                        <label for="password">Mot de passe</label>
+                    <div>
+                        <label for="password">Mot de passe
                         <div class="ConnecterInput2">
                             <div class="ConnecterInput2a">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="21" viewBox="0 0 16 21"
@@ -106,17 +108,18 @@ $tableauPage = strpos($pageActive, 'tableau') === 0;
                                 </svg>
                                 <input type="password" id="password" name="password" placeholder="Mot de passe" value=""
                                     required>
-                            </div>
+                        </div>
+                        </label>
                             <a href="">Mot de passe oublié ?</a>
                         </div>
                     </div>
 
-                    <button type="submit">CONNEXION</button>
-                </form>
-                <p>Pas encore de compte ? <a href="index.php?action=inscription">S’inscrire</a></p>
-                <p class="ConnecterAdmin">Vous êtes administrateur ? <a
-                        href="index.php?action=connexionadmin">Connectez-vous</a></p>
-            </div>
+            <button type="submit">CONNEXION</button>
+            </form>
+            <p>Pas encore de compte ? <a href="index.php?action=inscription">S’inscrire</a></p>
+            <p class="ConnecterAdmin">Vous êtes administrateur ? <a
+                    href="index.php?action=connexionadmin">Connectez-vous</a></p>
+        </div>
         </div>
     <?php endif; ?>
     <script src="./public/js/connecter.js"></script>
