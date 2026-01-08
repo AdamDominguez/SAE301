@@ -714,7 +714,7 @@ td:nth-child(5) {
     padding: 20px;
     background-color: var(--couleur-fond-widget);
     border-radius: 10px;
-    flex: 1 ;
+    flex: 1;
     border: 1px solid var(--couleur-border);
 }
 
@@ -770,6 +770,7 @@ textarea {
 .flex-bouton button {
     padding: 8px 16px;
     border-radius: 8px;
+    width: 100%;
 }
 
 .flex-bouton button:hover {
@@ -779,6 +780,7 @@ textarea {
 
 .enregistrer {
     display: flex;
+    justify-content: center;
     align-items: center;
     gap: 8px;
     background-color: var(--jaune);

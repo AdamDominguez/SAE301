@@ -172,6 +172,7 @@ footer {
     background: var(--jaune);
     gap: 50px;
     flex: 1;
+    width: 100%;
 }
 
 footer a {
