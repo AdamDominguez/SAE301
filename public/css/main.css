@@ -362,19 +362,77 @@ header a {
     align-items: center;
     gap: 9px;
     border-radius: 22px;
-    padding: 10px;
+    padding: 12px 18px;
     margin: 0 40px 0 0;
     cursor: pointer;
+    transition: all 0.25s ease;
+    position: relative;
 }
 
 .UserMenuLienA {
     background: var(--jaune);
     margin-left: auto;
+    border: 2px solid var(--noir);
+}
+
+.UserMenuLienA svg path {
+    fill: var(--noir);
+    stroke: var(--noir);
+    stroke-width: 0.5;
+    transition: fill 0.25s ease;
+}
+
+.UserMenuLienA a {
+    color: var(--noir);
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+.UserMenuLienA:hover {
+    background-color: var(--noir);
+    border-color: var(--jaune);
+}
+
+.UserMenuLienA:hover svg path {
+    fill: var(--jaune);
+    stroke: var(--noir);
+}
+
+.UserMenuLienA:hover a {
+    color: var(--jaune);
 }
 
 .UserMenuLienB {
-    border: var(--jaune) solid 2px;
+    border: 2px solid var(--jaune);
+    background: transparent;
     margin-right: auto;
+}
+
+.UserMenuLienB svg path {
+    fill: var(--jaune);
+    stroke: var(--jaune);
+    stroke-width: 0.5;
+    transition: fill 0.25s ease;
+}
+
+.UserMenuLienB a {
+    color: var(--jaune);
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+.UserMenuLienB:hover {
+    background-color: var(--jaune);
+    border-color: var(--noir);
+}
+
+.UserMenuLienB:hover svg path {
+    fill: var(--noir);
+    stroke: var(--jaune);
+}
+
+.UserMenuLienB:hover a {
+    color: var(--noir);
 }
 
 .UserMenuPP {
@@ -471,6 +529,10 @@ header a {
     color: var(--jaune);
 }
 
+.ConnecterContent a:hover {
+    text-decoration: underline;
+}
+
 .ConnecterContent h2,
 .ConnecterContent h3 {
     color: var(--noir);
@@ -511,11 +573,30 @@ header a {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    width: 100%;
+}
+
+.ConnecterField {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 5px;
+}
+
+.ConnecterContent label {
+    display: block;
+    width: 100%;
+    color: var(--noir);
+    font-weight: 500;
+    padding-bottom: 5px;
 }
 
 .ConnecterContent input {
-    width: 15vw;
     background: 0;
+    flex: 1;
+    min-width: 0;
+    border: none;
+    outline: none;
 }
 
 .ConnecterInput2a,
@@ -524,8 +605,24 @@ header a {
     padding: 10px;
     border-radius: 15px;
     display: flex;
-    justify-content: center;
+    align-items: center;
     gap: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-width 0.2s ease;
+}
+
+.ConnecterInput2a:focus-within,
+.ConnecterInput1:focus-within {
+    border-width: 2px;
+}
+
+.ConnecterInput2 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 5px;
+    padding: 0;
 }
 
 .ConnecterInput2a svg,
