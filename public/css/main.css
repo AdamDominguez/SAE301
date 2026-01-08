@@ -171,7 +171,7 @@ footer {
     padding: 50px 0 50px 0;
     background: var(--jaune);
     gap: 50px;
-    width: 100%;
+    flex: 1;
 }
 
 footer a {
@@ -181,7 +181,7 @@ footer a {
     transition: text-decoration 0.3s ease;
 }
 
-footer a:hover { 
+footer a:hover {
     text-decoration: underline;
 }
 
@@ -227,7 +227,7 @@ footer a:hover {
     margin-top: 15px;
     padding: 5px 15px;
     width: fit-content;
-    transition: all 0.3s ease-in-out; 
+    transition: all 0.3s ease-in-out;
     text-decoration: none;
 }
 
