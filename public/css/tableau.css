@@ -146,6 +146,10 @@ main {
     font-weight: normal;
 }
 
+h3.titre-widget {
+    margin-top: 0;
+}
+
 /* Liste des ruches */
 
 .liste-ruches {
