@@ -3,6 +3,7 @@ require_once __DIR__ . "/../modeles/contact.php";
 require_once __DIR__ . "/../modeles/inscription.php";
 require_once __DIR__ . "/../modeles/connexion.php";
 require_once __DIR__ . "/../modeles/uploadPhoto.php";
+require_once __DIR__ . "/../modeles/Ruche.php";
 
 // Affichage de la page d'accueil
 function accueil()
@@ -19,6 +20,19 @@ function fonctionnalites()
 
 function tableau()
 {
+    $rucheModel = new Ruche();
+    $ruches = $rucheModel->getRuches();
+    
+    // Determine selected hive from session or default to first
+    if (isset($_SESSION['selected_ruche']) && array_key_exists($_SESSION['selected_ruche'], $ruches)) {
+        $selectedRucheId = $_SESSION['selected_ruche'];
+    } else {
+        $selectedRucheId = array_key_first($ruches);
+        $_SESSION['selected_ruche'] = $selectedRucheId;
+    }
+    
+    $latestData = $rucheModel->getLatestData($selectedRucheId);
+
     setcookie('page', '?action=tableauAccueil', time() + 3600);
     require __DIR__ . "/../vues/vueTableauAccueil.php";
 }
@@ -31,18 +45,98 @@ function tableauValeurs()
 
 function tableauDonnees()
 {
+    $rucheModel = new Ruche();
+    $ruches = $rucheModel->getRuches();
+    
+    // Determine selected hive
+    if (isset($_GET['id']) && array_key_exists($_GET['id'], $ruches)) {
+        $selectedRucheId = $_GET['id'];
+        $_SESSION['selected_ruche'] = $selectedRucheId;
+    } elseif (isset($_SESSION['selected_ruche']) && array_key_exists($_SESSION['selected_ruche'], $ruches)) {
+         $selectedRucheId = $_SESSION['selected_ruche'];
+    } else {
+        $selectedRucheId = array_key_first($ruches);
+        $_SESSION['selected_ruche'] = $selectedRucheId;
+    }
+
+    $latestData = $rucheModel->getLatestData($selectedRucheId);
+    $gps = $ruches[$selectedRucheId]['gps'];
+
+    // Calculate min/max for widgets
+    $tempStats = $rucheModel->getMinMax($selectedRucheId, 'temperature');
+    $humStats = $rucheModel->getMinMax($selectedRucheId, 'humidite');
+    $poidsStats = $rucheModel->getMinMax($selectedRucheId, 'poids');
+    $freqStats = $rucheModel->getMinMax($selectedRucheId, 'frequence');
+
     setcookie('page', '?action=tableauDonnees', time() + 3600);
     require __DIR__ . "/../vues/vueTableauDonnees.php";
 }
 
 function tableauDonneesGraphiques()
 {
+    $rucheModel = new Ruche();
+    $ruches = $rucheModel->getRuches();
+    
+    // Determine selected hive
+    if (isset($_GET['id']) && array_key_exists($_GET['id'], $ruches)) {
+        $selectedRucheId = $_GET['id'];
+        $_SESSION['selected_ruche'] = $selectedRucheId;
+    } elseif (isset($_SESSION['selected_ruche']) && array_key_exists($_SESSION['selected_ruche'], $ruches)) {
+         $selectedRucheId = $_SESSION['selected_ruche'];
+    } else {
+        $selectedRucheId = array_key_first($ruches);
+        $_SESSION['selected_ruche'] = $selectedRucheId;
+    }
+
+    $rucheData = $rucheModel->getRuche($selectedRucheId);
+    $history = isset($rucheData['data']) ? $rucheData['data'] : [];
+    
+    // Calculate averages (simplistic)
+    $tempSum = $humSum = $poidsSum = $freqSum = 0;
+    $count = count($history);
+    if ($count > 0) {
+        foreach ($history as $row) {
+            $tempSum += $row['temperature'];
+            $humSum += $row['humidite'];
+            $poidsSum += $row['poids'];
+            $freqSum += $row['frequence'];
+        }
+        $tempMoy = round($tempSum / $count, 1);
+        $humMoy = round($humSum / $count);
+        $poidsMoy = round($poidsSum / $count, 1);
+        $freqMoy = round($freqSum / $count);
+    } else {
+        $tempMoy = $humMoy = $poidsMoy = $freqMoy = 0;
+    }
+
     setcookie('page', '?action=tableauDonneesGraphiques', time() + 3600);
     require __DIR__ . "/../vues/vueTableauDonneesGraphiques.php";
 }
 
 function tableauDonneesTableau()
 {
+    $rucheModel = new Ruche();
+    $ruches = $rucheModel->getRuches();
+    
+    // Determine selected hive
+    if (isset($_GET['id']) && array_key_exists($_GET['id'], $ruches)) {
+        $selectedRucheId = $_GET['id'];
+        $_SESSION['selected_ruche'] = $selectedRucheId;
+    } elseif (isset($_SESSION['selected_ruche']) && array_key_exists($_SESSION['selected_ruche'], $ruches)) {
+         $selectedRucheId = $_SESSION['selected_ruche'];
+    } else {
+        $selectedRucheId = array_key_first($ruches);
+        $_SESSION['selected_ruche'] = $selectedRucheId;
+    }
+
+    $rucheData = $rucheModel->getRuche($selectedRucheId);
+    $history = isset($rucheData['data']) ? $rucheData['data'] : [];
+    
+    // Sort history by date descending
+    usort($history, function ($a, $b) {
+        return strtotime($b['date']) - strtotime($a['date']);
+    });
+
     setcookie('page', '?action=tableauDonneesTableau', time() + 3600);
     require __DIR__ . "/../vues/vueTableauDonneesTableau.php";
 }
