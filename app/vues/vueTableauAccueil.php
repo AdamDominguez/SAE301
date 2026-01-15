@@ -69,37 +69,6 @@ $title = "Tableau de bord | BeeLink";
                     <p class="valeur-indicateur">233 Hz</p>
                 </div>
 
-                <div class="widget-alerte">
-                    <h3 class="titre-widget">Alertes récentes <a href="#">Tout voir</a></h3>
-                    <div class="liste-alertes">
-                        <div class="alerte">
-                            <div class="icone-alerte">⚠️</div>
-                            <p>Température élevée dans Ruche #3</p>
-                            <small>Il y a 2h</small>
-                        </div>
-                        <div class="alerte">
-                            <div class="icone-alerte">ℹ️</div>
-                            <p>Production de miel en hausse - Ruche #1</p>
-                            <small>Il y a 5h</small>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="widget-actions">
-                    <h3 class="titre-widget">Actions rapides</h3>
-                    <div class="liste-actions">
-                        <a href="#">
-                            <div class="icone-action">📈</div> Voir les valeurs
-                        </a>
-                        <a href="#">
-                            <div class="icone-action">📊</div> Analyser les données
-                        </a>
-                        <a href="#">
-                            <div class="icone-action">🔄</div> Synchroniser
-                        </a>
-                    </div>
-                </div>
-
                 <div class="widget-ruches">
                     <h3 class="titre-widget">Vos ruches</h3>
                     <div class="liste-ruches">

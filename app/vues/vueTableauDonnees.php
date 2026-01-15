@@ -134,26 +134,6 @@ $title = "Tableau de bord | BeeLink";
                     </div>
                 </div>
 
-                <div class="conteneur-widgets-egaux">
-                    <div class="widget-color couleur-synchro">
-                        <h4 class="titre-bloc-couleur">Dernière synchronisation</h4>
-                        <p class="valeur-bloc-couleur">Il y a 2 min</p>
-                        <small>Prochain sync dans 3 min</small>
-                    </div>
-
-                    <div class="widget-color couleur-etat">
-                        <h4 class="titre-bloc-couleur">État général</h4>
-                        <p class="valeur-bloc-couleur">Excellent</p>
-                        <small>4/4 ruches opérationnelles</small>
-                    </div>
-
-                    <div class="widget-color couleur-alertes">
-                        <h4 class="titre-bloc-couleur">Alertes actives</h4>
-                        <p class="valeur-bloc-couleur">1</p>
-                        <small>Température élevée - Ruche #3</small>
-                    </div>
-                </div>
-
                 <div id="map"></div>
 
             </div>
