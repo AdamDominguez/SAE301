@@ -36,6 +36,8 @@ try {
 
             else if ($_GET["action"] == "enregMembrePhoto")    // Enregistrement de la photo d'un article 
                 enregPhotoProfil($_GET["idMembre"]);
+            else if ($GET["action"] == "updateUserData")    // Mise à jour des informations du profil
+                updateUserData();
         } else
             accueil();
     } else {

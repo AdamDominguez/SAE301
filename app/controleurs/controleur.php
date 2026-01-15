@@ -3,6 +3,7 @@ require_once __DIR__ . "/../modeles/contact.php";
 require_once __DIR__ . "/../modeles/inscription.php";
 require_once __DIR__ . "/../modeles/connexion.php";
 require_once __DIR__ . "/../modeles/uploadPhoto.php";
+require_once __DIR__ . "/../modeles/userModel.php";
 
 // Affichage de la page d'accueil
 function accueil()
@@ -57,6 +58,42 @@ function tableauProfil()
 function photoProfil()
 {
     require __DIR__ . "/../vues/vueTableauProfil.php";
+}
+
+// Modification des infos pour l'utilisateur connecté
+function updateUserData()
+{
+    if (isset($_SESSION['id'])) {
+        $userCO = new UserModel();
+
+        $newData = [
+            'firstname' => $_POST['firstname'],
+            'lastname'  => $_POST['lastname'],
+            'email'     => $_POST['email'],
+            'mobile'    => $_POST['mobile'],
+            'adresse'   => $_POST['adresse'],
+            'ville'     => $_POST['ville'],
+            'postal'    => $_POST['postal'],
+            'pays'      => $_POST['pays']
+        ];
+
+        $success = $userCO->updateUserData($_SESSION['id'], $newData);
+
+        if ($success) {
+            // CRUCIAL : Mettre à jour la session pour l'affichage en temps réel
+            $_SESSION['acces'] = $newData['firstname'];
+            $_SESSION['nom']   = $newData['lastname'];
+            $_SESSION['email'] = $newData['email'];
+            $_SESSION['numero'] = $newData['mobile'];
+            $_SESSION['adresse'] = $newData['adresse'];
+            $_SESSION['ville'] = $newData['ville'];
+            $_SESSION['postal'] = $newData['postal'];
+            $_SESSION['pays']   = $newData['pays'];
+
+            header("Location: index.php?action=tableauProfil");
+            exit();
+        }
+    }
 }
 
 // Enregistrement de la photo d'un membre
