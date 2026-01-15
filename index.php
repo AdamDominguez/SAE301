@@ -54,7 +54,7 @@ try {
             else if ($_GET["action"] == "accueil")
                 accueil();
             else if ($_GET["action"] == "tableauAccueil")
-                inscription();
+                inscription('?action=tableauAccueil');
             else
                 accueil();
         } else {

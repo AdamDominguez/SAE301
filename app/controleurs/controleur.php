@@ -79,13 +79,22 @@ function contact()
     require __DIR__ . "/../vues/vueContact.php";
 }
 
-function inscription()
+function inscription($redirectUrl = null)
 {
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $inscriptionModel = new Inscription();
         $success = $inscriptionModel->pushInscription();
     }
-    setcookie('page', '?action=inscription', time() + 3600);
+    
+    // Only update the redirect cookie if a specific URL is passed, 
+    // or if no cookie is set (fallback to default).
+    // This allows preserving the original destination (e.g. tableauAccueil) when switching modes.
+    if ($redirectUrl) {
+        setcookie('page', $redirectUrl, time() + 3600);
+    } elseif (!isset($_COOKIE['page'])) {
+        setcookie('page', '?action=inscription', time() + 3600);
+    }
+    
     require __DIR__ . "/../vues/vueInscription.php";
 }
 
@@ -122,8 +131,9 @@ function login($email, $mdp)
 
         if (isset($_COOKIE["page"])) {
             $action = $_COOKIE["page"];
-        } else
-            $action = $_COOKIE["page"];
+        } else {
+            $action = "?action=accueil";
+        }
 
         header("Location: index.php" . $action);
     } else
