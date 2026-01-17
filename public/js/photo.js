@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (btnUpload && inputPhoto) {
         // Déclenche la saisie du fichier lorsque l'on clique sur le bouton de l'appareil photo
         btnUpload.addEventListener("click", (e) => {
-            e.preventDefault(); // Prevent default button behavior
+            e.preventDefault(); 
             inputPhoto.click();
         });
 

@@ -25,7 +25,7 @@ $urlPhoto .= "?v=" . time();
     <meta charset="UTF-8">
     <title><?= $title ?></title>
     <link href="./public/css/main.css" rel="stylesheet">
-    <link href="./public/css/tableau.css" rel="stylesheet">
+    <link href="./public/css/tableau.css?v=<?= time() ?>" rel="stylesheet">
     <link rel="icon" type="image/png" sizes="32x32" href="./public/img/favicons/favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./public/img/favicons/favicon-16.png">
 </head>
@@ -120,7 +120,7 @@ $urlPhoto .= "?v=" . time();
 
 
                     <div class="info-profil">
-                        <form action="index.php?action=updateProfil" method="POST">
+                        <form action="index.php?action=updateUserData" method="POST">
                             <h3>Informations personnelles</h3>
                             <div class="container-info-perso">
                                 <div class="flex-element info">
@@ -187,9 +187,33 @@ $urlPhoto .= "?v=" . time();
             </div>
         </section>
     </main>
+
+    <!-- Notification de succès -->
+    <div id="notification-succes" class="notification">
+        <div class="notification-content">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+            <span>Vos informations ont bien été modifiées.</span>
+        </div>
+    </div>
+
+    <!-- Notification d'erreur -->
+    <div id="notification-erreur" class="notification error">
+        <div class="notification-content">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-alert-circle">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+            <span>Une erreur est survenue lors de la modification.</span>
+        </div>
+    </div>
     <?php require "footer.php"; ?>
 
     <script src="public/js/photo.js"></script>
+    <script src="public/js/updateProfil.js"></script>
 </body>
 
 </html>

@@ -60,6 +60,16 @@ function photoProfil()
     require __DIR__ . "/../vues/vueTableauProfil.php";
 }
 
+// Enregistrement de la photo d'un membre
+function enregPhotoProfil($idMembre)
+{
+    $objProfil = new UploadPhoto();
+    $objProfil->updatePhotoProfil($idMembre);
+    //  Ajout d'une redirection après l'enregistrement pour éviter la page blanche et la re-soumission du formulaire.
+    header("Location: index.php?action=tableauProfil");
+    exit(); // Toujours exit après une redirection
+}
+
 // Modification des infos pour l'utilisateur connecté
 function updateUserData()
 {
@@ -80,7 +90,6 @@ function updateUserData()
         $success = $userCO->updateUserData($_SESSION['id'], $newData);
 
         if ($success) {
-            // CRUCIAL : Mettre à jour la session pour l'affichage en temps réel
             $_SESSION['acces'] = $newData['firstname'];
             $_SESSION['nom']   = $newData['lastname'];
             $_SESSION['email'] = $newData['email'];
@@ -90,20 +99,13 @@ function updateUserData()
             $_SESSION['postal'] = $newData['postal'];
             $_SESSION['pays']   = $newData['pays'];
 
-            header("Location: index.php?action=tableauProfil");
+            header("Location: index.php?action=tableauProfil&update=success");
+            exit();
+        } else {
+            header("Location: index.php?action=tableauProfil&update=error");
             exit();
         }
     }
-}
-
-// Enregistrement de la photo d'un membre
-function enregPhotoProfil($idMembre)
-{
-    $objProfil = new UploadPhoto();
-    $objProfil->updatePhotoProfil($idMembre);
-    //  Ajout d'une redirection après l'enregistrement pour éviter la page blanche et la re-soumission du formulaire.
-    header("Location: index.php?action=tableauProfil");
-    exit(); // Toujours exit après une redirection
 }
 
 function contact()
