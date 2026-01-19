@@ -1,4 +1,5 @@
 // https://gsap.com/docs/v3/
+// utilisation de l'ia pour m'aider avec les animations de compte, etc (adam)
 
 gsap.registerPlugin(ScrollTrigger);
 

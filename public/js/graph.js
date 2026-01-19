@@ -1,27 +1,20 @@
-// --- Initialisation des graphiques BeeLink ---
-
-// Options globales communes
-Chart.defaults.color = '#AAAAAA';
-Chart.defaults.font.family = 'sans-serif';
-
-// Data processing
+// déclaration des var avec un tableau (à vide bien sûr)
 let chartLabels = [];
 let tempData = [];
 let humData = [];
 let poidsData = [];
 let freqData = [];
 
-if (typeof rucheHistory !== 'undefined' && rucheHistory.length > 0) {
+// si rucheHistory est supérieur à 0 (rempli quoi) alors on lance un for each pour attribuer chaque
+// information à une variable qu'on utilisera pour afficher nos données
+if (rucheHistory.length > 0) {
     // Reverse history to show oldest to newest left to right
-    const reversedHistory = [...rucheHistory].reverse();
-
-    reversedHistory.forEach(item => {
-        // Format date: dd/mm HH h
+    rucheHistory.forEach(item => {
         const date = new Date(item.date);
-        const day = String(date.getDate()).padStart(2, '0');
-        const month = String(date.getMonth() + 1).padStart(2, '0');
-        const hour = String(date.getHours()).padStart(2, '0');
-        chartLabels.push(`${day}/${month} ${hour} h`);
+        const jour = String(date.getDate()).padStart(2, '0');
+        const mois = String(date.getMonth() + 1).padStart(2, '0');
+        const heure = String(date.getHours()).padStart(2, '0');
+        chartLabels.push(`${jour}/${mois} ${heure} h`);
 
         tempData.push(item.temperature);
         humData.push(item.humidite);
@@ -29,7 +22,8 @@ if (typeof rucheHistory !== 'undefined' && rucheHistory.length > 0) {
         freqData.push(item.frequence);
     });
 } else {
-    // Default fallback data
+    
+    // au cas ou on arrive pas à lire le fichier json, on affiche des valeurs en dur
     chartLabels = ['01/11 08 h', '01/11 20 h', '02/11 08 h', '02/11 20 h', '03/11 08 h', '03/11 20 h'];
     tempData = [21, 23, 21.5, 22.8, 20.2, 21];
     humData = [82, 80, 85, 84, 80, 82];
@@ -37,7 +31,7 @@ if (typeof rucheHistory !== 'undefined' && rucheHistory.length > 0) {
     freqData = [235, 245, 248, 205, 222, 215];
 }
 
-// --- Graphique 1 : Température et Humidité ---
+// température et humidité
 const ctxDonnees = document.getElementById('chartDonnees');
 if (ctxDonnees) {
     new Chart(ctxDonnees, {
@@ -60,7 +54,7 @@ if (ctxDonnees) {
     });
 }
 
-// --- Graphique 2 : Évolution du poids (Aire violette) ---
+// évolution du poids
 const ctxPoids = document.getElementById('chartPoids');
 if (ctxPoids) {
     new Chart(ctxPoids, {
@@ -81,7 +75,7 @@ if (ctxPoids) {
     });
 }
 
-// --- Graphique 3 : Fréquence sonore (Barres vertes) ---
+// fréquence sonore
 const ctxFreq = document.getElementById('chartFrequence');
 if (ctxFreq) {
     new Chart(ctxFreq, {
@@ -102,7 +96,7 @@ if (ctxFreq) {
     });
 }
 
-// --- Graphique 4 : Comparaison multi-métriques ---
+// comparaison multi-métriques
 const ctxComp = document.getElementById('chartComparaison');
 if (ctxComp) {
     new Chart(ctxComp, {

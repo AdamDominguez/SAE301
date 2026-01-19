@@ -9,7 +9,7 @@ $title = "Tableau de bord | BeeLink";
     <meta charset="UTF-8">
     <title><?= $title ?></title>
     <link href="./public/css/main.css" rel="stylesheet">
-    <link href="./public/css/tableau.css?v=<?= time() ?>" rel="stylesheet">
+    <link href="./public/css/tableau.css" rel="stylesheet">
     <link rel="icon" type="image/png" sizes="32x32" href="./public/img/favicons/favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./public/img/favicons/favicon-16.png">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -150,6 +150,6 @@ $title = "Tableau de bord | BeeLink";
     var rucheId = <?= json_encode($selectedRucheId) ?>;
 </script>
 
-<script src="./public/js/tableau.js?v=<?= time() ?>"></script>
+<script src="./public/js/tableau.js"></script>
 
 </html>
