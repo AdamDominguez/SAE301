@@ -2,13 +2,13 @@
 $title = "Tableau de bord | BeeLink";
 
 $idUtilisateur = $_SESSION['id'];
-$urlPhoto = "photoArticle/defaut.png"; // lien relatif image de profil par défaut 
+$urlPhoto = PHOTOMEMDIR . "/defaut.png"; // lien relatif image de profil par défaut 
 
 // Vérification de l'existence d'une image personnalisée (jpg ou png)
-if (file_exists("photoArticle/" . $idUtilisateur . ".jpg")) {
-    $urlPhoto = "photoArticle/" . $idUtilisateur . ".jpg";
-} elseif (file_exists("photoArticle/" . $idUtilisateur . ".png")) {
-    $urlPhoto = "photoArticle/" . $idUtilisateur . ".png";
+if (file_exists(PHOTOMEMDIR . "/" . $idUtilisateur . ".jpg")) {
+    $urlPhoto = PHOTOMEMDIR . "/" . $idUtilisateur . ".jpg";
+} elseif (file_exists(PHOTOMEMDIR . "/" . $idUtilisateur . ".png")) {
+    $urlPhoto = PHOTOMEMDIR . "/" . $idUtilisateur . ".png";
 }
 
 ?>
@@ -68,7 +68,7 @@ if (file_exists("photoArticle/" . $idUtilisateur . ".jpg")) {
 
                         <!-- formulaire d'upload de la photo de profil -->
                         <form method="post"
-                            action="index.php?action=enregMembrePhoto&idMembre=<?= $_SESSION['id'] ?>"
+                            action="index.php?action=enregMembrePhoto"
                             enctype="multipart/form-data" class="formPhoto">
 
                             <div class="form_elt">

@@ -1,4 +1,14 @@
 <?php
+$idUtilisateur = $_SESSION['id'];
+$urlPhoto = PHOTOMEMDIR . "/defaut.png"; // lien relatif image de profil par défaut 
+
+// Vérification de l'existence d'une image personnalisée (jpg ou png)
+if (file_exists(PHOTOMEMDIR . "/" . $idUtilisateur . ".jpg")) {
+    $urlPhoto = PHOTOMEMDIR . "/" . $idUtilisateur . ".jpg";
+} elseif (file_exists(PHOTOMEMDIR . "/" . $idUtilisateur . ".png")) {
+    $urlPhoto = PHOTOMEMDIR . "/" . $idUtilisateur . ".png";
+}
+
 // var qui permet de récup l'action d'url et sinon retourner accueil en url
 $pageActive = $_GET['action'] ?? 'accueil';
 
@@ -40,7 +50,7 @@ $tableauPage = strpos($pageActive, 'tableau') === 0;
             <div class=UserMenu>
                 <p><?= $_SESSION['email'] ?></p>
                 <div class="UserMenuPP">
-                    <img src="https://media.tenor.com/zrQPuXUoB5QAAAAe/gilbert.png" alt="">
+                    <img src="<?= $urlPhoto ?>" alt="">
                 </div>
                 <p>Bonjour <?= $_SESSION['acces'] ?> !</p>
                 <div class="UserMenuLiens">

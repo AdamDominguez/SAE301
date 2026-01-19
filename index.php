@@ -33,9 +33,8 @@ try {
                 quit();
             else if ($_GET["action"] == "membrePhoto")
                 photoProfil();  // Changement de la photo d'un article en fonction de son ID
-
             else if ($_GET["action"] == "enregMembrePhoto")    // Enregistrement de la photo d'un article 
-                enregPhotoProfil($_GET["idMembre"]);
+                enregPhotoProfil($_SESSION["id"]);
         } else
             accueil();
     } else {
