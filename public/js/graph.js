@@ -1,85 +1,112 @@
-// --- Initialisation des graphiques BeeLink ---
+// déclaration des var avec un tableau (à vide bien sûr)
+let chartLabels = [];
+let tempData = [];
+let humData = [];
+let poidsData = [];
+let freqData = [];
 
-// Options globales communes
-Chart.defaults.color = '#AAAAAA';
-Chart.defaults.font.family = 'sans-serif';
+// si rucheHistory est supérieur à 0 (rempli quoi) alors on lance un for each pour attribuer chaque
+// information à une variable qu'on utilisera pour afficher nos données
+if (rucheHistory.length > 0) {
+    // Reverse history to show oldest to newest left to right
+    rucheHistory.forEach(item => {
+        const date = new Date(item.date);
+        const jour = String(date.getDate()).padStart(2, '0');
+        const mois = String(date.getMonth() + 1).padStart(2, '0');
+        const heure = String(date.getHours()).padStart(2, '0');
+        chartLabels.push(`${jour}/${mois} ${heure} h`);
 
-// --- Graphique 1 : Température et Humidité ---
+        tempData.push(item.temperature);
+        humData.push(item.humidite);
+        poidsData.push(item.poids);
+        freqData.push(item.frequence);
+    });
+} else {
+    
+    // au cas ou on arrive pas à lire le fichier json, on affiche des valeurs en dur
+    chartLabels = ['01/11 08 h', '01/11 20 h', '02/11 08 h', '02/11 20 h', '03/11 08 h', '03/11 20 h'];
+    tempData = [21, 23, 21.5, 22.8, 20.2, 21];
+    humData = [82, 80, 85, 84, 80, 82];
+    poidsData = [15.8, 16.0, 15.9, 15.6, 16.0, 15.7];
+    freqData = [235, 245, 248, 205, 222, 215];
+}
+
+// température et humidité
 const ctxDonnees = document.getElementById('chartDonnees');
 if (ctxDonnees) {
     new Chart(ctxDonnees, {
         type: 'line',
         data: {
-            labels: ['01/11 08 h', '01/11 20 h', '02/11 08 h', '02/11 20 h', '03/11 08 h', '03/11 20 h'],
+            labels: chartLabels,
             datasets: [
-                { label: 'Température (°C)', data: [21, 23, 21.5, 22.8, 20.2, 21], borderColor: '#F0C753', backgroundColor: 'transparent', tension: 0.4, yAxisID: 'yTemp' },
-                { label: 'Humidité (%)', data: [82, 80, 85, 84, 80, 82], borderColor: '#2196F3', backgroundColor: 'rgba(33, 150, 243, 0.1)', fill: true, tension: 0.4, yAxisID: 'yHum' }
+                { label: 'Température (°C)', data: tempData, borderColor: '#F0C753', backgroundColor: 'transparent', tension: 0.4, yAxisID: 'yTemp' },
+                { label: 'Humidité (%)', data: humData, borderColor: '#2196F3', backgroundColor: 'rgba(33, 150, 243, 0.1)', fill: true, tension: 0.4, yAxisID: 'yHum' }
             ]
         },
         options: {
             responsive: true,
             maintainAspectRatio: false,
             scales: {
-                yTemp: { type: 'linear', position: 'left', min: 0, max: 24, ticks: { color: '#F0C753' }, grid: { color: '#444444', borderDash: [5, 5] } },
+                yTemp: { type: 'linear', position: 'left', ticks: { color: '#F0C753' }, grid: { color: '#444444', borderDash: [5, 5] } },
                 yHum: { type: 'linear', position: 'right', min: 0, max: 100, ticks: { color: '#2196F3' }, grid: { display: false } }
             }
         }
     });
 }
 
-// --- Graphique 2 : Évolution du poids (Aire violette) ---
+// évolution du poids
 const ctxPoids = document.getElementById('chartPoids');
 if (ctxPoids) {
     new Chart(ctxPoids, {
         type: 'line',
         data: {
-            labels: ['03/11 20 h', '03/11 08 h', '02/11 20 h', '02/11 08 h', '01/11 20 h', '01/11 08 h'],
-            datasets: [{ label: 'Poids (kg)', data: [15.8, 16.0, 15.9, 15.6, 16.0, 15.7], borderColor: '#AD46FF', backgroundColor: 'rgba(173, 70, 255, 0.2)', fill: true, tension: 0.4 }]
+            labels: chartLabels,
+            datasets: [{ label: 'Poids (kg)', data: poidsData, borderColor: '#AD46FF', backgroundColor: 'rgba(173, 70, 255, 0.2)', fill: true, tension: 0.4 }]
         },
         options: {
             responsive: true,
             maintainAspectRatio: false,
             plugins: { legend: { display: false } },
             scales: {
-                y: { min: 0, max: 16, grid: { color: '#444444', borderDash: [5, 5] } },
+                y: { grid: { color: '#444444', borderDash: [5, 5] } },
                 x: { grid: { display: false } }
             }
         }
     });
 }
 
-// --- Graphique 3 : Fréquence sonore (Barres vertes) ---
+// fréquence sonore
 const ctxFreq = document.getElementById('chartFrequence');
 if (ctxFreq) {
     new Chart(ctxFreq, {
         type: 'bar',
         data: {
-            labels: ['03/11 20 h', '03/11 08 h', '02/11 20 h', '02/11 08 h', '01/11 20 h', '01/11 08 h'],
-            datasets: [{ label: 'Hz', data: [235, 245, 248, 205, 222, 215], backgroundColor: '#00C951', borderRadius: 5 }]
+            labels: chartLabels,
+            datasets: [{ label: 'Hz', data: freqData, backgroundColor: '#00C951', borderRadius: 5 }]
         },
         options: {
             responsive: true,
             maintainAspectRatio: false,
             plugins: { legend: { display: false } },
             scales: {
-                y: { min: 0, max: 260, grid: { color: '#444444', borderDash: [5, 5] } },
+                y: { grid: { color: '#444444', borderDash: [5, 5] } },
                 x: { grid: { display: false } }
             }
         }
     });
 }
 
-// --- Graphique 4 : Comparaison multi-métriques ---
+// comparaison multi-métriques
 const ctxComp = document.getElementById('chartComparaison');
 if (ctxComp) {
     new Chart(ctxComp, {
         type: 'line',
         data: {
-            labels: ['03/11 20 h', '03/11 08 h', '02/11 20 h', '02/11 08 h', '01/11 20 h', '01/11 08 h'],
+            labels: chartLabels,
             datasets: [
-                { label: 'Fréquence (Hz)', data: [235, 245, 248, 205, 222, 215], borderColor: '#00C951', backgroundColor: 'transparent', tension: 0.4, pointRadius: 4 },
-                { label: 'Humidité (%)', data: [82, 80, 85, 84, 80, 82], borderColor: '#2196F3', backgroundColor: 'transparent', tension: 0.4, pointRadius: 4 },
-                { label: 'Température (°C)', data: [21, 20.5, 22.5, 21, 23.2, 22], borderColor: '#F0C753', backgroundColor: 'transparent', tension: 0.4, pointRadius: 4 }
+                { label: 'Fréquence (Hz)', data: freqData, borderColor: '#00C951', backgroundColor: 'transparent', tension: 0.4, pointRadius: 4 },
+                { label: 'Humidité (%)', data: humData, borderColor: '#2196F3', backgroundColor: 'transparent', tension: 0.4, pointRadius: 4 },
+                { label: 'Température (°C)', data: tempData, borderColor: '#F0C753', backgroundColor: 'transparent', tension: 0.4, pointRadius: 4 }
             ]
         },
         options: {
@@ -91,7 +118,7 @@ if (ctxComp) {
                 tooltip: { backgroundColor: 'rgba(43, 43, 43, 0.9)', borderColor: '#444444', borderWidth: 1, padding: 12 }
             },
             scales: {
-                y: { min: 0, max: 260, grid: { color: '#444444', borderDash: [5, 5] } },
+                y: { grid: { color: '#444444', borderDash: [5, 5] } },
                 x: { grid: { display: false } }
             }
         }

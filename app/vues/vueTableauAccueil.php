@@ -31,7 +31,7 @@ $title = "Tableau de bord | BeeLink";
 
         <section class="contenu-tableau">
             <div class="titres">
-                <h1 class="titre-principal">Accueil</h1>
+                <h1 class="titre-principal">Accueil - Ruche n°<?= $selectedRucheId ?></h1>
                 <p class="sous-titre1">Bienvenue sur BeeLink.</p>
             </div>
             <div class="grille-widgets">
@@ -39,63 +39,44 @@ $title = "Tableau de bord | BeeLink";
                 <div class="widget-indicateur">
                     <div class="entete-indicateur">
                         <div class="icone-indicateur">🌡️</div>
-                        <div class="changement positif">+0.3°C</div>
                     </div>
                     <p class="etiquette-indicateur">Température</p>
-                    <p class="valeur-indicateur">35.2°C</p>
+                    <p class="valeur-indicateur"><?= $latestData ? $latestData['temperature'] . '°C' : 'N/A' ?></p>
                 </div>
                 <div class="widget-indicateur">
                     <div class="entete-indicateur">
                         <div class="icone-indicateur">💧</div>
-                        <div class="changement negatif">-2%</div>
                     </div>
                     <p class="etiquette-indicateur">Humidité</p>
-                    <p class="valeur-indicateur">62%</p>
+                    <p class="valeur-indicateur"><?= $latestData ? $latestData['humidite'] . '%' : 'N/A' ?></p>
                 </div>
                 <div class="widget-indicateur">
                     <div class="entete-indicateur">
                         <div class="icone-indicateur">⚖️</div>
-                        <div class="changement positif">+1.2 kg</div>
                     </div>
                     <p class="etiquette-indicateur">Poids</p>
-                    <p class="valeur-indicateur">42.5 kg</p>
+                    <p class="valeur-indicateur"><?= $latestData ? $latestData['poids'] . ' kg' : 'N/A' ?></p>
                 </div>
                 <div class="widget-indicateur">
                     <div class="entete-indicateur">
                         <div class="icone-indicateur">〰️</div>
-                        <div class="changement positif">+15 Hz</div>
                     </div>
                     <p class="etiquette-indicateur">Fréquence</p>
-                    <p class="valeur-indicateur">233 Hz</p>
+                    <p class="valeur-indicateur"><?= $latestData ? $latestData['frequence'] . ' Hz' : 'N/A' ?></p>
                 </div>
 
                 <div class="widget-ruches">
                     <h3 class="titre-widget">Vos ruches</h3>
                     <div class="liste-ruches">
-                        <a class="ruche-item" href="#">
-                            <div class="icone-ruche">🍯</div>
-                            <p>Ruche IUT</p>
-                            <small>Zone A</small>
-                            <div class="statut statut-ok"></div>
-                        </a>
-                        <a class="ruche-item" href="#">
-                            <div class="icone-ruche">🍯</div>
-                            <p>Ruche IUT</p>
-                            <small>Zone A</small>
-                            <div class="statut statut-ok"></div>
-                        </a>
-                        <a class="ruche-item" href="#">
-                            <div class="icone-ruche">🍯</div>
-                            <p>Ruche IUT</p>
-                            <small>Zone A</small>
-                            <div class="statut statut-alerte"></div>
-                        </a>
-                        <a class="ruche-item" href="#">
-                            <div class="icone-ruche">🍯</div>
-                            <p>Ruche IUT</p>
-                            <small>Zone A</small>
-                            <div class="statut statut-ok"></div>
-                        </a>
+                        <?php if (isset($ruches)): ?>
+                            <?php foreach ($ruches as $id => $ruche): ?>
+                                <a class="ruche-item <?= ($id == $selectedRucheId) ? 'actif' : '' ?>" href="index.php?action=tableauDonnees&id=<?= $id ?>">
+                                    <div class="icone-ruche">🍯</div>
+                                    <p>Ruche <?= $id ?></p>
+                                    <small>Zone A</small>
+                                </a>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
                     </div>
                 </div>
 
