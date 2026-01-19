@@ -142,6 +142,14 @@ $title = "Tableau de bord | BeeLink";
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
     crossorigin=""></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+
+<script>
+    var rucheExportData = <?= json_encode($history) ?>;
+    var rucheId = <?= json_encode($selectedRucheId) ?>;
+</script>
+
 <script src="./public/js/tableau.js?v=<?= time() ?>"></script>
 
 </html>

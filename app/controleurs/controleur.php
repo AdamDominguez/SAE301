@@ -68,6 +68,14 @@ function tableauDonnees()
     $poidsStats = $rucheModel->getMinMax($selectedRucheId, 'poids');
     $freqStats = $rucheModel->getMinMax($selectedRucheId, 'frequence');
 
+    // Fetch history for export
+    $rucheData = $rucheModel->getRuche($selectedRucheId);
+    $history = isset($rucheData['data']) ? $rucheData['data'] : [];
+    // Sort history by date descending
+    usort($history, function ($a, $b) {
+        return strtotime($b['date']) - strtotime($a['date']);
+    });
+
     setcookie('page', '?action=tableauDonnees', time() + 3600);
     require __DIR__ . "/../vues/vueTableauDonnees.php";
 }

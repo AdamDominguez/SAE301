@@ -54,14 +54,14 @@ $title = "Tableau de bord | BeeLink";
             </nav>
 
             <div class="table-container">
-                <table>
+                <table id="donneesTable">
                     <thead>
                         <tr>
-                            <th>Date</th>
-                            <th>Temp.</th>
-                            <th>Poids</th>
-                            <th>Humidité</th>
-                            <th>Fréq.</th>
+                            <th class="sortable" data-type="date">Date</th>
+                            <th class="sortable" data-type="number">Temp.</th>
+                            <th class="sortable" data-type="number">Poids</th>
+                            <th class="sortable" data-type="number">Humidité</th>
+                            <th class="sortable" data-type="number">Fréq.</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -86,6 +86,7 @@ $title = "Tableau de bord | BeeLink";
         </section>
     </main>
     <?php require "footer.php"; ?>
+    <script src="./public/js/tableau.js?v=<?= time() ?>"></script>
 </body>
 
 </html>
