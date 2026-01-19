@@ -51,101 +51,151 @@
     },
     "000002": {
         "gps": [
-            47.769,
-            7.270
+            47.765,
+            7.265
         ],
         "data": [
             {
                 "date": "2024-11-01T08:00:00",
-                "temperature": 22,
-                "poids": 15.5,
-                "humidite": 81,
-                "frequence": 213
+                "temperature": 18,
+                "poids": 12.5,
+                "humidite": 75,
+                "frequence": 180
             },
             {
                 "date": "2024-11-01T20:00:00",
-                "temperature": 23,
-                "poids": 15.7,
-                "humidite": 80,
-                "frequence": 222
+                "temperature": 19,
+                "poids": 12.7,
+                "humidite": 74,
+                "frequence": 185
             },
             {
                 "date": "2024-11-02T08:00:00",
-                "temperature": 21,
-                "poids": 15.4,
-                "humidite": 83,
-                "frequence": 205
+                "temperature": 17,
+                "poids": 12.4,
+                "humidite": 76,
+                "frequence": 175
             },
             {
                 "date": "2024-11-02T20:00:00",
-                "temperature": 22,
-                "poids": 15.6,
-                "humidite": 85,
-                "frequence": 244
+                "temperature": 18,
+                "poids": 12.6,
+                "humidite": 78,
+                "frequence": 190
             },
             {
                 "date": "2024-11-03T08:00:00",
-                "temperature": 20,
-                "poids": 15.8,
-                "humidite": 80,
-                "frequence": 242
+                "temperature": 16,
+                "poids": 12.8,
+                "humidite": 73,
+                "frequence": 195
             },
             {
                 "date": "2024-11-03T20:00:00",
-                "temperature": 21,
-                "poids": 15.6,
-                "humidite": 82,
-                "frequence": 233
+                "temperature": 17,
+                "poids": 12.6,
+                "humidite": 75,
+                "frequence": 188
             }
         ]
     },
     "000003": {
         "gps": [
-            47.7696220,
-            7.270559
+            47.775,
+            7.280
         ],
         "data": [
             {
                 "date": "2024-11-01T08:00:00",
-                "temperature": 22,
-                "poids": 15.5,
-                "humidite": 81,
-                "frequence": 213
+                "temperature": 25,
+                "poids": 18.2,
+                "humidite": 65,
+                "frequence": 260
             },
             {
                 "date": "2024-11-01T20:00:00",
-                "temperature": 23,
-                "poids": 15.7,
-                "humidite": 80,
-                "frequence": 222
+                "temperature": 26,
+                "poids": 18.4,
+                "humidite": 64,
+                "frequence": 265
             },
             {
                 "date": "2024-11-02T08:00:00",
-                "temperature": 21,
-                "poids": 15.4,
-                "humidite": 83,
-                "frequence": 205
+                "temperature": 24,
+                "poids": 18.1,
+                "humidite": 66,
+                "frequence": 255
             },
             {
                 "date": "2024-11-02T20:00:00",
-                "temperature": 22,
-                "poids": 15.6,
-                "humidite": 85,
-                "frequence": 244
+                "temperature": 25,
+                "poids": 18.3,
+                "humidite": 68,
+                "frequence": 270
             },
             {
                 "date": "2024-11-03T08:00:00",
-                "temperature": 20,
-                "poids": 15.8,
-                "humidite": 80,
-                "frequence": 242
+                "temperature": 23,
+                "poids": 18.5,
+                "humidite": 63,
+                "frequence": 275
             },
             {
                 "date": "2024-11-03T20:00:00",
-                "temperature": 21,
-                "poids": 15.6,
-                "humidite": 82,
-                "frequence": 233
+                "temperature": 24,
+                "poids": 18.3,
+                "humidite": 65,
+                "frequence": 268
+            }
+        ]
+    },
+    "000004": {
+        "gps": [
+            47.760,
+            7.255
+        ],
+        "data": [
+            {
+                "date": "2024-11-01T08:00:00",
+                "temperature": 30,
+                "poids": 20.5,
+                "humidite": 50,
+                "frequence": 300
+            },
+            {
+                "date": "2024-11-01T20:00:00",
+                "temperature": 31,
+                "poids": 20.7,
+                "humidite": 49,
+                "frequence": 305
+            },
+            {
+                "date": "2024-11-02T08:00:00",
+                "temperature": 29,
+                "poids": 20.4,
+                "humidite": 51,
+                "frequence": 295
+            },
+            {
+                "date": "2024-11-02T20:00:00",
+                "temperature": 30,
+                "poids": 20.6,
+                "humidite": 53,
+                "frequence": 310
+            },
+            {
+                "date": "2024-11-03T08:00:00",
+                "temperature": 28,
+                "poids": 20.8,
+                "humidite": 48,
+                "frequence": 315
+            },
+            {
+                "date": "2024-11-03T20:00:00",
+                "temperature": 29,
+                "poids": 20.6,
+                "humidite": 50,
+                "frequence": 308
             }
         ]
     }

@@ -25,7 +25,7 @@ class UploadPhoto
                     // Stockage définitif du fichier photo dans le dossier "photoMembre"
                     move_uploaded_file(
                         $_FILES['photoMembre']['tmp_name'],
-                        PHOTOARTDIR . "/" . $idMembre . '.' . $extension_upload
+                        PHOTOMEMDIR . "/" . $idMembre . '.' . $extension_upload
                     );
                 } else
                     throw new Exception("Erreur : Type de fichier non autorisé. Veuillez utiliser une image au format JPG, PNG ou WEBP.");
