@@ -35,45 +35,18 @@ $title = "Tableau de bord | BeeLink";
                 <p class="sous-titre1">Bienvenue sur BeeLink.</p>
             </div>
             <div class="grille-widgets">
-
-                <div class="widget-indicateur">
-                    <div class="entete-indicateur">
-                        <div class="icone-indicateur">🌡️</div>
-                    </div>
-                    <p class="etiquette-indicateur">Température</p>
-                    <p class="valeur-indicateur"><?= $latestData ? $latestData['temperature'] . '°C' : 'N/A' ?></p>
-                </div>
-                <div class="widget-indicateur">
-                    <div class="entete-indicateur">
-                        <div class="icone-indicateur">💧</div>
-                    </div>
-                    <p class="etiquette-indicateur">Humidité</p>
-                    <p class="valeur-indicateur"><?= $latestData ? $latestData['humidite'] . '%' : 'N/A' ?></p>
-                </div>
-                <div class="widget-indicateur">
-                    <div class="entete-indicateur">
-                        <div class="icone-indicateur">⚖️</div>
-                    </div>
-                    <p class="etiquette-indicateur">Poids</p>
-                    <p class="valeur-indicateur"><?= $latestData ? $latestData['poids'] . ' kg' : 'N/A' ?></p>
-                </div>
-                <div class="widget-indicateur">
-                    <div class="entete-indicateur">
-                        <div class="icone-indicateur">〰️</div>
-                    </div>
-                    <p class="etiquette-indicateur">Fréquence</p>
-                    <p class="valeur-indicateur"><?= $latestData ? $latestData['frequence'] . ' Hz' : 'N/A' ?></p>
-                </div>
-
+                <?php require "data.php"; ?>
                 <div class="widget-ruches">
                     <h3 class="titre-widget">Vos ruches</h3>
                     <div class="liste-ruches">
+                        <!-- si la var $ruches existe et est remplie alors on lance un foreach qui va attribuer chaque ruche du JSON de manière dynamique! -->
                         <?php if (isset($ruches)): ?>
                             <?php foreach ($ruches as $id => $ruche): ?>
                                 <a class="ruche-item <?= ($id == $selectedRucheId) ? 'actif' : '' ?>" href="index.php?action=tableauDonnees&id=<?= $id ?>">
-                                    <div class="icone-ruche">🍯</div>
+                                    <div class="icone-ruche">
+                                        SVG A AJOUTER
+                                    </div>
                                     <p>Ruche <?= $id ?></p>
-                                    <small>Zone A</small>
                                 </a>
                             <?php endforeach; ?>
                         <?php endif; ?>

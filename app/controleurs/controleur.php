@@ -12,43 +12,47 @@ function accueil()
     require __DIR__ . "/../vues/vueAccueil.php";
 }
 
+// Affichage de la page fonctionnalités
 function fonctionnalites()
 {
     setcookie('page', '?action=fonctionnalites', time() + 3600);
     require __DIR__ . "/../vues/vueFonction.php";
 }
 
+// Affichage de la page tableau de bord accueil
 function tableau()
 {
+    // extension de la classe Ruche
     $rucheModel = new Ruche();
     $ruches = $rucheModel->getRuches();
-    
-    // Determine selected hive from session or default to first
+
+    //    si on reçoit une ruche dans $_SESSION & qu'elle existe alors...
     if (isset($_SESSION['selected_ruche']) && array_key_exists($_SESSION['selected_ruche'], $ruches)) {
         $selectedRucheId = $_SESSION['selected_ruche'];
     } else {
         $selectedRucheId = array_key_first($ruches);
         $_SESSION['selected_ruche'] = $selectedRucheId;
     }
-    
+
+    // récupération val minimum & max pour chaque champs
+    $tempStats = $rucheModel->getMinMax($selectedRucheId, 'temperature');
+    $humStats = $rucheModel->getMinMax($selectedRucheId, 'humidite');
+    $poidsStats = $rucheModel->getMinMax($selectedRucheId, 'poids');
+    $freqStats = $rucheModel->getMinMax($selectedRucheId, 'frequence');
+
     $latestData = $rucheModel->getLatestData($selectedRucheId);
 
     setcookie('page', '?action=tableauAccueil', time() + 3600);
     require __DIR__ . "/../vues/vueTableauAccueil.php";
 }
 
-function tableauValeurs()
-{
-    setcookie('page', '?action=tableauValeurs', time() + 3600);
-    require __DIR__ . "/../vues/vueTableauValeurs.php";
-}
-
+// Affichage de la page tableau de bord données
 function tableauDonnees()
 {
     $rucheModel = new Ruche();
     $ruches = $rucheModel->getRuches();
-    
-    // Determine selected hive
+
+    // si on reçoit une ruche dans $_SESSION & qu'elle existe alors...
     if (isset($_GET['id']) && array_key_exists($_GET['id'], $ruches)) {
         $selectedRucheId = $_GET['id'];
         $_SESSION['selected_ruche'] = $selectedRucheId;
@@ -60,32 +64,27 @@ function tableauDonnees()
     }
 
     $latestData = $rucheModel->getLatestData($selectedRucheId);
-    $gps = $ruches[$selectedRucheId]['gps'];
+    $rucheDataFull = $rucheModel->getRuche($selectedRucheId);
+    $history = $rucheDataFull['data'] ?? [];
 
-    // Calculate min/max for widgets
+    // récupération val minimum & max pour chaque champs
     $tempStats = $rucheModel->getMinMax($selectedRucheId, 'temperature');
     $humStats = $rucheModel->getMinMax($selectedRucheId, 'humidite');
     $poidsStats = $rucheModel->getMinMax($selectedRucheId, 'poids');
     $freqStats = $rucheModel->getMinMax($selectedRucheId, 'frequence');
-
-    // Fetch history for export
-    $rucheData = $rucheModel->getRuche($selectedRucheId);
-    $history = isset($rucheData['data']) ? $rucheData['data'] : [];
-    // Sort history by date descending
-    usort($history, function ($a, $b) {
-        return strtotime($b['date']) - strtotime($a['date']);
-    });
+    $gps = $ruches[$selectedRucheId]['gps'];
 
     setcookie('page', '?action=tableauDonnees', time() + 3600);
     require __DIR__ . "/../vues/vueTableauDonnees.php";
 }
 
+// Affichage de la page tableau de bord données graphiques
 function tableauDonneesGraphiques()
 {
     $rucheModel = new Ruche();
     $ruches = $rucheModel->getRuches();
-    
-    // Determine selected hive
+
+    // si on reçoit une ruche dans $_SESSION & qu'elle existe alors...
     if (isset($_GET['id']) && array_key_exists($_GET['id'], $ruches)) {
         $selectedRucheId = $_GET['id'];
         $_SESSION['selected_ruche'] = $selectedRucheId;
@@ -96,10 +95,11 @@ function tableauDonneesGraphiques()
         $_SESSION['selected_ruche'] = $selectedRucheId;
     }
 
+    // récupération et stockage de l'historique d'une ruche
     $rucheData = $rucheModel->getRuche($selectedRucheId);
-    $history = isset($rucheData['data']) ? $rucheData['data'] : [];
-    
-    // Calculate averages (simplistic)
+    $history = $rucheData['data'] ?? [];
+
+    // calcul pour l'affichage des données
     $tempSum = $humSum = $poidsSum = $freqSum = 0;
     $count = count($history);
     if ($count > 0) {
@@ -109,6 +109,7 @@ function tableauDonneesGraphiques()
             $poidsSum += $row['poids'];
             $freqSum += $row['frequence'];
         }
+        // on arrondit nos valeurs à la virgule
         $tempMoy = round($tempSum / $count, 1);
         $humMoy = round($humSum / $count);
         $poidsMoy = round($poidsSum / $count, 1);
@@ -121,12 +122,13 @@ function tableauDonneesGraphiques()
     require __DIR__ . "/../vues/vueTableauDonneesGraphiques.php";
 }
 
+// Affichage de la page tableau de bord données tableau
 function tableauDonneesTableau()
 {
     $rucheModel = new Ruche();
     $ruches = $rucheModel->getRuches();
-    
-    // Determine selected hive
+
+    // si on reçoit une ruche dans $_SESSION & qu'elle existe alors...
     if (isset($_GET['id']) && array_key_exists($_GET['id'], $ruches)) {
         $selectedRucheId = $_GET['id'];
         $_SESSION['selected_ruche'] = $selectedRucheId;
@@ -137,18 +139,15 @@ function tableauDonneesTableau()
         $_SESSION['selected_ruche'] = $selectedRucheId;
     }
 
+    // récupération et stockage de l'historique d'une ruche
     $rucheData = $rucheModel->getRuche($selectedRucheId);
-    $history = isset($rucheData['data']) ? $rucheData['data'] : [];
-    
-    // Sort history by date descending
-    usort($history, function ($a, $b) {
-        return strtotime($b['date']) - strtotime($a['date']);
-    });
+    $history = $rucheData['data'] ?? [];
 
     setcookie('page', '?action=tableauDonneesTableau', time() + 3600);
     require __DIR__ . "/../vues/vueTableauDonneesTableau.php";
 }
 
+// Affichage de la page tableau de bord profil
 function tableauProfil()
 {
     setcookie('page', '?action=tableauProfil', time() + 3600);
@@ -162,6 +161,9 @@ function photoProfil()
 }
 
 // Enregistrement de la photo d'un membre
+/**
+ * @throws Exception
+ */
 function enregPhotoProfil($idMembre)
 {
     $objProfil = new UploadPhoto();
@@ -171,9 +173,12 @@ function enregPhotoProfil($idMembre)
     exit(); // Toujours exit après une redirection
 }
 
+// Affichage de la page contact & permet d'envoyer un message en bdd
 function contact()
 {
+    // vérification de la valeur de REQUEST_METHOD et qu'elle soit strictement égale à la méthode POST avant de procéder
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // extension de la classe Contact qui se gère d'envoyer nos données
         $contactModel = new Contact();
         $success = $contactModel->pushMail();
     }
@@ -200,12 +205,14 @@ function inscription($redirectUrl = null)
     require __DIR__ . "/../vues/vueInscription.php";
 }
 
+// Affichage de la page de connexion administrateur
 function connexionadmin()
 {
     setcookie('page', '?action=connexionadmin', time() + 3600);
     require __DIR__ . "/../vues/vueConnexionAdmin.php";
 }
 
+// Permet une déconnexion de la session utilisateur
 function quit()
 {
     session_destroy();
@@ -219,6 +226,8 @@ function login($email, $mdp)
     $userDB = new Connexion();
     $userData = $userDB->getUserContent($email);
 
+    // les nombreux $_SESSION nous permettent d'afficher les valeurs directement en front pour plus de dynamisme
+    // (nom d'util par exemple sur le tableau de bord)
     if ($userData && password_verify($mdp, $userData['mdp'])) {
         $_SESSION['id'] = $userData['id'];
         $_SESSION['acces'] = $userData['prenom'];
@@ -231,11 +240,7 @@ function login($email, $mdp)
         $_SESSION['pays'] = $userData['pays'];
         $_SESSION['date_envoi'] = $userData['date_envoi'];
 
-        if (isset($_COOKIE["page"])) {
-            $action = $_COOKIE["page"];
-        } else {
-            $action = "?action=accueil";
-        }
+        $action = $_COOKIE["page"] ?? "?action=accueil";
 
         header("Location: index.php" . $action);
     } else

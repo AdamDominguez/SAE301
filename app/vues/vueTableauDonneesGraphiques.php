@@ -8,13 +8,10 @@ $title = "Tableau de bord | BeeLink";
 <head>
     <meta charset="UTF-8">
     <title><?= $title ?></title>
-
     <link href="./public/css/main.css" rel="stylesheet">
     <link href="./public/css/tableau.css" rel="stylesheet">
-
     <link rel="icon" type="image/png" sizes="32x32" href="./public/img/favicons/favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./public/img/favicons/favicon-16.png">
-
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
@@ -40,7 +37,9 @@ $title = "Tableau de bord | BeeLink";
                     <p class="sous-titre">Surveillance complète et analyse en temps réel de vos ruches.</p>
                 </div>
                 <div class="actions-globales">
+                    <!-- changement d'url avec window.location.href & attribution de l'id avec + this.value -->
                     <select class="select-ruche" onchange="window.location.href='index.php?action=tableauDonneesGraphiques&id=' + this.value">
+                        <!-- affichage dynamique des valeurs grâce à data.php -->
                         <?php foreach ($ruches as $id => $ruche): ?>
                             <option value="<?= $id ?>" <?= ($selectedRucheId == $id) ? 'selected' : '' ?>>Ruche <?= $id ?></option>
                         <?php endforeach; ?>
@@ -112,11 +111,14 @@ $title = "Tableau de bord | BeeLink";
             </div>
         </section>
     </main>
+
     <?php require "footer.php"; ?>
+
     <script>
-        // Pass PHP data to JS
+        // envoie des info php au js avec json_encode et notre historique
         const rucheHistory = <?= json_encode($history) ?>;
     </script>
+
     <script src="./public/js/graph.js"></script>
 </body>
 

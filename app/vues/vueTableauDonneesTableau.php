@@ -36,7 +36,9 @@ $title = "Tableau de bord | BeeLink";
                     <p class="sous-titre">Surveillance complète et analyse en temps réel de vos ruches.</p>
                 </div>
                 <div class="actions-globales">
+                    <!-- changement d'url avec window.location.href & attribution de l'id avec + this.value -->
                     <select class="select-ruche" onchange="window.location.href='index.php?action=tableauDonneesTableau&id=' + this.value">
+                        <!-- affichage dynamique des ruches avec un foreach pour chaque id on propose l'option -->
                         <?php foreach ($ruches as $id => $ruche): ?>
                             <option value="<?= $id ?>" <?= ($selectedRucheId == $id) ? 'selected' : '' ?>>Ruche <?= $id ?></option>
                         <?php endforeach; ?>
@@ -85,7 +87,9 @@ $title = "Tableau de bord | BeeLink";
             </div>
         </section>
     </main>
+
     <?php require "footer.php"; ?>
+
     <script src="./public/js/tableau.js"></script>
 </body>
 

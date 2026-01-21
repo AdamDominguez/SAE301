@@ -5,7 +5,8 @@ class Ruche
     private $data;
 
     /*******************************************************
-    En développement PHP, une méthode __construct permet d'initialiser les bases d'un fichier, ici on récupère le contenu du fichier json puis on le décode avec json_decode
+    En développement PHP, une méthode __construct permet d'initialiser les bases d'un fichier, ici on récupère le contenu du fichier
+    json puis on le décode avec json_decode
     Entrée : data_ruche.json
     Retour : $data
      *******************************************************/
