@@ -1,13 +1,17 @@
 <?php
-$idUtilisateur = $_SESSION['id'];
-$urlPhoto = PHOTOMEMDIR . "/defaut.png"; // lien relatif image de profil par défaut 
-
 // Vérification de l'existence d'une image personnalisée (jpg ou png)
-if (file_exists(PHOTOMEMDIR . "/" . $idUtilisateur . ".jpg")) {
-    $urlPhoto = PHOTOMEMDIR . "/" . $idUtilisateur . ".jpg";
-} elseif (file_exists(PHOTOMEMDIR . "/" . $idUtilisateur . ".png")) {
-    $urlPhoto = PHOTOMEMDIR . "/" . $idUtilisateur . ".png";
+$urlPhoto = PHOTOMEMDIR . "/defaut.png"; // lien relatif image de profil par défaut
+
+if (isset($_SESSION['id'])) {
+    $idUtilisateur = $_SESSION['id'];
+
+    if (file_exists(PHOTOMEMDIR . "/" . $idUtilisateur . ".jpg")) {
+        $urlPhoto = PHOTOMEMDIR . "/" . $idUtilisateur . ".jpg";
+    } elseif (file_exists(PHOTOMEMDIR . "/" . $idUtilisateur . ".png")) {
+        $urlPhoto = PHOTOMEMDIR . "/" . $idUtilisateur . ".png";
+    }
 }
+
 
 // var qui permet de récup l'action d'url et sinon retourner accueil en url
 $pageActive = $_GET['action'] ?? 'accueil';
