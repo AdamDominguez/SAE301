@@ -7,11 +7,6 @@
     --couleur-fond-widget: #2B2B2B;
     --couleur-border: #444444;
     --couleur-texte-clair: #AAAAAA;
-    --couleur-succes: #4CAF50;
-    --couleur-avertissement: #FF9800;
-    --couleur-bleu-alertes: #2196F3;
-    --couleur-negatif: #F44336;
-    --couleur-normal: #4A90E2;
 }
 
 body {
@@ -349,36 +344,34 @@ th {
     cursor: pointer;
 }
 
-th:hover {
-    text-decoration: underline;
-}
 
 tbody tr:hover {
     background-color: rgba(255, 255, 255, 0.05);
 }
 
 /* Colonne 2 : Température */
+/* Colonne 2 : Température */
 td:nth-child(2) {
-    color: #FF6900;
     font-weight: 500;
+    color: var(--jaune);
 }
 
 /* Colonne 3 : Poids */
 td:nth-child(3) {
-    color: #AD46FF;
     font-weight: 500;
+    color: var(--jaune);
 }
 
 /* Colonne 4 : Humidité */
 td:nth-child(4) {
-    color: #2B7FFF;
     font-weight: 500;
+    color: var(--jaune);
 }
 
 /* Colonne 5 : Fréquence */
 td:nth-child(5) {
-    color: #00C951;
     font-weight: 500;
+    color: var(--jaune);
 }
 
 /* Graphiques */
@@ -553,6 +546,16 @@ td:nth-child(5) {
 .element-info input {
     padding: 12px;
     border-radius: 6px;
+    background-color: var(--noir);
+    border: 1px solid var(--couleur-border);
+    color: var(--blanc);
+    transition: border-color 0.3s ease;
+}
+
+.element-info input:focus,
+.element-info textarea:focus {
+    outline: none;
+    border-color: var(--jaune);
 }
 
 .element-info input,
@@ -574,7 +577,11 @@ textarea {
     resize: none;
     min-height: 50px;
     border-radius: 6px;
-    padding: 8px;
+    padding: 12px;
+    background-color: var(--noir);
+    border: 1px solid var(--couleur-border);
+    color: var(--blanc);
+    transition: border-color 0.3s ease;
 }
 
 .flex-bouton {
@@ -583,14 +590,32 @@ textarea {
 }
 
 .flex-bouton button {
-    padding: 8px 16px;
+    padding: 12px 20px;
     border-radius: 8px;
     width: 100%;
+    border: 1px solid transparent;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: var(--jaune);
+    color: var(--noir);
 }
 
 .flex-bouton button:hover {
-    cursor: pointer;
-    opacity: 80%;
+    background-color: var(--noir);
+    color: var(--jaune);
+    border-color: var(--jaune);
+}
+
+.flex-bouton .annuler {
+    background-color: var(--noir);
+    color: var(--jaune);
+    border: 1px solid var(--jaune);
+}
+
+.flex-bouton .annuler:hover {
+    background-color: var(--jaune);
+    color: var(--noir);
 }
 
 .enregistrer {
@@ -598,7 +623,6 @@ textarea {
     justify-content: center;
     align-items: center;
     gap: 8px;
-    background-color: var(--jaune);
 }
 
 .flex-info-ruche {
@@ -608,7 +632,8 @@ textarea {
     width: 100%;
 }
 
-.icone-indicateur svg, .icone-ruche svg {
+.icone-indicateur svg,
+.icone-ruche svg {
     max-width: 100%;
     height: auto;
     width: auto;

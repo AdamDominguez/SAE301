@@ -42,6 +42,7 @@ a {
     background: var(--jaune);
     z-index: 10;
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .Arrow div {
@@ -57,16 +58,25 @@ a {
     max-width: 100%;
     width: 70px;
     height: 70px;
-    transition: transform 0.4s ease;
+    transition: transform 0.4s ease, background-color 0.3s ease;
 }
 
 .Arrow div svg path {
-    transition: none;
+    transition: stroke 0.3s ease;
+}
+
+.Arrow:hover {
+    background-color: var(--noir);
+    transform: translateY(50%) scale(1.1);
 }
 
 .Arrow:hover div {
     transform: translate(-50%, -50%) rotate(360deg);
-    background: #333333;
+    background: var(--jaune);
+}
+
+.Arrow:hover div svg path {
+    stroke: var(--noir);
 }
 
 .Home {
@@ -179,6 +189,7 @@ a {
     background-color: var(--noir);
     min-height: 89lvh;
     margin: 50px 5vw;
+    scroll-margin-top: 16lvh;
 }
 
 .Explication,
@@ -261,8 +272,8 @@ h2 span {
     align-items: center;
     background-color: var(--noir);
     height: 89lvh;
-    gap: 10lvh;
-    margin: 15lvh 5vw 15lvh 5vw;
+    gap: 5lvh;
+    margin: 5lvh 5vw 5lvh 5vw;
 }
 
 .Piliers svg {
@@ -276,8 +287,8 @@ h2 span {
     align-items: center;
     background-color: var(--noir);
     height: 70lvh;
-    gap: 10lvh;
-    margin: 15lvh 5vw 15lvh 5vw;
+    gap: 5lvh;
+    margin: 5lvh 5vw 5lvh 5vw;
 }
 
 .Passion img {
@@ -316,7 +327,7 @@ h2 span {
     align-items: center;
     background-color: var(--noir);
     height: 70lvh;
-    margin: 15lvh 5vw 15lvh 5vw;
+    margin: 5lvh 5vw 5lvh 5vw;
     color: var(--blanc);
 }
 
@@ -476,10 +487,109 @@ h2 span {
     margin-top: 10px;
 }
 
-/* @media (width > 1200px) {
-
+/* Loader Styles */
+/* Loader Styles */
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--noir);
+    /* Start Black */
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
-@media (width > 680px) {
+#loader-bg {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: var(--jaune);
+    border-radius: 50%;
+    /* Circle expansion */
+    transform: scale(0);
+    z-index: 0;
+}
 
-} */
+.loader-content {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    /* Horizontal layout */
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    z-index: 1;
+    /* Above bg */
+}
+
+.loader-icon-container {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    display: grid;
+    place-items: center;
+}
+
+#loader-icon-1,
+#loader-icon-2,
+#loader-icon-3,
+#loader-icon-4 {
+    grid-area: 1 / 1;
+    width: 60%;
+    /* Consistent size */
+    height: auto;
+    opacity: 0;
+    z-index: 2;
+}
+
+#loader-hex {
+    grid-area: 1 / 1;
+    width: 100%;
+    height: auto;
+    transform-origin: center center;
+    opacity: 0;
+    /* Fix FOUC */
+}
+
+#loader-data {
+    grid-area: 1 / 1;
+    font-family: 'Consolas', 'Monaco', 'Bitstream Vera Sans Mono', monospace;
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: var(--jaune);
+    letter-spacing: 2px;
+    z-index: 2;
+    opacity: 0;
+    text-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+    /* Glowing text */
+}
+
+#loader-bee {
+    grid-area: 1 / 1;
+    width: 80%;
+    height: auto;
+    opacity: 0;
+    transform: scale(0);
+}
+
+#loader-text {
+    font-size: 9rem;
+    font-weight: bold;
+    color: #000000;
+    font-family: inherit;
+    margin: 0;
+    /* Reset margins */
+    opacity: 0;
+    overflow: hidden;
+    line-height: 1;
+}
+
+#loader-text span {
+    display: inline-block;
+    transform-origin: bottom center;
+}

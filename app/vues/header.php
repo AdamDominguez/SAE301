@@ -16,8 +16,8 @@ if (isset($_SESSION['id'])) {
 // var qui permet de récup l'action d'url et sinon retourner accueil en url
 $pageActive = $_GET['action'] ?? 'accueil';
 
-// Nouvelle variable pour vérifier si l'action actuelle commence par 'tableau'
-$tableauPage = strpos($pageActive, 'tableau') === 0;
+// Nouvelle variable pour vérifier si l'action actuelle commence par 'tableau' ou est 'inscription'
+$tableauPage = strpos($pageActive, 'tableau') === 0 || $pageActive === 'inscription';
 ?>
 
 <header>
@@ -29,15 +29,14 @@ $tableauPage = strpos($pageActive, 'tableau') === 0;
             <!-- L'attribut class permet au ternaire de vérifier si 
              on a bien l'action qu'on souhaite, si oui alors on met 
              la classe active, sinon on fait rien psk ça marche pas  -->
-            <!-- Accueil (Adam.D) -->
+            <!-- Accueil -->
             <a href='index.php?action=accueil' class='<?= $pageActive == 'accueil' ? 'active' : '' ?>'>Accueil</a>
-            <!-- Tableau de bord (Clément) -->
-            <a href='index.php?action=fonctionnalites'
-                class='<?= $pageActive == 'fonctionnalites' ? 'active' : '' ?>'>Fonctionnalités</a>
-            <!-- Tableau de bord (Clément) -->
+            <!-- Fonctionnalités -->
+            <a href='index.php?action=fonctionnalites' class='<?= $pageActive == 'fonctionnalites' ? 'active' : '' ?>'>Fonctionnalités</a>
+            <!-- Tableau de bord -->
             <a href='index.php?action=tableauAccueil' class='<?= $tableauPage ? 'active' : '' ?>'>Tableau de
                 bord</a>
-            <!-- Contact (Adam.D) -->
+            <!-- Contact -->
             <a href='index.php?action=contact' class='<?= $pageActive == 'contact' ? 'active' : '' ?>'>Nous
                 contacter</a>
         </nav>
@@ -110,8 +109,8 @@ $tableauPage = strpos($pageActive, 'tableau') === 0;
                         </div>
                     </div>
 
-                    <div>
-                        <label for="password">Mot de passe
+                    <div class="ConnecterField">
+                        <label for="password">Mot de passe</label>
                         <div class="ConnecterInput2">
                             <div class="ConnecterInput2a">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="21" viewBox="0 0 16 21"
@@ -122,10 +121,9 @@ $tableauPage = strpos($pageActive, 'tableau') === 0;
                                 </svg>
                                 <input type="password" id="password" name="password" placeholder="Mot de passe" value=""
                                     required>
+                            </div>
                         </div>
-                        </label>
-                            <a href="">Mot de passe oublié ?</a>
-                        </div>
+                        <a href="">Mot de passe oublié ?</a>
                     </div>
 
             <button type="submit">CONNEXION</button>

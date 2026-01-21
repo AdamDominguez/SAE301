@@ -144,5 +144,5 @@
 }
 
 .form-row:focus-within label {
-    color: var(--jaune);
+    color: var(--noir);
 }
