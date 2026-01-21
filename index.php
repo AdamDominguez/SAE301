@@ -37,6 +37,22 @@ try {
                 enregPhotoProfil($_SESSION["id"]);
         } else
             accueil();
+    } elseif (isset($_SESSION["admin"])) {
+        if (isset($_GET["action"])) {
+            if ($_GET["action"] == "admin") {
+                admin();
+            } else if ($_GET["action"] == "supprimerMembre") {
+                if (isset($_GET['id'])) {
+                    supprimerMembre($_GET['id']);
+                } else {
+                    admin();
+                }
+            } else if ($_GET["action"] == "quit") {
+                quit();
+            }
+        } else {
+            admin();
+        }
     } else {
         // ce qui est visible pour ceux non connectés
         if (isset($_GET["action"])) {
@@ -54,6 +70,8 @@ try {
                 accueil();
             else if ($_GET["action"] == "tableauAccueil")
                 inscription('?action=tableauAccueil');
+            else if ($_GET["action"] == "loginadmin")
+                loginAdmin($_POST["email"], $_POST["password"]);
             else
                 accueil();
         } else {

@@ -2,6 +2,7 @@
 require_once __DIR__ . "/../modeles/contact.php";
 require_once __DIR__ . "/../modeles/inscription.php";
 require_once __DIR__ . "/../modeles/connexion.php";
+require_once __DIR__ . "/../modeles/connexionAdmin.php";
 require_once __DIR__ . "/../modeles/uploadPhoto.php";
 require_once __DIR__ . "/../modeles/Ruche.php";
 
@@ -206,10 +207,49 @@ function inscription($redirectUrl = null)
 }
 
 // Affichage de la page de connexion administrateur
-function connexionadmin()
+function connexionAdmin()
 {
-    setcookie('page', '?action=connexionadmin', time() + 3600);
     require __DIR__ . "/../vues/vueConnexionAdmin.php";
+}
+
+// Affichage de la page de connexion administrateur
+function admin()
+{
+    // vérification pour être sûr qu'on est bien administrateur sinon au revoir
+    if (!isset($_SESSION['admin'])) {
+        header("Location: index.php?action=connexionadmin");
+        exit();
+    }
+
+    $adminModel = new ConnexionAdmin();
+    $membres = $adminModel->getUsers();
+    require __DIR__ . "/../vues/vueAdmin.php";
+}
+
+function supprimerMembre($id)
+{
+    // vérification pour être sûr qu'on est bien administrateur sinon au revoir
+    if (isset($_SESSION['admin'])) {
+        $adminModel = new ConnexionAdmin();
+        $adminModel->deleteUser($id);
+    }
+
+    header("Location: index.php?action=admin");
+    exit();
+}
+
+function loginAdmin($email, $mdp)
+{
+    $adminDB = new ConnexionAdmin();
+    $adminData = $adminDB->getAdminContent($email);
+
+    if ($adminData) {
+        $_SESSION['admin'] = true;
+        $_SESSION['id'] = $adminData['id'];
+        $_SESSION['email'] = $adminData['email'];
+        header("Location: index.php?action=admin");
+    } else
+        connexionAdmin();
 }
 
 // Permet une déconnexion de la session utilisateur

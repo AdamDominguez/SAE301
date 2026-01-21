@@ -18,17 +18,18 @@ $title = "Panel Administrateur | BeeLink";
         <a href="index.php?action=accueil" class="BackAccueil">← Retour à la page d'accueil</a>
         <section class="ConnexionAdmin">
             <img src="./public/img/logo_admin.avif" alt="Logo Administrateur">
-            <form method="POST">
+            <form method="POST" action=<?= $_SERVER["PHP_SELF"] . "?action=loginadmin" ?>>
                 <fieldset>
                     <div class="form-group">
                         <div class="form-row">
                             <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="nom@example.com" required>
+                            <input type="email" id="email" name="email" placeholder="nom@example.com" value="" required>
                         </div>
 
                         <div class="form-row">
-                            <label for="mdp">Mot de passe</label>
-                            <input type="text" id="mdp" name="mdp" placeholder="MDP123$" required>
+                            <label for="password">Mot de passe</label>
+                            <input type="password" id="password" name="password" placeholder="MDP123$" value=""
+                                   required>
                         </div>
                     </div>
                 </fieldset>
