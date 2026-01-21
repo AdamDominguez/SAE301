@@ -46,9 +46,9 @@ $title = "Tableau de bord | BeeLink";
                             <option value="<?= $id ?>" <?= ($selectedRucheId == $id) ? 'selected' : '' ?>>Ruche <?= $id ?></option>
                         <?php endforeach; ?>
                     </select>
-                    <button class="btn-export">
-                        Exporter
-                    </button>
+<!--                    <button class="btn-export">-->
+<!--                        Exporter-->
+<!--                    </button>-->
                 </div>
             </div>
 
