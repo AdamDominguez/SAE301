@@ -607,3 +607,9 @@ textarea {
     gap: 20px;
     width: 100%;
 }
+
+svg {
+    max-width: 100%;
+    height: auto;
+    width: auto;
+}
