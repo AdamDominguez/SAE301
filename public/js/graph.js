@@ -8,7 +8,6 @@ let freqData = [];
 // si rucheHistory est supérieur à 0 (rempli quoi) alors on lance un for each pour attribuer chaque
 // information à une variable qu'on utilisera pour afficher nos données
 if (rucheHistory.length > 0) {
-    // Reverse history to show oldest to newest left to right
     rucheHistory.forEach(item => {
         const date = new Date(item.date);
         const jour = String(date.getDate()).padStart(2, '0');

@@ -1,13 +1,17 @@
 <?php
-$idUtilisateur = $_SESSION['id'];
-$urlPhoto = PHOTOMEMDIR . "/defaut.png"; // lien relatif image de profil par défaut 
-
 // Vérification de l'existence d'une image personnalisée (jpg ou png)
-if (file_exists(PHOTOMEMDIR . "/" . $idUtilisateur . ".jpg")) {
-    $urlPhoto = PHOTOMEMDIR . "/" . $idUtilisateur . ".jpg";
-} elseif (file_exists(PHOTOMEMDIR . "/" . $idUtilisateur . ".png")) {
-    $urlPhoto = PHOTOMEMDIR . "/" . $idUtilisateur . ".png";
+$urlPhoto = PHOTOMEMDIR . "/defaut.png"; // lien relatif image de profil par défaut
+
+if (isset($_SESSION['id'])) {
+    $idUtilisateur = $_SESSION['id'];
+
+    if (file_exists(PHOTOMEMDIR . "/" . $idUtilisateur . ".jpg")) {
+        $urlPhoto = PHOTOMEMDIR . "/" . $idUtilisateur . ".jpg";
+    } elseif (file_exists(PHOTOMEMDIR . "/" . $idUtilisateur . ".png")) {
+        $urlPhoto = PHOTOMEMDIR . "/" . $idUtilisateur . ".png";
+    }
 }
+
 
 // var qui permet de récup l'action d'url et sinon retourner accueil en url
 $pageActive = $_GET['action'] ?? 'accueil';
@@ -40,7 +44,7 @@ $tableauPage = strpos($pageActive, 'tableau') === 0;
     </div>
 
     <?php if (isset($_SESSION['acces'])): ?>
-        <div class="Connecter">
+        <div class="Connecter" style="border-radius: 100%">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#333333"
                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M5.52 19c.64-2.2 1.84-3 3.22-3h6.52c1.38 0 2.58.8 3.22 3" />

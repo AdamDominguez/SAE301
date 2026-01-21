@@ -184,7 +184,31 @@ $title = "Accueil | BeeLink";
         </section>
         <section class="Passion">
             <div class="PassionGauche">
-                <img src="./public/img/apiculteur.png" alt="Apiculteur tenant une ruche en main">
+                <img loading="lazy"
+                        sizes="(max-width: 826px) 100vw, 826px"
+                        srcset="
+./public/img/interface/apiculteur_hkm40t_c_scale,w_200.png 200w,
+./public/img/interface/apiculteur_hkm40t_c_scale,w_257.png 257w,
+./public/img/interface/apiculteur_hkm40t_c_scale,w_307.png 307w,
+./public/img/interface/apiculteur_hkm40t_c_scale,w_351.png 351w,
+./public/img/interface/apiculteur_hkm40t_c_scale,w_392.png 392w,
+./public/img/interface/apiculteur_hkm40t_c_scale,w_430.png 430w,
+./public/img/interface/apiculteur_hkm40t_c_scale,w_467.png 467w,
+./public/img/interface/apiculteur_hkm40t_c_scale,w_502.png 502w,
+./public/img/interface/apiculteur_hkm40t_c_scale,w_535.png 535w,
+./public/img/interface/,w_566.png 566w,
+./public/img/interface/apiculteur_hkm40t_c_scale,w_597.png 597w,
+./public/img/interface/apiculteur_hkm40t_c_scale,w_626.png 626w,
+./public/img/interface/,w_657.png 657w,
+./public/img/interface/,w_685.png 685w,
+./public/img/interface/apiculteur_hkm40t_c_scale,w_713.png 713w,
+./public/img/interface/apiculteur_hkm40t_c_scale,w_740.png 740w,
+./public/img/interface/apiculteur_hkm40t_c_scale,w_768.png 768w,
+./public/img/interface/apiculteur_hkm40t_c_scale,w_793.png 793w,
+./public/img/interface/apiculteur_hkm40t_c_scale,w_820.png 820w,
+./public/img/interface/apiculteur_hkm40t_c_scale,w_826.png 826w"
+                        src="./public/img/interface/apiculteur_hkm40t_c_scale,w_826.png"
+                        alt="Apiculteur tenant une ruche en main">
             </div>
             <div class="PassionDroite">
                 <h2>Une passion pour

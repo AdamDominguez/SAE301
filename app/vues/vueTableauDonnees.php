@@ -39,14 +39,16 @@ $title = "Tableau de bord | BeeLink";
                     <p class="sous-titre">Surveillance complète et analyse en temps réel de vos ruches.</p>
                 </div>
                 <div class="actions-globales">
+                    <!-- changement d'url avec window.location.href & attribution de l'id avec + this.value -->
                     <select class="select-ruche" onchange="window.location.href='index.php?action=tableauDonnees&id=' + this.value">
+                        <!-- affichage dynamique des ruches avec un foreach pour chaque id on propose l'option -->
                         <?php foreach ($ruches as $id => $ruche): ?>
                             <option value="<?= $id ?>" <?= ($selectedRucheId == $id) ? 'selected' : '' ?>>Ruche <?= $id ?></option>
                         <?php endforeach; ?>
                     </select>
-                    <button class="btn-export">
-                        Exporter
-                    </button>
+<!--                    <button class="btn-export">-->
+<!--                        Exporter-->
+<!--                    </button>-->
                 </div>
             </div>
 
@@ -57,98 +59,22 @@ $title = "Tableau de bord | BeeLink";
             </nav>
 
             <div class="grille-widgets-donnees">
-
-                <div class="widget-indicateur">
-                    <div class="entete-indicateur">
-                        <span class="icone-indicateur">🌡️</span>
-                    </div>
-                    <p class="etiquette-indicateur">Température</p>
-                    <p class="valeur-indicateur"><?= $latestData['temperature'] ?>°C</p>
-                    <div class="min-max">
-                        <div class="min">
-                            <small>Min</small>
-                            <p><?= $tempStats['min'] ?>°C</p>
-                        </div>
-                        <div class="max">
-                            <small>Max</small>
-                            <p><?= $tempStats['max'] ?>°C</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="widget-indicateur">
-                    <div class="entete-indicateur">
-                        <span class="icone-indicateur">💧</span>
-                    </div>
-                    <p class="etiquette-indicateur">Humidité</p>
-                    <p class="valeur-indicateur"><?= $latestData['humidite'] ?>%</p>
-                    <div class="min-max">
-                        <div class="min">
-                            <small>Min</small>
-                            <p><?= $humStats['min'] ?>%</p>
-                        </div>
-                        <div class="max">
-                            <small>Max</small>
-                            <p><?= $humStats['max'] ?>%</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="widget-indicateur">
-                    <div class="entete-indicateur">
-                        <span class="icone-indicateur">⚖️</span>
-                    </div>
-                    <p class="etiquette-indicateur">Poids total</p>
-                    <p class="valeur-indicateur"><?= $latestData['poids'] ?> kg</p>
-                    <div class="min-max">
-                        <div class="min">
-                            <small>Min</small>
-                            <p><?= $poidsStats['min'] ?> kg</p>
-                        </div>
-                        <div class="max">
-                            <small>Max</small>
-                            <p><?= $poidsStats['max'] ?> kg</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="widget-indicateur">
-                    <div class="entete-indicateur">
-                        <span class="icone-indicateur">〰️</span>
-                    </div>
-                    <p class="etiquette-indicateur">Fréquence</p>
-                    <p class="valeur-indicateur"><?= $latestData['frequence'] ?> Hz</p>
-                    <div class="min-max">
-                        <div class="min">
-                            <small>Min</small>
-                            <p><?= $freqStats['min'] ?> Hz</p>
-                        </div>
-                        <div class="max">
-                            <small>Max</small>
-                            <p><?= $freqStats['max'] ?> Hz</p>
-                        </div>
-                    </div>
-                </div>
-
+                <?php require "data.php"; ?>
                 <div id="map" data-lat="<?= $gps[0] ?>" data-lng="<?= $gps[1] ?>" data-id="Ruche <?= $selectedRucheId ?>"></div>
-
             </div>
         </section>
     </main>
     <?php require "footer.php"; ?>
 </body>
 
+<!--intég leaflet-->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
     crossorigin=""></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
-
-<script>
-    var rucheExportData = <?= json_encode($history) ?>;
-    var rucheId = <?= json_encode($selectedRucheId) ?>;
-</script>
+<!--exportation pdf-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>-->
 
 <script src="./public/js/tableau.js"></script>
 

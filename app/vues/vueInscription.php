@@ -104,7 +104,7 @@ $title = "Inscription | BeeLink";
                     <fieldset class="form-section">
                         <div class="form-group-container">
                             <div class="form-group-row">
-                                <div class="form-row" style="width: 100%;"> <!-- Full width for login fields -->
+                                <div class="form-row" style="width: 100%;">
                                     <label for="email-connexion">Email <span>*</span></label>
                                     <input type="email" id="email-connexion" name="email" placeholder="nom@example.com" required>
                                 </div>
