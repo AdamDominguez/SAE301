@@ -608,7 +608,7 @@ textarea {
     width: 100%;
 }
 
-svg {
+.icone-indicateur svg, .icone-ruche svg {
     max-width: 100%;
     height: auto;
     width: auto;
