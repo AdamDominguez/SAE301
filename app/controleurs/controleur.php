@@ -58,7 +58,7 @@ function tableauDonnees()
         $selectedRucheId = $_GET['id'];
         $_SESSION['selected_ruche'] = $selectedRucheId;
     } elseif (isset($_SESSION['selected_ruche']) && array_key_exists($_SESSION['selected_ruche'], $ruches)) {
-         $selectedRucheId = $_SESSION['selected_ruche'];
+        $selectedRucheId = $_SESSION['selected_ruche'];
     } else {
         $selectedRucheId = array_key_first($ruches);
         $_SESSION['selected_ruche'] = $selectedRucheId;
@@ -90,7 +90,7 @@ function tableauDonneesGraphiques()
         $selectedRucheId = $_GET['id'];
         $_SESSION['selected_ruche'] = $selectedRucheId;
     } elseif (isset($_SESSION['selected_ruche']) && array_key_exists($_SESSION['selected_ruche'], $ruches)) {
-         $selectedRucheId = $_SESSION['selected_ruche'];
+        $selectedRucheId = $_SESSION['selected_ruche'];
     } else {
         $selectedRucheId = array_key_first($ruches);
         $_SESSION['selected_ruche'] = $selectedRucheId;
@@ -134,7 +134,7 @@ function tableauDonneesTableau()
         $selectedRucheId = $_GET['id'];
         $_SESSION['selected_ruche'] = $selectedRucheId;
     } elseif (isset($_SESSION['selected_ruche']) && array_key_exists($_SESSION['selected_ruche'], $ruches)) {
-         $selectedRucheId = $_SESSION['selected_ruche'];
+        $selectedRucheId = $_SESSION['selected_ruche'];
     } else {
         $selectedRucheId = array_key_first($ruches);
         $_SESSION['selected_ruche'] = $selectedRucheId;
@@ -174,12 +174,50 @@ function enregPhotoProfil($idMembre)
     exit(); // Toujours exit après une redirection
 }
 
+// Modification des infos pour l'utilisateur connecté
+function updateUserData()
+{
+    if (isset($_SESSION['id'])) {
+        $userCO = new UserModel();
+
+        $newData = [
+            'firstname' => $_POST['firstname'],
+            'lastname' => $_POST['lastname'],
+            'email' => $_POST['email'],
+            'mobile' => $_POST['mobile'],
+            'adresse' => $_POST['adresse'],
+            'ville' => $_POST['ville'],
+            'postal' => $_POST['postal'],
+            'pays' => $_POST['pays']
+        ];
+
+        $success = $userCO->updateUserData($_SESSION['id'], $newData);
+
+        if ($success) {
+            $_SESSION['acces'] = $newData['firstname'];
+            $_SESSION['nom'] = $newData['lastname'];
+            $_SESSION['email'] = $newData['email'];
+            $_SESSION['numero'] = $newData['mobile'];
+            $_SESSION['adresse'] = $newData['adresse'];
+            $_SESSION['ville'] = $newData['ville'];
+            $_SESSION['postal'] = $newData['postal'];
+            $_SESSION['pays'] = $newData['pays'];
+
+            header("Location: index.php?action=tableauProfil&update=success");
+            exit();
+        } else {
+            header("Location: index.php?action=tableauProfil&update=error");
+            exit();
+        }
+    }
+}
+
 // Affichage de la page contact & permet d'envoyer un message en bdd
 function contact()
 {
     // vérification de la valeur de REQUEST_METHOD et qu'elle soit strictement égale à la méthode POST avant de procéder
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // extension de la classe Contact qui se gère d'envoyer nos données
+        // extension de la classe Contact qui se gère d'envoyer nos données
         $contactModel = new Contact();
         $success = $contactModel->pushMail();
     }
@@ -193,7 +231,7 @@ function inscription($redirectUrl = null)
         $inscriptionModel = new Inscription();
         $success = $inscriptionModel->pushInscription();
     }
-    
+
     // Only update the redirect cookie if a specific URL is passed, 
     // or if no cookie is set (fallback to default).
     // This allows preserving the original destination (e.g. tableauAccueil) when switching modes.
@@ -202,7 +240,7 @@ function inscription($redirectUrl = null)
     } elseif (!isset($_COOKIE['page'])) {
         setcookie('page', '?action=inscription', time() + 3600);
     }
-    
+
     require __DIR__ . "/../vues/vueInscription.php";
 }
 

@@ -18,6 +18,8 @@ $pageActive = $_GET['action'] ?? 'accueil';
 
 // Nouvelle variable pour vérifier si l'action actuelle commence par 'tableau'
 $tableauPage = strpos($pageActive, 'tableau') === 0;
+
+
 ?>
 
 <header>
