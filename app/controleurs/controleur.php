@@ -6,6 +6,8 @@ require_once __DIR__ . "/../modeles/connexionAdmin.php";
 require_once __DIR__ . "/../modeles/uploadPhoto.php";
 require_once __DIR__ . "/../modeles/Ruche.php";
 require_once __DIR__ . "/../modeles/usermodel.php";
+require_once __DIR__ . "/../modeles/avis.php";
+
 
 
 // Affichage de la page d'accueil
@@ -18,6 +20,8 @@ function accueil()
 // Affichage de la page fonctionnalités
 function fonctionnalites()
 {
+    $avisModel = new Avis();
+    $listeAvis = $avisModel->getAllAvis();
     setcookie('page', '?action=fonctionnalites', time() + 3600);
     require __DIR__ . "/../vues/vueFonction.php";
 }
