@@ -1,4 +1,3 @@
-/* --- Global Mobile Resets & Typography --- */
 body.no-scroll {
     overflow: hidden;
 }
@@ -9,7 +8,6 @@ body.no-scroll {
     box-sizing: border-box;
 }
 
-/* Fix global overflow to prevent double scrollbars */
 html,
 body {
     overflow-x: hidden;
@@ -18,7 +16,6 @@ body {
     padding: 0;
 }
 
-/* Adjust Main padding for fixed header */
 main {
     padding-top: 80px;
     width: 100%;
@@ -29,7 +26,6 @@ h3 {
     text-align: center;
 }
 
-/* --- Header & Hamburger Menu --- */
 body header {
     justify-content: space-between;
     align-items: center;
@@ -56,7 +52,6 @@ body header .UserMenu {
     display: none;
 }
 
-/* Hamburger Icon */
 body header .Burger {
     display: flex;
     flex-direction: column;
@@ -90,7 +85,6 @@ body header .Burger {
     transform: translateY(-10.5px) rotate(-45deg);
 }
 
-/* Mobile Menu Overlay */
 body header .Liens {
     display: flex;
     flex-direction: column;
@@ -137,7 +131,6 @@ body header .Liens nav a::after {
     display: none;
 }
 
-/* --- Home Section Layout --- */
 .Home {
     display: flex;
     flex-direction: column;
@@ -204,8 +197,6 @@ body header .Liens nav a::after {
     opacity: 0.9;
 }
 
-/* Fix for Contact page colors */
-/* Fix for Contact page colors & Layout */
 .Contact {
     flex-direction: column;
     height: auto;
@@ -313,7 +304,6 @@ body header .Liens nav a::after {
     letter-spacing: 0.5px;
 }
 
-/* --- HomeHero Grid Layout --- */
 .HomeHero {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -361,13 +351,11 @@ body header .Liens nav a::after {
     display: none;
 }
 
-/* Honeycomb decoration positioning for mobile */
 .Explication .honeycomb1,
 .Explication .honeycomb2 {
     display: none;
 }
 
-/* Loader Responsive */
 .loader-content {
     flex-direction: column;
     gap: 15px;
@@ -382,7 +370,6 @@ body header .Liens nav a::after {
     font-size: 3.5rem;
 }
 
-/* Sections Natural Flow (Remove fixed heights and flex centering) */
 .Explication,
 .Piliers,
 .Passion,
@@ -402,7 +389,6 @@ body header .Liens nav a::after {
     padding-top: 100px;
 }
 
-/* Ensure content inside stack correctly */
 .ExplicationMenu {
     flex-direction: column-reverse;
     width: 100%;
@@ -432,14 +418,12 @@ body header .Liens nav a::after {
     width: 100%;
 }
 
-/* Mobile Steps Styling */
 .MarcheEtape {
     width: 100%;
     max-width: 320px;
     margin: 0 auto 10px auto;
 }
 
-/* Mobile Timeline Frieze Switch */
 .frise_desktop {
     display: none;
 }
@@ -452,7 +436,6 @@ body header .Liens nav a::after {
     margin: 0 auto;
 }
 
-/* --- Responsive Footer --- */
 .Footer1 {
     display: flex;
     flex-wrap: wrap;
@@ -464,7 +447,6 @@ body header .Liens nav a::after {
 .Footer1A {
     order: 1;
     width: 48%;
-    /* Share top row */
     align-items: flex-start;
     text-align: left;
 }
@@ -476,12 +458,9 @@ body header .Liens nav a::after {
 .Footer1D {
     order: 2;
     width: 45%;
-    /* Share top row */
     text-align: left;
-    /* Align like 1A or stick to center? User asked for 1A left. 1D side by side usually implies visual balance. keeping layout fluid. */
     align-items: flex-start;
     padding-top: 0;
-    /* Reset previous padding */
     display: flex;
     flex-direction: column;
 }
@@ -508,7 +487,6 @@ body header .Liens nav a::after {
     padding: 30px;
 }
 
-/* Fix for Dashboard Layout */
 main {
     flex-direction: column;
 }
@@ -547,7 +525,7 @@ main {
 
 .element-menu {
     flex-shrink: 0;
-    margin: 0 !important;
+    margin: 0;
 }
 
 .element-menu a {
@@ -577,7 +555,6 @@ main {
     gap: 25px;
 }
 
-/* Hive Grid - 2 Columns for better visibility */
 .liste-ruches {
     grid-template-columns: 1fr 1fr;
     gap: 15px;
@@ -601,12 +578,9 @@ main {
     border: 2px solid var(--jaune);
 }
 
-/* Restore Header User Menu on Mobile */
 body header .Connecter {
     display: flex;
-    /* Show user icon */
     font-size: 0;
-    /* Hide text "Se connecter" / email if needed, or style properly */
     background: transparent;
     padding: 0;
     width: 40px;
@@ -614,7 +588,6 @@ body header .Connecter {
     justify-content: center;
     align-items: center;
     margin-right: 15px;
-    /* Space from burger */
 }
 
 body header .Connecter svg {
@@ -623,8 +596,6 @@ body header .Connecter svg {
     stroke: var(--noir);
 }
 
-/* Ensure dropdown works if it relies on hover or make it clickable via JS if needed */
-/* Since it's mobile, hover might be tricky. Assuming tap works on .Connecter to toggle .UserMenu */
 .UserMenu {
     top: 60px;
     right: 10px;
@@ -643,7 +614,6 @@ body header .Connecter svg {
     color: var(--noir);
 }
 
-/* Profile Page Response */
 .container-profil {
     flex-direction: column;
 }
@@ -659,7 +629,6 @@ body header .Connecter svg {
     gap: 15px;
 }
 
-/* --- Features (Fonctionnalités) Page Responsive Styles --- */
 .container {
     grid-template-columns: 1fr;
     padding: 20px;
@@ -696,7 +665,6 @@ body header .Connecter svg {
     width: 80vw;
     padding: 20px;
     z-index: -1;
-    /* Behind content */
     opacity: 0.8;
 }
 
