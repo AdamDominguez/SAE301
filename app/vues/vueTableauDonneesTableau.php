@@ -36,23 +36,34 @@ $title = "Tableau de bord | BeeLink";
                     <p class="sous-titre">Surveillance complète et analyse en temps réel de vos ruches.</p>
                 </div>
                 <div class="actions-globales">
-                    <!-- changement d'url avec window.location.href & attribution de l'id avec + this.value -->
-                    <select class="select-ruche" onchange="window.location.href='index.php?action=tableauDonneesTableau&id=' + this.value">
-                        <!-- affichage dynamique des ruches avec un foreach pour chaque id on propose l'option -->
-                        <?php foreach ($ruches as $id => $ruche): ?>
-                            <option value="<?= $id ?>" <?= ($selectedRucheId == $id) ? 'selected' : '' ?>>Ruche <?= $id ?></option>
-                        <?php endforeach; ?>
+                    <select class="select-ruche"
+                        onchange="window.location.href='index.php?action=tableauDonnees&id=' + this.value">
+                        <?php
+                        $mesRuchesIds = explode(', ', $_SESSION['id_ruche']);
+
+                        foreach ($mesRuchesIds as $idRuche):
+                            if (isset($ruches[$idRuche])):
+                                ?>
+                                <option value="<?= $idRuche ?>" <?= ($selectedRucheId == $idRuche) ? 'selected' : '' ?>>
+                                    Ruche <?= $idRuche ?>
+                                </option>
+                                <?php
+                            endif;
+                        endforeach;
+                        ?>
                     </select>
-<!--                    <button class="btn-export">-->
-<!--                        Exporter-->
-<!--                    </button>-->
+                    <!--                    <button class="btn-export">-->
+                    <!--                        Exporter-->
+                    <!--                    </button>-->
                 </div>
             </div>
 
             <nav class="nav-onglets">
                 <a href="index.php?action=tableauDonnees&id=<?= $selectedRucheId ?>" class="onglet">Aperçu</a>
-                <a href="index.php?action=tableauDonneesGraphiques&id=<?= $selectedRucheId ?>" class="onglet">Graphiques</a>
-                <a href="index.php?action=tableauDonneesTableau&id=<?= $selectedRucheId ?>" class="onglet actif">Tableau</a>
+                <a href="index.php?action=tableauDonneesGraphiques&id=<?= $selectedRucheId ?>"
+                    class="onglet">Graphiques</a>
+                <a href="index.php?action=tableauDonneesTableau&id=<?= $selectedRucheId ?>"
+                    class="onglet actif">Tableau</a>
             </nav>
 
             <div class="table-container">
