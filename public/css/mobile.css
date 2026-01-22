@@ -684,8 +684,15 @@ body header .Connecter svg {
 
 .ConnecterContent {
     width: 100lvw;
+    padding: 20px;
 }
 
 .ConnecterContent h3 {
     width: 70lvw;
+}
+
+.cross {
+    scale: 2.5;
+    right: 15px;
+    top: 5px;
 }
