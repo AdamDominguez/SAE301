@@ -4,13 +4,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const inputPhoto = formPhoto.querySelector("input[type='file']");
 
     if (btnUpload && inputPhoto) {
-        // Déclenche la saisie du fichier lorsque l'on clique sur le bouton de l'appareil photo
+        // déclenche la saisie du fichier lorsque l'on clique sur le bouton de l'appareil photo
         btnUpload.addEventListener("click", (e) => {
-            e.preventDefault(); 
+            e.preventDefault(); // grâce à cette méthode du DOM on empêche le caractère de base d'un bouton en html et qui permet de ne pas soumettre le formulaire immédiatement
             inputPhoto.click();
         });
 
-        // Envoie automatiquement le formulaire quand un fichier est sélectionné 
+        // envoie automatiquement le formulaire quand un fichier est sélectionné
         inputPhoto.addEventListener("change", () => {
             if (inputPhoto.files.length > 0) {
                 formPhoto.submit();

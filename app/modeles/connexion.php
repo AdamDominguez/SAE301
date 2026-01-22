@@ -8,7 +8,7 @@ class Connexion extends Database
     ce qui est écrit dans la page connexion correspond à quoi que ce soit
     sinon on retourne 0 (NULL)
     Entrée : $loginInput
-Retour : $result
+    Retour : $result
      *******************************************************/
     public function getUserContent($loginInput)
     {

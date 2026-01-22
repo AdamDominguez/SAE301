@@ -18,7 +18,7 @@
             <h4>Liens</h4>
             <a href="index.php?action=accueil">Accueil</a>
             <a href="index.php?action=fonctionnalites">Fonctionnalités</a>
-            <a href="index.php?action=tableau">Tableau de bord</a>
+            <a href="index.php?action=tableauAccueil">Tableau de bord</a>
         </div>
 
         <div class="Footer1C">

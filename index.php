@@ -33,13 +33,28 @@ try {
                 quit();
             else if ($_GET["action"] == "membrePhoto")
                 photoProfil();  // Changement de la photo d'un article en fonction de son ID
-
             else if ($_GET["action"] == "enregMembrePhoto")    // Enregistrement de la photo d'un article 
                 enregPhotoProfil($_GET["idMembre"]);
             else if ($_GET["action"] == "updateUserData")    // Mise à jour des informations du profil
                 updateUserData();
         } else
             accueil();
+    } elseif (isset($_SESSION["admin"])) {
+        if (isset($_GET["action"])) {
+            if ($_GET["action"] == "admin") {
+                admin();
+            } else if ($_GET["action"] == "supprimerMembre") {
+                if (isset($_GET['id'])) {
+                    supprimerMembre($_GET['id']);
+                } else {
+                    admin();
+                }
+            } else if ($_GET["action"] == "quit") {
+                quit();
+            }
+        } else {
+            admin();
+        }
     } else {
         // ce qui est visible pour ceux non connectés
         if (isset($_GET["action"])) {
@@ -56,7 +71,9 @@ try {
             else if ($_GET["action"] == "accueil")
                 accueil();
             else if ($_GET["action"] == "tableauAccueil")
-                inscription();
+                inscription('?action=tableauAccueil');
+            else if ($_GET["action"] == "loginadmin")
+                loginAdmin($_POST["email"], $_POST["password"]);
             else
                 accueil();
         } else {

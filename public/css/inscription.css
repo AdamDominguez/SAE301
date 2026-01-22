@@ -1,7 +1,7 @@
 .main-inscription {
-    background: var(--noir); 
+    background: var(--noir);
     min-height: 89vh;
-    padding: 60px 0; 
+    padding: 60px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -31,7 +31,7 @@
     padding: 40px 50px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     width: 100%;
-    max-width: 750px; 
+    max-width: 750px;
     box-sizing: border-box;
 }
 
@@ -49,20 +49,20 @@
 .form-group-container {
     display: flex;
     flex-direction: column;
-    gap: 25px; 
+    gap: 25px;
 }
 
 .form-group-row {
     display: flex;
-    gap: 30px; 
+    gap: 30px;
     flex-wrap: wrap;
 }
 
 .form-row {
     display: flex;
     flex-direction: column;
-    gap: 5px; 
-    flex: 1; 
+    gap: 5px;
+    flex: 1;
     min-width: 200px;
 }
 
@@ -77,7 +77,7 @@
 
 .InscriptionForm-card input {
     background: var(--blanc);
-    border: 2px solid var(--jaune); 
+    border: 2px solid var(--jaune);
     border-radius: 4px;
     width: 100%;
     box-sizing: border-box;
@@ -92,7 +92,7 @@
 }
 
 .InscriptionForm-card input:focus {
-    border: 2px solid var(--noir); 
+    border: 2px solid var(--noir);
     outline: none;
 }
 
@@ -116,5 +116,33 @@
 
 .submit-button:hover {
     background-color: var(--noir);
-    color: var(--jaune); 
+    color: var(--jaune);
+}
+
+.auth-switch-link {
+    text-align: center;
+    margin-top: 25px;
+    color: var(--noir);
+    font-size: 0.95rem;
+    font-weight: 300;
+}
+
+.auth-switch-link a {
+    color: var(--jaune);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid transparent;
+}
+
+.auth-switch-link a:hover {
+    border-bottom: 1px solid var(--jaune);
+}
+
+.hidden {
+    display: none;
+}
+
+.form-row:focus-within label {
+    color: var(--jaune);
 }
