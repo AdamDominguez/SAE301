@@ -355,6 +355,7 @@ body header .Liens nav a::after {
 .Explication .honeycomb2 {
     display: none;
 }
+
 .loader-content {
     flex-direction: column;
     gap: 15px;
@@ -599,6 +600,7 @@ body header .Connecter {
     justify-content: center;
     align-items: center;
     margin-right: 15px;
+    gap: 0;
 }
 
 body header .Connecter svg {

@@ -588,6 +588,7 @@ body header .Connecter {
     justify-content: center;
     align-items: center;
     margin-right: 15px;
+    gap: 0;
 }
 
 body header .Connecter svg {
