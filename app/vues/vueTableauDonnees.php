@@ -16,8 +16,7 @@ $title = "Tableau de bord | BeeLink";
     <link rel="icon" type="image/png" sizes="32x32" href="./public/img/favicons/favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./public/img/favicons/favicon-16.png">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-        crossorigin="" />
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
 </head>
 
 <body>
@@ -42,28 +41,39 @@ $title = "Tableau de bord | BeeLink";
                     <p class="sous-titre">Surveillance complète et analyse en temps réel de vos ruches.</p>
                 </div>
                 <div class="actions-globales">
-                    <!-- changement d'url avec window.location.href & attribution de l'id avec + this.value -->
-                    <select class="select-ruche" onchange="window.location.href='index.php?action=tableauDonnees&id=' + this.value">
-                        <!-- affichage dynamique des ruches avec un foreach pour chaque id on propose l'option -->
-                        <?php foreach ($ruches as $id => $ruche): ?>
-                            <option value="<?= $id ?>" <?= ($selectedRucheId == $id) ? 'selected' : '' ?>>Ruche <?= $id ?></option>
-                        <?php endforeach; ?>
+                    <select class="select-ruche"
+                        onchange="window.location.href='index.php?action=tableauDonnees&id=' + this.value">
+                        <?php
+                        $mesRuchesIds = explode(', ', $_SESSION['id_ruche']);
+
+                        foreach ($mesRuchesIds as $idRuche):
+                            if (isset($ruches[$idRuche])):
+                                ?>
+                                <option value="<?= $idRuche ?>" <?= ($selectedRucheId == $idRuche) ? 'selected' : '' ?>>
+                                    Ruche <?= $idRuche ?>
+                                </option>
+                                <?php
+                            endif;
+                        endforeach;
+                        ?>
                     </select>
-<!--                    <button class="btn-export">-->
-<!--                        Exporter-->
-<!--                    </button>-->
+                    <!--                    <button class="btn-export">-->
+                    <!--                        Exporter-->
+                    <!--                    </button>-->
                 </div>
             </div>
 
             <nav class="nav-onglets">
                 <a href="index.php?action=tableauDonnees&id=<?= $selectedRucheId ?>" class="onglet actif">Aperçu</a>
-                <a href="index.php?action=tableauDonneesGraphiques&id=<?= $selectedRucheId ?>" class="onglet">Graphiques</a>
+                <a href="index.php?action=tableauDonneesGraphiques&id=<?= $selectedRucheId ?>"
+                    class="onglet">Graphiques</a>
                 <a href="index.php?action=tableauDonneesTableau&id=<?= $selectedRucheId ?>" class="onglet">Tableau</a>
             </nav>
 
             <div class="grille-widgets-donnees">
                 <?php require "data.php"; ?>
-                <div id="map" data-lat="<?= $gps[0] ?>" data-lng="<?= $gps[1] ?>" data-id="Ruche <?= $selectedRucheId ?>"></div>
+                <div id="map" data-lat="<?= $gps[0] ?>" data-lng="<?= $gps[1] ?>"
+                    data-id="Ruche <?= $selectedRucheId ?>"></div>
             </div>
         </section>
     </main>
@@ -72,8 +82,7 @@ $title = "Tableau de bord | BeeLink";
 
 <!--intég leaflet-->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-    crossorigin=""></script>
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
 <!--exportation pdf-->
 <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>-->

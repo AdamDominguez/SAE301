@@ -453,7 +453,6 @@ body header .Liens nav a::after {
 }
 
 /* --- Responsive Footer --- */
-/* --- Responsive Footer --- */
 .Footer1 {
     display: flex;
     flex-wrap: wrap;
@@ -632,7 +631,7 @@ body header .Connecter svg {
     width: 250px;
     background: var(--blanc);
     border: 1px solid #eee;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .UserMenu p {
@@ -641,7 +640,7 @@ body header .Connecter svg {
 }
 
 .UserMenuLiens a {
-    color: var(--noir) !important;
+    color: var(--noir);
 }
 
 /* Profile Page Response */
@@ -696,4 +695,15 @@ body header .Connecter svg {
 .carte {
     width: 80vw;
     padding: 20px;
+    z-index: -1;
+    /* Behind content */
+    opacity: 0.8;
+}
+
+.honeycomb1 {
+    display: none;
+}
+
+.honeycomb2 {
+    display: none;
 }

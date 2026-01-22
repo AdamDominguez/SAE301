@@ -6,6 +6,8 @@ require_once __DIR__ . "/../modeles/connexionAdmin.php";
 require_once __DIR__ . "/../modeles/uploadPhoto.php";
 require_once __DIR__ . "/../modeles/Ruche.php";
 require_once __DIR__ . "/../modeles/usermodel.php";
+require_once __DIR__ . "/../modeles/avis.php";
+
 
 
 // Affichage de la page d'accueil
@@ -18,6 +20,8 @@ function accueil()
 // Affichage de la page fonctionnalités
 function fonctionnalites()
 {
+    $avisModel = new Avis();
+    $listeAvis = $avisModel->getAllAvis();
     setcookie('page', '?action=fonctionnalites', time() + 3600);
     require __DIR__ . "/../vues/vueFonction.php";
 }
@@ -29,12 +33,17 @@ function tableau()
     $rucheModel = new Ruche();
     $ruches = $rucheModel->getRuches();
 
+    // on séléctionne l'id ruche sinon par défaut première ruche de la liste
+    $selectedRucheId = $_SESSION['id_ruche'] ?? array_key_first($ruches);
+
     //    si on reçoit une ruche dans $_SESSION & qu'elle existe alors...
-    if (isset($_SESSION['selected_ruche']) && array_key_exists($_SESSION['selected_ruche'], $ruches)) {
-        $selectedRucheId = $_SESSION['selected_ruche'];
+    if (isset($_GET['id']) && array_key_exists($_GET['id'], $ruches)) {
+        $selectedRucheId = $_GET['id'];
+        $_SESSION['selected_ruche'] = $selectedRucheId;
+    } elseif (isset($_SESSION['id_ruche']) && array_key_exists($_SESSION['id_ruche'], $ruches)) {
+        $selectedRucheId = $_SESSION['id_ruche'];
     } else {
         $selectedRucheId = array_key_first($ruches);
-        $_SESSION['selected_ruche'] = $selectedRucheId;
     }
 
     // récupération val minimum & max pour chaque champs
@@ -319,6 +328,7 @@ function login($email, $mdp)
         $_SESSION['postal'] = $userData['postal'];
         $_SESSION['pays'] = $userData['pays'];
         $_SESSION['date_envoi'] = $userData['date_envoi'];
+        $_SESSION['id_ruche'] = $userData['id_ruche'];
 
         $action = $_COOKIE["page"] ?? "?action=accueil";
 

@@ -12,7 +12,7 @@ class Connexion extends Database
      *******************************************************/
     public function getUserContent($loginInput)
     {
-        $sql = "SELECT id, nom, prenom, email, mdp, postal, ville, adresse, numero, pays, date_envoi FROM membres WHERE email = ?";
+        $sql = "SELECT id, nom, prenom, email, mdp, postal, ville, adresse, numero, pays, id_ruche, date_envoi FROM membres WHERE email = ?";
 
         $result = $this->execReqPrep($sql, array($loginInput));
 
