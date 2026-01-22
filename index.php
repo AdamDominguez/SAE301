@@ -35,6 +35,8 @@ try {
                 photoProfil();  // Changement de la photo d'un article en fonction de son ID
             else if ($_GET["action"] == "enregMembrePhoto")    // Enregistrement de la photo d'un article 
                 enregPhotoProfil($_SESSION["id"]);
+            else if ($_GET["action"] == "updateUserData")    // Mise à jour des informations du profil
+                updateUserData();
         } else
             accueil();
     } elseif (isset($_SESSION["admin"])) {

@@ -125,6 +125,7 @@ $tableauPage = strpos($pageActive, 'tableau') === 0 || $pageActive === 'inscript
                         </div>
                         <a href="">Mot de passe oublié ?</a>
                     </div>
+            </div>
 
             <button type="submit">CONNEXION</button>
             </form>
@@ -139,6 +140,35 @@ $tableauPage = strpos($pageActive, 'tableau') === 0 || $pageActive === 'inscript
         <span></span>
         <span></span>
     </div>
+</header>
+
+<!-- Notification de succès -->
+<div id="notification-succes" class="notification">
+    <div class="notification-content">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-check-circle">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+        </svg>
+        <span>Connexion réussie !</span>
+    </div>
+</div>
+
+<!-- Notification d'erreur -->
+<div id="notification-erreur" class="notification error">
+    <div class="notification-content">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-alert-circle">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="12"></line>
+            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+        </svg>
+        <span>Une erreur est survenue lors de la connexion.</span>
+    </div>
+</div>
+
     <script src="./public/js/connecter.js"></script>
     <script src="./public/js/burger.js"></script>
-</header>
+<script src="./public/js/connecter.js"></script>
