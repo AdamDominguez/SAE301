@@ -200,7 +200,7 @@ a {
 
 .honeycomb1 {
     position: absolute;
-    top: -50px;
+    top: 100lvh;
     left: 0;
     max-width: 100%;
     width: 15vw;
@@ -212,7 +212,7 @@ a {
     max-width: 100%;
     width: 15vw;
     right: 0;
-    bottom: -50px;
+    bottom: -130lvh;
     top: auto;
     z-index: 10;
 }

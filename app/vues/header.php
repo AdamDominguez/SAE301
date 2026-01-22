@@ -32,7 +32,8 @@ $tableauPage = strpos($pageActive, 'tableau') === 0 || $pageActive === 'inscript
             <!-- Accueil -->
             <a href='index.php?action=accueil' class='<?= $pageActive == 'accueil' ? 'active' : '' ?>'>Accueil</a>
             <!-- Fonctionnalités -->
-            <a href='index.php?action=fonctionnalites' class='<?= $pageActive == 'fonctionnalites' ? 'active' : '' ?>'>Fonctionnalités</a>
+            <a href='index.php?action=fonctionnalites'
+                class='<?= $pageActive == 'fonctionnalites' ? 'active' : '' ?>'>Fonctionnalités</a>
             <!-- Tableau de bord -->
             <a href='index.php?action=tableauAccueil' class='<?= $tableauPage ? 'active' : '' ?>'>Tableau de
                 bord</a>
@@ -169,6 +170,5 @@ $tableauPage = strpos($pageActive, 'tableau') === 0 || $pageActive === 'inscript
     </div>
 </div>
 
-    <script src="./public/js/connecter.js"></script>
-    <script src="./public/js/burger.js"></script>
 <script src="./public/js/connecter.js"></script>
+<script src="./public/js/burger.js"></script>

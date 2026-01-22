@@ -351,3 +351,11 @@ body header .Liens nav a::after {
     /* Behind content */
     opacity: 0.8;
 }
+
+.honeycomb1 {
+    display: none;
+}
+
+.honeycomb2 {
+    display: none;
+}
