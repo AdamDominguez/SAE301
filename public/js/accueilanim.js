@@ -13,6 +13,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const icon3 = document.querySelector("#loader-icon-3"); // Data
     const icon4 = document.querySelector("#loader-icon-4"); // Beekeeper
 
+    // Home Elements
+    const homeTitle = document.querySelector(".Content .Gauche h1");
+    const homeText = document.querySelector(".Content .Gauche p");
+    const homeButtons = document.querySelector(".Content .Boutons");
+    const homeImage = document.querySelector(".Content .Droite img");
+    const homeArrow = document.querySelector(".Arrow");
+    const homeHeroItems = document.querySelectorAll(".HomeHero div");
+
     if (loader && loaderBg && loaderBee && loaderText) {
         // 1. Prepare Text
         const textContent = loaderText.textContent;
@@ -23,7 +31,17 @@ document.addEventListener("DOMContentLoaded", function () {
         gsap.set(loaderBg, { scale: 0 });
         gsap.set(loaderBee, { scale: 0, opacity: 0, rotation: 180 });
         gsap.set(loaderText, { opacity: 1 });
+
         gsap.set(chars, { yPercent: 100, opacity: 0 });
+
+        // 3. Home Elements Initial State
+        // 3. Home Elements Initial State
+        const homeElements = [homeTitle, homeText, homeButtons];
+        gsap.set(homeElements, { y: 30, opacity: 0 });
+        gsap.set(homeArrow, { yPercent: 150, opacity: 0 }); // Start lower, respecting % based transform
+        gsap.set(homeImage, { x: 30, opacity: 0 });
+        gsap.set(homeImage, { x: 30, opacity: 0 });
+        gsap.set(homeHeroItems, { y: 30, opacity: 0 });
 
         // Icon States (Slide Up Setup)
         const icons = [icon1, icon2, icon3, icon4];
@@ -35,11 +53,27 @@ document.addEventListener("DOMContentLoaded", function () {
             onComplete: () => {
                 gsap.to(loader, {
                     yPercent: -100,
-                    duration: 0.8,
+                    duration: 1,
                     ease: "power2.inOut",
                     onComplete: () => {
                         loader.style.display = "none";
                         ScrollTrigger.refresh();
+
+                        // Trigger Home Animation after loader is gone
+                        const homeTl = gsap.timeline();
+
+                        homeTl.to(homeTitle, { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" }, "+=0.1")
+                            .to(homeText, { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" }, "-=0.6")
+                            .to(homeButtons, { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" }, "-=0.6")
+                            .to(homeImage, { x: 0, opacity: 1, duration: 1, ease: "power3.out" }, "-=0.8")
+                            .to(homeArrow, { yPercent: 50, opacity: 1, duration: 0.8, ease: "back.out(1.7)", clearProps: "transform" }, "-=0.6")
+                            .to(homeHeroItems, {
+                                y: 0,
+                                opacity: 1,
+                                duration: 0.8,
+                                stagger: 0.1,
+                                ease: "power3.out"
+                            }, "-=0.6");
                     }
                 });
             }
