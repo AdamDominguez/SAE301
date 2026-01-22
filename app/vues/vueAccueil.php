@@ -12,6 +12,7 @@ $title = "Accueil | BeeLink";
     <link href="./public/css/main.css" rel="stylesheet">
     <link href="./public/css/index.css" rel="stylesheet">
     <link href="./public/css/mobile.css" rel="stylesheet" media="(max-width: 680px)">
+    <link href="./public/css/tablette.css" rel="stylesheet" media="(min-width: 681px) and (max-width: 1200px)">
     <link rel="icon" type="image/png" sizes="32x32" href="./public/img/favicons/favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./public/img/favicons/favicon-16.png">
 </head>
@@ -115,7 +116,7 @@ $title = "Accueil | BeeLink";
                 </div>
             </div>
         </section>
-        <img class="frise_mobile" src="./public/img/frise_mobile.svg" alt="Frise chronologique">
+
         <section class="Explication" id="Explication">
             <img class="honeycomb1" src="./public/img/honeycomb.png" alt="Design de ruche">
             <img class="honeycomb2" src="./public/img/honeycombdouble.png" alt="Design de ruche">
@@ -166,7 +167,8 @@ $title = "Accueil | BeeLink";
                 <h2>Nos trois <span>piliers</span></h2>
                 <h3>Ce qui fait de BeeLink une solution unique pour les apiculteurs</h3>
             </div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="1619" height="421" viewBox="0 0 1619 421" fill="none">
+            <img class="frise_mobile_img" src="./public/img/frise_mobile.svg" alt="Frise Piliers Mobile">
+            <svg class="frise_desktop" xmlns="http://www.w3.org/2000/svg" width="1619" height="421" viewBox="0 0 1619 421" fill="none">
                 <path
                     d="M158.75 179.75V170.25H263.25V179.75H158.75ZM173 165.5C170.387 165.5 168.152 164.571 166.293 162.712C164.434 160.853 163.503 158.616 163.5 156V103.75C163.5 101.137 164.431 98.9018 166.293 97.043C168.155 95.1842 170.391 94.2532 173 94.25H249C251.612 94.25 253.85 95.181 255.712 97.043C257.574 98.905 258.503 101.141 258.5 103.75V156C258.5 158.613 257.571 160.85 255.712 162.712C253.853 164.574 251.616 165.503 249 165.5H173ZM173 156H249V103.75H173V156Z"
                     fill="#ECC655" />

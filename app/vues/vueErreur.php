@@ -3,8 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Erreur | BeeLink</title>
     <link href="./public/css/main.css" rel="stylesheet">
+    <link href="./public/css/mobile.css" rel="stylesheet" media="(max-width: 680px)">
+    <link href="./public/css/tablette.css" rel="stylesheet" media="(min-width: 681px) and (max-width: 1200px)">
 </head>
 
 <body>

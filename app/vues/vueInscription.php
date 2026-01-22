@@ -11,6 +11,8 @@ $title = "Inscription | BeeLink";
     <title><?= $title ?></title>
     <link href="./public/css/main.css" rel="stylesheet">
     <link href="./public/css/inscription.css" rel="stylesheet">
+    <link href="./public/css/mobile.css" rel="stylesheet" media="(max-width: 680px)">
+    <link href="./public/css/tablette.css" rel="stylesheet" media="(min-width: 681px) and (max-width: 1200px)">
     <link rel="icon" type="image/png" sizes="32x32" href="./public/img/favicons/favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./public/img/favicons/favicon-16.png">
 </head>
