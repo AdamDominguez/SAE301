@@ -707,3 +707,17 @@ body header .Connecter svg {
 .honeycomb2 {
     display: none;
 }
+
+.ConnecterMenu-active {
+    max-width: 100%;
+    width: auto;
+    z-index: 3200;
+}
+
+.ConnecterContent {
+    width: 100lvw;
+}
+
+.ConnecterContent h3 {
+    width: 70lvw;
+}
