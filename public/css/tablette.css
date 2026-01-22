@@ -1,0 +1,699 @@
+/* --- Global Mobile Resets & Typography --- */
+body.no-scroll {
+    overflow: hidden;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Fix global overflow to prevent double scrollbars */
+html,
+body {
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Adjust Main padding for fixed header */
+main {
+    padding-top: 80px;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+h3 {
+    text-align: center;
+}
+
+/* --- Header & Hamburger Menu --- */
+body header {
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    height: 80px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: var(--jaune);
+    z-index: 2000;
+}
+
+body header img {
+    margin: 0;
+    width: 90px;
+    height: auto;
+    display: block;
+}
+
+body header .Liens nav,
+body header .Connecter,
+body header .UserMenu {
+    display: none;
+}
+
+/* Hamburger Icon */
+body header .Burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 35px;
+    height: 24px;
+    cursor: pointer;
+    z-index: 3000;
+    position: relative;
+}
+
+.Burger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: var(--noir);
+    border-radius: 4px;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.Burger.active span:nth-child(1) {
+    transform: translateY(10.5px) rotate(45deg);
+}
+
+.Burger.active span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-10px);
+}
+
+.Burger.active span:nth-child(3) {
+    transform: translateY(-10.5px) rotate(-45deg);
+}
+
+/* Mobile Menu Overlay */
+body header .Liens {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--jaune);
+    transition: right 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    z-index: 2500;
+    padding: 0;
+    margin: 0;
+    gap: 40px;
+    opacity: 1;
+}
+
+body header .Liens.active {
+    right: 0;
+}
+
+body header .Liens nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+    width: 100%;
+}
+
+body header .Liens nav a {
+    display: block;
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--noir);
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1px;
+    padding: 10px 0;
+}
+
+body header .Liens nav a::after {
+    display: none;
+}
+
+/* --- Home Section Layout --- */
+.Home {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    min-height: auto;
+    padding-top: 20px;
+    width: 100%;
+    background: var(--jaune);
+}
+
+.Content {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 10px 0 50px 0;
+    gap: 30px;
+    align-items: center;
+    background-color: var(--jaune);
+    width: 100%;
+}
+
+.Droite {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: transparent;
+    padding: 20px 0;
+    flex-basis: auto;
+}
+
+.Droite img {
+    width: 85%;
+    max-width: 400px;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.1));
+}
+
+.Gauche {
+    width: 100%;
+    padding: 0 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex-basis: auto;
+}
+
+.Gauche h1 {
+    font-size: 28px;
+    font-weight: 900;
+    line-height: 1.2;
+    margin: 0 0 20px 0;
+    color: var(--noir);
+    width: 100%;
+}
+
+.Gauche p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0 0 35px 0;
+    width: 100%;
+    max-width: 400px;
+    color: var(--noir);
+    opacity: 0.9;
+}
+
+/* Fix for Contact page colors */
+/* Fix for Contact page colors & Layout */
+.Contact {
+    flex-direction: column;
+    height: auto;
+    padding: 60px;
+    gap: 30px;
+}
+
+.Contact .Gauche {
+    width: 100%;
+    margin: 0;
+    align-items: flex-start;
+    text-align: left;
+    padding: 0;
+    gap: 20px;
+}
+
+.Contact .Gauche h1 {
+    color: var(--jaune);
+    text-align: left;
+    margin-bottom: 15px;
+    font-size: 28px;
+}
+
+.Contact .Gauche p {
+    color: var(--blanc);
+    max-width: 100%;
+    text-align: left;
+    opacity: 1;
+    font-size: 16px;
+    margin: 0;
+}
+
+.gauche-un,
+.gauche-deux,
+.gauche-trois {
+    width: 100%;
+    padding-bottom: 0;
+}
+
+.gauche-deux,
+.gauche-trois {
+    padding-top: 15px;
+}
+
+.Contact .Droite {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.Contact .Droite form {
+    width: 100%;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.Contact .Droite form h3 {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.Contact .Droite form button {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 30px;
+}
+
+.form-group {
+    flex-direction: column;
+    gap: 0;
+}
+
+.form-row {
+    margin: 15px 0 0 0;
+}
+
+.main-inscription {
+    padding: 80px;
+}
+
+.Boutons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+.Decouvrir,
+.Savoir {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 16px;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* --- HomeHero Grid Layout --- */
+.HomeHero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    width: 100%;
+    padding: 40px 20px 60px 20px;
+    background-color: var(--noir);
+    height: auto;
+}
+
+.HomeHero div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    gap: 12px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px 10px;
+    border-radius: 12px;
+}
+
+.HomeHero svg {
+    width: 32px;
+    height: 32px;
+}
+
+.HomeHero p {
+    font-size: 13px;
+    line-height: 1.3;
+    margin: 0;
+    color: var(--blanc);
+    font-weight: 600;
+}
+
+.HomeHero div:last-child {
+    grid-column: span 2;
+    width: 100%;
+    max-width: 100%;
+    justify-self: center;
+}
+
+.Arrow {
+    display: none;
+}
+
+/* Honeycomb decoration positioning for mobile */
+.Explication .honeycomb1,
+.Explication .honeycomb2 {
+    display: none;
+}
+
+/* Loader Responsive */
+.loader-content {
+    flex-direction: column;
+    gap: 15px;
+}
+
+.loader-icon-container {
+    width: 150px;
+    height: 150px;
+}
+
+#loader-text {
+    font-size: 3.5rem;
+}
+
+/* Sections Natural Flow (Remove fixed heights and flex centering) */
+.Explication,
+.Piliers,
+.Passion,
+.Marche {
+    height: auto;
+    min-height: 0;
+    display: block;
+    padding: 50px 5vw;
+    margin: 0;
+}
+
+.Beelink {
+    display: none;
+}
+
+.Explication {
+    padding-top: 100px;
+}
+
+/* Ensure content inside stack correctly */
+.ExplicationMenu {
+    flex-direction: column-reverse;
+    width: 100%;
+}
+
+.ExplicationLogos {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.Piliers,
+.Passion,
+.MarcheEtapes,
+.BeelinkTab {
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+}
+
+.ExplicationTexte,
+.Passion img,
+.PassionDroite,
+.MarcheEtape,
+.BeelinkTab {
+    width: 100%;
+}
+
+/* Mobile Steps Styling */
+.MarcheEtape {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto 10px auto;
+}
+
+/* Mobile Timeline Frieze Switch */
+.frise_desktop {
+    display: none;
+}
+
+.frise_mobile_img {
+    display: block;
+    width: 100%;
+    max-width: 311px;
+    height: auto;
+    margin: 0 auto;
+}
+
+/* --- Responsive Footer --- */
+/* --- Responsive Footer --- */
+.Footer1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 20px;
+    width: 100%;
+}
+
+.Footer1A {
+    order: 1;
+    width: 48%;
+    /* Share top row */
+    align-items: flex-start;
+    text-align: left;
+}
+
+.Footer1A p {
+    text-align: left;
+}
+
+.Footer1D {
+    order: 2;
+    width: 45%;
+    /* Share top row */
+    text-align: left;
+    /* Align like 1A or stick to center? User asked for 1A left. 1D side by side usually implies visual balance. keeping layout fluid. */
+    align-items: flex-start;
+    padding-top: 0;
+    /* Reset previous padding */
+    display: flex;
+    flex-direction: column;
+}
+
+.Footer2A,
+.Footer1B,
+.Footer1C {
+    order: 3;
+    width: auto;
+    align-items: flex-start;
+    text-align: left;
+    margin: 0;
+    padding-right: 20px;
+}
+
+.Footer3 {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.titre {
+    padding: 30px;
+}
+
+/* Fix for Dashboard Layout */
+main {
+    flex-direction: column;
+}
+
+.FonctionNav {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 15px;
+    background: var(--noir);
+    gap: 10px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    padding-top: 60px;
+}
+
+.FonctionNav::-webkit-scrollbar {
+    display: none;
+}
+
+.FonctionNav .principal,
+.FonctionNav .gestion {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.FonctionNav h4 {
+    display: none;
+}
+
+.element-menu {
+    flex-shrink: 0;
+    margin: 0 !important;
+}
+
+.element-menu a {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin: 0;
+    font-size: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.element-menu.actif a {
+    background: var(--jaune);
+    color: var(--noir);
+    border-color: var(--jaune);
+    font-weight: bold;
+}
+
+.contenu-tableau {
+    width: 100%;
+    padding: 20px;
+}
+
+.grille-widgets,
+.grille-widgets-donnees {
+    grid-template-columns: 1fr;
+    gap: 25px;
+}
+
+/* Hive Grid - 2 Columns for better visibility */
+.liste-ruches {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.widget-ruches {
+    grid-column: 1;
+    background: var(--couleur-fond-widget);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.ruche-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 15px 10px;
+}
+
+.table-container {
+    overflow-x: auto;
+    border: 2px solid var(--jaune);
+}
+
+/* Restore Header User Menu on Mobile */
+body header .Connecter {
+    display: flex;
+    /* Show user icon */
+    font-size: 0;
+    /* Hide text "Se connecter" / email if needed, or style properly */
+    background: transparent;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    /* Space from burger */
+}
+
+body header .Connecter svg {
+    width: 28px;
+    height: 28px;
+    stroke: var(--noir);
+}
+
+/* Ensure dropdown works if it relies on hover or make it clickable via JS if needed */
+/* Since it's mobile, hover might be tricky. Assuming tap works on .Connecter to toggle .UserMenu */
+.UserMenu {
+    top: 60px;
+    right: 10px;
+    width: 250px;
+    background: var(--blanc);
+    border: 1px solid #eee;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+}
+
+.UserMenu p {
+    color: var(--noir);
+    font-size: 14px;
+}
+
+.UserMenuLiens a {
+    color: var(--noir) !important;
+}
+
+/* Profile Page Response */
+.container-profil {
+    flex-direction: column;
+}
+
+.recap-profil,
+.info-profil {
+    max-width: 100%;
+    width: 100%;
+}
+
+.flex-element {
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* --- Features (Fonctionnalités) Page Responsive Styles --- */
+.container {
+    grid-template-columns: 1fr;
+    padding: 20px;
+    gap: 20px;
+}
+
+.bloc {
+    width: 100%;
+}
+
+.interface {
+    flex-direction: column;
+    padding: 40px 20px;
+    gap: 40px;
+}
+
+.texte,
+.interface img {
+    max-width: 100%;
+    width: 100%;
+}
+
+.banniere {
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.avis-container {
+    padding: 20px 0;
+    margin-bottom: 40px;
+}
+
+.carte {
+    width: 80vw;
+    padding: 20px;
+}
