@@ -22,8 +22,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?action=tableauProfil';
                 window.history.pushState({ path: newUrl }, '', newUrl);
             }, 4000);
-        } else {
-            console.error("Aucune notification trouvée");
+            // } else {
+            //     console.error("Aucune notification trouvée");
         }
     }
 });

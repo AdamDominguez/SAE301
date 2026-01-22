@@ -3,6 +3,14 @@
     --jaune: #F0C753;
     --noir: #333333;
     --blanc: #ffffff;
+    --couleur-fond-widget: #2B2B2B;
+    --couleur-border: #444444;
+    --couleur-texte-clair: #AAAAAA;
+    --couleur-succes: #4CAF50;
+    --couleur-avertissement: #FF9800;
+    --couleur-bleu-alertes: #2196F3;
+    --couleur-negatif: #F44336;
+    --couleur-normal: #4A90E2;
 }
 
 html {
@@ -675,4 +683,37 @@ nav a:hover::after {
 nav a.active::after {
     width: calc(100% - 20px);
     height: 3px;
+}
+
+/* --- NOTIFICATIONS Modif infos profil --- */
+
+.notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--couleur-succes);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transform: translateY(100px);
+    opacity: 0;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    z-index: 2000;
+}
+
+.notification.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.notification-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+}
+
+.notification.error {
+    background-color: var(--couleur-negatif);
 }

@@ -5,6 +5,8 @@ require_once __DIR__ . "/../modeles/connexion.php";
 require_once __DIR__ . "/../modeles/connexionAdmin.php";
 require_once __DIR__ . "/../modeles/uploadPhoto.php";
 require_once __DIR__ . "/../modeles/Ruche.php";
+require_once __DIR__ . "/../modeles/usermodel.php";
+
 
 // Affichage de la page d'accueil
 function accueil()
@@ -320,9 +322,12 @@ function login($email, $mdp)
 
         $action = $_COOKIE["page"] ?? "?action=accueil";
 
-        header("Location: index.php" . $action);
-    } else
-        accueil();
+        header("Location: index.php" . $action . "&login=success");
+        exit();
+    } else {
+        header("Location: index.php?action=accueil&login=error");
+        exit();
+    }
 }
 
 // Affichage de la page d'erreur (utilisation de __DIR__ . "/..." pour forcer le lien)
