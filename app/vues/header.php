@@ -134,5 +134,11 @@ $tableauPage = strpos($pageActive, 'tableau') === 0 || $pageActive === 'inscript
         </div>
         </div>
     <?php endif; ?>
+    <div class="Burger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
     <script src="./public/js/connecter.js"></script>
+    <script src="./public/js/burger.js"></script>
 </header>

@@ -7,9 +7,11 @@ $title = "Accueil | BeeLink";
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $title ?></title>
     <link href="./public/css/main.css" rel="stylesheet">
     <link href="./public/css/index.css" rel="stylesheet">
+    <link href="./public/css/mobile.css" rel="stylesheet" media="(max-width: 680px)">
     <link rel="icon" type="image/png" sizes="32x32" href="./public/img/favicons/favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./public/img/favicons/favicon-16.png">
 </head>
@@ -113,9 +115,10 @@ $title = "Accueil | BeeLink";
                 </div>
             </div>
         </section>
-        <img class="honeycomb1" src="./public/img/honeycomb.png" alt="Design de ruche">
-        <img class="honeycomb2" src="./public/img/honeycombdouble.png" alt="Design de ruche">
+        <img class="frise_mobile" src="./public/img/frise_mobile.svg" alt="Frise chronologique">
         <section class="Explication" id="Explication">
+            <img class="honeycomb1" src="./public/img/honeycomb.png" alt="Design de ruche">
+            <img class="honeycomb2" src="./public/img/honeycombdouble.png" alt="Design de ruche">
             <h2>Qu'est-ce que le projet <span>BeeLink</span> ?</h2>
             <div class="ExplicationMenu">
                 <div class="ExplicationLogos">
@@ -377,7 +380,7 @@ $title = "Accueil | BeeLink";
                 </a>
                 <div class="BeelinkStat">
                     <div class="BeelinkStats">
-                        <p><span class="counter" data-target="400" data-prefix="+">0</span></p>
+                        <p><span class="counter">400</span></p>
                         <p class="blanc">Ruches surveillées</p>
                     </div>
                     <div class="BeelinkStats">
@@ -385,7 +388,7 @@ $title = "Accueil | BeeLink";
                         <p class="blanc">Surveillance continue</p>
                     </div>
                     <div class="BeelinkStats">
-                        <p><span class="counter" data-target="98" data-suffix="%">0</span></p>
+                        <p><span class="counter">98%</span></p>
                         <p class="blanc">Satisfaction utilisateurs</p>
                     </div>
                 </div>
