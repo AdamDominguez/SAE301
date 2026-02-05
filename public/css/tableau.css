@@ -74,8 +74,6 @@ main {
 /* Widgets Base Styles */
 
 .widget-indicateur,
-.widget-alerte,
-.widget-actions,
 .widget-ruches,
 .widget-graphique-donnees {
     background-color: var(--couleur-fond-widget);
@@ -120,13 +118,7 @@ main {
     gap: 20px;
 }
 
-/* Bandeau Jaune (Removed as per user edit) */
-
 /* Widgets Layout (Accueil) */
-
-.widget-alerte {
-    grid-column: span 3;
-}
 
 .widget-actions {
     grid-column: span 1;
@@ -136,7 +128,7 @@ main {
     grid-column: 1 / -1;
 }
 
-/* Alertes & Titres Widgets */
+/* Titres Widgets */
 
 .titre-widget {
     display: flex;
@@ -154,61 +146,15 @@ main {
     font-weight: normal;
 }
 
-.liste-alertes .alerte {
-    display: flex;
-    align-items: center;
-    background-color: var(--noir);
-    padding: 15px;
-    border-radius: 4px;
-    margin-bottom: 10px;
-}
-
-.icone-alerte {
-    font-size: 1.5em;
-    margin-right: 15px;
-}
-
-.alerte p {
-    flex-grow: 1;
-    margin: 0;
-    font-weight: 500;
-    color: var(--blanc);
-}
-
-.alerte small {
-    color: var(--couleur-texte-clair);
-    font-size: 0.8em;
-}
-
-/* Actions rapides */
-
-.liste-actions a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: var(--blanc);
-    padding: 12px 0;
-    border-bottom: 1px solid var(--couleur-border);
-    transition: background-color 0.2s;
-}
-
-.liste-actions a:last-child {
-    border-bottom: none;
-}
-
-.icone-action {
-    margin-right: 10px;
-    font-size: 1.2em;
-}
-
-.liste-actions a:hover {
-    color: var(--jaune);
+h3.titre-widget {
+    margin-top: 0;
 }
 
 /* Liste des ruches */
 
 .liste-ruches {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     margin-top: 20px;
 }
@@ -217,7 +163,6 @@ main {
     background-color: var(--noir);
     padding: 15px;
     border-radius: 6px;
-    flex-grow: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -229,7 +174,8 @@ main {
     transition: border-color 0.2s, color 0.2s, background-color 0.2s;
 }
 
-.ruche-item:hover {
+.ruche-item:hover,
+.ruche-item.actif {
     border-color: var(--jaune);
     background-color: #3D3D3D;
     color: var(--jaune);
@@ -252,22 +198,6 @@ main {
     font-size: 0.8em;
 }
 
-.statut {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-}
-
-.statut-ok {
-    background-color: var(--couleur-succes);
-}
-
-.statut-alerte {
-    background-color: var(--couleur-avertissement);
-}
 
 
 /* --- PAGE: DONNÉES --- */
@@ -350,30 +280,6 @@ main {
     font-weight: bold;
 }
 
-/* Étiquettes d'état */
-
-.etiquette-etat {
-    font-size: 0.7em;
-    font-weight: bold;
-    padding: 3px 8px;
-    border-radius: 15px;
-    text-transform: uppercase;
-}
-
-.etiquette-optimal {
-    color: var(--couleur-succes);
-    background-color: rgba(76, 175, 80, 0.1);
-}
-
-.etiquette-elevee {
-    color: var(--couleur-avertissement);
-    background-color: rgba(255, 152, 0, 0.1);
-}
-
-.etiquette-normal {
-    color: var(--couleur-normal);
-    background-color: rgba(74, 144, 226, 0.1);
-}
 
 /* Min/Max */
 
@@ -402,66 +308,6 @@ main {
 
 .min-max .max {
     text-align: right;
-}
-
-/* Widgets colorés (Conteneur Égaux) */
-
-.conteneur-widgets-egaux {
-    padding-top: 20px;
-    grid-column: 1 / -1;
-    display: flex;
-    gap: 20px;
-}
-
-.widget-color {
-    padding: 20px;
-    border-radius: 8px;
-    color: var(--blanc);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    flex: 1;
-}
-
-.titre-bloc-couleur {
-    font-size: 1.1em;
-    margin-bottom: 5px;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.8);
-}
-
-.valeur-bloc-couleur {
-    font-size: 2.5em;
-    font-weight: bold;
-    margin: 0 0 5px 0;
-    color: var(--blanc);
-}
-
-.widget-color small {
-    display: block;
-    font-size: 0.9em;
-    color: rgba(255, 255, 255, 0.7);
-}
-
-/* Couleur des textes en noir pour contrast */
-.couleur-synchro .titre-bloc-couleur,
-.couleur-synchro small {
-    color: var(--noir);
-}
-
-.couleur-synchro .valeur-bloc-couleur {
-    color: var(--noir);
-}
-
-.couleur-synchro {
-    background-color: var(--jaune);
-    color: var(--noir);
-}
-
-.couleur-etat {
-    background-color: var(--couleur-succes);
-}
-
-.couleur-alertes {
-    background-color: var(--couleur-bleu-alertes);
 }
 
 /* Map Leaflet */
@@ -580,48 +426,6 @@ td:nth-child(5) {
     font-size: 0.9em;
 }
 
-/* Indicateur bas (Graphiques) */
-
-.indicateur-bas {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px solid var(--couleur-border);
-    padding-top: 10px;
-    margin-top: 20px;
-}
-
-.plage-cible {
-    font-size: 0.9em;
-    color: var(--couleur-texte-clair);
-    margin: 0;
-}
-
-.etiquette-variation {
-    font-size: 0.8em;
-    font-weight: bold;
-    padding: 3px 8px;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    gap: 3px;
-    line-height: 1;
-}
-
-.etiquette-variation span {
-    font-size: 1.1em;
-    font-weight: bolder;
-}
-
-.variation-verte {
-    color: var(--couleur-succes);
-    background-color: rgba(76, 175, 80, 0.15);
-}
-
-.variation-rouge {
-    color: var(--couleur-negatif);
-    background-color: rgba(244, 67, 54, 0.15);
-}
 
 /* --- PAGE: PROFIL --- */
 
@@ -804,35 +608,8 @@ textarea {
     width: 100%;
 }
 
-/* --- NOTIFICATIONS Modif infos profil --- */
-
-.notification {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: var(--couleur-succes);
-    color: white;
-    padding: 15px 25px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    transform: translateY(100px);
-    opacity: 0;
-    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
-    z-index: 1000;
-}
-
-.notification.show {
-    transform: translateY(0);
-    opacity: 1;
-}
-
-.notification-content {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: 500;
-}
-
-.notification.error {
-    background-color: var(--couleur-negatif);
+.icone-indicateur svg, .icone-ruche svg {
+    max-width: 100%;
+    height: auto;
+    width: auto;
 }

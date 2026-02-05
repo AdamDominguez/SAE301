@@ -121,7 +121,7 @@ $title = "Fonctionnalités | BeeLink";
                     <p class="blanc">Graphiques visuels</p>
                 </div>
             </div>
-            <img loading=lazy (max-width: 800px) 100vw, 800px srcset="
+            <img loading=lazy sizes="(max-width: 800px) 100vw, 800px" srcset="
                 public/img/interface/Interface_ftmteo_c_scale,w_200.png 200w,
                 public/img/interface/Interface_ftmteo_c_scale,w_326.png 326w,
                 public/img/interface/Interface_ftmteo_c_scale,w_424.png 424w,

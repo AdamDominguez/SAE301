@@ -39,132 +39,42 @@ $title = "Tableau de bord | BeeLink";
                     <p class="sous-titre">Surveillance complète et analyse en temps réel de vos ruches.</p>
                 </div>
                 <div class="actions-globales">
-                    <select class="select-ruche">
-                        <option>Ruche 001</option>
-                        <option>Ruche 002</option>
-                        <option>Ruche 003</option>
+                    <!-- changement d'url avec window.location.href & attribution de l'id avec + this.value -->
+                    <select class="select-ruche" onchange="window.location.href='index.php?action=tableauDonnees&id=' + this.value">
+                        <!-- affichage dynamique des ruches avec un foreach pour chaque id on propose l'option -->
+                        <?php foreach ($ruches as $id => $ruche): ?>
+                            <option value="<?= $id ?>" <?= ($selectedRucheId == $id) ? 'selected' : '' ?>>Ruche <?= $id ?></option>
+                        <?php endforeach; ?>
                     </select>
-                    <button class="btn-export">
-                        Exporter
-                    </button>
+<!--                    <button class="btn-export">-->
+<!--                        Exporter-->
+<!--                    </button>-->
                 </div>
             </div>
 
             <nav class="nav-onglets">
-                <a href="index.php?action=tableauDonnees" class="onglet actif">Aperçu</a>
-                <a href="index.php?action=tableauDonneesGraphiques" class="onglet">Graphiques</a>
-                <a href="index.php?action=tableauDonneesTableau" class="onglet">Tableau</a>
+                <a href="index.php?action=tableauDonnees&id=<?= $selectedRucheId ?>" class="onglet actif">Aperçu</a>
+                <a href="index.php?action=tableauDonneesGraphiques&id=<?= $selectedRucheId ?>" class="onglet">Graphiques</a>
+                <a href="index.php?action=tableauDonneesTableau&id=<?= $selectedRucheId ?>" class="onglet">Tableau</a>
             </nav>
 
             <div class="grille-widgets-donnees">
-
-                <div class="widget-indicateur">
-                    <div class="entete-indicateur">
-                        <span class="icone-indicateur">🌡️</span>
-                        <span class="etiquette-etat etiquette-optimal">OPTIMAL</span>
-                    </div>
-                    <p class="etiquette-indicateur">Température</p>
-                    <p class="valeur-indicateur">21.0°C</p>
-                    <div class="min-max">
-                        <div class="min">
-                            <small>Min</small>
-                            <p>20.0°C</p>
-                        </div>
-                        <div class="max">
-                            <small>Max</small>
-                            <p>23.0°C</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="widget-indicateur">
-                    <div class="entete-indicateur">
-                        <span class="icone-indicateur">💧</span>
-                        <span class="etiquette-etat etiquette-elevee">élevée</span>
-                    </div>
-                    <p class="etiquette-indicateur">Humidité</p>
-                    <p class="valeur-indicateur">82%</p>
-                    <div class="min-max">
-                        <div class="min">
-                            <small>Min</small>
-                            <p>80%</p>
-                        </div>
-                        <div class="max">
-                            <small>Max</small>
-                            <p>85%</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="widget-indicateur">
-                    <div class="entete-indicateur">
-                        <span class="icone-indicateur">⚖️</span>
-                        <span class="etiquette-etat etiquette-optimal">OPTIMAL</span>
-                    </div>
-                    <p class="etiquette-indicateur">Poids total</p>
-                    <p class="valeur-indicateur">15.6 kg</p>
-                    <div class="min-max">
-                        <div class="min">
-                            <small>Min</small>
-                            <p>15.4 kg</p>
-                        </div>
-                        <div class="max">
-                            <small>Max</small>
-                            <p>15.8 kg</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="widget-indicateur">
-                    <div class="entete-indicateur">
-                        <span class="icone-indicateur">〰️</span>
-                        <span class="etiquette-etat etiquette-normal">NORMAL</span>
-                    </div>
-                    <p class="etiquette-indicateur">Fréquence</p>
-                    <p class="valeur-indicateur">233 Hz</p>
-                    <div class="min-max">
-                        <div class="min">
-                            <small>Min</small>
-                            <p>205 Hz</p>
-                        </div>
-                        <div class="max">
-                            <small>Max</small>
-                            <p>244 Hz</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="conteneur-widgets-egaux">
-                    <div class="widget-color couleur-synchro">
-                        <h4 class="titre-bloc-couleur">Dernière synchronisation</h4>
-                        <p class="valeur-bloc-couleur">Il y a 2 min</p>
-                        <small>Prochain sync dans 3 min</small>
-                    </div>
-
-                    <div class="widget-color couleur-etat">
-                        <h4 class="titre-bloc-couleur">État général</h4>
-                        <p class="valeur-bloc-couleur">Excellent</p>
-                        <small>4/4 ruches opérationnelles</small>
-                    </div>
-
-                    <div class="widget-color couleur-alertes">
-                        <h4 class="titre-bloc-couleur">Alertes actives</h4>
-                        <p class="valeur-bloc-couleur">1</p>
-                        <small>Température élevée - Ruche #3</small>
-                    </div>
-                </div>
-
-                <div id="map"></div>
-
+                <?php require "data.php"; ?>
+                <div id="map" data-lat="<?= $gps[0] ?>" data-lng="<?= $gps[1] ?>" data-id="Ruche <?= $selectedRucheId ?>"></div>
             </div>
         </section>
     </main>
     <?php require "footer.php"; ?>
 </body>
 
+<!--intég leaflet-->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
     crossorigin=""></script>
+
+<!--exportation pdf-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>-->
 
 <script src="./public/js/tableau.js"></script>
 

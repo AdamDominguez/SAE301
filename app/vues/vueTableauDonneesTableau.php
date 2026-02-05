@@ -36,83 +36,61 @@ $title = "Tableau de bord | BeeLink";
                     <p class="sous-titre">Surveillance complète et analyse en temps réel de vos ruches.</p>
                 </div>
                 <div class="actions-globales">
-                    <select class="select-ruche">
-                        <option>Ruche 001</option>
-                        <option>Ruche 002</option>
-                        <option>Ruche 003</option>
+                    <!-- changement d'url avec window.location.href & attribution de l'id avec + this.value -->
+                    <select class="select-ruche" onchange="window.location.href='index.php?action=tableauDonneesTableau&id=' + this.value">
+                        <!-- affichage dynamique des ruches avec un foreach pour chaque id on propose l'option -->
+                        <?php foreach ($ruches as $id => $ruche): ?>
+                            <option value="<?= $id ?>" <?= ($selectedRucheId == $id) ? 'selected' : '' ?>>Ruche <?= $id ?></option>
+                        <?php endforeach; ?>
                     </select>
-                    <button class="btn-export">
-                        Exporter
-                    </button>
+<!--                    <button class="btn-export">-->
+<!--                        Exporter-->
+<!--                    </button>-->
                 </div>
             </div>
 
             <nav class="nav-onglets">
-                <a href="index.php?action=tableauDonnees" class="onglet">Aperçu</a>
-                <a href="index.php?action=tableauDonneesGraphiques" class="onglet">Graphiques</a>
-                <a href="index.php?action=tableauDonneesTableau" class="onglet actif">Tableau</a>
+                <a href="index.php?action=tableauDonnees&id=<?= $selectedRucheId ?>" class="onglet">Aperçu</a>
+                <a href="index.php?action=tableauDonneesGraphiques&id=<?= $selectedRucheId ?>" class="onglet">Graphiques</a>
+                <a href="index.php?action=tableauDonneesTableau&id=<?= $selectedRucheId ?>" class="onglet actif">Tableau</a>
             </nav>
 
             <div class="table-container">
-                <table>
+                <table id="donneesTable">
                     <thead>
                         <tr>
-                            <th>Date</th>
-                            <th>Temp.</th>
-                            <th>Poids</th>
-                            <th>Humidité</th>
-                            <th>Fréq.</th>
+                            <th class="sortable" data-type="date">Date</th>
+                            <th class="sortable" data-type="number">Temp.</th>
+                            <th class="sortable" data-type="number">Poids</th>
+                            <th class="sortable" data-type="number">Humidité</th>
+                            <th class="sortable" data-type="number">Fréq.</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>03/11/2024 20:00:00</td>
-                            <td>21°C</td>
-                            <td>15.6 kg</td>
-                            <td>82%</td>
-                            <td>233 Hz</td>
-                        </tr>
-                        <tr>
-                            <td>03/11/2024 08:00:00</td>
-                            <td>20°C</td>
-                            <td>15.8 kg</td>
-                            <td>80%</td>
-                            <td>242 Hz</td>
-                        </tr>
-                        <tr>
-                            <td>02/11/2024 20:00:00</td>
-                            <td>22°C</td>
-                            <td>15.6 kg</td>
-                            <td>85%</td>
-                            <td>244 Hz</td>
-                        </tr>
-                        <tr>
-                            <td>02/11/2024 08:00:00</td>
-                            <td>21°C</td>
-                            <td>15.4 kg</td>
-                            <td>83%</td>
-                            <td>205 Hz</td>
-                        </tr>
-                        <tr>
-                            <td>01/11/2024 20:00:00</td>
-                            <td>23°C</td>
-                            <td>15.7 kg</td>
-                            <td>80%</td>
-                            <td>222 Hz</td>
-                        </tr>
-                        <tr>
-                            <td>01/11/2024 08:00:00</td>
-                            <td>22°C</td>
-                            <td>15.5 kg</td>
-                            <td>81%</td>
-                            <td>213 Hz</td>
-                        </tr>
+                        <?php if (!empty($history)): ?>
+                            <?php foreach ($history as $row): ?>
+                                <tr>
+                                    <td><?= date('d/m/Y H:i:s', strtotime($row['date'])) ?></td>
+                                    <td><?= $row['temperature'] ?>°C</td>
+                                    <td><?= $row['poids'] ?> kg</td>
+                                    <td><?= $row['humidite'] ?>%</td>
+                                    <td><?= $row['frequence'] ?> Hz</td>
+                                </tr>
+                            <?php endforeach; ?>
+                        <?php else: ?>
+                            <tr>
+                                <td colspan="5">Aucune donnée disponible.</td>
+                            </tr>
+                        <?php endif; ?>
                     </tbody>
                 </table>
             </div>
         </section>
     </main>
+
     <?php require "footer.php"; ?>
+
+    <script src="./public/js/tableau.js"></script>
 </body>
 
 </html>

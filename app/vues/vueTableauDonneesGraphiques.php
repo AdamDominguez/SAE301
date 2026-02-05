@@ -8,13 +8,10 @@ $title = "Tableau de bord | BeeLink";
 <head>
     <meta charset="UTF-8">
     <title><?= $title ?></title>
-
     <link href="./public/css/main.css" rel="stylesheet">
     <link href="./public/css/tableau.css" rel="stylesheet">
-
     <link rel="icon" type="image/png" sizes="32x32" href="./public/img/favicons/favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./public/img/favicons/favicon-16.png">
-
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
@@ -40,67 +37,45 @@ $title = "Tableau de bord | BeeLink";
                     <p class="sous-titre">Surveillance complète et analyse en temps réel de vos ruches.</p>
                 </div>
                 <div class="actions-globales">
-                    <select class="select-ruche">
-                        <option>Ruche 001</option>
-                        <option>Ruche 002</option>
-                        <option>Ruche 003</option>
+                    <!-- changement d'url avec window.location.href & attribution de l'id avec + this.value -->
+                    <select class="select-ruche" onchange="window.location.href='index.php?action=tableauDonneesGraphiques&id=' + this.value">
+                        <!-- affichage dynamique des valeurs grâce à data.php -->
+                        <?php foreach ($ruches as $id => $ruche): ?>
+                            <option value="<?= $id ?>" <?= ($selectedRucheId == $id) ? 'selected' : '' ?>>Ruche <?= $id ?></option>
+                        <?php endforeach; ?>
                     </select>
-                    <button class="btn-export">
-                        Exporter
-                    </button>
+<!--                    <button class="btn-export">-->
+<!--                        Exporter-->
+<!--                    </button>-->
                 </div>
             </div>
 
             <nav class="nav-onglets">
-                <a href="index.php?action=tableauDonnees" class="onglet">Aperçu</a>
-                <a href="index.php?action=tableauDonneesGraphiques" class="onglet actif">Graphiques</a>
-                <a href="index.php?action=tableauDonneesTableau" class="onglet">Tableau</a>
+                <a href="index.php?action=tableauDonnees&id=<?= $selectedRucheId ?>" class="onglet">Aperçu</a>
+                <a href="index.php?action=tableauDonneesGraphiques&id=<?= $selectedRucheId ?>" class="onglet actif">Graphiques</a>
+                <a href="index.php?action=tableauDonneesTableau&id=<?= $selectedRucheId ?>" class="onglet">Tableau</a>
             </nav>
 
             <div class="grille-widgets-donnees">
 
                 <div class="widget-indicateur">
                     <p class="etiquette-indicateur">Température moy.</p>
-                    <p class="valeur-indicateur">22.0°C</p>
-                    <div class="indicateur-bas">
-                        <p class="plage-cible">20.0°C - 23.0°C</p>
-                        <span class="etiquette-variation variation-rouge">
-                            <span>⬋</span> -1.00°C
-                        </span>
-                    </div>
+                    <p class="valeur-indicateur"><?= $tempMoy ?>°C</p>
                 </div>
 
                 <div class="widget-indicateur">
                     <p class="etiquette-indicateur">Poids moy.</p>
-                    <p class="valeur-indicateur">15.6kg</p>
-                    <div class="indicateur-bas">
-                        <p class="plage-cible">15.4kg - 16.0kg</p>
-                        <span class="etiquette-variation variation-verte">
-                            <span>⬈</span> +0.20kg
-                        </span>
-                    </div>
+                    <p class="valeur-indicateur"><?= $poidsMoy ?>kg</p>
                 </div>
 
                 <div class="widget-indicateur">
                     <p class="etiquette-indicateur">Humidité moy.</p>
-                    <p class="valeur-indicateur">82%</p>
-                    <div class="indicateur-bas">
-                        <p class="plage-cible">80% - 85%</p>
-                        <span class="etiquette-variation variation-verte">
-                            <span>⬈</span> +2.0%
-                        </span>
-                    </div>
+                    <p class="valeur-indicateur"><?= $humMoy ?>%</p>
                 </div>
 
                 <div class="widget-indicateur">
                     <p class="etiquette-indicateur">Fréquences moy.</p>
-                    <p class="valeur-indicateur">227 Hz</p>
-                    <div class="indicateur-bas">
-                        <p class="plage-cible">205Hz - 244Hz</p>
-                        <span class="etiquette-variation variation-rouge">
-                            <span>⬋</span> -17Hz
-                        </span>
-                    </div>
+                    <p class="valeur-indicateur"><?= $freqMoy ?> Hz</p>
                 </div>
 
                 <div class="widget-graphique-donnees principal">
@@ -136,7 +111,14 @@ $title = "Tableau de bord | BeeLink";
             </div>
         </section>
     </main>
+
     <?php require "footer.php"; ?>
+
+    <script>
+        // envoie des info php au js avec json_encode et notre historique
+        const rucheHistory = <?= json_encode($history) ?>;
+    </script>
+
     <script src="./public/js/graph.js"></script>
 </body>
 
